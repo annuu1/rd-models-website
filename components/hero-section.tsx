@@ -136,7 +136,7 @@ export function HeroSection() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
@@ -159,7 +159,7 @@ export function HeroSection() {
               />
             </motion.div>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

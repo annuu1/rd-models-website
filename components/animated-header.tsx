@@ -101,7 +101,7 @@ export function AnimatedHeader() {
               className={`hidden md:flex font-barlow text-lg px-6 py-3 transition-all duration-300 ${
                 isScrolled
                   ? "border-primary text-primary hover:bg-primary hover:text-white"
-                  : "border-white text-white hover:bg-white hover:text-primary"
+                  : "border-white text-white hover:bg-white hover:text-primary bg-transparent"
               }`}
               asChild
             >
