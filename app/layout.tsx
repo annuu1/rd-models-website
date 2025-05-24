@@ -1,6 +1,11 @@
 import type React from "react"
 import "@/app/globals.css"
-import '@/styles/fonts.css';
+import localFont from 'next/font/local'
+const grenda = localFont({
+  src: '../public/fonts/Grenda.otf',
+  variable: '--font-grenda', // Optional for CSS variables
+  display: 'swap',
+})
 
 import { Forum, Jost, Outfit, Amiri } from "next/font/google"
 import type { Metadata } from "next"
@@ -106,7 +111,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en-IN" className={`${forum.variable} ${jost.variable} ${outfit.variable} ${amiri.variable}`}>
+    <html lang="en-IN" className={`${forum.variable} ${jost.variable} ${outfit.variable} ${amiri.variable} ${grenda.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

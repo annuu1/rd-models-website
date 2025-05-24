@@ -52,7 +52,7 @@ export function AnimatedHeader() {
             >
               <Link
                 href={item.href}
-                className={`text-lg font-small transition-all duration-300 font-grenda-100 relative group ${
+                className={`text-base font-small transition-all duration-300 font-grenda relative group ${
                   isScrolled ? "text-gray-800 hover:text-primary" : "text-white hover:text-green-400"
                 }`}
               >

@@ -56,7 +56,7 @@ const config = {
       },
       fontFamily: {
         forum: ["var(--font-forum)", "serif"],
-        grenda: ["Grenda", "sans-serif"],
+        grenda: ["var(--font-grenda)", "sans-serif"], 
         barlow: ["Barlow", "sans-serif"],
         jost: ["var(--font-jost)", "sans-serif"],
         outfit: ["var(--font-outfit)", "sans-serif"],
