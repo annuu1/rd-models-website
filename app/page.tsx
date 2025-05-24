@@ -1,6 +1,5 @@
 import { AnimatedHeader } from "@/components/animated-header"
 import { HeroSection } from "@/components/hero-section"
-import FounderSection from "@/components/founder-section"
 import { TeamMember } from "@/components/team-member"
 import { StatCard } from "@/components/stat-card"
 import { TestimonialSlider } from "@/components/testimonial-slider"
@@ -52,7 +51,6 @@ export default function Home() {
       <AnimatedHeader />
       <main className="flex-1">
         <HeroSection />
-        <FounderSection />
 
         {/* Featured Project Section */}
         <section className="py-16 bg-white">
@@ -330,7 +328,6 @@ export default function Home() {
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
                 <div className="relative h-8 w-24">
-                  <Image src="/images/rd-logo.png" alt="RD Models Logo" fill className="object-contain" />
                 </div>
               </div>
               <p className="text-muted-foreground max-w-xs font-barlow mb-4">
