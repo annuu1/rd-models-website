@@ -1,5 +1,7 @@
 import type React from "react"
 import "@/app/globals.css"
+import '@/styles/fonts.css';
+
 import { Forum, Jost, Outfit, Amiri } from "next/font/google"
 import type { Metadata } from "next"
 import { ThemeProvider } from "@/components/theme-provider"

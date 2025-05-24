@@ -36,13 +36,13 @@ export function AnimatedHeader() {
           </div>
         </motion.div>
 
-        <nav className="hidden lg:flex gap-8">
+        <nav className="hidden lg:flex gap-14">
           {[
-            { href: "/", label: "Home" },
-            { href: "/about", label: "About Us" },
-            { href: "/portfolio", label: "Portfolio" },
-            { href: "/blog", label: "Blog" },
-            { href: "/contact", label: "Contact" },
+            { href: "/", label: "HOME" },
+            { href: "/about", label: "ABOUT" },
+            { href: "/portfolio", label: "PORTFOLIO" },
+            { href: "/blog", label: "BLOG" },
+            { href: "/contact", label: "CONTACT" },
           ].map((item, index) => (
             <motion.div
               key={item.href}
@@ -52,7 +52,7 @@ export function AnimatedHeader() {
             >
               <Link
                 href={item.href}
-                className={`text-lg font-medium transition-all duration-300 font-barlow relative group ${
+                className={`text-lg font-small transition-all duration-300 font-grenda-100 relative group ${
                   isScrolled ? "text-gray-800 hover:text-primary" : "text-white hover:text-green-400"
                 }`}
               >
