@@ -66,7 +66,7 @@ export function HeroSection() {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}
             >
-              <AnimatedButton
+              {/* <AnimatedButton
                 size="lg"
                 className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-barlow text-lg px-8 py-4 rounded-full shadow-2xl border-0 relative overflow-hidden group"
               >
@@ -94,7 +94,7 @@ export function HeroSection() {
                   whileHover={{ x: "0%" }}
                   transition={{ duration: 0.5 }}
                 />
-              </AnimatedButton>
+              </AnimatedButton> */}
             </motion.div>
 
             <motion.div
