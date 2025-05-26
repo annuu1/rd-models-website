@@ -14,10 +14,10 @@ export function HeroSection() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://akshatapartments.com/wp-content/uploads/2024/02/e-6.jpg')",
+            backgroundImage: "url('/images/hero-bg.jpg')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-600/60 via-black/30 to-black/10" />
       </div>
 
       {/* Particle Background */}
@@ -37,7 +37,7 @@ export function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <TypewriterEffect words={["Premier", "3D Architectural", "Modeling Services"]} className="text-white" />
+            <TypewriterEffect words={["Premier", "3D Architectural", "Modeling Services"]} className="text-white font-grenda" />
           </motion.h1>
 
           <motion.div
@@ -46,9 +46,9 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="mb-8"
           >
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-medium mb-4 font-barlow text-green-400">
+            {/* <h2 className="text-xl md:text-2xl lg:text-3xl font-medium mb-4 font-barlow text-green-400">
               Based in Jaipur • Serving All of India
-            </h2>
+            </h2> */}
             <p className="text-lg md:text-xl lg:text-2xl font-barlow text-gray-200 max-w-3xl mx-auto leading-relaxed">
               Leading 3D modeling company specializing in detailed architectural visualizations, building models, and
               interior renderings for clients across India.
@@ -105,7 +105,7 @@ export function HeroSection() {
               <AnimatedButton
                 variant="outline"
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary font-barlow text-lg px-8 py-4 rounded-full shadow-2xl backdrop-blur-sm bg-white/10 relative overflow-hidden group"
+                className="border-2 border-white text-white hover:bg-white hover:text-primary font-barlow text-lg px-5 py-3 rounded-full shadow-2xl backdrop-blur-sm bg-white/10 relative overflow-hidden group"
               >
                 <Link href="/contact" className="relative z-10 flex items-center gap-2">
                   <span>Contact Us</span>

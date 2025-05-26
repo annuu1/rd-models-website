@@ -23,7 +23,7 @@ export function AnimatedHeader() {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-white/100 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -72,8 +72,8 @@ export function AnimatedHeader() {
           >
             <motion.a
               href="tel:+911411234567"
-              className={`p-3 rounded-full transition-all duration-300 ${
-                isScrolled ? "bg-primary text-white hover:bg-primary/90" : "bg-white/20 text-white hover:bg-white/30"
+              className={`p-2 rounded-lg transition-all duration-300 ${
+                isScrolled ? "border border-primary/90 text-primary bg-transparent hover:bg-primary/90 hover:text-white" : "border border-white bg-white/0 text-white hover:bg-white/95 hover:text-primary"
               }`}
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
@@ -84,8 +84,8 @@ export function AnimatedHeader() {
               href="https://wa.me/919876543210"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-3 rounded-full transition-all duration-300 ${
-                isScrolled ? "bg-green-500 text-white hover:bg-green-600" : "bg-white/20 text-white hover:bg-white/30"
+              className={`p-2 rounded-lg transition-all duration-300 ${
+                isScrolled ? "border border-primary/90 text-primary bg-transparent hover:bg-primary/90 hover:text-white" : "border border-white bg-white/0 text-white hover:bg-white/95 hover:text-primary"
               }`}
               whileHover={{ scale: 1.1, rotate: -5 }}
               whileTap={{ scale: 0.95 }}
@@ -97,15 +97,15 @@ export function AnimatedHeader() {
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 }}>
             <Button
               variant="outline"
-              size="lg"
-              className={`hidden md:flex font-barlow text-lg px-6 py-3 transition-all duration-300 ${
+              size="sm"
+              className={`hidden md:flex font-grenda text-lg font-light px-4 py-2 rounded-lg transition-all duration-300 ${
                 isScrolled
                   ? "border-primary text-primary hover:bg-primary hover:text-white"
                   : "border-white text-white hover:bg-white hover:text-primary bg-transparent"
               }`}
               asChild
             >
-              <Link href="/contact">Get a Quote</Link>
+              <Link href="/contact">ENQUIRE</Link>
             </Button>
           </motion.div>
 
