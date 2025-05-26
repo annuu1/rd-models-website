@@ -26,7 +26,7 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#2c5282", // Deep blue color inspired by akshatapartments.com
+          DEFAULT: "#c49575", // Deep blue color inspired by akshatapartments.com
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
