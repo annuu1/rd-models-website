@@ -1,38 +1,50 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Phone, MessageCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { MobileMenu } from "@/components/mobile-menu"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Phone, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { MobileMenu } from "@/components/mobile-menu";
+import { motion } from "framer-motion";
 
 export function AnimatedHeader() {
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+      setIsScrolled(window.scrollY > 50);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-white/100 backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled
+          ? "bg-white/100 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="container flex h-20 items-center justify-between py-4">
-        <motion.div className="flex items-center gap-3" whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+        <motion.div
+          className="flex items-center gap-3"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
+        >
           <div className="relative h-12 w-32">
-            <Image src="/images/rd-logo.png" alt="RD Models Logo" fill className="object-contain" priority />
+            <Image
+              src="/images/rd-logo.png"
+              alt="RD Models Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
         </motion.div>
 
@@ -53,11 +65,17 @@ export function AnimatedHeader() {
               <Link
                 href={item.href}
                 className={`text-base font-small transition-all duration-300 font-grenda relative group ${
-                  isScrolled ? "text-primary hover:text-primary" : "text-white hover:text-white-400"
+                  isScrolled
+                    ? "text-primary hover:text-primary"
+                    : "text-white hover:text-white-400"
                 }`}
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                <span
+                  className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-700 group-hover:w-full ${
+                    isScrolled ? "bg-primary" : "bg-white"
+                  }`}
+                ></span>
               </Link>
             </motion.div>
           ))}
@@ -73,7 +91,9 @@ export function AnimatedHeader() {
             <motion.a
               href="tel:+911411234567"
               className={`p-2 rounded-lg transition-all duration-300 ${
-                isScrolled ? "border border-primary/90 text-primary bg-transparent hover:bg-primary/90 hover:text-white" : "border border-white bg-white/0 text-white hover:bg-white/95 hover:text-primary"
+                isScrolled
+                  ? "border border-primary/90 text-primary bg-transparent hover:bg-primary/90 hover:text-white"
+                  : "border border-white bg-white/0 text-white hover:bg-white/95 hover:text-primary"
               }`}
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
@@ -85,7 +105,9 @@ export function AnimatedHeader() {
               target="_blank"
               rel="noopener noreferrer"
               className={`p-2 rounded-lg transition-all duration-300 ${
-                isScrolled ? "border border-primary/90 text-primary bg-transparent hover:bg-primary/90 hover:text-white" : "border border-white bg-white/0 text-white hover:bg-white/95 hover:text-primary"
+                isScrolled
+                  ? "border border-primary/90 text-primary bg-transparent hover:bg-primary/90 hover:text-white"
+                  : "border border-white bg-white/0 text-white hover:bg-white/95 hover:text-primary"
               }`}
               whileHover={{ scale: 1.1, rotate: -5 }}
               whileTap={{ scale: 0.95 }}
@@ -94,7 +116,11 @@ export function AnimatedHeader() {
             </motion.a>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 }}>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6 }}
+          >
             <Button
               variant="outline"
               size="sm"
@@ -113,5 +139,5 @@ export function AnimatedHeader() {
         </div>
       </div>
     </motion.header>
-  )
+  );
 }
