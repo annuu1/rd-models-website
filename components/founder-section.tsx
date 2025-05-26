@@ -10,11 +10,11 @@ export function FounderSection() {
         <div className="relative flex-shrink-0 md:-ml-5 z-20">
           <div className=" relative">
             <Image
-              src="/images/hero-bg.jpg"
+              src="/images/founder.png"
               alt="Ar. Rohitash Daiya - Founder RD Models"
               width={500}
               height={240}
-              className="shadow-lg -ml-8 md:-ml-16"
+              className="-ml-8 md:-ml-16"
               priority
             />
           </div>
