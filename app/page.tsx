@@ -12,6 +12,7 @@ import Link from "next/link"
 import { Building2, Mail, MapPin, Phone } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 import type { Metadata } from "next"
+import { FounderSection } from "@/components/founder-section"
 
 export const metadata: Metadata = {
   title: "RD Models - Premier 3D Architectural Modeling Services in Jaipur, India",
@@ -51,6 +52,14 @@ export default function Home() {
       <AnimatedHeader />
       <main className="flex-1">
         <HeroSection />
+        {/* Founder Section */}
+       <section className="py-16 w-full bg-gray-200">
+          <div className="container">
+            
+            <FounderSection />
+          </div>
+        </section>
+
 
         {/* Featured Project Section */}
         <section className="py-16 bg-white">
