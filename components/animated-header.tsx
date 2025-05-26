@@ -53,11 +53,11 @@ export function AnimatedHeader() {
               <Link
                 href={item.href}
                 className={`text-base font-small transition-all duration-300 font-grenda relative group ${
-                  isScrolled ? "text-gray-800 hover:text-primary" : "text-white hover:text-green-400"
+                  isScrolled ? "text-primary hover:text-primary" : "text-white hover:text-white-400"
                 }`}
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </motion.div>
           ))}
