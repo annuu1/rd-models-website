@@ -39,7 +39,7 @@ export function HeroSection() {
           >
             {/* <TypewriterEffect words={["Premier", "3D Architectural", "Modeling Services"]} className="text-white font-grenda" /> */}
             <TypewriterEffect words={["Leading", "Model Maker", "In India"]} className="text-white font-grenda" />
-          </motion.h1>
+          </motion.h1> 
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
