@@ -31,7 +31,7 @@ export function AnimatedHeader() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="container flex h-20 items-center justify-between py-4">
+      <div className="flex h-20 items-center justify-between py-4 px-10">
         <motion.div
           className="flex items-center gap-3"
           whileHover={{ scale: 1.05 }}
@@ -48,7 +48,7 @@ export function AnimatedHeader() {
           </div>
         </motion.div>
 
-        <nav className="hidden lg:flex gap-14">
+        <nav className="hidden lg:flex gap-14 flex-1 justify-center">
           {[
             { href: "/", label: "HOME" },
             { href: "/about", label: "ABOUT" },
