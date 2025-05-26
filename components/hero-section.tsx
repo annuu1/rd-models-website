@@ -32,13 +32,13 @@ export function HeroSection() {
           className="max-w-4xl mx-auto"
         >
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 font-forum"
+            className="text-4xl md:text-4xl lg:text-4xl font-bold mb-6 font-forum"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
             {/* <TypewriterEffect words={["Premier", "3D Architectural", "Modeling Services"]} className="text-white font-grenda" /> */}
-            <TypewriterEffect words={["Leading", "Model Maker", "In India"]} className="text-white font-grenda" />
+            <TypewriterEffect words={["Leading Model Maker In India"]} className="text-white font-grenda" />
           </motion.h1> 
 
           <motion.div

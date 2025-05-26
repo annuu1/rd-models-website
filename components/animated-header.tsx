@@ -95,10 +95,10 @@ export function AnimatedHeader() {
                   ? "border border-primary/90 text-primary bg-transparent hover:bg-primary/90 hover:text-white"
                   : "border border-white bg-white/0 text-white hover:bg-white/95 hover:text-primary"
               }`}
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileHover={{ scale: 1.1, rotate: 0 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Phone className="h-5 w-5" />
+              <Phone fill="currentColor" className="h-4 w-4" />
             </motion.a>
             <motion.a
               href="https://wa.me/919876543210"
@@ -109,10 +109,10 @@ export function AnimatedHeader() {
                   ? "border border-primary/90 text-primary bg-transparent hover:bg-primary/90 hover:text-white"
                   : "border border-white bg-white/0 text-white hover:bg-white/95 hover:text-primary"
               }`}
-              whileHover={{ scale: 1.1, rotate: -5 }}
+              whileHover={{ scale: 1.1, rotate: 0 }}
               whileTap={{ scale: 0.95 }}
             >
-              <MessageCircle className="h-5 w-5" />
+              <MessageCircle className="h-4 w-4" />
             </motion.a>
           </motion.div>
 
