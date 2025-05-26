@@ -32,13 +32,13 @@ export function HeroSection() {
           className="max-w-4xl mx-auto"
         >
           <motion.h1
-            className="text-4xl md:text-4xl lg:text-4xl font-bold mb-6 font-forum"
+            className="text-4xl md:text-4xl lg:text-6xl font-bold mb-6 font-forum"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
             {/* <TypewriterEffect words={["Premier", "3D Architectural", "Modeling Services"]} className="text-white font-grenda" /> */}
-            <TypewriterEffect words={["Leading Model Maker In India"]} className="text-white font-grenda" />
+            <TypewriterEffect words={["Leading Model Maker In India"]} className="text-white font-forum" />
           </motion.h1> 
 
           <motion.div
@@ -50,7 +50,7 @@ export function HeroSection() {
             {/* <h2 className="text-xl md:text-2xl lg:text-3xl font-medium mb-4 font-barlow text-green-400">
               Based in Jaipur • Serving All of India
             </h2> */}
-            <p className="text-lg md:text-xl lg:text-2xl font-barlow text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl lg:text-xl font-forum text-gray-200 max-w-3xl mx-auto leading-relaxed">
               Leading 3D modeling company specializing in detailed architectural visualizations, building models, and
               interior renderings for clients across India.
             </p>

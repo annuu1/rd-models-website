@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MessageCircle } from "lucide-react";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { MobileMenu } from "@/components/mobile-menu";
 import { motion } from "framer-motion";
@@ -63,20 +64,14 @@ export function AnimatedHeader() {
               transition={{ delay: index * 0.1 + 0.3 }}
             >
               <Link
-                href={item.href}
-                className={`text-base font-small transition-all duration-300 font-grenda relative group ${
-                  isScrolled
-                    ? "text-primary hover:text-primary"
-                    : "text-white hover:text-white-400"
-                }`}
-              >
-                {item.label}
-                <span
-                  className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-700 group-hover:w-full ${
-                    isScrolled ? "bg-primary" : "bg-white"
-                  }`}
-                ></span>
-              </Link>
+  href={item.href}
+  className={`relative inline-block text-base font-small transition-colors duration-300 font-grenda ${
+    isScrolled ? "text-primary hover:text-primary" : "text-white hover:text-white-400"
+  } after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:rounded after:transition-all after:duration-400 hover:after:w-1/2`}
+>
+  {item.label}
+</Link>
+
             </motion.div>
           ))}
         </nav>
@@ -98,7 +93,7 @@ export function AnimatedHeader() {
               whileHover={{ scale: 1.1, rotate: 0 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Phone fill="currentColor" className="h-4 w-4" />
+              <FaPhoneAlt className="h-4 w-4" />
             </motion.a>
             <motion.a
               href="https://wa.me/919876543210"
@@ -112,7 +107,7 @@ export function AnimatedHeader() {
               whileHover={{ scale: 1.1, rotate: 0 }}
               whileTap={{ scale: 0.95 }}
             >
-              <MessageCircle className="h-4 w-4" />
+              <FaWhatsapp className="h-4 w-4" />
             </motion.a>
           </motion.div>
 
