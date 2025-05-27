@@ -24,12 +24,12 @@ export function FounderSection() {
           <h2 className="text-4xl md:text-2xl font-bold text-primary font-grenda leading-tight border-b-2 border-primary pb-2">
           An Architect who chose hobby as a profession & decide to set new benchmark in model making.
           </h2>
-          <p className="text-lg text-gray-700 font-barlow leading-relaxed">
+          <p className="text-lg text-gray-700 font-forum leading-relaxed">
             RD Models, a premier model maker, specializes in creating detailed and precise models for various industries, including real estate, railways, machinery, factories, and defense. Our dedication to quality and innovation sets us apart in the model maker industry. We embrace challenging projects, utilizing advanced technology and extensive experience to produce functional and aesthetically pleasing models. As a top model maker, we deliver high-quality models tailored to meet the specific needs of our clients across diverse sectors, including scientific research.
           </p>
           <div className="mt-4">
             <div className="text-xl font-bold text-gray-900 font-forum">Ar. Rohitash Daiya</div>
-            <div className="text-gray-600 font-barlow">Founder R D Models</div>
+            <div className="text-gray-600 font-forum">Founder R D Models</div>
           </div>
         </div>
       </div>
