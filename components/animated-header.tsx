@@ -64,7 +64,7 @@ export function AnimatedHeader() {
               <span className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${isScrolled ? "text-primary hover:text-primary" : "text-white hover:text-white-400"}`}>MEDIA</span>
               <div className="flex flex-col absolute left-0 mt-2 w-40 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 p-2">
                 <Link href="/blog" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">BLOG</Link>
-                <Link href="/media/press-release" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0 text-nowrap ">PRESS RELEASE</Link>
+                <Link href="/publications" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0 text-nowrap ">PUBLICATIONS</Link>
               </div>
             </div>
           </motion.div>
@@ -75,8 +75,8 @@ export function AnimatedHeader() {
             <div className="relative group">
               <span className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${isScrolled ? "text-primary hover:text-primary" : "text-white hover:text-white-400"}`}>PORTFOLIO</span>
               <div className="flex flex-col absolute left-0 mt-2 w-40 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 p-2">
-                <Link href="/portfolio" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">Photos</Link>
-                <Link href="/videos" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">Videos</Link>
+                <Link href="/gallery/images" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">Photos</Link>
+                <Link href="/gallery/videos" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">Videos</Link>
               </div>
             </div>
           </motion.div>
