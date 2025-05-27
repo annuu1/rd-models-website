@@ -53,8 +53,8 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         {/* Founder Section */}
-       <section className="py-16 w-full bg-gray-200">
-          <div className="container">
+       <section className="py-16 w-full bg-white">
+          <div className="ml-96 mr-20">
             
             <FounderSection />
           </div>
@@ -102,7 +102,7 @@ export default function Home() {
         <section className="bg-white py-16 md:py-24" id="services">
           <div className="container">
             <SectionHeading
-              title="Our 3D Modeling Services"
+              title="Our Services"
               subtitle="Comprehensive architectural visualization services from our Jaipur studio for clients across India"
             />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -172,7 +172,7 @@ export default function Home() {
         <section className="bg-muted py-16 md:py-24" id="team">
           <div className="container">
             <SectionHeading
-              title="Meet Our Jaipur Team"
+              title="Meet Our Team"
               subtitle="Our talented team of professionals in Jaipur brings together expertise in architecture, design, and technology to deliver exceptional 3D modeling services across India."
             />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
