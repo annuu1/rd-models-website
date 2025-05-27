@@ -54,7 +54,7 @@ export default function Home() {
         <HeroSection />
         {/* Founder Section */}
        <section className="py-16 w-full bg-white">
-          <div className="ml-96 mr-20">
+          <div className="sm:pl-64">
             
             <FounderSection />
           </div>
