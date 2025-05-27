@@ -62,7 +62,7 @@ export default function Home() {
 
 
         {/* Featured Project Section */}
-        <section className="py-16 bg-white">
+        {/* <section className="py-16 bg-white">
           <div className="container">
             <SectionHeading
               title="Featured Project"
@@ -75,13 +75,13 @@ export default function Home() {
               </AnimatedButton>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Who We Are Section with Statistics */}
         <section className="py-16 bg-muted" id="who-we-are">
           <div className="container">
             <SectionHeading
-              title="Leading 3D Modeling Company in Jaipur, India"
+              title="Who We Are"
               subtitle="RD Models is a premier 3D architectural modeling studio based in Jaipur, Rajasthan, serving clients across India. We specialize in creating detailed and realistic building models for architects, developers, and construction companies nationwide."
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
