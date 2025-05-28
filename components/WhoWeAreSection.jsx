@@ -17,7 +17,7 @@ export function WhoWeAreSection() {
           <div className="relative h-96 w-full">
             <Image
               src="/who-we-are-placeholder.jpg"
-              alt="RD Models Studio"
+              alt="RD Models Studio "
               fill
               className="object-cover rounded-lg"
             />
@@ -48,7 +48,7 @@ export function WhoWeAreSection() {
                 </AnimatedButton>
               </div>
             </div>
-            
+             
             {/* Bottom Row: Cards with Persistent Description */}
             <div className="group relative">
               <StatCard number="28+" label="States Served" />
