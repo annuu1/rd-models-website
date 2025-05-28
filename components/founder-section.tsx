@@ -9,7 +9,7 @@ export function FounderSection() {
         position: 'relative',
         zIndex: 1
       }}>
-        <div className="absolute ml-64 inset-0 border-2 border-primary z-0 hidden sm:block"></div>
+        <div className="absolute ml-64 mr-20 inset-0 border-2 border-primary z-0 hidden sm:block"></div>
         {/* Image floated left and overlapping border */}
         <div className="relative flex-shrink-0 z-20">
           <div className=" relative">
