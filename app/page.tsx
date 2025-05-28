@@ -13,6 +13,7 @@ import { Building2, Mail, MapPin, Phone } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 import type { Metadata } from "next"
 import { FounderSection } from "@/components/founder-section"
+import {WhoWeAreSection} from "@/components/WhoWeAreSection"
 
 export const metadata: Metadata = {
   title: "RD Models - Premier 3D Architectural Modeling Services in Jaipur, India",
@@ -97,6 +98,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <WhoWeAreSection />
 
         {/* Services Section */}
         {/* <section className="bg-white py-16 md:py-24" id="services">
