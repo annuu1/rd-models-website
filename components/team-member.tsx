@@ -12,8 +12,13 @@ interface TeamMemberProps {
 export function TeamMember({ name, position, image, bio }: TeamMemberProps) {
   return (
     <Card className="overflow-hidden">
-      <div className="relative h-80 w-full">
-        <Image src={image || "/placeholder.svg"} alt={name} fill className="object-cover" />
+      <div className="relative h-80 w-80 mx-auto mt-6 rounded-full overflow-hidden">
+        <Image
+          src={image || "/placeholder.svg"}
+          alt={name}
+          fill
+          className="object-cover"
+        />
       </div>
       <CardContent className="p-6 text-center">
         <h3 className="text-xl font-bold mb-1 font-forum">{name}</h3>

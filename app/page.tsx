@@ -99,7 +99,7 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="bg-white py-16 md:py-24" id="services">
+        {/* <section className="bg-white py-16 md:py-24" id="services">
           <div className="container">
             <SectionHeading
               title="Our Services"
@@ -166,10 +166,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Meet the Team Section */}
-        <section className="bg-muted py-16 md:py-24" id="team">
+        <section className="bg-white py-16 md:py-24" id="team">
           <div className="container">
             <SectionHeading
               title="Meet Our Team"
@@ -199,7 +199,7 @@ export default function Home() {
         </section>
 
         {/* Latest Blog Posts */}
-        <section className="py-16 bg-white" id="blog">
+        {/* <section className="py-16 bg-white" id="blog">
           <div className="container">
             <SectionHeading
               title="Latest from Our Blog"
@@ -237,7 +237,7 @@ export default function Home() {
               </AnimatedButton>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Clients Section */}
         <section className="py-16 bg-muted" id="clients">
@@ -261,7 +261,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="container py-16 md:py-24" id="contact">
+        {/* <section className="container py-16 md:py-24" id="contact">
           <SectionHeading
             title="Get In Touch"
             subtitle="Interested in our services? Fill out the form below and we'll get back to you as soon as possible."
@@ -310,7 +310,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA Section */}
         <section className="py-16 bg-primary text-white">
