@@ -97,8 +97,8 @@ export default function Home() {
               </AnimatedButton>
             </div>
           </div>
-        </section>
-        <WhoWeAreSection /> */}
+        </section>*/}
+        <WhoWeAreSection /> 
 
         {/* Services Section */}
         {/* <section className="bg-white py-16 md:py-24" id="services">

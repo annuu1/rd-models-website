@@ -3,13 +3,17 @@
 import { useEffect, useRef, useState } from "react"
 import { useInView } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
+import { AnimatedButton } from "./animated-button"
+import Link from "next/link"
 
 interface StatCardProps {
   number: string
   label: string
+  description: string
+  link?: string
 }
 
-export function StatCard({ number, label }: StatCardProps) {
+export function StatCard({ number, label, description, link }: StatCardProps) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.5 })
   const [count, setCount] = useState(0)
@@ -47,11 +51,21 @@ export function StatCard({ number, label }: StatCardProps) {
   const formattedCount = `${count}${suffix}`
 
   return (
-    <Card ref={ref}>
-      <CardContent className="p-6 text-center">
-        <p className="text-4xl font-bold text-primary mb-2 font-forum">{formattedCount}</p>
-        <p className="text-muted-foreground font-barlow">{label}</p>
-      </CardContent>
-    </Card>
+    <div className="group">
+      <Card ref={ref} className="relative transition-all duration-300 group-hover:shadow-lg">
+        <CardContent className="p-6 text-center">
+          <p className="text-4xl font-bold text-primary mb-2 font-forum">{formattedCount}</p>
+          <p className="text-muted-foreground font-barlow">{label}</p>
+          <p className="text-sm text-muted-foreground mt-2 font-barlow">{description}</p>
+          {link && (
+            <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <AnimatedButton variant="outline" size="sm">
+                <Link href={link}>Show More</Link>
+              </AnimatedButton>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+    </div>
   )
 }
