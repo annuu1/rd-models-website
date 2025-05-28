@@ -4,8 +4,8 @@ import React from 'react';
 
 const InstagramPost = () => {
   const instagramPosts = [
-    'https://www.instagram.com/reel/C5AyRzELMlP/embed',
-    'https://www.instagram.com/reel/C5AyRzELMlP/embed',
+    'https://www.instagram.com/reel/C5azwDGB9I_/embed',
+    'https://www.instagram.com/reel/DCGVgoehqbm/embed',
     'https://www.instagram.com/reel/C5AyRzELMlP/embed',
     // Add more embed URLs here
   ];
