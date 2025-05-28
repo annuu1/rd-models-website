@@ -14,6 +14,7 @@ import { ContactForm } from "@/components/contact-form"
 import type { Metadata } from "next"
 import { FounderSection } from "@/components/founder-section"
 import {WhoWeAreSection} from "@/components/WhoWeAreSection"
+import InstagramPost from "@/components/instagram-posts"
 
 export const metadata: Metadata = {
   title: "RD Models - Premier 3D Architectural Modeling Services in Jaipur, India",
@@ -313,6 +314,17 @@ export default function Home() {
             </div>
           </div>
         </section> */}
+        {/* Instagram Posts Section */}
+        <section className="bg-muted py-16 md:py-24" id="instagram">
+          <div className="container">
+            <SectionHeading
+              title="Instagram Posts"
+              subtitle="Check out our latest Instagram posts for inspiration and updates from our Jaipur studio."
+            />
+            <InstagramPost />
+            
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="py-16 bg-primary text-white">

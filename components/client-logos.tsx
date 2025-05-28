@@ -65,8 +65,8 @@ export function ClientLogos() {
       >
         {allClients.map((client, index) => (
           <div key={`${client.id}-${index}`} className="flex-shrink-0 mx-8 group">
-            <div className="relative h-16 w-48 transition-all duration-300 filter grayscale hover:grayscale-0 group-hover:scale-110">
-              <Image src={client.logo || "/placeholder.svg"} alt={client.name} fill className="object-contain" />
+            <div className="relative h-16 w-48 transition-all duration-300 client-logo-hover group-hover:scale-110">
+              <Image src={client.logo || "/placeholder.svg"} alt={client.name} fill className="object-contain client-logo-img" />
             </div>
           </div>
         ))}
@@ -86,8 +86,8 @@ export function ClientLogos() {
       >
         {allClients.map((client, index) => (
           <div key={`${client.id}-${index}`} className="flex-shrink-0 mx-8 group">
-            <div className="relative h-16 w-48 transition-all duration-300 filter grayscale hover:grayscale-0 group-hover:scale-110">
-              <Image src={client.logo || "/placeholder.svg"} alt={client.name} fill className="object-contain" />
+            <div className="relative h-16 w-48 transition-all duration-300 client-logo-hover group-hover:scale-110">
+              <Image src={client.logo || "/placeholder.svg"} alt={client.name} fill className="object-contain client-logo-img" />
             </div>
           </div>
         ))}
@@ -107,8 +107,8 @@ export function ClientLogos() {
       >
         {allClients.map((client, index) => (
           <div key={`${client.id}-${index}`} className="flex-shrink-0 mx-8 group">
-            <div className="relative h-16 w-48 transition-all duration-300 filter grayscale hover:grayscale-0 group-hover:scale-110">
-              <Image src={client.logo || "/placeholder.svg"} alt={client.name} fill className="object-contain" />
+            <div className="relative h-16 w-48 transition-all duration-300 client-logo-hover group-hover:scale-110">
+              <Image src={client.logo || "/placeholder.svg"} alt={client.name} fill className="object-contain client-logo-img" />
             </div>
           </div>
         ))}
