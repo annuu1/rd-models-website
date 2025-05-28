@@ -70,6 +70,49 @@ export function ClientLogos() {
             </div>
           </div>
         ))}
+        
+      </motion.div>
+      <motion.div
+        className="flex"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          x: {
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "loop",
+            duration: 20,
+            ease: "linear",
+          },
+        }}
+      >
+        {allClients.map((client, index) => (
+          <div key={`${client.id}-${index}`} className="flex-shrink-0 mx-8 group">
+            <div className="relative h-16 w-48 transition-all duration-300 filter grayscale hover:grayscale-0 group-hover:scale-110">
+              <Image src={client.logo || "/placeholder.svg"} alt={client.name} fill className="object-contain" />
+            </div>
+          </div>
+        ))}
+        
+      </motion.div>
+      <motion.div
+        className="flex"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          x: {
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "loop",
+            duration: 20,
+            ease: "linear",
+          },
+        }}
+      >
+        {allClients.map((client, index) => (
+          <div key={`${client.id}-${index}`} className="flex-shrink-0 mx-8 group">
+            <div className="relative h-16 w-48 transition-all duration-300 filter grayscale hover:grayscale-0 group-hover:scale-110">
+              <Image src={client.logo || "/placeholder.svg"} alt={client.name} fill className="object-contain" />
+            </div>
+          </div>
+        ))}
+        
       </motion.div>
     </div>
   )
