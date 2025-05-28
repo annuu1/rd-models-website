@@ -79,7 +79,7 @@ export default function Home() {
         </section> */}
 
         {/* Who We Are Section with Statistics */}
-        <section className="py-16 bg-muted" id="who-we-are">
+        {/* <section className="py-16 bg-muted" id="who-we-are">
           <div className="container">
             <SectionHeading
               title="Who We Are"
@@ -98,7 +98,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <WhoWeAreSection />
+        <WhoWeAreSection /> */}
 
         {/* Services Section */}
         {/* <section className="bg-white py-16 md:py-24" id="services">
