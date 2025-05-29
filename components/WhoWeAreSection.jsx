@@ -18,7 +18,7 @@ export function WhoWeAreSection() {
           {/* Left Side: Image */}
           <div className="relative h-full w-full min-h-[350px]">
             <Image
-              src="/images/brandImg.png"
+              src="/images/rd-brand-img.png"
               alt="Ar. Rohitash Daiya - Founder RD Models"
               fill
               className="object-contain"
