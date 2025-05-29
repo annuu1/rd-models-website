@@ -24,7 +24,7 @@ export function HeroSection() {
       <ParticleBackground />
 
       {/* Content */}
-      <div className="relative z-20 container text-center text-white">
+      <div className="relative z-20 container text-center text-white bg-black bg-opacity-70 p-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
