@@ -55,9 +55,9 @@ export function WhoWeAreSection() {
           </div>
         </div>
         <div className="text-center mt-10">
-          <AnimatedButton>
+          {/* <AnimatedButton>
             <Link href="/about">Learn More About Us</Link>
-          </AnimatedButton>
+          </AnimatedButton> */}
         </div>
       </div>
     </section>
