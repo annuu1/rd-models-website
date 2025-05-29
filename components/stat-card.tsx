@@ -60,7 +60,7 @@ export function StatCard({ number, label, description, link }: StatCardProps) {
           {link && (
             <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <AnimatedButton variant="outline" size="sm">
-                <Link href={link}>Show More</Link>
+                <Link href={link}>Read More</Link>
               </AnimatedButton>
             </div>
           )}

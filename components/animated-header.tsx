@@ -39,7 +39,7 @@ export function AnimatedHeader() {
         >
           <div className="relative h-16 w-48">
             <Image
-              src="/images/rd-logo.png"
+              src="/images/logo.png"
               alt="RD Models Logo"
               fill
               className="object-contain"
