@@ -8,10 +8,10 @@ const InstagramPost = () => {
     'https://www.instagram.com/reel/C5azwDGB9I_/embed',
     'https://www.instagram.com/reel/DCGVgoehqbm/embed',
     'https://www.instagram.com/reel/C5AyRzELMlP/embed',
-    'https://www.instagram.com/reel/C5AyRzELMlP/embed',
-    'https://www.instagram.com/reel/C5AyRzELMlP/embed',
-    'https://www.instagram.com/reel/C5AyRzELMlP/embed',
-    'https://www.instagram.com/reel/C5AyRzELMlP/embed',
+    'https://www.instagram.com/reel/C5x2YWshIag/embed',
+    'https://www.instagram.com/reel/C52feQsL47v/embed',
+    'https://www.instagram.com/reel/CrGT0ophME7/embed',
+    'https://www.instagram.com/reel/CacpbPghQo5/embed',
     // Add more embed URLs here
   ];
 
