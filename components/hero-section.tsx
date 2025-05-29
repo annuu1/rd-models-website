@@ -6,18 +6,56 @@ import { AnimatedButton } from "@/components/animated-button"
 import { TypewriterEffect } from "@/components/typewriter-effect"
 import { ParticleBackground } from "@/components/particle-background"
 
+import React, { useState, useEffect, useRef } from "react";
+
 export function HeroSection() {
+  // List of background images (add more if needed)
+  const backgrounds = [
+    "/images/hero-bg1.JPG",
+    "/images/hero-bg.jpg",
+    "/images/hero-bg.png"
+  ];
+  const [current, setCurrent] = useState(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Automatic background switching
+  useEffect(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setCurrent((prev) => (prev + 1) % backgrounds.length);
+    }, 6000); // 6 seconds
+    return () => timeoutRef.current && clearTimeout(timeoutRef.current);
+  }, [current, backgrounds.length]);
+
+  // Manual navigation
+  const goTo = (idx: number) => {
+    setCurrent((idx + backgrounds.length) % backgrounds.length);
+  };
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video/Image */}
+      {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/images/hero-bg1.JPG')",
-          }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
+          style={{ backgroundImage: `url('${backgrounds[current]}')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-600/60 via-black/30 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-700/70 via-black/40 to-black/20" />
+        {/* Arrow Buttons */}
+        <button
+          aria-label="Previous background"
+          className="absolute left-4 top-1/2 z-10 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 shadow-lg focus:outline-none"
+          onClick={() => goTo(current - 1)}
+        >
+          <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button
+          aria-label="Next background"
+          className="absolute right-4 top-1/2 z-10 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 shadow-lg focus:outline-none"
+          onClick={() => goTo(current + 1)}
+        >
+          <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
       </div>
 
       {/* Particle Background */}
