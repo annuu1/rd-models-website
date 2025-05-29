@@ -62,12 +62,12 @@ export function HeroSection() {
       <ParticleBackground />
 
       {/* Content */}
-      <div className="relative z-20 container text-center text-white bg-black bg-opacity-70 p-6">
+     <div className="relative z-20 text-center text-white bg-black bg-opacity-70 p-10 rounded-xl max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-4xl mx-auto"
+          className=""
         >
           <motion.h1
             className="text-4xl md:text-4xl lg:text-6xl font-bold mb-6 font-forum"
