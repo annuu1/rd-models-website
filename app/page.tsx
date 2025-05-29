@@ -244,7 +244,7 @@ export default function Home() {
 
         {/* Clients Section */}
         <section className="py-16 bg-muted" id="clients">
-          <div className="container">
+          <div className="">
             <SectionHeading
               title="Our Clients Across India"
               subtitle="We've had the privilege of working with leading architects, developers, and construction companies from Jaipur to Mumbai, Delhi to Bangalore."
