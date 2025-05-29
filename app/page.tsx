@@ -116,12 +116,12 @@ export default function Home() {
             <TestimonialSlider />
           </div>
         </section>
-        
+
         {/* Instagram Posts Section */}
         <section className="bg-muted py-16 md:py-24" id="instagram">
-          <div className="container">
+          <div className="">
             <SectionHeading
-              title="Instagram Posts"
+              title="Instagram Handle"
               subtitle="Check out our latest Instagram posts for inspiration and updates from our Jaipur studio."
             />
             <InstagramPost />
