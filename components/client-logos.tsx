@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { AnimatedButton } from "./animated-button";
 
 export function ClientLogos() {
   // List of client image filenames from /public/images/clients
@@ -80,7 +81,7 @@ export function ClientLogos() {
   const rows = splitIntoRows(clientImageFiles, 3);
 
   return (
-    <div className="w-full overflow-hidden py-8">
+    <div className="w-full overflow-hidden py-8 text-center">
       {/* Render each row of client logos */}
       {rows.map((row, rowIdx) => (
         <motion.div
@@ -101,7 +102,7 @@ export function ClientLogos() {
             const alt = filename.replace(/[-_]/g, ' ').replace(/\.[^/.]+$/, '');
             return (
               <div key={`${filename}-${index}`} className="flex-shrink-0 mx-8 group">
-                <div className="relative h-16 w-48 transition-all duration-300 client-logo-hover group-hover:scale-110">
+                <div className="relative h-32 w-64 transition-all duration-300 client-logo-hover group-hover:scale-110">
                   <Image src={`/images/clients/${filename}`} alt={alt} fill className="object-contain client-logo-img" />
                 </div>
               </div>
