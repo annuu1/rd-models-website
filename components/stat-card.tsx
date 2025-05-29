@@ -55,7 +55,7 @@ export function StatCard({ number, label, description, link }: StatCardProps) {
       <Card ref={ref} className="relative transition-all duration-300 group-hover:shadow-lg">
         <CardContent className="p-6 text-center">
           <p className="text-4xl font-bold text-primary mb-2 font-forum">{formattedCount}</p>
-          <p className="text-muted-foreground font-barlow">{label}</p>
+          <p className="font-bold text-muted-foreground font-barlow">{label}</p>
           <p className="text-sm text-muted-foreground mt-2 font-barlow">{description}</p>
           {link && (
             <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

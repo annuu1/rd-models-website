@@ -32,7 +32,7 @@ export function SectionHeading({ title, subtitle, className = "" }: SectionHeadi
           }`}
         />
       </h2>
-      {subtitle && <p className="text-muted-foreground max-w-3xl mx-auto font-barlow">{subtitle}</p>}
+      {subtitle && <p className="text-muted-foreground mx-auto font-barlow">{subtitle}</p>}
     </div>
   )
 }
