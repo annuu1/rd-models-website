@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { SectionHeading } from "./section-heading"
 
 export function FounderSection() {
   return (
@@ -24,7 +25,7 @@ export function FounderSection() {
         </div>
         {/* Content */}
         <div className="flex-1 flex flex-col justify-center items-start gap-6 max-w-[550px]">
-          <h2 className="text-4xl md:text-2xl font-bold text-primary font-grenda leading-tight lg:border-b-2 lg:border-primary pb-2">
+          <h2 className="link-underline text-4xl md:text-2xl font-bold text-primary font-grenda leading-tight">
           An Architect who chose hobby as a profession & decide to set new benchmark in model making.
           </h2>
           <p className="text-lg text-gray-700 font-forum leading-relaxed">
