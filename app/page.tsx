@@ -62,114 +62,8 @@ export default function Home() {
           </div>
         </section>
 
-
-        {/* Featured Project Section */}
-        {/* <section className="py-16 bg-white">
-          <div className="container">
-            <SectionHeading
-              title="Featured Project"
-              subtitle="Explore our latest and most impressive 3D modeling work from our Jaipur studio"
-            />
-            <FeaturedProject />
-            <div className="text-center mt-10">
-              <AnimatedButton>
-                <Link href="/portfolio">View All Projects</Link>
-              </AnimatedButton>
-            </div>
-          </div>
-        </section> */}
-
         {/* Who We Are Section with Statistics */}
-        {/* <section className="py-16 bg-muted" id="who-we-are">
-          <div className="container">
-            <SectionHeading
-              title="Who We Are"
-              subtitle="RD Models is a premier 3D architectural modeling studio based in Jaipur, Rajasthan, serving clients across India. We specialize in creating detailed and realistic building models for architects, developers, and construction companies nationwide."
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <StatCard number="1800+" label="Models Delivered Across India" />
-              <StatCard number="700+" label="Happy Clients Nationwide" />
-              <StatCard number="28+" label="States Served" />
-              <StatCard number="15+" label="Years in Jaipur" />
-            </div>
-            <div className="text-center mt-10">
-              <AnimatedButton>
-                <Link href="/about">Learn More About Us</Link>
-              </AnimatedButton>
-            </div>
-          </div>
-        </section>*/}
         <WhoWeAreSection /> 
-
-        {/* Services Section */}
-        {/* <section className="bg-white py-16 md:py-24" id="services">
-          <div className="container">
-            <SectionHeading
-              title="Our Services"
-              subtitle="Comprehensive architectural visualization services from our Jaipur studio for clients across India"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-muted p-8 rounded-lg">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                  <Building2 className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 font-forum">3D Architectural Models</h3>
-                <p className="text-muted-foreground font-barlow">
-                  Detailed exterior and interior 3D models for residential, commercial, and institutional projects
-                  across India.
-                </p>
-              </div>
-              <div className="bg-muted p-8 rounded-lg">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-6 w-6 text-primary"
-                  >
-                    <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2Z" />
-                    <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
-                    <path d="M9 9h6" />
-                    <path d="M9 13h6" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-3 font-forum">Interior Visualization</h3>
-                <p className="text-muted-foreground font-barlow">
-                  Photorealistic interior renderings and virtual tours for residential and commercial spaces.
-                </p>
-              </div>
-              <div className="bg-muted p-8 rounded-lg">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-6 w-6 text-primary"
-                  >
-                    <path d="M12 2v20" />
-                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-3 font-forum">Construction Visualization</h3>
-                <p className="text-muted-foreground font-barlow">
-                  Phase-wise construction visualization and progress modeling for project management and marketing.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section> */}
 
         {/* Meet the Team Section */}
         <section className="bg-white py-16 md:py-24" id="team">
@@ -201,47 +95,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Latest Blog Posts */}
-        {/* <section className="py-16 bg-white" id="blog">
-          <div className="container">
-            <SectionHeading
-              title="Latest from Our Blog"
-              subtitle="Insights, trends, and expertise from the world of 3D architectural modeling in India"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <BlogPreview
-                title="Sometimes Rome Is Built in a Day—Or Less"
-                excerpt="Walk into any architecture studio and you'll likely spot a physical model sitting quietly in a corner. At RD Models, we believe it's time to recognise architectural model making for what it truly is: an art form."
-                date="December 15, 2024"
-                author="RD Models Team"
-                image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?height=400&width=600"
-                slug="sometimes-rome-is-built-in-a-day"
-              />
-              <BlogPreview
-                title="The Future of Architectural Visualization in India"
-                excerpt="Explore how emerging technologies are transforming the way architects and developers visualize projects across India's growing construction industry."
-                date="November 28, 2024"
-                author="Deeksha Vyas"
-                image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?height=400&width=600"
-                slug="future-of-architectural-visualization"
-              />
-              <BlogPreview
-                title="3D Modeling Techniques for Indian Architecture"
-                excerpt="Learn about specialized techniques for creating photorealistic visualizations of traditional and modern Indian architectural styles."
-                date="November 10, 2024"
-                author="Pushpkant Yadav"
-                image="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?height=400&width=600"
-                slug="3d-modeling-techniques-indian-architecture"
-              />
-            </div>
-            <div className="text-center mt-10">
-              <AnimatedButton>
-                <Link href="/blog">View All Articles</Link>
-              </AnimatedButton>
-            </div>
-          </div>
-        </section> */}
-
         {/* Clients Section */}
         <section className="py-16 bg-muted" id="clients">
           <div className="">
@@ -263,57 +116,7 @@ export default function Home() {
             <TestimonialSlider />
           </div>
         </section>
-
-        {/* <section className="container py-16 md:py-24" id="contact">
-          <SectionHeading
-            title="Get In Touch"
-            subtitle="Interested in our services? Fill out the form below and we'll get back to you as soon as possible."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <ContactForm />
-            </div>
-            <div className="flex flex-col justify-center">
-              <div className="bg-muted p-8 rounded-lg">
-                <h3 className="text-xl font-bold text-primary mb-6 font-forum">Contact Information</h3>
-                <div className="space-y-4 font-barlow">
-                  <div className="flex items-start gap-4">
-                    <MapPin className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Address</p>
-                      <p className="text-muted-foreground">123 Modeling Street, Design District, Jaipur, Rajasthan</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <Phone className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Phone</p>
-                      <p className="text-muted-foreground">+91-141-123-4567</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <Mail className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">Email</p>
-                      <p className="text-muted-foreground">info@rdmodels.com</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-8 font-barlow">
-                  <h4 className="font-medium mb-3">Working Hours</h4>
-                  <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
-                    <div>Monday - Friday</div>
-                    <div>9:00 AM - 6:00 PM</div>
-                    <div>Saturday</div>
-                    <div>10:00 AM - 4:00 PM</div>
-                    <div>Sunday</div>
-                    <div>Closed</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
+        
         {/* Instagram Posts Section */}
         <section className="bg-muted py-16 md:py-24" id="instagram">
           <div className="container">
