@@ -103,26 +103,37 @@ export function TestimonialSlider() {
           <div className="space-y-6">
             <p className="text-lg md:text-xl italic font-forum">{testimonials[currentIndex].quote}</p>
             <div className="text-center">
-              <p className="font-bold font-forum">{testimonials[currentIndex].author}</p>
-              <p className="text-muted-foreground font-forum">{testimonials[currentIndex].position}</p>
+              <div className="flex justify-center items-center gap-3">
+                <div className="">
+                  <img
+                    src="/images/testimonials/testimonial.png"
+                    alt="Testimonial"
+                    className="w-12 h-12 rounded-full mx-auto border-2 border-primary p-1 bg-white object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-bold font-forum">{testimonials[currentIndex].author}</p>
+                  <p className="text-muted-foreground font-forum">{testimonials[currentIndex].position}</p>
+                </div>
+              </div>
             </div>
           </div>
         </CardContent>
       </Card>
       <div className="flex justify-center mt-6 gap-4">
-        <Button 
-          variant="outline" 
-          size="icon" 
-          onClick={prevTestimonial} 
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={prevTestimonial}
           className="rounded-full hover:bg-primary hover:text-white hover:scale-110 transition-transform duration-100"
         >
           <ChevronLeft className="h-4 w-4" />
           <span className="sr-only">Previous testimonial</span>
         </Button>
-        <Button 
-          variant="outline" 
-          size="icon" 
-          onClick={nextTestimonial} 
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={nextTestimonial}
           className="rounded-full hover:bg-primary hover:text-white hover:scale-110 transition-transform duration-100"
         >
           <ChevronRight className="h-4 w-4" />
