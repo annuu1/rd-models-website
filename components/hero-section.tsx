@@ -42,7 +42,7 @@ export function HeroSection() {
           style={{ backgroundImage: `url('${backgrounds[current]}')` }}
           initial={{ scale: 1 }}
           animate={{ scale: 1.1 }}
-          transition={{ duration: 3, ease: 'easeInOut' }}
+          transition={{ duration: 3, ease: 'linear' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-700/70 via-black/40 to-black/20" />
         {/* Arrow Buttons */}
