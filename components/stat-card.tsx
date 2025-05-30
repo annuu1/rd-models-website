@@ -52,7 +52,7 @@ export function StatCard({ number, label, description, link }: StatCardProps) {
 
   return (
     <div className="group">
-      <Card ref={ref} className="relative transition-all duration-300 group-hover:shadow-2xl hover:bg-gray-400">
+      <Card ref={ref} className="relative transition-all duration-300 group-hover:shadow-2xl hover:bg-gray-600 hover:opacity-55">
         <CardContent className="p-6 text-center">
           <p className="text-4xl font-bold text-primary mb-2 font-forum group-hover:text-white transition-colors duration-300">{formattedCount}</p>
           <p className="font-bold text-lg text-muted-foreground font-barlow group-hover:text-white transition-colors duration-300">{label}</p>
