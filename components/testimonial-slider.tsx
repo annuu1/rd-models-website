@@ -1,6 +1,7 @@
 'use client'
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion"
 
 const testimonials = [
   {
@@ -42,12 +43,15 @@ const testimonials = [
 
 export function TestimonialSlider() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [direction, setDirection] = useState(0) // -1 for left, 1 for right
 
   const nextTestimonial = () => {
+    setDirection(1)
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
   }
 
   const prevTestimonial = () => {
+    setDirection(-1)
     setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
   }
 
@@ -55,111 +59,144 @@ export function TestimonialSlider() {
     return (currentIndex + offset + testimonials.length) % testimonials.length
   }
 
+  // Animation variants for sliding
+  const variants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 300 : -300,
+      opacity: 0,
+      position: "absolute" as const,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      position: "relative" as const,
+      transition: { x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } },
+    },
+    exit: (dir: number) => ({
+      x: dir < 0 ? 300 : -300,
+      opacity: 0,
+      position: "absolute" as const,
+      transition: { x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } },
+    }),
+  }
+
   return (
     <section className="bg-white py-16 md:py-8" id="testimonials">
       <div className="max-w-5xl mx-auto">
         {/* Testimonial Slider */}
-        <div className="relative">
-          <div className="flex items-center justify-center gap-4">
-            {/* Left testimonial (faded, partially visible) */}
-            <div className="w-80 h-96 transition-all duration-300 transform scale-90 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/80 z-10"></div>
-              <div className="w-full h-full bg-gradient-to-br from-purple-600/50 to-blue-900/50 rounded-lg p-6 flex flex-col justify-between">
-                <p className="text-white text-sm italic line-clamp-6">{testimonials[getTestimonialIndex(-1)].quote}</p>
-                <div className="text-center">
-                  <div className="flex justify-center items-center gap-3">
-                    <div>
-                      <img
-                        src="/images/testimonials/testimonial.png"
-                        alt="Testimonial"
-                        className="w-10 h-10 rounded-full mx-auto border-2 border-white/50 p-1 bg-white object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold text-sm">{testimonials[getTestimonialIndex(-1)].author}</p>
-                      <p className="text-gray-400 text-xs">{testimonials[getTestimonialIndex(-1)].position}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Center testimonial (main focus) */}
-            <div className="w-96 h-96 z-10 transition-all duration-300 transform scale-100">
-              <div className="w-full h-full bg-gradient-to-br from-purple-600/70 to-blue-900/70 rounded-lg p-6 flex flex-col justify-between">
-                <p className="text-white text-base italic line-clamp-6">{testimonials[currentIndex].quote}</p>
-                <div className="text-center">
-                  <div className="flex justify-center items-center gap-3">
-                    <div>
-                      <img
-                        src="/images/testimonials/testimonial.png"
-                        alt="Testimonial"
-                        className="w-12 h-12 rounded-full mx-auto border-2 border-white p-1 bg-white object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold">{testimonials[currentIndex].author}</p>
-                      <p className="text-gray-400">{testimonials[currentIndex].position}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right testimonial (faded, partially visible) */}
-            <div className="w-80 h-96 transition-all duration-300 transform scale-90 relative">
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-black/80 z-10"></div>
-              <div className="w-full h-full bg-gradient-to-br from-purple-600/50 to-blue-900/50 rounded-lg p-6 flex flex-col justify-between">
-                <p className="text-white text-sm italic line-clamp-6">{testimonials[getTestimonialIndex(1)].quote}</p>
-                <div className="text-center">
-                  <div className="flex justify-center items-center gap-3">
-                    <div>
-                      <img
-                        src="/images/testimonials/testimonial.png"
-                        alt="Testimonial"
-                        className="w-10 h-10 rounded-full mx-auto border-2 border-white/50 p-1 bg-white object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold text-sm">{testimonials[getTestimonialIndex(1)].author}</p>
-                      <p className="text-gray-400 text-xs">{testimonials[getTestimonialIndex(1)].position}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Navigation Arrows */}
+        <div className="flex items-center justify-center gap-6">
           <button
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-3 rounded-full bg-black/50 hover:bg-purple-600 transition-all duration-300 hover:scale-110"
+            className="text-white p-3 rounded-full bg-black/50 hover:bg-purple-600 transition-all duration-300 hover:scale-110"
           >
             <ChevronLeft className="h-8 w-8" />
             <span className="sr-only">Previous testimonial</span>
           </button>
+          <div className="relative">
+            <div className="flex items-center justify-center gap-0">
+              {/* Left testimonial (faded, partially visible) */}
+              <div className="w-80 h-96 transition-all duration-300 transform scale-90 relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/80 z-10"></div>
+                <div className="w-full h-full bg-gradient-to-br from-purple-600/50 to-blue-900/50 rounded-lg p-6 flex flex-col justify-between">
+                  <p className="text-white text-sm italic line-clamp-6">{testimonials[getTestimonialIndex(-1)].quote}</p>
+                  <div className="text-center">
+                    <div className="flex justify-center items-center gap-3">
+                      <div>
+                        <img
+                          src="/images/testimonials/testimonial.png"
+                          alt="Testimonial"
+                          className="w-10 h-10 rounded-full mx-auto border-2 border-white/50 p-1 bg-white object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-white font-semibold text-sm">{testimonials[getTestimonialIndex(-1)].author}</p>
+                        <p className="text-gray-400 text-xs">{testimonials[getTestimonialIndex(-1)].position}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Center testimonial (main focus) with slide animation */}
+              <div className="w-96 h-96 z-10 flex items-center justify-center relative overflow-hidden">
+                <AnimatePresence initial={false} custom={direction} mode="wait">
+                  <motion.div
+                    key={currentIndex}
+                    custom={direction}
+                    variants={variants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="w-full h-full bg-gradient-to-br from-purple-600/70 to-blue-900/70 rounded-lg p-6 flex flex-col justify-between"
+                    style={{ position: "absolute", width: "100%", height: "100%" }}
+                  >
+                    <p className="text-white text-base italic line-clamp-6">{testimonials[currentIndex].quote}</p>
+                    <div className="text-center">
+                      <div className="flex justify-center items-center gap-3">
+                        <div>
+                          <img
+                            src="/images/testimonials/testimonial.png"
+                            alt="Testimonial"
+                            className="w-12 h-12 rounded-full mx-auto border-2 border-white p-1 bg-white object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p className="text-white font-semibold">{testimonials[currentIndex].author}</p>
+                          <p className="text-gray-400">{testimonials[currentIndex].position}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Right testimonial (faded, partially visible) */}
+              <div className="w-80 h-96 transition-all duration-300 transform scale-90 relative">
+                <div className="absolute inset-0 bg-gradient-to-l from-transparent to-black/80 z-10"></div>
+                <div className="w-full h-full bg-gradient-to-br from-purple-600/50 to-blue-900/50 rounded-lg p-6 flex flex-col justify-between">
+                  <p className="text-white text-sm italic line-clamp-6">{testimonials[getTestimonialIndex(1)].quote}</p>
+                  <div className="text-center">
+                    <div className="flex justify-center items-center gap-3">
+                      <div>
+                        <img
+                          src="/images/testimonials/testimonial.png"
+                          alt="Testimonial"
+                          className="w-10 h-10 rounded-full mx-auto border-2 border-white/50 p-1 bg-white object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-white font-semibold text-sm">{testimonials[getTestimonialIndex(1)].author}</p>
+                        <p className="text-gray-400 text-xs">{testimonials[getTestimonialIndex(1)].position}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center mt-4 gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-3 h-3 rounded-full ${
+                    index === currentIndex ? "bg-pink-500" : "bg-gray-500"
+                  }`}
+                  onClick={() => setCurrentIndex(index)}
+                >
+                  <span className="sr-only">Go to testimonial {index + 1}</span>
+                </button>
+              ))}
+            </div>
+          </div>
           <button
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-3 rounded-full bg-black/50 hover:bg-purple-600 transition-all duration-300 hover:scale-110"
+            className="text-white p-3 rounded-full bg-black/50 hover:bg-purple-600 transition-all duration-300 hover:scale-110"
           >
             <ChevronRight className="h-8 w-8" />
             <span className="sr-only">Next testimonial</span>
           </button>
-    
-          {/* Pagination Dots */}
-          <div className="flex justify-center mt-4 gap-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full ${
-                  index === currentIndex ? "bg-pink-500" : "bg-gray-500"
-                }`}
-                onClick={() => setCurrentIndex(index)}
-              >
-                <span className="sr-only">Go to testimonial {index + 1}</span>
-              </button>
-            ))}
-          </div>
         </div>
       </div>
     </section>
