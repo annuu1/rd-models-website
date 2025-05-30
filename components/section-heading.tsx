@@ -23,7 +23,7 @@ export function SectionHeading({ title, subtitle, className = "" }: SectionHeadi
   }, [isInView, hasAnimated])
 
   return (
-    <div ref={ref} className={`text-center mb-12 ${className}`}>
+    <div ref={ref} className={`text-center mb-4 ${className}`}>
       <h2 className="text-3xl font-bold text-primary mb-4 font-forum relative inline-block">
         {title}
         <span

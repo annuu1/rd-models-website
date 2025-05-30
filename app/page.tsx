@@ -119,7 +119,7 @@ export default function Home() {
           <div className="">
             <SectionHeading
               title="What Our Clients Say"
-              subtitle="We take pride in the relationships we build with our clients. Their words speak volumes about our commitment to quality, creativity, and customer satisfaction"
+              subtitle="We take pride in the relationships we build with our clients. Their words speak volumes about our commitment to quality, creativity, and customer satisfaction."
             />
             <TestimonialSlider />
           </div>
@@ -130,7 +130,7 @@ export default function Home() {
           <div className="">
             <SectionHeading
               title="Instagram Handle"
-              subtitle="Check out our latest Instagram posts for inspiration and updates from our Jaipur studio."
+              subtitle="Check out our latest Instagram posts for inspiration and updates."
             />
             <InstagramPost />
 
