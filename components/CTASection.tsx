@@ -1,5 +1,6 @@
 import { AnimatedButton } from "./animated-button";
 import Link from "next/link";
+import { SectionHeading } from "./section-heading";
 
 export function CTASection() {
   return (
@@ -21,24 +22,23 @@ export function CTASection() {
           </div>
         </div>
         {/* Text and Buttons */}
-        <div className="md:w-2/3 text-center md:text-left md:ml-16 md:pl-32"> {/* Added md:ml-8 for rightward shift */}
-          <h2 className="text-3xl font-bold mb-6 font-forum text-gray-800">
-            Ready to Bring Your Vision to Life?
-          </h2>
-          <p className="text-gray-700 max-w-2xl mx-auto md:mx-0 mb-8 font-barlow">
-            Contact our Jaipur team today to discuss your 3D modeling requirements. We serve clients across India with
-            world-class architectural visualization services.
-          </p>
+        <div className="md:w-2/3 text-center md:text-left md:ml-16 md:pl-32 flex flex-col justify-center items-center"> {/* Added md:ml-8 for rightward shift */}
+          <SectionHeading
+            title="Ready to Bring Your Vision to Life?"
+            subtitle="Contact our Jaipur team today to discuss your 3D modeling requirements. We serve clients across India with
+            world-class architectural visualization services."
+          />
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <AnimatedButton
               variant="outline"
-              className="bg-gray-800 hover:bg-gray-700 text-white border-gray-800"
+              className="bg-primary text-white"
             >
               <Link href="/contact">Get a Quote</Link>
             </AnimatedButton>
             <AnimatedButton
               variant="outline"
-              className="bg-transparent border-gray-800 text-gray-800 hover:bg-gray-100"
+              className="bg-transparent border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white"
             >
               <Link href="/portfolio">View Portfolio</Link>
             </AnimatedButton>
