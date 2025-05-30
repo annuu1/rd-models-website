@@ -13,8 +13,9 @@ import { Building2, Mail, MapPin, Phone } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 import type { Metadata } from "next"
 import { FounderSection } from "@/components/founder-section"
-import {WhoWeAreSection} from "@/components/WhoWeAreSection"
+import { WhoWeAreSection } from "@/components/WhoWeAreSection"
 import InstagramPost from "@/components/instagram-posts"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "RD Models - Premier 3D Architectural Modeling Services in Jaipur, India",
@@ -55,15 +56,15 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         {/* Founder Section */}
-       <section className="py-16 w-full bg-white">
+        <section className="py-16 w-full bg-white">
           <div className="sm:pl-64">
-            
+
             <FounderSection />
           </div>
         </section>
 
         {/* Who We Are Section with Statistics */}
-        <WhoWeAreSection /> 
+        <WhoWeAreSection />
 
         {/* Meet the Team Section */}
         <section className="bg-white py-16 md:py-24" id="team">
@@ -104,7 +105,7 @@ export default function Home() {
             />
             <ClientLogos />
             <AnimatedButton size="lg" className="mt-8">View All Clients</AnimatedButton>
-            
+
           </div>
         </section>
 
@@ -127,25 +128,43 @@ export default function Home() {
               subtitle="Check out our latest Instagram posts for inspiration and updates from our Jaipur studio."
             />
             <InstagramPost />
-            
+
           </div>
         </section>
 
         {/* CTA Section */}
         <section className="py-16 bg-primary text-white">
-          <div className="container text-center">
-            <h2 className="text-3xl font-bold mb-6 font-forum">Ready to Bring Your Vision to Life?</h2>
-            <p className="text-white/90 max-w-2xl mx-auto mb-8 font-barlow">
-              Contact our Jaipur team today to discuss your 3D modeling requirements. We serve clients across India with
-              world-class architectural visualization services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <AnimatedButton variant="outline" className="bg-white hover:bg-white/90 text-primary border-white">
-                <Link href="/contact">Get a Quote</Link>
-              </AnimatedButton>
-              <AnimatedButton variant="outline" className="bg-transparent border-white text-white hover:bg-white/10">
-                <Link href="/portfolio">View Portfolio</Link>
-              </AnimatedButton>
+          <div className="container flex flex-col md:flex-row items-center">
+            {/* Image Container */}
+            <div className="md:w-1/3 mb-8 md:mb-0">
+              <div className="relative w-full max-w-sm mx-auto">
+                <img
+                  src="/images/cta/sketch.png"
+                  alt="Default Architectural Visualization"
+                  className="w-full h-auto object-cover transition-opacity duration-300 hover:opacity-0"
+                />
+                <img
+                  src="/images/cta/project.png"
+                  alt="Hover Architectural Visualization"
+                  className="absolute top-0 left-0 w-full h-auto object-cover opacity-0 transition-opacity duration-300 hover:opacity-100"
+                />
+              </div>
+            </div>
+            {/* Text and Buttons */}
+            <div className="md:w-2/3 text-center md:text-left">
+              <h2 className="text-3xl font-bold mb-6 font-forum">Ready to Bring Your Vision to Life?</h2>
+              <p className="text-white/90 max-w-2xl mx-auto md:mx-0 mb-8 font-barlow">
+                Contact our Jaipur team today to discuss your 3D modeling requirements. We serve clients across India with
+                world-class architectural visualization services.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <AnimatedButton variant="outline" className="bg-white hover:bg-white/90 text-primary border-white">
+                  <Link href="/contact">Get a Quote</Link>
+                </AnimatedButton>
+                <AnimatedButton variant="outline" className="bg-transparent border-white text-white hover:bg-white/10">
+                  <Link href="/portfolio">View Portfolio</Link>
+                </AnimatedButton>
+              </div>
             </div>
           </div>
         </section>
