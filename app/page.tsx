@@ -116,7 +116,7 @@ export default function Home() {
 
         {/* Testimonials Section */}
         <section className="bg-white py-16 md:py-8" id="testimonials">
-          <div className="container">
+          <div className="">
             <SectionHeading
               title="What Our Clients Say"
               subtitle="We take pride in the relationships we build with our clients. Their words speak volumes about our commitment to quality, creativity, and customer satisfaction"
