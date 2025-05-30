@@ -41,7 +41,7 @@ export function HeroSection() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
           style={{ backgroundImage: `url('${backgrounds[current]}')` }}
           initial={{ scale: 1 }}
-          animate={{ scale: 1.1 }}
+          animate={{ scale: 1.9 }}
           transition={{ duration: 6, ease: 'easeInOut' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-700/70 via-black/40 to-black/20" />
