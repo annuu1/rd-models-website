@@ -86,13 +86,13 @@ export function ClientLogos() {
       {rows.map((row, rowIdx) => (
         <motion.div
           key={rowIdx}
-          className="flex mb-4 min-w-8" // Added min-w-max to ensure it takes up the full width of its content
+          className="flex mb-4 min-w-max" // Added min-w-max to ensure it takes up the full width of its content
           animate={{ x: ["0%", "-100%"] }}
           transition={{
             x: {
               repeat: Number.POSITIVE_INFINITY,
               repeatType: "loop",
-              duration: 90, // Adjust duration
+              duration: 80, // Reduced from 90 to 30 for faster animation
               ease: "linear",
             },
           }}

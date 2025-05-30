@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const testimonials = [
   {
@@ -23,7 +23,7 @@ const testimonials = [
   {
     id: 3,
     quote:
-      "I visited one model exhibition in which we saw a lot of models but one model captures our attention which was developed by RD Models. We decided to make it for our plant too. After meeting with Rohitash, he explained the details and knowledge about the model which we were not aware of. The model came out as masterpiece and we were all happy seeing our model. Model resolved our main problem too, as the visitors were not allowed to visit the whole plant because as of safety guidelines, but they can see the plant in one go. Our department also got praised well for the model.",
+      "I visited one model personally exhibition in which we saw a lot of models but one model captures our attention which was developed by RD Models. We decided to make it for our plant too. After meeting with Rohitash, he explained the details and knowledge about the model which we were not aware of. The model came out as masterpiece and we were all happy seeing our model. Model resolved our main problem too, as the visitors were not allowed to visit the whole plant because as of safety guidelines, but they can see the plant in one go. Our department also got praised well for the model.",
     author: "L.K. Jain",
     position: "Managing Director Rajasthan Co-operative Dairy Federation",
   },
@@ -43,13 +43,12 @@ export function TestimonialSlider() {
   return (
     <div className="relative max-w-4xl mx-auto">
       <Card className="border-none shadow-lg">
-        <CardContent className="p-8 md:p-12">
-          <Quote className="h-12 w-12 text-primary/20 mb-6" />
+        <CardContent className="p-8 md:p-4">
           <div className="space-y-6">
-            <p className="text-lg md:text-xl italic font-barlow">{testimonials[currentIndex].quote}</p>
-            <div>
+            <p className="text-lg md:text-xl italic font-forum">{testimonials[currentIndex].quote}</p>
+            <div className="text-center">
               <p className="font-bold font-forum">{testimonials[currentIndex].author}</p>
-              <p className="text-muted-foreground font-barlow">{testimonials[currentIndex].position}</p>
+              <p className="text-muted-foreground font-forum">{testimonials[currentIndex].position}</p>
             </div>
           </div>
         </CardContent>
