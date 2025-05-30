@@ -66,8 +66,6 @@ export function ClientLogos() {
     "radisson-logo-1.png",
     "silver-logo.png",
     "symphonia-and-graphics-malviya-nagar-jaipur-computer-graphic-designers-rfjzlilox2-250.webp",
-    "tata.jpg",
-    "vbr9pzk7.png",
   ];
 
   // Split into 3 rows
