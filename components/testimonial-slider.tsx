@@ -24,6 +24,20 @@ const testimonials = [
     author: "Robert Godwin",
     position: "Senior Developer",
   },
+  {
+    id: 4,
+    quote:
+      "Working with this team has been a game-changer for our business. Their innovative approach and attention to detail are unmatched. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+    author: "Sarah Johnson",
+    position: "Marketing Director",
+  },
+  {
+    id: 5,
+    quote:
+      "The support and collaboration we've experienced here are top-notch. Highly recommend their services! Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+    author: "Michael Chen",
+    position: "Operations Manager",
+  },
 ]
 
 export function TestimonialSlider() {
@@ -44,7 +58,6 @@ export function TestimonialSlider() {
   return (
     <section className="bg-white py-16 md:py-8" id="testimonials">
       <div className="max-w-5xl mx-auto">
-
         {/* Testimonial Slider */}
         <div className="relative">
           <div className="flex items-center justify-center gap-4">
@@ -132,7 +145,7 @@ export function TestimonialSlider() {
             <ChevronRight className="h-8 w-8" />
             <span className="sr-only">Next testimonial</span>
           </button>
-
+    
           {/* Pagination Dots */}
           <div className="flex justify-center mt-4 gap-2">
             {testimonials.map((_, index) => (
