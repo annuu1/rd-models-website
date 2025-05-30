@@ -86,18 +86,19 @@ export function ClientLogos() {
       {rows.map((row, rowIdx) => (
         <motion.div
           key={rowIdx}
-          className="flex mb-4"
-          animate={{ x: ["0%", "-50%"] }}
+          className="flex mb-4 min-w-8" // Added min-w-max to ensure it takes up the full width of its content
+          animate={{ x: ["0%", "-100%"] }}
           transition={{
             x: {
               repeat: Number.POSITIVE_INFINITY,
               repeatType: "loop",
-              duration: 20,
+              duration: 90, // Adjust duration as needed for desired speed
               ease: "linear",
             },
           }}
         >
-          {row.map((filename: string, index: number) => {
+          {/* Duplicate the row content to create a seamless loop */}
+          {[...row, ...row].map((filename: string, index: number) => {
             // Clean up filename for alt text
             const alt = filename.replace(/[-_]/g, ' ').replace(/\.[^/.]+$/, '');
             return (
