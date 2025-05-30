@@ -92,7 +92,7 @@ export function ClientLogos() {
             x: {
               repeat: Number.POSITIVE_INFINITY,
               repeatType: "loop",
-              duration: 90, // Adjust duration as needed for desired speed
+              duration: 90, // Adjust duration
               ease: "linear",
             },
           }}
