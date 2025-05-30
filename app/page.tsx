@@ -79,13 +79,13 @@ export default function Home() {
                 name="CA. Avinash Daiya"
                 position="Chief Financial Officer"
                 image="https://rdmodels.com/wp-content/uploads/2025/04/Avinash-300x300.png?height=300&width=300"
-                bio="With over 15 years of financial expertise, Avinash ensures the company's financial health and strategic growth across India."
+                bio="With over 10 years of financial expertise, Avinash ensures the company's financial health and strategic growth."
               />
               <TeamMember
                 name="Ar. Deeksha Vyas"
                 position="Chief Marketing Officer"
                 image="https://rdmodels.com/wp-content/uploads/2025/01/Deeksha-pnxqvlmzw1pylhl7ivkogx2fwq65helnihpuu1atvc.png?height=300&width=300"
-                bio="An architect by training, Deeksha leads our marketing efforts with a deep understanding of client needs across India."
+                bio="An architect by profession, Deeksha leads our marketing efforts with a deep understanding of client needs."
               />
               <TeamMember
                 name="Er. Pushpkant Yadav"
@@ -102,7 +102,7 @@ export default function Home() {
           <div className="text-center">
             <SectionHeading
               title="Our Clients Across India"
-              subtitle="We've had the privilege of working with leading architects, developers, and construction companies from Jaipur to Mumbai, Delhi to Bangalore."
+              subtitle="We've had the privilege of working with leading architects, developers, and construction companies from all over Indi."
             />
             <ClientLogos />
             <AnimatedButton size="lg" className="mt-8">View All Clients</AnimatedButton>
@@ -115,7 +115,7 @@ export default function Home() {
           <div className="container">
             <SectionHeading
               title="What Our Clients Say"
-              subtitle="Testimonials from architects, developers, and construction companies across India who have worked with our Jaipur-based team."
+              subtitle="We take pride in the relationships we build with our clients. Their words speak volumes about our commitment to quality, creativity, and customer satisfaction"
             />
             <TestimonialSlider />
           </div>

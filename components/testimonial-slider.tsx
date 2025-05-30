@@ -1,5 +1,5 @@
-"use client"
-
+'use client'
+import React from "react"
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -110,11 +110,21 @@ export function TestimonialSlider() {
         </CardContent>
       </Card>
       <div className="flex justify-center mt-6 gap-4">
-        <Button variant="outline" size="icon" onClick={prevTestimonial} className="rounded-full">
+        <Button 
+          variant="outline" 
+          size="icon" 
+          onClick={prevTestimonial} 
+          className="rounded-full hover:bg-primary hover:text-white hover:scale-110 transition-transform duration-100"
+        >
           <ChevronLeft className="h-4 w-4" />
           <span className="sr-only">Previous testimonial</span>
         </Button>
-        <Button variant="outline" size="icon" onClick={nextTestimonial} className="rounded-full">
+        <Button 
+          variant="outline" 
+          size="icon" 
+          onClick={nextTestimonial} 
+          className="rounded-full hover:bg-primary hover:text-white hover:scale-110 transition-transform duration-100"
+        >
           <ChevronRight className="h-4 w-4" />
           <span className="sr-only">Next testimonial</span>
         </Button>
