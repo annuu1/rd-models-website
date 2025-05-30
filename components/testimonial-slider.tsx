@@ -9,23 +9,23 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "RD Models delivered exceptional 3D models for our residential project. Their attention to detail and quick turnaround time exceeded our expectations.",
-    author: "John Smith",
-    position: "Principal Architect, Smith & Associates",
+      "We have ordered RDModels to model our world class open pit mine rampura agucha mine of m/s HZL.The model made by RD was so nice that it was not only being appreciated by our top management and govt. Authorities at various occasions but also it's a mirror image of the actual mine to understand mining for non mining persons. My appreciation to RD models and it's team members.",
+    author: "Ramshanker Sharma",
+    position: "Asso. Gm and mine manager HZL -Vedanta limited india",
   },
   {
     id: 2,
     quote:
-      "Working with RD Models has been a game-changer for our development company. Their 3D visualizations have helped us secure investors and pre-sell units before construction even begins.",
-    author: "Sarah Johnson",
-    position: "CEO, Johnson Development Group",
+      "When I first thought to give the project to RD Models, I was not sure about it and was little confused as my architect was also not convinced. But after talking to Mr Rohitash, I felt the confidence to give him the project. He promised me to complete the model in time and with successful delivery. And yes, he and his team did tremendous work on the model with professional delivery. I and my project architect was 100% satisfied with his work. I wish the team all the best for future endeavours.",
+    author: "Ramesh Kapopara",
+    position: "directors Tulsi creators, Gujrat",
   },
   {
     id: 3,
     quote:
-      "The team at RD Models understands architectural design at a deep level. They don't just create models; they enhance our vision with their technical expertise and creative insights.",
-    author: "Michael Chen",
-    position: "Design Director, Chen Architecture",
+      "I visited one model exhibition in which we saw a lot of models but one model captures our attention which was developed by RD Models. We decided to make it for our plant too. After meeting with Rohitash, he explained the details and knowledge about the model which we were not aware of. The model came out as masterpiece and we were all happy seeing our model. Model resolved our main problem too, as the visitors were not allowed to visit the whole plant because as of safety guidelines, but they can see the plant in one go. Our department also got praised well for the model.",
+    author: "L.K. Jain",
+    position: "Managing Director Rajasthan Co-operative Dairy Federation",
   },
 ]
 
