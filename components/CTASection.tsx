@@ -32,13 +32,13 @@ export function CTASection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <AnimatedButton
               variant="outline"
-              className="bg-primary text-white"
+              className="bg-primary text-white hover:border-1 hover:border-primary hover:text-primary"
             >
               <Link href="/contact">Get a Quote</Link>
             </AnimatedButton>
             <AnimatedButton
               variant="outline"
-              className="bg-transparent border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white"
+              className="bg-transparent border-gray-800 text-gray-800 hover:bg-primary hover:text-white hover:border-transparent"
             >
               <Link href="/portfolio">View Portfolio</Link>
             </AnimatedButton>

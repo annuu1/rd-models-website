@@ -102,11 +102,15 @@ export default function Home() {
           <div className="text-center">
             <SectionHeading
               title="Our Clients Across India"
-              subtitle="We've had the privilege of working with leading architects, developers, and construction companies from all over Indi."
+              subtitle="We've had the privilege of working with leading architects, developers, and construction companies from all over India."
             />
             <ClientLogos />
-            <AnimatedButton size="lg" className="mt-8">View All Clients</AnimatedButton>
-
+            <AnimatedButton
+              size="lg"
+              className="mt-8 bg-primary text-white border border-transparent hover:bg-transparent hover:border-[1px] hover:border-primary hover:text-primary transition-all duration-200"
+            >
+              View All Clients
+            </AnimatedButton>
           </div>
         </section>
 
@@ -134,7 +138,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-       <CTASection />
+        <CTASection />
       </main>
       <footer className="border-t bg-muted">
         <div className="container py-8 md:py-12">
