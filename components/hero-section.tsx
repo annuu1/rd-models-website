@@ -36,9 +36,13 @@ export function HeroSection() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
-        <div
+        <motion.div
+          key={current} // ensures animation resets on image change
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
           style={{ backgroundImage: `url('${backgrounds[current]}')` }}
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.1 }}
+          transition={{ duration: 3, ease: 'easeInOut' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-700/70 via-black/40 to-black/20" />
         {/* Arrow Buttons */}
