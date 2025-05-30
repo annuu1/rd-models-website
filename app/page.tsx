@@ -115,7 +115,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="bg-white py-16 md:py-24" id="testimonials">
+        <section className="bg-white py-16 md:py-8" id="testimonials">
           <div className="container">
             <SectionHeading
               title="What Our Clients Say"
@@ -126,7 +126,7 @@ export default function Home() {
         </section>
 
         {/* Instagram Posts Section */}
-        <section className="bg-muted py-16 md:py-24" id="instagram">
+        <section className="bg-muted py-16 md:py-8" id="instagram">
           <div className="">
             <SectionHeading
               title="Instagram Handle"
