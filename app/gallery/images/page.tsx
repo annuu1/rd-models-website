@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { SectionHeading } from "@/components/section-heading"
 import { MobileMenu } from "@/components/mobile-menu"
 import type { Metadata } from "next"
+import { AnimatedHeader } from "@/components/animated-header"
 
 export const metadata: Metadata = {
   title: "Image Gallery - RD Models 3D Architectural Visualization",
@@ -98,61 +99,7 @@ const images = [
 export default function ImageGalleryPage() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-40 border-b bg-white">
-        <div className="container flex h-16 items-center justify-between py-4">
-          <div className="flex items-center gap-2">
-            <Building2 className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-primary font-forum">RD Models</span>
-          </div>
-          <nav className="hidden md:flex gap-6">
-            <Link href="/" className="text-base font-medium text-muted-foreground hover:text-primary font-barlow">
-              Home
-            </Link>
-            <Link href="/about" className="text-base font-medium text-muted-foreground hover:text-primary font-barlow">
-              About Us
-            </Link>
-            <Link
-              href="/portfolio"
-              className="text-base font-medium text-muted-foreground hover:text-primary font-barlow"
-            >
-              Portfolio
-            </Link>
-            <Link
-              href="/gallery/videos"
-              className="text-base font-medium text-muted-foreground hover:text-primary font-barlow"
-            >
-              Videos
-            </Link>
-            <Link
-              href="/gallery/images"
-              className="text-base font-medium text-primary hover:text-primary/80 font-barlow"
-            >
-              Images
-            </Link>
-            <Link
-              href="/publications"
-              className="text-base font-medium text-muted-foreground hover:text-primary font-barlow"
-            >
-              Publications
-            </Link>
-            <Link href="/blog" className="text-base font-medium text-muted-foreground hover:text-primary font-barlow">
-              Blog
-            </Link>
-            <Link
-              href="/contact"
-              className="text-base font-medium text-muted-foreground hover:text-primary font-barlow"
-            >
-              Contact
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" className="hidden md:flex font-barlow text-base">
-              <Link href="/contact">Get a Quote</Link>
-            </Button>
-            <MobileMenu />
-          </div>
-        </div>
-      </header>
+      <AnimatedHeader />
 
       <main className="container py-12">
         <div className="mb-12">
