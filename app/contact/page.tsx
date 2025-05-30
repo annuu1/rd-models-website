@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/contact-form"
 import { SectionHeading } from "@/components/section-heading"
 import { MobileMenu } from "@/components/mobile-menu"
 import type { Metadata } from "next"
+import { AnimatedHeader } from "@/components/animated-header"
 
 export const metadata: Metadata = {
   title: "Contact RD Models - 3D Architectural Modeling Services in Jaipur, India",
@@ -30,52 +31,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-40 border-b bg-white">
-        <div className="container flex h-16 items-center justify-between py-4">
-          <div className="flex items-center gap-2">
-            <Building2 className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-primary font-forum">RD Models</span>
-          </div>
-          <nav className="hidden md:flex gap-6">
-            <Link
-              href="/"
-              className="text-base font-medium text-muted-foreground hover:text-primary font-barlow link-underline"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="text-base font-medium text-muted-foreground hover:text-primary font-barlow link-underline"
-            >
-              About Us
-            </Link>
-            <Link
-              href="/portfolio"
-              className="text-base font-medium text-muted-foreground hover:text-primary font-barlow link-underline"
-            >
-              Portfolio
-            </Link>
-            <Link
-              href="/blog"
-              className="text-base font-medium text-muted-foreground hover:text-primary font-barlow link-underline"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/contact"
-              className="text-base font-medium text-primary hover:text-primary/80 font-barlow link-underline"
-            >
-              Contact
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" className="hidden md:flex font-barlow text-base">
-              <Link href="/contact">Get a Quote</Link>
-            </Button>
-            <MobileMenu />
-          </div>
-        </div>
-      </header>
+      <AnimatedHeader />
 
       <main>
         {/* Hero Section */}
