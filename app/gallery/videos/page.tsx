@@ -96,7 +96,7 @@ export default function VideoGalleryPage() {
     <div className="min-h-screen bg-background">
       <AnimatedHeader/>
 
-      <main className="container py-12">
+      <main className="py-12 md:px-4">
         <div className="mb-12">
           <Button variant="ghost" size="sm" asChild className="mb-6">
             <Link href="/">
@@ -111,48 +111,39 @@ export default function VideoGalleryPage() {
         </div>
 
         {/* Premium Video Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {videos.map((video, index) => (
-            <div
-              key={video.id}
-              className={`group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-500 ${
-                index % 5 === 0 ? "md:col-span-2" : ""
-              }`}
-            >
-              <div className={`relative overflow-hidden ${index % 5 === 0 ? "aspect-video" : "aspect-[4/3]"}`}>
-                <img
-                  src={video.thumbnail || "/placeholder.svg"}
-                  alt={video.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
-
-                {/* Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-primary/80 transition-all duration-300 group-hover:scale-110">
-                    <Play className="h-8 w-8 text-white ml-1" fill="currentColor" />
-                  </div>
-                </div>
-
-                {/* Duration Badge */}
-                <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-barlow flex items-center gap-1">
-                  <Clock className="h-3 w-3" />
-                  {video.duration}
-                </div>
-
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="text-xl font-bold mb-2 font-forum">{video.title}</h3>
-                    <p className="text-sm font-barlow opacity-90 line-clamp-2">{video.description}</p>
-                  </div>
-                </div>
-
-                {/* Subtle border on hover */}
-                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500 rounded-lg"></div>
-              </div>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+  {videos.map((video) => (
+    <div
+      key={video.id}
+      className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-500"
+    >
+      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg bg-gray-200" style={{ backgroundImage: `url(/placeholder.svg)` }}>
+        <img
+          src={video.thumbnail || "/placeholder.svg"}
+          alt={video.title}
+          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out rounded-lg"
+        />
+        {/* Play Button */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-primary/80 transition-all duration-300 group-hover:scale-110">
+            <Play className="h-8 w-8 text-white ml-1" fill="currentColor" />
+          </div>
         </div>
+        {/* Duration Badge */}
+        <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-barlow flex items-center gap-1">
+          <Clock className="h-3 w-3" />
+          {video.duration}
+        </div>
+        {/* Subtle border on hover */}
+        <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500 rounded-lg" />
+      </div>
+      <div className="p-3 bg-white">
+        <h3 className="text-base font-bold font-forum">{video.title}</h3>
+        <p className="text-xs text-muted-foreground font-barlow mt-0.5">{video.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
 
         {/* Load More */}
         <div className="text-center mt-16">

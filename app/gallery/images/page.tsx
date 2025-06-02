@@ -187,7 +187,7 @@ export default function ImageGalleryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="md:px-4 min-h-screen bg-background">
       <Head>
         {images.slice(0, 6).map((image) =>
           image.images.map((src, idx) => (
