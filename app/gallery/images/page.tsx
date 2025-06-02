@@ -8,17 +8,17 @@ import { SectionHeading } from "@/components/section-heading"
 import { MobileMenu } from "@/components/mobile-menu"
 import type { Metadata } from "next"
 import { AnimatedHeader } from "@/components/animated-header"
-
+import React, { useEffect, useState } from "react";
 
 const images = [
   {
     id: 1,
-    title: "Modern Residential Villa",
-    description: "Contemporary villa design with clean lines and modern amenities",
+    title: "Masar Makkah",
+    description: "2.2-mile King Abdul Aziz Road (KAAR) urban development corridor in Makkah (Mecca), Saudi Arabia, the gateway development designed by Omrania / HOK",
     images: [
-      "https://rdmodels.com/wp-content/uploads/2025/01/Times-2-768x512-1.jpg",
-      "https://rdmodels.com/wp-content/uploads/2025/01/Times-2-768x512-1.jpg",
-      "https://rdmodels.com/wp-content/uploads/2025/01/Times-2-768x512-1.jpg",
+      "https://rdmodels.com/wp-content/uploads/2025/01/Kaar-Dubai-6-768x512-1.jpg",
+      "https://rdmodels.com/wp-content/uploads/2025/01/Kaar-Dubai-1-768x512-1.jpg",
+      "https://rdmodels.com/wp-content/uploads/2025/01/Kaar-Dubai-5-768x512-1.jpg",
     ],
   },
   {
@@ -133,17 +133,15 @@ const images = [
   },
 ];
 
-import React, { useEffect, useState } from "react";
-
 export default function ImageGalleryPage() {
   // For each card, track the current image index
-  const [currentIndexes, setCurrentIndexes] = useState(() => images.map(() => 0));
+  const [currentIndexes, setCurrentIndexes] = useState(() => images.slice(0, 6).map(() => 0));
   // Track hover state per card
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   // Track sliding direction per card (1 for next/right, -1 for prev/left, 0 for none)
-  const [slideDirections, setSlideDirections] = useState(() => images.map(() => 0));
+  const [slideDirections, setSlideDirections] = useState(() => images.slice(0, 6).map(() => 0));
   // Track if an image is currently animating (to avoid rapid double transitions)
-  const [isSliding, setIsSliding] = useState(() => images.map(() => false));
+  const [isSliding, setIsSliding] = useState(() => images.slice(0, 6).map(() => false));
 
   // Helper to trigger slide animation
   const triggerSlide = (i: number, direction: number, updateIndex: () => void) => {
@@ -154,7 +152,7 @@ export default function ImageGalleryPage() {
       setSlideDirections((prev) => prev.map((d, j) => (j === i ? 0 : d)));
       setTimeout(() => {
         setIsSliding((prev) => prev.map((s, j) => (j === i ? false : s)));
-      }, 700); // match transition duration
+      }, 1200); // match transition duration
     }, 10); // allow DOM to apply initial slide class
   };
 
@@ -162,8 +160,8 @@ export default function ImageGalleryPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       // Decide how many cards to update (e.g., 1 to 3 cards)
-      const numToUpdate = Math.max(1, Math.floor(Math.random() * Math.min(3, images.length)));
-      const indexes = Array.from({ length: images.length }, (_, i) => i);
+      const numToUpdate = Math.max(1, Math.floor(Math.random() * Math.min(3, 6)));
+      const indexes = Array.from({ length: 6 }, (_, i) => i);
       // Shuffle and pick numToUpdate unique indexes
       for (let i = indexes.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -189,7 +187,7 @@ export default function ImageGalleryPage() {
           );
         });
       });
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -239,16 +237,16 @@ export default function ImageGalleryPage() {
 
         {/* Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-          {images.map((image, i) => (
+          {images.slice(0, 6).map((image, i) => (
             <div
               key={image.id}
               className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-500"
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg">
                 <div
-                  className={`absolute inset-0 w-full h-full transition-transform duration-700 ease-in-out ${
+                  className={`absolute inset-0 w-full h-full transition-transform duration-1200 ease-in-out ${
                     slideDirections[i] === 1
                       ? isSliding[i]
                         ? 'translate-x-full opacity-0 z-0'
@@ -265,7 +263,7 @@ export default function ImageGalleryPage() {
                     src={image.images[currentIndexes[i]] || "/placeholder.svg"}
                     alt={image.title}
                     fill
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out rounded-lg"
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1200 ease-out rounded-lg"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     placeholder="blur"
                     blurDataURL="/placeholder.svg"
@@ -279,28 +277,24 @@ export default function ImageGalleryPage() {
                       className="bg-black/40 text-white rounded-full p-2 hover:bg-black/70 transition"
                       aria-label="Previous image"
                     >
-                      &#8592;
+                      ←
                     </button>
                     <button
                       onClick={(e) => { e.stopPropagation(); handleNext(i); }}
                       className="bg-black/40 text-white rounded-full p-2 hover:bg-black/70 transition"
                       aria-label="Next image"
                     >
-                      &#8594;
+                      →
                     </button>
                   </div>
                 )}
-
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="text-xl font-bold mb-2 font-forum">{image.title}</h3>
-                    <p className="text-sm font-barlow opacity-90 line-clamp-2">{image.description}</p>
-                  </div>
-                </div>
-
                 {/* Border on hover */}
                 <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500 rounded-lg" />
+              </div>
+              {/* Details below the image */}
+              <div className="p-3 bg-white">
+                <h3 className="text-base font-bold font-forum">{image.title}</h3>
+                <p className="text-xs text-muted-foreground font-barlow mt-0.5">{image.description}</p>
               </div>
             </div>
           ))}
