@@ -280,7 +280,7 @@ export default function ImageGalleryPage() {
                       className="bg-black/0 text-white font-extrabold rounded-full p-0 hover:scale-110 transition"
                       aria-label="Previous image"
                     >
-                      ←
+                      {"⮜"}
                     </button>
                     <button
                       onClick={(e) => {
@@ -290,7 +290,7 @@ export default function ImageGalleryPage() {
                       className="bg-black/0 text-white rounded-full p-0 hover:scale-110 transition"
                       aria-label="Next image"
                     >
-                      →
+                      {"⮞"}
                     </button>
                   </div>
                 )}
