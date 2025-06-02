@@ -136,6 +136,8 @@ const images = [
 export default function ImageGalleryPage() {
   // For each card, track the current image index
   const [currentIndexes, setCurrentIndexes] = useState(() => images.slice(0, 6).map(() => 0));
+  // Track the next image index for each card during transition
+  const [nextIndexes, setNextIndexes] = useState(() => images.slice(0, 6).map(() => 0));
   // Track hover state per card
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   // Track sliding direction per card (1 for next/right, -1 for prev/left, 0 for none)
@@ -144,19 +146,19 @@ export default function ImageGalleryPage() {
   const [isSliding, setIsSliding] = useState(() => images.slice(0, 6).map(() => false));
 
   // Helper to trigger slide animation
-  const triggerSlide = (i: number, direction: number, updateIndex: () => void) => {
-    setSlideDirections((prev) => prev.map((d, j) => (j === i ? direction : 0)));
+  const triggerSlide = (i: number, direction: number, nextIndex: number) => {
+    if (isSliding[i]) return;
+    setNextIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
+    setSlideDirections((prev) => prev.map((d, j) => (j === i ? direction : d)));
     setIsSliding((prev) => prev.map((s, j) => (j === i ? true : s)));
     setTimeout(() => {
-      updateIndex();
+      setCurrentIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
       setSlideDirections((prev) => prev.map((d, j) => (j === i ? 0 : d)));
-      setTimeout(() => {
-        setIsSliding((prev) => prev.map((s, j) => (j === i ? false : s)));
-      }, 1200); // match transition duration
-    }, 10); // allow DOM to apply initial slide class
+      setIsSliding((prev) => prev.map((s, j) => (j === i ? false : s)));
+    }, 1200); // match transition duration
   };
 
-  // Change image every 3 seconds for a random subset of cards
+  // Change image every 2 seconds for a random subset of cards
   useEffect(() => {
     const interval = setInterval(() => {
       // Decide how many cards to update (e.g., 1 to 3 cards)
@@ -170,51 +172,27 @@ export default function ImageGalleryPage() {
       const toUpdate = indexes.slice(0, numToUpdate);
       // For each card to update, trigger slide right
       toUpdate.forEach((i) => {
-        triggerSlide(i, 1, () => {
-          setCurrentIndexes((prev) =>
-            prev.map((idx, j) =>
-              i === j
-                ? (() => {
-                    const imgArr = images[j].images;
-                    let newIdx;
-                    do {
-                      newIdx = Math.floor(Math.random() * imgArr.length);
-                    } while (imgArr.length > 1 && newIdx === idx);
-                    return newIdx;
-                  })()
-                : idx
-            )
-          );
-        });
+        const imgArr = images[i].images;
+        let newIdx;
+        do {
+          newIdx = Math.floor(Math.random() * imgArr.length);
+        } while (imgArr.length > 1 && newIdx === currentIndexes[i]);
+        triggerSlide(i, 1, newIdx);
       });
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndexes]);
 
   // Handlers for manual navigation with slide
   const handlePrev = (i: number) => {
     if (isSliding[i]) return;
-    triggerSlide(i, -1, () => {
-      setCurrentIndexes((prev) =>
-        prev.map((idx, j) =>
-          i === j
-            ? (idx - 1 + images[j].images.length) % images[j].images.length
-            : idx
-        )
-      );
-    });
+    const nextIndex = (currentIndexes[i] - 1 + images[i].images.length) % images[i].images.length;
+    triggerSlide(i, -1, nextIndex);
   };
   const handleNext = (i: number) => {
     if (isSliding[i]) return;
-    triggerSlide(i, 1, () => {
-      setCurrentIndexes((prev) =>
-        prev.map((idx, j) =>
-          i === j
-            ? (idx + 1) % images[j].images.length
-            : idx
-        )
-      );
-    });
+    const nextIndex = (currentIndexes[i] + 1) % images[i].images.length;
+    triggerSlide(i, 1, nextIndex);
   };
 
   return (
@@ -245,17 +223,14 @@ export default function ImageGalleryPage() {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg">
+                {/* Current Image */}
                 <div
                   className={`absolute inset-0 w-full h-full transition-transform duration-1200 ease-in-out ${
-                    slideDirections[i] === 1
-                      ? isSliding[i]
-                        ? 'translate-x-full opacity-0 z-0'
-                        : 'translate-x-0 opacity-100 z-10'
-                      : slideDirections[i] === -1
-                      ? isSliding[i]
-                        ? '-translate-x-full opacity-0 z-0'
-                        : 'translate-x-0 opacity-100 z-10'
-                      : 'translate-x-0 opacity-100 z-10'
+                    slideDirections[i] === 0
+                      ? 'translate-x-0 opacity-100 z-10'
+                      : slideDirections[i] === 1
+                      ? 'translate-x-full opacity-0 z-0'
+                      : '-translate-x-full opacity-0 z-0'
                   }`}
                   style={{ willChange: 'transform, opacity' }}
                 >
@@ -269,19 +244,44 @@ export default function ImageGalleryPage() {
                     blurDataURL="/placeholder.svg"
                   />
                 </div>
+                {/* Next Image (shown during transition) */}
+                {slideDirections[i] !== 0 && (
+                  <div
+                    className={`absolute inset-0 w-full h-full transition-transform duration-1200 ease-in-out ${
+                      slideDirections[i] === 1
+                        ? isSliding[i]
+                          ? 'translate-x-0 opacity-100 z-10'
+                          : 'translate-x-[-100%] opacity-0 z-0'
+                        : isSliding[i]
+                        ? 'translate-x-0 opacity-100 z-10'
+                        : 'translate-x-full opacity-0 z-0'
+                    }`}
+                    style={{ willChange: 'transform, opacity' }}
+                  >
+                    <Image
+                      src={image.images[nextIndexes[i]] || "/placeholder.svg"}
+                      alt={image.title}
+                      fill
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1200 ease-out rounded-lg"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      placeholder="blur"
+                      blurDataURL="/placeholder.svg"
+                    />
+                  </div>
+                )}
                 {/* Prev/Next controls on hover */}
                 {hoveredIndex === i && (
-                  <div className="absolute inset-0 flex items-center justify-between px-2 z-10">
+                  <div className="absolute inset-0 flex items-center justify-between px-2 z-20">
                     <button
                       onClick={(e) => { e.stopPropagation(); handlePrev(i); }}
-                      className="bg-black/40 text-white rounded-full p-2 hover:bg-black/70 transition"
+                      className="bg-black/0 text-white font-extrabold rounded-full p-0 hover:scale-110 transition"
                       aria-label="Previous image"
                     >
                       ←
                     </button>
                     <button
                       onClick={(e) => { e.stopPropagation(); handleNext(i); }}
-                      className="bg-black/40 text-white rounded-full p-2 hover:bg-black/70 transition"
+                      className="bg-black/0 text-white rounded-full p-0 hover:scale-110 transition"
                       aria-label="Next image"
                     >
                       →
