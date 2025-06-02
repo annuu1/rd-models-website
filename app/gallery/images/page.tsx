@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   ],
 }
 
-// Sample image data
 const images = [
+  // Image data remains unchanged
   {
     id: 1,
     title: "Modern Residential Villa",
@@ -115,33 +115,22 @@ export default function ImageGalleryPage() {
           />
         </div>
 
-        {/* Premium Image Grid */}
+        {/* Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {images.map((image, index) => (
+          {images.map((image) => (
             <div
               key={image.id}
-              className={`group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-500 ${
-                index % 7 === 0 || index % 7 === 3
-                  ? "md:col-span-2 md:row-span-2"
-                  : index % 7 === 1 || index % 7 === 4
-                    ? "md:row-span-2"
-                    : ""
-              }`}
+              className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-500"
             >
-              <div
-                className={`relative overflow-hidden ${
-                  index % 7 === 0 || index % 7 === 3
-                    ? "aspect-[4/3]"
-                    : index % 7 === 1 || index % 7 === 4
-                      ? "aspect-[3/4]"
-                      : "aspect-square"
-                }`}
-              >
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
                 <Image
                   src={image.image || "/placeholder.svg"}
                   alt={image.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out rounded-lg"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  placeholder="blur"
+                  blurDataURL="/placeholder.svg"
                 />
 
                 {/* Hover Overlay */}
@@ -152,8 +141,8 @@ export default function ImageGalleryPage() {
                   </div>
                 </div>
 
-                {/* Subtle border on hover */}
-                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500 rounded-lg"></div>
+                {/* Border on hover */}
+                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500 rounded-lg" />
               </div>
             </div>
           ))}
