@@ -159,7 +159,7 @@ export function TestimonialSlider() {
                     animate="center"
                     exit="exit"
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="w-full h-full bg-gradient-to-br from-primary/70 to-primary/40 rounded-lg p-6 flex flex-col justify-between"
+                    className="w-full h-full bg-gradient-to-b from-primary via-primary/80 to-zinc-900 rounded-lg p-6 flex flex-col justify-between"
                     style={{ position: "absolute", width: "100%", height: "100%" }}
                   >
                     <p className="text-white text-base italic line-clamp-6">{testimonials[currentIndex].quote}</p>
