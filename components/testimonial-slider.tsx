@@ -6,15 +6,15 @@ import { AnimatePresence, motion } from "framer-motion"
 const testimonials = [
   {
     id: 1,
-    quote: "The model made by RD was so nice that it was not only being appreciated by our top management and govt. Authorities at various occasions but also it's a mirror image of the actual mine to understand mining for non mining persons.",
-    author: "Ramshanker Sharma",
-    position: "Associate General Manager and Mine Manager, HZL - Vedanta Limited India"
-  },
-  {
-    id: 2,
     quote: "RD models delivered us the model in less than a weeks time. The model has caught the eyes of many, precision in every aspect of the model is beyond words. Seeing the model every day makes us inspired to our vision!",
     author: "Sachin Bhati",
     position: "Managing Director, Dhanraj School"
+  },
+  {
+    id: 2,
+    quote: "The model made by RD was so nice that it was not only being appreciated by our top management and govt. Authorities at various occasions but also it's a mirror image of the actual mine to understand mining for non mining persons.",
+    author: "Ramshanker Sharma",
+    position: "Associate General Manager and Mine Manager, HZL - Vedanta Limited India"
   },
   {
     id: 3,
@@ -159,7 +159,7 @@ export function TestimonialSlider() {
                     animate="center"
                     exit="exit"
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="w-full h-full bg-gradient-to-b from-primary via-primary/80 to-zinc-900 rounded-lg p-6 flex flex-col justify-between"
+                    className="w-full h-full bg-gradient-to-b from-primary via-primary/100 to-primary/100 rounded-lg p-6 flex flex-col justify-between"
                     style={{ position: "absolute", width: "100%", height: "100%" }}
                   >
                     <p className="text-white text-base italic line-clamp-6">{testimonials[currentIndex].quote}</p>
@@ -174,7 +174,7 @@ export function TestimonialSlider() {
                         </div>
                         <div>
                           <p className="text-white font-semibold">{testimonials[currentIndex].author}</p>
-                          <p className="text-gray-400">{testimonials[currentIndex].position}</p>
+                          <p className="text-gray-700">{testimonials[currentIndex].position}</p>
                         </div>
                       </div>
                     </div>
