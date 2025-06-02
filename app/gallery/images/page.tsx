@@ -1,20 +1,22 @@
 "use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { Building2, ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { SectionHeading } from "@/components/section-heading"
-import { MobileMenu } from "@/components/mobile-menu"
-import type { Metadata } from "next"
-import { AnimatedHeader } from "@/components/animated-header"
+import Link from "next/link";
+import Image from "next/image";
+import { Building2, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/section-heading";
+import { MobileMenu } from "@/components/mobile-menu";
+import { AnimatedHeader } from "@/components/animated-header";
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 
+// Define the images array
 const images = [
   {
     id: 1,
     title: "Masar Makkah",
-    description: "2.2-mile King Abdul Aziz Road (KAAR) urban development corridor in Makkah (Mecca), Saudi Arabia, the gateway development designed by Omrania / HOK",
+    description:
+      "2.2-mile King Abdul Aziz Road (KAAR) urban development corridor in Makkah (Mecca), Saudi Arabia, the gateway development designed by Omrania / HOK",
     images: [
       "https://rdmodels.com/wp-content/uploads/2025/01/Kaar-Dubai-6-768x512-1.jpg",
       "https://rdmodels.com/wp-content/uploads/2025/01/Kaar-Dubai-1-768x512-1.jpg",
@@ -134,18 +136,12 @@ const images = [
 ];
 
 export default function ImageGalleryPage() {
-  // For each card, track the current image index
   const [currentIndexes, setCurrentIndexes] = useState(() => images.slice(0, 6).map(() => 0));
-  // Track the next image index for each card during transition
   const [nextIndexes, setNextIndexes] = useState(() => images.slice(0, 6).map(() => 0));
-  // Track hover state per card
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  // Track sliding direction per card (1 for next/right, -1 for prev/left, 0 for none)
   const [slideDirections, setSlideDirections] = useState(() => images.slice(0, 6).map(() => 0));
-  // Track if an image is currently animating (to avoid rapid double transitions)
   const [isSliding, setIsSliding] = useState(() => images.slice(0, 6).map(() => false));
 
-  // Helper to trigger slide animation
   const triggerSlide = (i: number, direction: number, nextIndex: number) => {
     if (isSliding[i]) return;
     setNextIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
@@ -153,24 +149,20 @@ export default function ImageGalleryPage() {
     setIsSliding((prev) => prev.map((s, j) => (j === i ? true : s)));
     setTimeout(() => {
       setCurrentIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
-      setSlideDirections((prev) => prev.map((d, j) => (j === i ? 0 : d)));
       setIsSliding((prev) => prev.map((s, j) => (j === i ? false : s)));
-    }, 1200); // match transition duration
+      setSlideDirections((prev) => prev.map((d, j) => (j === i ? 0 : d)));
+    }, 800);
   };
 
-  // Change image every 2 seconds for a random subset of cards
   useEffect(() => {
     const interval = setInterval(() => {
-      // Decide how many cards to update (e.g., 1 to 3 cards)
       const numToUpdate = Math.max(1, Math.floor(Math.random() * Math.min(3, 6)));
       const indexes = Array.from({ length: 6 }, (_, i) => i);
-      // Shuffle and pick numToUpdate unique indexes
       for (let i = indexes.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [indexes[i], indexes[j]] = [indexes[j], indexes[i]];
       }
       const toUpdate = indexes.slice(0, numToUpdate);
-      // For each card to update, trigger slide right
       toUpdate.forEach((i) => {
         const imgArr = images[i].images;
         let newIdx;
@@ -183,7 +175,6 @@ export default function ImageGalleryPage() {
     return () => clearInterval(interval);
   }, [currentIndexes]);
 
-  // Handlers for manual navigation with slide
   const handlePrev = (i: number) => {
     if (isSliding[i]) return;
     const nextIndex = (currentIndexes[i] - 1 + images[i].images.length) % images[i].images.length;
@@ -197,8 +188,14 @@ export default function ImageGalleryPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Head>
+        {images.slice(0, 6).map((image) =>
+          image.images.map((src, idx) => (
+            <link key={`${image.id}-${idx}`} rel="preload" href={src} as="image" />
+          ))
+        )}
+      </Head>
       <AnimatedHeader />
-
       <main className="py-12">
         <div className="mb-12">
           <Button variant="ghost" size="sm" asChild className="mb-6">
@@ -212,8 +209,6 @@ export default function ImageGalleryPage() {
             subtitle="Browse our extensive collection of high-quality 3D architectural renderings, building models, and interior visualizations showcasing our expertise."
           />
         </div>
-
-        {/* Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           {images.slice(0, 6).map((image, i) => (
             <div
@@ -222,65 +217,76 @@ export default function ImageGalleryPage() {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg">
-                {/* Current Image */}
+              <div
+                className="relative aspect-[16/9] w-full overflow-hidden rounded-lg bg-gray-200"
+                style={{ backgroundImage: `url(/placeholder.svg)` }}
+              >
                 <div
-                  className={`absolute inset-0 w-full h-full transition-transform duration-1200 ease-in-out ${
+                  className={`absolute inset-0 w-full h-full transition-transform duration-800 ease-in-out z-10 ${
                     slideDirections[i] === 0
-                      ? 'translate-x-0 opacity-100 z-10'
+                      ? "translate-x-0 opacity-100"
                       : slideDirections[i] === 1
-                      ? 'translate-x-full opacity-0 z-0'
-                      : '-translate-x-full opacity-0 z-0'
+                      ? isSliding[i]
+                        ? "translate-x-full opacity-0"
+                        : "translate-x-0 opacity-100"
+                      : isSliding[i]
+                      ? "-translate-x-full opacity-0"
+                      : "translate-x-0 opacity-100"
                   }`}
-                  style={{ willChange: 'transform, opacity' }}
+                  style={{ willChange: "transform, opacity" }}
                 >
                   <Image
                     src={image.images[currentIndexes[i]] || "/placeholder.svg"}
                     alt={image.title}
                     fill
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1200 ease-out rounded-lg"
+                    priority={i < 6}
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out rounded-lg"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     placeholder="blur"
                     blurDataURL="/placeholder.svg"
                   />
                 </div>
-                {/* Next Image (shown during transition) */}
-                {slideDirections[i] !== 0 && (
+                {isSliding[i] && slideDirections[i] !== 0 && (
                   <div
-                    className={`absolute inset-0 w-full h-full transition-transform duration-1200 ease-in-out ${
+                    className={`absolute inset-0 w-full h-full transition-transform duration-800 ease-in-out z-20 ${
                       slideDirections[i] === 1
                         ? isSliding[i]
-                          ? 'translate-x-0 opacity-100 z-10'
-                          : 'translate-x-[-100%] opacity-0 z-0'
+                          ? "translate-x-0 opacity-100"
+                          : "-translate-x-full opacity-0"
                         : isSliding[i]
-                        ? 'translate-x-0 opacity-100 z-10'
-                        : 'translate-x-full opacity-0 z-0'
+                        ? "translate-x-0 opacity-100"
+                        : "translate-x-full opacity-0"
                     }`}
-                    style={{ willChange: 'transform, opacity' }}
+                    style={{ willChange: "transform, opacity" }}
                   >
                     <Image
                       src={image.images[nextIndexes[i]] || "/placeholder.svg"}
                       alt={image.title}
                       fill
-                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1200 ease-out rounded-lg"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out rounded-lg"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       placeholder="blur"
                       blurDataURL="/placeholder.svg"
                     />
                   </div>
                 )}
-                {/* Prev/Next controls on hover */}
                 {hoveredIndex === i && (
                   <div className="absolute inset-0 flex items-center justify-between px-2 z-20">
                     <button
-                      onClick={(e) => { e.stopPropagation(); handlePrev(i); }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handlePrev(i);
+                      }}
                       className="bg-black/0 text-white font-extrabold rounded-full p-0 hover:scale-110 transition"
                       aria-label="Previous image"
                     >
                       ←
                     </button>
                     <button
-                      onClick={(e) => { e.stopPropagation(); handleNext(i); }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleNext(i);
+                      }}
                       className="bg-black/0 text-white rounded-full p-0 hover:scale-110 transition"
                       aria-label="Next image"
                     >
@@ -288,10 +294,8 @@ export default function ImageGalleryPage() {
                     </button>
                   </div>
                 )}
-                {/* Border on hover */}
                 <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500 rounded-lg" />
               </div>
-              {/* Details below the image */}
               <div className="p-3 bg-white">
                 <h3 className="text-base font-bold font-forum">{image.title}</h3>
                 <p className="text-xs text-muted-foreground font-barlow mt-0.5">{image.description}</p>
@@ -299,15 +303,12 @@ export default function ImageGalleryPage() {
             </div>
           ))}
         </div>
-
-        {/* Load More */}
         <div className="text-center mt-16">
           <Button variant="outline" size="lg" className="px-8 py-3">
             Load More Images
           </Button>
         </div>
       </main>
-
       <footer className="border-t bg-muted mt-16">
         <div className="container py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
@@ -322,5 +323,5 @@ export default function ImageGalleryPage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
