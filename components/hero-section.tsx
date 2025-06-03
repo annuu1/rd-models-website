@@ -13,7 +13,8 @@ export function HeroSection() {
   const backgrounds = [
     "/images/hero-bg1.JPG",
     "/images/hero-bg.jpg",
-    "/images/hero-bg.png"
+    "images/hero-bg/hero-bg1.jpg",
+    "images/hero-bg/hero-bg2.jpg",
   ];
   const [current, setCurrent] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);

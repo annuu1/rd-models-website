@@ -137,3 +137,12 @@
     width: 80%; /* or 100% if you want full width under the text */
   }
 }
+
+/* Line grow animation */
+/* Line grow animation */
+@keyframes grow {
+  to { height: 100%; }
+}
+.animate-grow {
+  animation: grow 2s ease-out forwards; /* Slower: 2s instead of 1s */
+}
