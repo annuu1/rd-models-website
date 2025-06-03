@@ -90,7 +90,7 @@ export function ClientLogos() {
             x: {
               repeat: Number.POSITIVE_INFINITY,
               repeatType: "loop",
-              duration: 30, // Reduced from 90 to 30 for faster animation
+              duration: 45,
               ease: "linear",
             },
           }}
