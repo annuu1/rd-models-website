@@ -14,7 +14,7 @@ export function WhoWeAreSection() {
           title="Who We Are"
           subtitle="RD Models is a premier 3D architectural modeling studio based in Jaipur, Rajasthan, serving clients across India. We specialize in creating detailed and realistic building models for architects, developers, and construction companies nationwide."
         />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Left Side: Image */}
           <div className="relative h-full w-full min-h-[350px]">
             <Image
@@ -24,10 +24,6 @@ export function WhoWeAreSection() {
               className="object-contain"
               priority
             />
-          </div>
-          {/* Center line vertical */}
-          <div className="relative h-full w-full flex items-center justify-center">
-            <div className="absolute bottom-0 w-[1px] bg-primary h-0 animate-grow"></div>
           </div>
           {/* Right Side: Stat Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
