@@ -1,4 +1,5 @@
 import { AnimatedHeader } from "@/components/animated-header"
+import FloatingContactButtons from "./FloatingContactButtons";
 import { HeroSection } from "@/components/hero-section"
 import { TeamMember } from "@/components/team-member"
 import { StatCard } from "@/components/stat-card"
@@ -266,6 +267,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <FloatingContactButtons />
     </div>
   )
 }

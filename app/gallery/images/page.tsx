@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import FloatingContactButtons from "../../FloatingContactButtons";
 import Image from "next/image";
 import { Building2, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -239,11 +240,11 @@ export default function ImageGalleryPage() {
               <div className="absolute inset-0 pointer-events-none">
                 {/* Polythen-like overlay sliding from top */}
                 <div className="absolute bottom-0 left-0 w-full h-48 z-20 opacity-0 pointer-events-none transform -translate-y-full group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-30"></div>
-  <div className="relative w-full h-full flex items-end justify-center pb-4">
-    <h3 className="text-lg font-bold font-forum drop-shadow text-white text-center">{image.title}</h3>
-  </div>
-</div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-30"></div>
+                  <div className="relative w-full h-full flex items-end justify-center pb-4">
+                    <h3 className="text-lg font-bold font-forum drop-shadow text-white text-center">{image.title}</h3>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
@@ -267,6 +268,7 @@ export default function ImageGalleryPage() {
           </div>
         </div>
       </footer>
+      <FloatingContactButtons />
     </div>
   );
 }
