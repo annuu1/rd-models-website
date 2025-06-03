@@ -127,7 +127,7 @@ export function TestimonialSlider() {
             <div className="flex items-center justify-center gap-0">
               {/* Left testimonial (faded, partially visible) */}
               <div className="w-80 h-96 transition-all duration-300 transform scale-90 relative">
-                <div className="absolute inset-0 bg-transparent z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-white/10 backdrop-blur-[1px] rounded-lg z-10"></div>
                 <div className="w-full h-full bg-gray-400 rounded-lg p-6 flex flex-col justify-between">
                   <p className="text-white text-sm italic line-clamp-6">{testimonials[getTestimonialIndex(-1)].quote}</p>
                   <div className="text-center">
@@ -184,7 +184,7 @@ export function TestimonialSlider() {
 
               {/* Right testimonial (faded, partially visible) */}
               <div className="w-80 h-96 transition-all duration-300 transform scale-90 relative">
-                <div className="absolute inset-0 bg-transparent z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-white/10 backdrop-blur-[1px] rounded-lg z-10"></div>
                 <div className="w-full h-full bg-gray-400 rounded-lg p-6 flex flex-col justify-between">
                   <p className="text-white text-sm italic line-clamp-6">{testimonials[getTestimonialIndex(1)].quote}</p>
                   <div className="text-center">
