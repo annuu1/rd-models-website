@@ -38,7 +38,7 @@ const images = [
   },
   {
     id: 3,
-    title: "Lehariya",
+    title: "Lehariya By KGK Realty",
     images: [
       "/gallery/pictures/3-Lehariya/1 (15).JPG",
       "/gallery/pictures/3-Lehariya/1 (50).JPG",
@@ -72,6 +72,18 @@ const images = [
       "/gallery/pictures/5-NK-Anantya/(50).JPG",
     ],
   },
+  {
+    id: 6,
+    title: "MOTF Dubai",  
+    images: [
+      "/gallery/pictures/6-MOTF-Dubai/1.png",
+      "/gallery/pictures/6-MOTF-Dubai/2.png",
+      "/gallery/pictures/6-MOTF-Dubai/3.jpg",
+      "/gallery/pictures/6-MOTF-Dubai/4.jpg",
+      "/gallery/pictures/6-MOTF-Dubai/5.jpg",
+    ],
+
+  }
   // Add more if new folders/images are added
 ];
 
