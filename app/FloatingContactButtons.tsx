@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default function FloatingContactButtons() {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex gap-4 items-end">
+    <div className="fixed bottom-6 right-6 z-50 flex gap-4 items-end">
       <a
         href={`https://wa.me/${WHATSAPP_NUMBER.replace(/[^\d]/g, "")}`}
         target="_blank"
