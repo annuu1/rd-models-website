@@ -61,7 +61,7 @@ const images = [
   },
   {
     id: 5,
-    title: "NK-Anantya",
+    title: "NK Anantya",
     images: [
       "/gallery/pictures/5-NK-Anantya/(20).JPG",
       "/gallery/pictures/5-NK-Anantya/(30).JPG",
