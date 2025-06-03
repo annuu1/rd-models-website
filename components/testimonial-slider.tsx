@@ -150,7 +150,7 @@ export function TestimonialSlider() {
 
               {/* Center testimonial (main focus) with slide animation */}
               <div className="w-96 h-96 z-10 flex items-center justify-center relative overflow-hidden">
-                <AnimatePresence initial={false} custom={direction} mode="wait">
+                <AnimatePresence initial={false} custom={direction}>
                   <motion.div
                     key={currentIndex}
                     custom={direction}
