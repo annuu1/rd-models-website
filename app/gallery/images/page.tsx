@@ -152,12 +152,12 @@ export default function ImageGalleryPage() {
           {images.slice(0, 6).map((image, i) => (
             <div
               key={image.id}
-              className="group relative overflow-hidden rounded-sm shadow-md hover:shadow-xl transition-all duration-500 h-96"
+              className="group relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-[24rem]"
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div
-                className="relative w-full h-full overflow-hidden rounded-lg bg-gray-200"
+                className="relative w-full h-full overflow-hidden  bg-gray-200"
                 style={{ backgroundImage: `url(/placeholder.svg)` }}
               >
                 <div
@@ -179,7 +179,7 @@ export default function ImageGalleryPage() {
                     alt={image.title}
                     fill
                     priority={i < 6}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out rounded-lg"
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out "
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     placeholder="blur"
                     blurDataURL="/placeholder.svg"
@@ -202,7 +202,7 @@ export default function ImageGalleryPage() {
                       src={image.images[nextIndexes[i]] || "/placeholder.svg"}
                       alt={image.title}
                       fill
-                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out rounded-lg"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out "
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       placeholder="blur"
                       blurDataURL="/placeholder.svg"
@@ -233,16 +233,17 @@ export default function ImageGalleryPage() {
                     </button>
                   </div>
                 )}
-                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500 rounded-lg" />
+                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500 " />
               </div>
               {/* Overlay and info on hover */}
               <div className="absolute inset-0 pointer-events-none">
                 {/* Polythen-like overlay sliding from top */}
-                <div className="absolute inset-0 bg-white/40 rounded-none z-20 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-in-out" />
-                {/* Info (fades in on overlay) */}
-                <div className="absolute bottom-0 left-0 w-full px-4 pb-6 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-400 text-black text-center pointer-events-none">
-                  <h3 className="text-lg font-bold font-forum drop-shadow">{image.title}</h3>
-                </div>
+                <div className="absolute bottom-0 left-0 w-full h-48 z-20 opacity-0 pointer-events-none transform -translate-y-full group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-500 ease-in-out">
+  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-30"></div>
+  <div className="relative w-full h-full flex items-end justify-center pb-4">
+    <h3 className="text-lg font-bold font-forum drop-shadow text-white text-center">{image.title}</h3>
+  </div>
+</div>
               </div>
             </div>
           ))}
