@@ -15,6 +15,9 @@ export function HeroSection() {
     "/images/hero-bg.jpg",
     "images/hero-bg/hero-bg1.jpg",
     "images/hero-bg/hero-bg2.jpg",
+    "images/hero-bg/hero-bg3.jpg",
+    "images/hero-bg/hero-bg4.jpg",
+    "images/hero-bg/hero-bg5.jpg"
   ];
   const [current, setCurrent] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
