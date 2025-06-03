@@ -153,7 +153,7 @@ export default function ImageGalleryPage() {
           {images.slice(0, 6).map((image, i) => (
             <div
               key={image.id}
-              className="group relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-[24rem]"
+              className="group relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-[28rem]"
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
