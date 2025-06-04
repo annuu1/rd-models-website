@@ -74,7 +74,7 @@ const images = [
   },
   {
     id: 6,
-    title: "MOTF Dubai",  
+    title: "MOTF Dubai",
     images: [
       "/gallery/pictures/6-MOTF-Dubai/1.png",
       "/gallery/pictures/6-MOTF-Dubai/2.png",
@@ -82,28 +82,27 @@ const images = [
       "/gallery/pictures/6-MOTF-Dubai/4.jpg",
       "/gallery/pictures/6-MOTF-Dubai/5.jpg",
     ],
-
   }
-  // Add more if new folders/images are added
 ];
 
 export default function ImageGalleryPage() {
   const [currentIndexes, setCurrentIndexes] = useState(() => images.slice(0, 6).map(() => 0));
   const [nextIndexes, setNextIndexes] = useState(() => images.slice(0, 6).map(() => 0));
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [slideDirections, setSlideDirections] = useState(() => images.slice(0, 6).map(() => 0));
   const [isSliding, setIsSliding] = useState(() => images.slice(0, 6).map(() => false));
+  const [slideDirections, setSlideDirections] = useState(() => images.slice(0, 6).map(() => 0));
 
   const triggerSlide = (i: number, direction: number, nextIndex: number) => {
     if (isSliding[i]) return;
-    setNextIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
-    setSlideDirections((prev) => prev.map((d, j) => (j === i ? direction : d)));
     setIsSliding((prev) => prev.map((s, j) => (j === i ? true : s)));
+    setSlideDirections((prev) => prev.map((d, j) => (j === i ? direction : d)));
+    setNextIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
+
     setTimeout(() => {
       setCurrentIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
       setIsSliding((prev) => prev.map((s, j) => (j === i ? false : s)));
       setSlideDirections((prev) => prev.map((d, j) => (j === i ? 0 : d)));
-    }, 800);
+    }, 500); // Match transition duration
   };
 
   useEffect(() => {
@@ -121,19 +120,19 @@ export default function ImageGalleryPage() {
         do {
           newIdx = Math.floor(Math.random() * imgArr.length);
         } while (imgArr.length > 1 && newIdx === currentIndexes[i]);
-        triggerSlide(i, 1, newIdx);
+        const direction = Math.random() > 0.5 ? 1 : -1; // Randomly choose left or right
+        triggerSlide(i, direction, newIdx);
       });
     }, 2000);
     return () => clearInterval(interval);
   }, [currentIndexes]);
 
   const handlePrev = (i: number) => {
-    if (isSliding[i]) return;
     const nextIndex = (currentIndexes[i] - 1 + images[i].images.length) % images[i].images.length;
     triggerSlide(i, -1, nextIndex);
   };
+
   const handleNext = (i: number) => {
-    if (isSliding[i]) return;
     const nextIndex = (currentIndexes[i] + 1) % images[i].images.length;
     triggerSlide(i, 1, nextIndex);
   };
@@ -170,58 +169,34 @@ export default function ImageGalleryPage() {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div
-                className="relative w-full h-full overflow-hidden  bg-gray-200"
+                className="relative w-full h-full overflow-hidden bg-gray-200"
                 style={{ backgroundImage: `url(/placeholder.svg)` }}
               >
                 <div
-                  className={`absolute inset-0 w-full h-full transition-transform duration-800 ease-in-out z-10 ${
-                    slideDirections[i] === 0
-                      ? "translate-x-0 opacity-100"
-                      : slideDirections[i] === 1
-                      ? isSliding[i]
-                        ? "translate-x-full opacity-0"
-                        : "translate-x-0 opacity-100"
-                      : isSliding[i]
-                      ? "-translate-x-full opacity-0"
+                  className={`absolute inset-0 w-full h-full transition-all duration-500 ease-out ${
+                    isSliding[i]
+                      ? slideDirections[i] === 1
+                        ? "translate-x-full"
+                        : "-translate-x-full"
                       : "translate-x-0 opacity-100"
-                  }`}
+                  } ${isSliding[i] ? "opacity-0" : ""}`}
                   style={{ willChange: "transform, opacity" }}
                 >
                   <Image
-                    src={image.images[currentIndexes[i]] || "/placeholder.svg"}
+                    src={
+                      isSliding[i]
+                        ? image.images[nextIndexes[i]] || "/placeholder.svg"
+                        : image.images[currentIndexes[i]] || "/placeholder.svg"
+                    }
                     alt={image.title}
                     fill
                     priority={i < 6}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out "
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 ease-out"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     placeholder="blur"
                     blurDataURL="/placeholder.svg"
                   />
                 </div>
-                {isSliding[i] && (
-                  <div
-                    className={`absolute inset-0 w-full h-full transition-transform duration-800 ease-in-out z-10 ${
-                      slideDirections[i] === 1
-                        ? isSliding[i]
-                          ? "translate-x-0 opacity-100"
-                          : "-translate-x-full opacity-0"
-                        : isSliding[i]
-                        ? "translate-x-0 opacity-100"
-                        : "translate-x-full opacity-0"
-                    }`}
-                    style={{ willChange: "transform, opacity" }}
-                  >
-                    <Image
-                      src={image.images[nextIndexes[i]] || "/placeholder.svg"}
-                      alt={image.title}
-                      fill
-                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out "
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      placeholder="blur"
-                      blurDataURL="/placeholder.svg"
-                    />
-                  </div>
-                )}
                 {hoveredIndex === i && (
                   <div className="absolute inset-0 flex items-center justify-between px-2 z-20">
                     <button
@@ -229,7 +204,7 @@ export default function ImageGalleryPage() {
                         e.stopPropagation();
                         handlePrev(i);
                       }}
-                      className="bg-black/0 text-white font-extrabold rounded-full p-0 hover:scale-110 transition"
+                      className="bg-black/50 text-white font-extrabold rounded-full p-2 hover:bg-black/70 transition"
                       aria-label="Previous image"
                     >
                       {"❮"}
@@ -239,20 +214,18 @@ export default function ImageGalleryPage() {
                         e.stopPropagation();
                         handleNext(i);
                       }}
-                      className="bg-black/0 text-white rounded-full p-0 hover:scale-110 transition"
+                      className="bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition"
                       aria-label="Next image"
                     >
                       {"❯"}
                     </button>
                   </div>
                 )}
-                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500 " />
+                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500" />
               </div>
-              {/* Overlay and info on hover */}
               <div className="absolute inset-0 pointer-events-none">
-                {/* Polythen-like overlay sliding from top */}
                 <div className="absolute bottom-0 left-0 w-full h-48 z-20 opacity-0 pointer-events-none transform -translate-y-full group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-30"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
                   <div className="relative w-full h-full flex items-end justify-center pb-4">
                     <h3 className="text-lg font-bold font-forum drop-shadow text-white text-center">{image.title}</h3>
                   </div>
