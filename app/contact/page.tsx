@@ -194,12 +194,12 @@ export default function ContactPage() {
                         </span>
                       ))}
                     </div>
-                    <div className="text-sm text-muted-foreground font-barlow">
+                    {/* <div className="text-sm text-muted-foreground font-barlow">
                       <span className="font-medium">Phone:</span> {loc.phone}
                     </div>
                     <div className="text-sm text-muted-foreground font-barlow">
                       <span className="font-medium">Email:</span> {loc.email}
-                    </div>
+                    </div> */}
                   </div>
                   <div className="flex-1 min-w-[220px] max-w-full">
                     <iframe
