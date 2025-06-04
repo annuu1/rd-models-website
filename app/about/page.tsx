@@ -17,18 +17,20 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 z-10" />
-          <div className="relative h-[400px]">
+          <div className="relative h-[70vh] min-h-[400px]">
             <Image
-              src="https://premier3d.com.au/wp-content/uploads/2022/01/DSC05202-Custom-min.jpg?height=800&width=1600"
+              src="/images/hero-bg/hero-bg2.jpg"
               alt="RD Models Team"
               fill
               className="object-cover"
               priority
             />
+            {/* Overlay for darkening the background */}
+            <div className="absolute inset-0 bg-black/60 z-10" />
           </div>
           <div className="absolute inset-0 flex items-center z-20">
             <div className="container">
-              <div className="max-w-2xl">
+              <div className="max-w-2xl mx-auto bg-black/40 rounded-xl p-8 shadow-lg backdrop-blur-md flex flex-col items-center text-center">
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl font-forum">
                   About RD Models
                 </h1>
@@ -79,8 +81,66 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Our Mission Section */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              {/* Image on the left */}
+              <div className="relative h-[400px] rounded-lg overflow-hidden order-1 md:order-none">
+                <Image
+                  src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80"
+                  alt="Mission at RD Models"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* Content on the right */}
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum">
+                  Our Mission
+                </h2>
+                <div className="space-y-4 text-muted-foreground font-barlow">
+                  <p>
+                    At RD Models, our mission is to push the boundaries of scale model making. We leverage the latest technologies to create detailed, accurate, and aesthetically pleasing models. As a pioneering model making company, we aim to be the industry benchmark, continually setting new standards of quality and craftsmanship. Our extensive in-house production capabilities, including CNC laser cutting, CNC milling, 5D CNC carving, vacuum forming, and large 3D scanning, enable us to execute complex and intricate projects with ease.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Team & Why Choose Us Section */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Our Team */}
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum">
+                  Our Team
+                </h2>
+                <div className="space-y-4 text-muted-foreground font-barlow text-lg">
+                  <p>
+                    The heart of RD Models is our dedicated team of over 100 skilled craftsmen. Their passion and expertise drive our success as a leading model maker. Our team is committed to delivering models that not only meet but exceed client expectations. We take pride in transforming ideas into tangible realities, providing models that serve as powerful tools for visualization and communication.
+                  </p>
+                </div>
+              </div>
+              {/* Why Choose Us */}
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum">
+                  Why Choose Us
+                </h2>
+                <div className="space-y-4 text-muted-foreground font-barlow text-lg">
+                  <p>
+                    What sets RD Models apart as a premier model making company is our unwavering dedication to quality and innovation. We embrace challenging projects, using our advanced technology and extensive experience to create models that are both functional and beautiful. Our clients include industry giants like Tata, Vedanta, L&amp;T, NCC, Reliance, Godrej, and Maruti, as well as government departments and scientific institutions. We are proud to be a trusted partner in bringing their visions to life.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Our Values Section */}
-        <section className="py-16 md:py-24 bg-muted">
+        {/* <section className="py-16 md:py-24 bg-muted">
           <div className="container">
             <SectionHeading
               title="Our Values"
@@ -241,10 +301,10 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Our Achievements Section */}
-        <section className="py-16 md:py-24 bg-white">
+        {/* <section className="py-16 md:py-24 bg-white">
           <div className="container">
             <SectionHeading
               title="Our Achievements"
@@ -257,10 +317,10 @@ export default function AboutPage() {
               <StatCard number="6+" label="Locations" />
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Our Team Section */}
-        <section className="py-16 md:py-24 bg-muted">
+        {/* <section className="py-16 md:py-24 bg-muted">
           <div className="container">
             <SectionHeading
               title="Meet Our Leadership Team"
@@ -287,7 +347,7 @@ export default function AboutPage() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA Section */}
         <section className="py-16 md:py-24 bg-primary">
