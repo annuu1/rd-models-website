@@ -29,6 +29,68 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
+  const locations = [
+    {
+      name: "Jaipur Office",
+      address: [
+        "123 Modeling Street",
+        "Malviya Nagar, Jaipur",
+        "Rajasthan 302017, India"
+      ],
+      phone: "+91-141-123-4567",
+      email: "jaipur@rdmodels.com"
+    },
+    {
+      name: "Delhi Office",
+      address: [
+        "45 Connaught Place",
+        "New Delhi",
+        "Delhi 110001, India"
+      ],
+      phone: "+91-11-2345-6789",
+      email: "delhi@rdmodels.com"
+    },
+    {
+      name: "Mumbai Office",
+      address: [
+        "12 Marine Drive",
+        "Churchgate, Mumbai",
+        "Maharashtra 400020, India"
+      ],
+      phone: "+91-22-1234-5678",
+      email: "mumbai@rdmodels.com"
+    },
+    {
+      name: "Bangalore Office",
+      address: [
+        "88 Residency Road",
+        "Bangalore",
+        "Karnataka 560025, India"
+      ],
+      phone: "+91-80-9876-5432",
+      email: "bangalore@rdmodels.com"
+    },
+    {
+      name: "Hyderabad Office",
+      address: [
+        "5-9-300 Banjara Hills",
+        "Hyderabad",
+        "Telangana 500034, India"
+      ],
+      phone: "+91-40-1234-5678",
+      email: "hyderabad@rdmodels.com"
+    },
+    {
+      name: "Kolkata Office",
+      address: [
+        "21 Park Street",
+        "Kolkata",
+        "West Bengal 700016, India"
+      ],
+      phone: "+91-33-2468-1357",
+      email: "kolkata@rdmodels.com"
+    },
+  ];
   return (
     <div className="min-h-screen bg-background">
       <AnimatedHeader />
@@ -74,45 +136,7 @@ export default function ContactPage() {
               <div className="space-y-8">
                 <div className="bg-muted p-8 rounded-lg">
                   <h3 className="text-xl font-bold text-primary mb-6 font-forum">Contact Information</h3>
-                  <div className="space-y-6 font-barlow">
-                    <div className="flex items-start gap-4">
-                      <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium">Our Jaipur Office</p>
-                        <p className="text-muted-foreground">
-                          123 Modeling Street
-                          <br />
-                          Malviya Nagar, Jaipur
-                          <br />
-                          Rajasthan 302017, India
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <Phone className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium">Phone</p>
-                        <p className="text-muted-foreground">+91-141-123-4567</p>
-                        <p className="text-muted-foreground">+91-98765-43210</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium">Email</p>
-                        <p className="text-muted-foreground">info@rdmodels.com</p>
-                        <p className="text-muted-foreground">projects@rdmodels.com</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <Globe className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium">Service Area</p>
-                        <p className="text-muted-foreground">All of India</p>
-                        <p className="text-xs text-muted-foreground">Based in Jaipur, Rajasthan</p>
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
 
                 <div className="bg-muted p-8 rounded-lg">
@@ -146,6 +170,51 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Locations Section */}
+        <section className="py-16 bg-muted">
+          <div className="container">
+            <SectionHeading
+              title="Our Locations"
+              subtitle="Find our offices and studios across India."
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {locations.map((loc, idx) => (
+                <div key={idx} className="bg-white rounded-lg shadow p-6 flex md:flex-col gap-6">
+                  <div className="flex-1">
+                    <h4 className="text-lg font-bold text-primary font-forum">{loc.name}</h4>
+                    <div className="text-muted-foreground font-barlow">
+                      {loc.address.map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {/* <br /> */}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="text-sm text-muted-foreground font-barlow">
+                      <span className="font-medium">Phone:</span> {loc.phone}
+                    </div>
+                    <div className="text-sm text-muted-foreground font-barlow">
+                      <span className="font-medium">Email:</span> {loc.email}
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-[220px] max-w-full">
+                    <iframe
+                      src={`https://www.google.com/maps?q=${encodeURIComponent(loc.address.join(", ").replace(/\n/g, " "))}&output=embed`}
+                      width="100%"
+                      height="300"
+                      style={{ border: 0 }}
+                      allowFullScreen={true}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`Map for ${loc.name}`}
+                    ></iframe>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
