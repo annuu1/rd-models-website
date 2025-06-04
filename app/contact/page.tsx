@@ -37,9 +37,9 @@ export default function ContactPage() {
         {/* Hero Section */}
         <section className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 z-10" />
-          <div className="relative h-[300px]">
+          <div className="relative h-[70vh] min-h-[400px]">
             <Image
-              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?height=600&width=1600"
+              src="/images/hero-bg/hero-bg2.jpg"
               alt="Contact RD Models - 3D Architectural Modeling Services in Jaipur"
               fill
               className="object-cover"
@@ -48,12 +48,12 @@ export default function ContactPage() {
           </div>
           <div className="absolute inset-0 flex items-center z-20">
             <div className="container">
-              <div className="max-w-2xl">
+              <div className="max-w-2xl mx-auto bg-black/40 rounded-xl p-8 shadow-lg backdrop-blur-md flex flex-col items-center text-center">
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl font-forum">
                   Contact Us
                 </h1>
                 <p className="mt-4 text-lg text-white/90 md:text-xl font-barlow">
-                  Get in touch with our Jaipur team for professional 3D architectural modeling services across India.
+                Get in touch with our Jaipur team for professional 3D architectural modeling services across India.
                 </p>
               </div>
             </div>
@@ -154,18 +154,21 @@ export default function ContactPage() {
         <section className="py-16 bg-muted">
           <div className="container">
             <SectionHeading
-              title="Visit Our Jaipur Studio"
+              title="Visit Us"
               subtitle="Located in the heart of Jaipur, Rajasthan, our studio is equipped with state-of-the-art technology for 3D modeling and visualization."
             />
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <MapPin className="h-12 w-12 mx-auto mb-4" />
-                  <p className="font-barlow">Interactive Map</p>
-                  <p className="text-sm">Malviya Nagar, Jaipur, Rajasthan</p>
+            <div className="overflow-hidden rounded-lg my-8">
+                  <iframe
+                    src="https://www.google.com/maps?q=84/54,+Sector+8,+Sector+9,+Pratap+Nagar,+Jaipur,+Rajasthan+302033&output=embed"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="RD Models Location"
+                  ></iframe>
                 </div>
-              </div>
-            </div>
           </div>
         </section>
 

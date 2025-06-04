@@ -31,19 +31,19 @@ export function WhoWeAreSection() {
               number="2000+"
               label="Models Delivered Across India"
               description="Delivered over 1800 high-quality 3D models to clients ..."
-              link="/models"
+              link="/about"
             />
             <StatCard
               number="700+"
               label="Happy Clients Nationwide"
               description="Trusted by over 700 clients nationwide for innovative and precise solutions..."
-              link="/clients"
+              link="/about"
             />
             <StatCard
               number="7+"
               label="Countries"
               description="Serving 28+ states with tailored 3D models for diverse architectural projects..."
-              link="/states"
+              link="/about"
             />
             <StatCard
               number="6+"
