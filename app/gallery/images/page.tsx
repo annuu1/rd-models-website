@@ -87,22 +87,20 @@ const images = [
 
 export default function ImageGalleryPage() {
   const [currentIndexes, setCurrentIndexes] = useState(() => images.slice(0, 6).map(() => 0));
-  const [nextIndexes, setNextIndexes] = useState(() => images.slice(0, 6).map(() => 0));
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isSliding, setIsSliding] = useState(() => images.slice(0, 6).map(() => false));
   const [slideDirections, setSlideDirections] = useState(() => images.slice(0, 6).map(() => 0));
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const triggerSlide = (i: number, direction: number, nextIndex: number) => {
     if (isSliding[i]) return;
-    setIsSliding((prev) => prev.map((s, j) => (j === i ? true : s)));
+    setIsSliding((prev) => prev.map((s, j) => (j === i ? true : s))); // Start sliding
     setSlideDirections((prev) => prev.map((d, j) => (j === i ? direction : d)));
-    setNextIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
+    setCurrentIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
 
     setTimeout(() => {
-      setCurrentIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
-      setIsSliding((prev) => prev.map((s, j) => (j === i ? false : s)));
+      setIsSliding((prev) => prev.map((s, j) => (j === i ? false : s))); // Stop sliding
       setSlideDirections((prev) => prev.map((d, j) => (j === i ? 0 : d)));
-    }, 500); // Match transition duration
+    }, 500); // Match slide-in animation duration
   };
 
   useEffect(() => {
@@ -176,18 +174,14 @@ export default function ImageGalleryPage() {
                   className={`absolute inset-0 w-full h-full transition-all duration-500 ease-out ${
                     isSliding[i]
                       ? slideDirections[i] === 1
-                        ? "translate-x-full"
-                        : "-translate-x-full"
+                        ? "translate-x-full opacity-0"
+                        : "-translate-x-full opacity-0"
                       : "translate-x-0 opacity-100"
-                  } ${isSliding[i] ? "opacity-0" : ""}`}
+                  }`}
                   style={{ willChange: "transform, opacity" }}
                 >
                   <Image
-                    src={
-                      isSliding[i]
-                        ? image.images[nextIndexes[i]] || "/placeholder.svg"
-                        : image.images[currentIndexes[i]] || "/placeholder.svg"
-                    }
+                    src={image.images[currentIndexes[i]] || "/placeholder.svg"}
                     alt={image.title}
                     fill
                     priority={i < 6}
@@ -197,32 +191,32 @@ export default function ImageGalleryPage() {
                     blurDataURL="/placeholder.svg"
                   />
                 </div>
-                {hoveredIndex === i && (
-                  <div className="absolute inset-0 flex items-center justify-between px-2 z-20">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handlePrev(i);
-                      }}
-                      className="bg-black/50 text-white font-extrabold rounded-full p-2 hover:bg-black/70 transition"
-                      aria-label="Previous image"
-                    >
-                      {"❮"}
-                    </button>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleNext(i);
-                      }}
-                      className="bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition"
-                      aria-label="Next image"
-                    >
-                      {"❯"}
-                    </button>
-                  </div>
-                )}
-                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500" />
               </div>
+              {hoveredIndex === i && (
+                <div className="absolute inset-0 flex items-center justify-between px-2 z-20">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handlePrev(i);
+                    }}
+                    className="bg-black/50 text-white font-extrabold rounded-full p-2 hover:bg-black/70 transition"
+                    aria-label="Previous image"
+                  >
+                    {"❮"}
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleNext(i);
+                    }}
+                    className="bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition"
+                    aria-label="Next image"
+                  >
+                    {"❯"}
+                  </button>
+                </div>
+              )}
+              <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500" />
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute bottom-0 left-0 w-full h-48 z-20 opacity-0 pointer-events-none transform -translate-y-full group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-500 ease-in-out">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
