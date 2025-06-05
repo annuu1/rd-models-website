@@ -56,7 +56,7 @@ export function AnimatedHeader() {
             { href: "/about", label: "ABOUT" },
             { href: "/portfolio", label: "PORTFOLIO" },
             { href: "/blog", label: "MEDIA" },
-            { href: "#testimonials", label: "TESTIMONIALS" },
+            { href: "/testimonials", label: "TESTIMONIALS" },
             { href: "/contact", label: "CONTACT" },
           ].map((item, index) => {
             if(item.label === "MEDIA"){
