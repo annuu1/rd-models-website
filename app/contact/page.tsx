@@ -148,7 +148,7 @@ export default function ContactPage() {
         </section> */}
 
         {/* Contact Form and Info Section */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-12">
           <div className="container">
             <SectionHeading
               title="Get In Touch"
