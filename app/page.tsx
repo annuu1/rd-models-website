@@ -107,6 +107,7 @@ export default function Home() {
             />
             <ClientLogos />
             <AnimatedButton
+              href="/clients"
               size="lg"
               className="mt-8 bg-primary text-white border border-transparent hover:bg-transparent hover:border-[1px] hover:border-primary hover:text-primary transition-all duration-200"
             >
