@@ -16,7 +16,7 @@ export default function FloatingContactButtons() {
       </a>
       <a
         href={`tel:${PHONE_NUMBER}`}
-        className="bg-blue-500 hover:bg-blue-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+        className="bg-blue-900 hover:bg-blue-700 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition-transform hover:scale-110"
         title="Call"
       >
         <FaPhoneAlt className="h-6 w-6" />

@@ -11,6 +11,7 @@ import { Forum, Jost, Outfit, Amiri } from "next/font/google"
 import type { Metadata } from "next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
+import FloatingContactButtons from "./FloatingContactButtons"
 
 const forum = Forum({
   subsets: ["latin"],
@@ -182,6 +183,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
           <Toaster />
+          <FloatingContactButtons />
         </ThemeProvider>
       </body>
     </html>
