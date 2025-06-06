@@ -16,6 +16,7 @@ const images = [
   {
     id: 1,
     title: "KAAR",
+    description: "A modern residential project with innovative architecture.",
     images: [
       "/gallery/pictures/1-KAAR/1.jpg",
       "/gallery/pictures/1-KAAR/2.jpg",
@@ -28,6 +29,7 @@ const images = [
   {
     id: 2,
     title: "Empyreal club",
+    description: "A luxury club project combining elegance and comfort.",
     images: [
       "/gallery/pictures/2-Empyreal club/1.jpg",
       "/gallery/pictures/2-Empyreal club/3.jpg",
@@ -39,6 +41,7 @@ const images = [
   {
     id: 3,
     title: "Lehariya By KGK Realty",
+    description: "A vibrant commercial project by KGK Realty, inspired by traditional patterns.",
     images: [
       "/gallery/pictures/3-Lehariya/1 (15).JPG",
       "/gallery/pictures/3-Lehariya/1 (50).JPG",
@@ -52,6 +55,7 @@ const images = [
   {
     id: 4,
     title: "Mahakumbh 2025",
+    description: "A grand event pavilion designed for Mahakumbh 2025 celebrations.",
     images: [
       "/gallery/pictures/4-Mahakumbh 2025/1 (11).jpg",
       "/gallery/pictures/4-Mahakumbh 2025/1 (28).jpg",
@@ -63,6 +67,7 @@ const images = [
   {
     id: 5,
     title: "NK Anantya",
+    description: "A premium residential complex with state-of-the-art amenities.",
     images: [
       "/gallery/pictures/5-NK-Anantya/(20).JPG",
       "/gallery/pictures/5-NK-Anantya/(30).JPG",
@@ -75,6 +80,7 @@ const images = [
   {
     id: 6,
     title: "MOTF Dubai",
+    description: "Museum of the Future, Dubai – a showcase of innovative design and technology.",
     images: [
       "/gallery/pictures/6-MOTF-Dubai/1.png",
       "/gallery/pictures/6-MOTF-Dubai/2.png",
@@ -220,8 +226,13 @@ export default function ImageGalleryPage() {
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute bottom-0 left-0 w-full h-48 z-20 opacity-0 pointer-events-none transform -translate-y-full group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-500 ease-in-out">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
-                  <div className="relative w-full h-full flex items-end justify-center pb-4">
-                    <h3 className="text-lg font-bold font-forum drop-shadow text-white text-center">{image.title}</h3>
+                  <div className="relative w-full h-full flex flex-col items-center justify-end pb-4">
+                    <h3 className="text-lg font-bold font-forum drop-shadow text-white text-center mb-1">
+                      {image.title}
+                    </h3>
+                    <p className="text-sm font-barlow drop-shadow text-white text-center max-w-xs">
+                      {image.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -242,7 +253,7 @@ export default function ImageGalleryPage() {
               <span className="text-xl font-bold text-primary font-forum">RD Models</span>
             </div>
             <p className="text-sm text-muted-foreground font-barlow">
-              © {new Date().getFullYear()} RD Models, Jaipur, Rajasthan, India. All rights reserved.
+              &copy; {new Date().getFullYear()} RD Models, Jaipur, Rajasthan, India. All rights reserved.
             </p>
           </div>
         </div>
