@@ -126,7 +126,7 @@ function ClientLogos() {
     });
     return rows;
   }
-  const rows = splitIntoRows(clientImageFiles, 3);
+  const rows = splitIntoRows(clientImageFiles, 1);
 
   return (
     <div className="w-full py-8 text-center">
