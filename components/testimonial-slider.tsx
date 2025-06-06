@@ -162,7 +162,7 @@ export function TestimonialSlider() {
                     className="w-full h-full bg-gradient-to-b from-primary via-primary/100 to-primary/100 rounded-lg p-6 flex flex-col justify-between"
                     style={{ position: "absolute", width: "100%", height: "100%" }}
                   >
-                    <p className="text-white text-base italic line-clamp-6">{testimonials[currentIndex].quote}</p>
+                    <p className="text-white text-base font-forum italic line-clamp-6">{testimonials[currentIndex].quote}</p>
                     <div className="text-center">
                       <div className="flex justify-center items-center gap-3">
                         <div>
