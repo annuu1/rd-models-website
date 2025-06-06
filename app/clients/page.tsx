@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import "./page.css";
 import FloatingContactButtons from "../FloatingContactButtons";
 import Image from "next/image";
 import { AnimatedHeader } from "@/components/animated-header";

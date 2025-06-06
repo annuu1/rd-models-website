@@ -1,0 +1,22 @@
+.client-logo-hover {
+  /* background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); */
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: filter 0.3s, background 0.3s;
+}
+
+.client-logo-img {
+  filter: none;
+  transition: filter 0.3s;
+}
+
+.group:hover .client-logo-hover,
+.group:focus .client-logo-hover {
+  background: #fff;
+  filter: grayscale(1) contrast(1.2);
+}
+
+.group:hover .client-logo-img,
+.group:focus .client-logo-img {
+  filter: grayscale(1) contrast(1.2);
+}
