@@ -115,19 +115,20 @@ export function TestimonialSlider() {
     <section className="bg-white py-16 md:py-8" id="testimonials">
       <div className="max-w-5xl mx-auto">
         {/* Testimonial Slider */}
-        <div className="flex items-center justify-center gap-6">
+        <div className="flex items-center justify-center gap-2 md:gap-6">
+          {/* Prev button */}
           <button
             onClick={prevTestimonial}
-            className="text-white p-3 rounded-full bg-black/50 hover:bg-primary/80 transition-all duration-300 hover:scale-110"
+            className="hidden md:inline-flex text-white p-3 rounded-full bg-black/50 hover:bg-primary/80 transition-all duration-300 hover:scale-110 w-12 h-12 items-center justify-center"
+            aria-label="Previous testimonial"
           >
             <ChevronLeft className="h-8 w-8" />
-            <span className="sr-only">Previous testimonial</span>
           </button>
           <div className="relative">
             <div className="flex items-center justify-center gap-0">
-              {/* Left testimonial (faded, partially visible) */}
-              <div className="w-80 h-96 transition-all duration-300 transform scale-90 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-white/10 backdrop-blur-[1px] rounded-lg z-10"></div>
+              {/* Left testimonial: only show on md+ */}
+              <div className="hidden md:block w-80 h-96 transition-all duration-300 transform scale-90 relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-white/10 backdrop-blur-[1px] rounded-lg z-10"></div>
                 <div className="w-full h-full bg-gray-400 rounded-lg p-6 flex flex-col justify-between">
                   <p className="text-white text-sm italic line-clamp-6">{testimonials[getTestimonialIndex(-1)].quote}</p>
                   <div className="text-center">
@@ -149,7 +150,7 @@ export function TestimonialSlider() {
               </div>
 
               {/* Center testimonial (main focus) with slide animation */}
-              <div className="w-96 h-96 z-10 flex items-center justify-center relative overflow-hidden">
+              <div className="w-full max-w-xs sm:max-w-sm md:w-96 h-96 z-10 flex items-center justify-center relative overflow-hidden">
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.div
                     key={currentIndex}
@@ -164,7 +165,7 @@ export function TestimonialSlider() {
                   >
                     <p className="text-white text-base font-forum italic line-clamp-6">{testimonials[currentIndex].quote}</p>
                     <div className="text-center">
-                      <div className="flex justify-center items-center gap-3">
+                      <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-3">
                         <div>
                           <img
                             src="/images/testimonials/testimonial.png"
@@ -172,7 +173,7 @@ export function TestimonialSlider() {
                             className="w-12 h-12 rounded-full mx-auto border-2 border-white p-1 bg-white object-cover"
                           />
                         </div>
-                        <div>
+                        <div className="text-center md:text-left">
                           <p className="text-white font-semibold">{testimonials[currentIndex].author}</p>
                           <p className="text-gray-700">{testimonials[currentIndex].position}</p>
                         </div>
@@ -182,9 +183,9 @@ export function TestimonialSlider() {
                 </AnimatePresence>
               </div>
 
-              {/* Right testimonial (faded, partially visible) */}
-              <div className="w-80 h-96 transition-all duration-300 transform scale-90 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-white/10 backdrop-blur-[1px] rounded-lg z-10"></div>
+              {/* Right testimonial: only show on md+ */}
+              <div className="hidden md:block w-80 h-96 transition-all duration-300 transform scale-90 relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-white/10 backdrop-blur-[1px] rounded-lg z-10"></div>
                 <div className="w-full h-full bg-gray-400 rounded-lg p-6 flex flex-col justify-between">
                   <p className="text-white text-sm italic line-clamp-6">{testimonials[getTestimonialIndex(1)].quote}</p>
                   <div className="text-center">
@@ -221,12 +222,13 @@ export function TestimonialSlider() {
               ))}
             </div>
           </div>
+          {/* Next button */}
           <button
             onClick={nextTestimonial}
-            className="text-white p-3 rounded-full bg-black/50 hover:bg-primary transition-all duration-300 hover:scale-110"
+            className="hidden md:inline-flex text-white p-3 rounded-full bg-black/50 hover:bg-primary transition-all duration-300 hover:scale-110 w-12 h-12 items-center justify-center"
+            aria-label="Next testimonial"
           >
             <ChevronRight className="h-8 w-8" />
-            <span className="sr-only">Next testimonial</span>
           </button>
         </div>
       </div>

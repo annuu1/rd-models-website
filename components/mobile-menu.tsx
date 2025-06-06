@@ -7,7 +7,9 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export function MobileMenu() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
+  const [mediaOpen, setMediaOpen] = useState(false);
+  const [portfolioOpen, setPortfolioOpen] = useState(false);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -29,38 +31,92 @@ export function MobileMenu() {
               <span className="sr-only">Close</span>
             </Button>
           </div>
-          <nav className="flex flex-col gap-6 py-8">
+          <nav className="flex flex-col gap-2 py-8">
             <Link
               href="/"
-              className="text-lg font-medium text-primary hover:text-primary/80 font-barlow"
+              className="text-lg font-medium text-primary hover:text-primary/80 font-barlow px-2 py-2 rounded"
               onClick={() => setOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-lg font-medium text-muted-foreground hover:text-primary font-barlow"
+              className="text-lg font-medium text-muted-foreground hover:text-primary font-barlow px-2 py-2 rounded"
               onClick={() => setOpen(false)}
             >
               About Us
             </Link>
+
+            {/* Portfolio Dropdown */}
+            <button
+              type="button"
+              aria-expanded={portfolioOpen}
+              aria-controls="mobile-portfolio-dropdown"
+              className="flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-primary font-barlow px-2 py-2 rounded w-full focus:outline-none"
+              onClick={() => setPortfolioOpen((v) => !v)}
+            >
+              <span>Portfolio</span>
+              <span>{portfolioOpen ? "▲" : "▼"}</span>
+            </button>
+            {portfolioOpen && (
+              <div id="mobile-portfolio-dropdown" className="flex flex-col gap-1 ml-4 mb-2">
+                <Link
+                  href="/gallery/images"
+                  className="text-base font-normal text-muted-foreground hover:text-primary font-barlow px-2 py-1 rounded"
+                  onClick={() => setOpen(false)}
+                >
+                  Photos
+                </Link>
+                <Link
+                  href="/gallery/videos"
+                  className="text-base font-normal text-muted-foreground hover:text-primary font-barlow px-2 py-1 rounded"
+                  onClick={() => setOpen(false)}
+                >
+                  Videos
+                </Link>
+              </div>
+            )}
+
+            {/* Media Dropdown */}
+            <button
+              type="button"
+              aria-expanded={mediaOpen}
+              aria-controls="mobile-media-dropdown"
+              className="flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-primary font-barlow px-2 py-2 rounded w-full focus:outline-none"
+              onClick={() => setMediaOpen((v) => !v)}
+            >
+              <span>Media</span>
+              <span>{mediaOpen ? "▲" : "▼"}</span>
+            </button>
+            {mediaOpen && (
+              <div id="mobile-media-dropdown" className="flex flex-col gap-1 ml-4 mb-2">
+                <Link
+                  href="/blog"
+                  className="text-base font-normal text-muted-foreground hover:text-primary font-barlow px-2 py-1 rounded"
+                  onClick={() => setOpen(false)}
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="/publications"
+                  className="text-base font-normal text-muted-foreground hover:text-primary font-barlow px-2 py-1 rounded"
+                  onClick={() => setOpen(false)}
+                >
+                  Publications
+                </Link>
+              </div>
+            )}
+
             <Link
-              href="/portfolio"
-              className="text-lg font-medium text-muted-foreground hover:text-primary font-barlow"
+              href="/testimonials"
+              className="text-lg font-medium text-muted-foreground hover:text-primary font-barlow px-2 py-2 rounded"
               onClick={() => setOpen(false)}
             >
-              Portfolio
-            </Link>
-            <Link
-              href="/blog"
-              className="text-lg font-medium text-muted-foreground hover:text-primary font-barlow"
-              onClick={() => setOpen(false)}
-            >
-              Blog
+              Testimonials
             </Link>
             <Link
               href="/contact"
-              className="text-lg font-medium text-muted-foreground hover:text-primary font-barlow"
+              className="text-lg font-medium text-muted-foreground hover:text-primary font-barlow px-2 py-2 rounded"
               onClick={() => setOpen(false)}
             >
               Contact
@@ -76,5 +132,5 @@ export function MobileMenu() {
         </div>
       </SheetContent>
     </Sheet>
-  )
+  );
 }
