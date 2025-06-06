@@ -84,9 +84,9 @@ const images = [
     images: [
       "/gallery/pictures/6-MOTF-Dubai/1.png",
       "/gallery/pictures/6-MOTF-Dubai/2.png",
-      "/gallery/pictures/6-MOTF-Dubai/3.jpg",
-      "/gallery/pictures/6-MOTF-Dubai/4.jpg",
-      "/gallery/pictures/6-MOTF-Dubai/5.jpg",
+      "/gallery/pictures/6-MOTF-Dubai/3.JPG",
+      "/gallery/pictures/6-MOTF-Dubai/4.JPG",
+      "/gallery/pictures/6-MOTF-Dubai/5.JPG",
     ],
   }
 ];
