@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaTwitter, FaMapMarkerAlt, FaGlobeAsia, FaPhone, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -48,8 +48,26 @@ export function Footer() {
               detailed building models and visualizations.
             </p>
             <div className="text-sm text-muted-foreground font-barlow mb-4">
-              <p>📍 Jaipur, Rajasthan, India</p>
-              <p>🇮🇳 Serving all of India</p>
+              <p>
+                <a
+                  href="tel:+911234567890"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
+                  aria-label="Phone number"
+                >
+                  <FaPhone className="h-4 w-4" />
+                  +91 123-456-7890
+                </a>
+              </p>
+              <p>
+                <a
+                  href="mailto:info@rdmodels.com"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
+                  aria-label="Email address"
+                >
+                  <FaEnvelope className="h-4 w-4" />
+                  info@rdmodels.com
+                </a>
+              </p>
             </div>
             <div className="flex gap-4">
               <Link
