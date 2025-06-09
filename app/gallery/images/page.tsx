@@ -210,7 +210,7 @@ export default function ImageGalleryPage() {
                   ? "bg-primary text-primary-foreground"
                   : "hover:bg-primary/10"
               }`}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => setSelectedIndex(0)}
             >
               {category}
             </Button>
