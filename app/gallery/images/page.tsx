@@ -3,19 +3,22 @@
 import Link from "next/link";
 import FloatingContactButtons from "../../FloatingContactButtons";
 import Image from "next/image";
-import { Building2, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/section-heading";
 import { MobileMenu } from "@/components/mobile-menu";
 import { AnimatedHeader } from "@/components/animated-header";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
+import { FaLinkedin, FaInstagram, FaTwitter, FaMapMarkerAlt, FaGlobeAsia, FaPhone, FaEnvelope } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 // Define the images array from local folders
 const images = [
   {
     id: 1,
     title: "KAAR",
+    category: "Residential",
     description: "A modern residential project with innovative architecture.",
     images: [
       "/gallery/pictures/1-KAAR/1.jpg",
@@ -29,6 +32,7 @@ const images = [
   {
     id: 2,
     title: "Empyreal club",
+    category: "Commercial",
     description: "A luxury club project combining elegance and comfort.",
     images: [
       "/gallery/pictures/2-Empyreal club/1.jpg",
@@ -41,6 +45,7 @@ const images = [
   {
     id: 3,
     title: "Lehariya By KGK Realty",
+    category: "Commercial",
     description: "A vibrant commercial project by KGK Realty, inspired by traditional patterns.",
     images: [
       "/gallery/pictures/3-Lehariya/1 (15).JPG",
@@ -55,6 +60,7 @@ const images = [
   {
     id: 4,
     title: "Mahakumbh 2025",
+    category: "Event",
     description: "A grand event pavilion designed for Mahakumbh 2025 celebrations.",
     images: [
       "/gallery/pictures/4-Mahakumbh 2025/1 (11).jpg",
@@ -67,6 +73,7 @@ const images = [
   {
     id: 5,
     title: "NK Anantya",
+    category: "Residential",
     description: "A premium residential complex with state-of-the-art amenities.",
     images: [
       "/gallery/pictures/5-NK-Anantya/(20).JPG",
@@ -80,6 +87,7 @@ const images = [
   {
     id: 6,
     title: "MOTF Dubai",
+    category: "Cultural",
     description: "Museum of the Future, Dubai – a showcase of innovative design and technology.",
     images: [
       "/gallery/pictures/6-MOTF-Dubai/1.png",
@@ -88,63 +96,91 @@ const images = [
       "/gallery/pictures/6-MOTF-Dubai/4.JPG",
       "/gallery/pictures/6-MOTF-Dubai/5.JPG",
     ],
-  }
+  },
 ];
 
 export default function ImageGalleryPage() {
-  const [currentIndexes, setCurrentIndexes] = useState(() => images.slice(0, 6).map(() => 0));
-  const [isSliding, setIsSliding] = useState(() => images.slice(0, 6).map(() => false));
-  const [slideDirections, setSlideDirections] = useState(() => images.slice(0, 6).map(() => 0));
+  const [currentIndexes, setCurrentIndexes] = useState(() => images.map(() => 0));
+  const [isSliding, setIsSliding] = useState(() => images.map(() => false));
+  const [slideDirections, setSlideDirections] = useState(() => images.map(() => 0));
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Extract unique categories
+  const categories = ["All", ...new Set(images.map((image) => image.category))];
+
+  // Filter images based on selected category
+  const filteredImages =
+    selectedCategory === "All"
+      ? images
+      : images.filter((image) => image.category === selectedCategory);
 
   const triggerSlide = (i: number, direction: number, nextIndex: number) => {
     if (isSliding[i]) return;
-    setIsSliding((prev) => prev.map((s, j) => (j === i ? true : s))); // Start sliding
+    setIsSliding((prev) => prev.map((s, j) => (j === i ? true : s)));
     setSlideDirections((prev) => prev.map((d, j) => (j === i ? direction : d)));
     setCurrentIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
 
     setTimeout(() => {
-      setIsSliding((prev) => prev.map((s, j) => (j === i ? false : s))); // Stop sliding
+      setIsSliding((prev) => prev.map((s, j) => (j === i ? false : s)));
       setSlideDirections((prev) => prev.map((d, j) => (j === i ? 0 : d)));
-    }, 500); // Match slide-in animation duration
+    }, 500);
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const numToUpdate = Math.max(1, Math.floor(Math.random() * Math.min(3, 6)));
-      const indexes = Array.from({ length: 6 }, (_, i) => i);
+      const numToUpdate = Math.max(1, Math.floor(Math.random() * Math.min(3, filteredImages.length)));
+      const indexes = Array.from({ length: filteredImages.length }, (_, i) => i);
       for (let i = indexes.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [indexes[i], indexes[j]] = [indexes[j], indexes[i]];
       }
       const toUpdate = indexes.slice(0, numToUpdate);
       toUpdate.forEach((i) => {
-        const imgArr = images[i].images;
+        const imgArr = filteredImages[i].images;
         let newIdx;
         do {
           newIdx = Math.floor(Math.random() * imgArr.length);
         } while (imgArr.length > 1 && newIdx === currentIndexes[i]);
-        const direction = Math.random() > 0.5 ? 1 : -1; // Randomly choose left or right
+        const direction = Math.random() > 0.5 ? 1 : -1;
         triggerSlide(i, direction, newIdx);
       });
     }, 2000);
     return () => clearInterval(interval);
-  }, [currentIndexes]);
+  }, [currentIndexes, filteredImages]);
 
   const handlePrev = (i: number) => {
-    const nextIndex = (currentIndexes[i] - 1 + images[i].images.length) % images[i].images.length;
+    const nextIndex = (currentIndexes[i] - 1 + filteredImages[i].images.length) % filteredImages[i].images.length;
     triggerSlide(i, -1, nextIndex);
   };
 
   const handleNext = (i: number) => {
-    const nextIndex = (currentIndexes[i] + 1) % images[i].images.length;
+    const nextIndex = (currentIndexes[i] + 1) % filteredImages[i].images.length;
     triggerSlide(i, 1, nextIndex);
+  };
+
+  // Footer form state and handlers
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
     <div className="md:px-4 min-h-screen bg-background">
       <Head>
-        {images.slice(0, 6).map((image) =>
+        {images.map((image) =>
           image.images.map((src, idx) => (
             <link key={`${image.id}-${idx}`} rel="preload" href={src} as="image" />
           ))
@@ -164,8 +200,24 @@ export default function ImageGalleryPage() {
             subtitle="Browse our extensive collection of high-quality 3D architectural renderings, building models, and interior visualizations showcasing our expertise."
           />
         </div>
+        <div className="mb-8 flex flex-wrap gap-4 justify-center">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant={selectedCategory === category ? "default" : "outline"}
+              className={`px-4 py-2 font-barlow text-sm ${
+                selectedCategory === category
+                  ? "bg-primary text-primary-foreground"
+                  : "hover:bg-primary/10"
+              }`}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-          {images.slice(0, 6).map((image, i) => (
+          {filteredImages.map((image, i) => (
             <div
               key={image.id}
               className="group relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-[28rem]"
@@ -246,15 +298,174 @@ export default function ImageGalleryPage() {
         </div>
       </main>
       <footer className="border-t bg-muted mt-16">
-        <div className="container py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Building2 className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold text-primary font-forum">RD Models</span>
+        <div className="container py-8 md:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="md:col-span-2">
+              <motion.div
+                className="flex items-center gap-3 mb-4"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="relative h-16 w-48">
+                  <Image
+                    src="/images/logo.png"
+                    alt="RD Models Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </motion.div>
+              <p className="text-muted-foreground max-w-xs font-barlow mb-4">
+                Leading 3D architectural modeling company based in Jaipur, Rajasthan, serving clients across India with
+                detailed building models and visualizations.
+              </p>
+              <div className="text-sm text-muted-foreground font-barlow mb-4">
+                <p className="flex items-center gap-2">
+                  <FaMapMarkerAlt className="h-4 w-4" />
+                  Jaipur, Rajasthan, India
+                </p>
+                <p className="flex items-center gap-2">
+                  <FaGlobeAsia className="h-4 w-4" />
+                  Serving all of India
+                </p>
+                <p>
+                  <a
+                    href="tel:+911234567890"
+                    className="flex items-center gap-2 hover:text-primary transition-colors"
+                    aria-label="Phone number"
+                  >
+                    <FaPhone className="h-4 w-4" />
+                    +91 123-456-7890
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="mailto:info@rdmodels.com"
+                    className="flex items-center gap-2 hover:text-primary transition-colors"
+                    aria-label="Email address"
+                  >
+                    <FaEnvelope className="h-4 w-4" />
+                    info@rdmodels.com
+                  </a>
+                </p>
+              </div>
+              <div className="flex gap-4">
+                <Link
+                  href="https://www.linkedin.com/company/yourcompany"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin className="h-6 w-6" />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/yourcompany"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram className="h-6 w-6" />
+                </Link>
+                <Link
+                  href="https://twitter.com/yourcompany"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="Twitter"
+                >
+                  <FaTwitter className="h-6 w-6" />
+                </Link>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground font-barlow">
-              &copy; {new Date().getFullYear()} RD Models, Jaipur, Rajasthan, India. All rights reserved.
-            </p>
+            <div>
+              <h3 className="font-medium mb-4 font-forum">Quick Links</h3>
+              <ul className="space-y-2 font-barlow">
+                <li>
+                  <Link href="/" className="text-muted-foreground hover:text-primary">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-muted-foreground hover:text-primary">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/portfolio" className="text-muted-foreground hover:text-primary">
+                    Portfolio
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="text-muted-foreground hover:text-primary">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-muted-foreground hover:text-primary">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-medium mb-4 font-forum">Contact Us</h3>
+              <form onSubmit={handleSubmit} className="space-y-4 font-barlow">
+                <div>
+                  <label htmlFor="name" className="sr-only">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your Name"
+                    required
+                    className="w-full bg-transparent border-b border-muted-foreground/50 text-muted-foreground focus:outline-none focus:border-primary py-2 px-1 transition-colors placeholder:text-muted-foreground/70"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="sr-only">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Your Email"
+                    required
+                    className="w-full bg-transparent border-b border-muted-foreground/50 text-muted-foreground focus:outline-none focus:border-primary py-2 px-1 transition-colors placeholder:text-muted-foreground/70"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="sr-only">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Your Message"
+                    required
+                    rows={1}
+                    className="w-full bg-transparent border-b border-muted-foreground/50 text-muted-foreground focus:outline-none focus:border-primary py-2 px-1 transition-colors placeholder:text-muted-foreground/70 resize-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-2 rounded-md transition-colors font-medium"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </footer>
