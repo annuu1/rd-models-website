@@ -258,7 +258,7 @@ export default function PublicationsPage() {
         </section>
       </main>
 
-      <footer className="border-t bg-muted mt-12">
+      {/* <footer className="border-t bg-muted mt-12">
         <div className="container py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
@@ -270,7 +270,7 @@ export default function PublicationsPage() {
             </p>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }

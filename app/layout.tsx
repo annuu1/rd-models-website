@@ -12,6 +12,7 @@ import type { Metadata } from "next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 import FloatingContactButtons from "./FloatingContactButtons"
+import { Footer } from "@/components/Footer";
 
 const forum = Forum({
   subsets: ["latin"],
@@ -179,9 +180,14 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-barlow">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+      <body
+        className={
+          `${grenda.variable} ${forum.variable} ${jost.variable} ${outfit.variable} ${amiri.variable} font-sans bg-background min-h-screen`
+        }
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          <Footer />
           <Toaster />
           <FloatingContactButtons />
         </ThemeProvider>
