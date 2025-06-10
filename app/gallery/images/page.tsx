@@ -165,7 +165,7 @@ export default function ImageGalleryPage() {
           {filteredImages.map((project) => (
             <div
               key={project.id}
-              className="group relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-[24rem]"
+              className="group relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-[28rem]"
             >
               <Slider
                 autoplay={true}
@@ -176,11 +176,14 @@ export default function ImageGalleryPage() {
                 className="w-full h-full"
               >
                 {project.images.map((image, index) => (
-                  <div key={`${project.id}-${index}`}>
-                    <img
+                  <div key={`${project.id}-${index}`} className="relative w-full h-[28rem]">
+                    <Image
                       src={image || "/placeholder.svg"}
                       alt={`${project.title} image ${index + 1}`}
-                      className="object-fill w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out"
+                      style={{height: '100%', width: '100%'}}
+                      width={100}
+                      height={100}
                     />
                   </div>
                 ))}
