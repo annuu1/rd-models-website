@@ -1,19 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import FloatingContactButtons from "../../FloatingContactButtons";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/section-heading";
 import { MobileMenu } from "@/components/mobile-menu";
 import { AnimatedHeader } from "@/components/animated-header";
-import React, { useEffect, useState } from "react";
-import Head from "next/head";
 import { FaLinkedin, FaInstagram, FaTwitter, FaMapMarkerAlt, FaGlobeAsia, FaPhone, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import FloatingContactButtons from "../../FloatingContactButtons";
+import React, { useState, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-// Define the images array from local folders
+// Define the images array
 const images = [
   {
     id: 1,
@@ -100,64 +102,14 @@ const images = [
 ];
 
 export default function ImageGalleryPage() {
-  const [currentIndexes, setCurrentIndexes] = useState(() => images.map(() => 0));
-  const [isSliding, setIsSliding] = useState(() => images.map(() => false));
-  const [slideDirections, setSlideDirections] = useState(() => images.map(() => 0));
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   // Extract unique categories
-  const categories = ["All", ...new Set(images.map((image) => image.category))];
+  const categories = ["All", ...new Set(images.map((project) => project.category))];
 
-  // Filter images based on selected category
+  // Filter projects based on selected category
   const filteredImages =
-    selectedCategory === "All"
-      ? images
-      : images.filter((image) => image.category === selectedCategory);
-
-  const triggerSlide = (i: number, direction: number, nextIndex: number) => {
-    if (isSliding[i]) return;
-    setIsSliding((prev) => prev.map((s, j) => (j === i ? true : s)));
-    setSlideDirections((prev) => prev.map((d, j) => (j === i ? direction : d)));
-    setCurrentIndexes((prev) => prev.map((idx, j) => (j === i ? nextIndex : idx)));
-
-    setTimeout(() => {
-      setIsSliding((prev) => prev.map((s, j) => (j === i ? false : s)));
-      setSlideDirections((prev) => prev.map((d, j) => (j === i ? 0 : d)));
-    }, 500);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const numToUpdate = Math.max(1, Math.floor(Math.random() * Math.min(3, filteredImages.length)));
-      const indexes = Array.from({ length: filteredImages.length }, (_, i) => i);
-      for (let i = indexes.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [indexes[i], indexes[j]] = [indexes[j], indexes[i]];
-      }
-      const toUpdate = indexes.slice(0, numToUpdate);
-      toUpdate.forEach((i) => {
-        const imgArr = filteredImages[i].images;
-        let newIdx;
-        do {
-          newIdx = Math.floor(Math.random() * imgArr.length);
-        } while (imgArr.length > 1 && newIdx === currentIndexes[i]);
-        const direction = Math.random() > 0.5 ? 1 : -1;
-        triggerSlide(i, direction, newIdx);
-      });
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [currentIndexes, filteredImages]);
-
-  const handlePrev = (i: number) => {
-    const nextIndex = (currentIndexes[i] - 1 + filteredImages[i].images.length) % filteredImages[i].images.length;
-    triggerSlide(i, -1, nextIndex);
-  };
-
-  const handleNext = (i: number) => {
-    const nextIndex = (currentIndexes[i] + 1) % filteredImages[i].images.length;
-    triggerSlide(i, 1, nextIndex);
-  };
+    selectedCategory === "All" ? images : images.filter((project) => project.category === selectedCategory);
 
   // Footer form state and handlers
   const [formData, setFormData] = useState({
@@ -178,16 +130,9 @@ export default function ImageGalleryPage() {
   };
 
   return (
-    <div className="md:px-4 min-h-screen bg-background">
-      <Head>
-        {images.map((image) =>
-          image.images.map((src, idx) => (
-            <link key={`${image.id}-${idx}`} rel="preload" href={src} as="image" />
-          ))
-        )}
-      </Head>
+    <div className="min-h-screen bg-background">
       <AnimatedHeader />
-      <main className="py-12">
+      <main className="py-12 md:px-4">
         <div className="mb-12">
           <Button variant="ghost" size="sm" asChild className="mb-6">
             <Link href="/">
@@ -197,7 +142,7 @@ export default function ImageGalleryPage() {
           </Button>
           <SectionHeading
             title="Image Gallery"
-            subtitle="Browse our extensive collection of high-quality 3D architectural renderings, building models, and interior visualizations showcasing our expertise."
+            subtitle="Explore our collection of architectural images showcasing our expertise in building modeling and design."
           />
         </div>
         <div className="mb-8 flex flex-wrap gap-4 justify-center">
@@ -216,75 +161,38 @@ export default function ImageGalleryPage() {
             </Button>
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-          {filteredImages.map((image, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+          {filteredImages.map((project) => (
             <div
-              key={image.id}
-              className="group relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-[28rem]"
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              key={project.id}
+              className="group relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-[24rem]"
             >
-              <div
-                className="relative w-full h-full overflow-hidden bg-gray-200"
-                style={{ backgroundImage: `url(/placeholder.svg)` }}
+              <Slider
+                autoplay={true}
+                autoplaySpeed={5000}
+                dots={true}
+                infinite={true}
+                arrows={true}
+                className="w-full h-full"
               >
-                <div
-                  className={`absolute inset-0 w-full h-full transition-all duration-500 ease-out ${
-                    isSliding[i]
-                      ? slideDirections[i] === 1
-                        ? "translate-x-full opacity-0"
-                        : "-translate-x-full opacity-0"
-                      : "translate-x-0 opacity-100"
-                  }`}
-                  style={{ willChange: "transform, opacity" }}
-                >
-                  <Image
-                    src={image.images[currentIndexes[i]] || "/placeholder.svg"}
-                    alt={image.title}
-                    fill
-                    priority={i < 6}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 ease-out"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    placeholder="blur"
-                    blurDataURL="/placeholder.svg"
-                  />
-                </div>
-              </div>
-              {hoveredIndex === i && (
-                <div className="absolute inset-0 flex items-center justify-between px-2 z-20">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handlePrev(i);
-                    }}
-                    className="bg-black/50 text-white font-extrabold rounded-full p-2 hover:bg-black/70 transition"
-                    aria-label="Previous image"
-                  >
-                    {"❮"}
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleNext(i);
-                    }}
-                    className="bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition"
-                    aria-label="Next image"
-                  >
-                    {"❯"}
-                  </button>
-                </div>
-              )}
-              <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 transition-colors duration-500" />
+                {project.images.map((image, index) => (
+                  <div key={`${project.id}-${index}`}>
+                    <img
+                      src={image || "/placeholder.svg"}
+                      alt={`${project.title} image ${index + 1}`}
+                      className="object-fill w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out"
+                    />
+                  </div>
+                ))}
+              </Slider>
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute bottom-0 left-0 w-full h-48 z-20 opacity-0 pointer-events-none transform -translate-y-full group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-500 ease-in-out">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
                   <div className="relative w-full h-full flex flex-col items-center justify-end pb-4">
-                    <h3 className="text-lg font-bold font-forum drop-shadow text-white text-center mb-1">
-                      {image.title}
+                    <h3 className="text-lg font-bold font-forum drop-shadow text-white text-center">
+                      {project.title}
                     </h3>
-                    <p className="text-sm font-barlow drop-shadow text-white text-center max-w-xs">
-                      {image.description}
-                    </p>
+                    <p className="text-xs text-white font-barlow mt-1 text-center px-2">{project.description}</p>
                   </div>
                 </div>
               </div>
