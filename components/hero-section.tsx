@@ -7,6 +7,7 @@ import { TypewriterEffect } from "@/components/typewriter-effect"
 import { ParticleBackground } from "@/components/particle-background"
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 export function HeroSection() {
   // List of background images (add more if needed)
@@ -29,7 +30,9 @@ export function HeroSection() {
     timeoutRef.current = setTimeout(() => {
       setCurrent((prev) => (prev + 1) % backgrounds.length);
     }, 6000); // 6 seconds
-    return () => timeoutRef.current && clearTimeout(timeoutRef.current);
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, [current, backgrounds.length]);
 
   // Manual navigation
@@ -41,14 +44,28 @@ export function HeroSection() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Carousel - Pure Fade Transition */}
       <div className="absolute inset-0 z-0">
-        <motion.div
-          key={current}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('${backgrounds[current]}')` }}
-          animate={{ opacity: 1, scale: 1.07 }}
-          exit={{ opacity: 0, scale: 1 }}
-          transition={{ opacity: { duration: 1 }, scale: { duration: 6, ease: 'easeInOut' } }}
-        />
+        {/* Only render the current background image using Next.js Image for optimization */}
+        {backgrounds.map((src, idx) => (
+          <motion.div
+            key={src + idx}
+            className="absolute inset-0 w-full h-full"
+            style={{ opacity: idx === current ? 1 : 0, pointerEvents: "none", transition: "opacity 1s" }}
+            animate={{ opacity: idx === current ? 1 : 0, scale: idx === current ? 1.07 : 1 }}
+            exit={{ opacity: 0, scale: 1 }}
+            transition={{ opacity: { duration: 1 }, scale: { duration: 6, ease: 'easeInOut' } }}
+          >
+            <Image
+              src={src.startsWith("/") ? src : "/" + src.replace(/^images\//, "images/")}
+              alt="Hero background"
+              fill
+              priority={idx === 0}
+              loading={idx === 0 ? "eager" : "lazy"}
+              sizes="100vw"
+              style={{ objectFit: "cover" }}
+              quality={75}
+            />
+          </motion.div>
+        ))}
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-700/70 via-black/40 to-black/20" />
         {/* Arrow Buttons */}
         <button

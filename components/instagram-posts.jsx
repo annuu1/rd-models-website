@@ -4,6 +4,20 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const InstagramPost = () => {
+  const [duration, setDuration] = React.useState(40);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      if (window.innerWidth <= 768) {
+        setDuration(20); // Faster scroll on mobile
+      } else {
+        setDuration(40); // Default for desktop
+      }
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   const instagramPosts = [
     'https://www.instagram.com/reel/C5azwDGB9I_/embed',
     'https://www.instagram.com/reel/DCGVgoehqbm/embed',
@@ -27,7 +41,7 @@ const InstagramPost = () => {
           x: {
             repeat: Number.POSITIVE_INFINITY,
             repeatType: "loop",
-            duration: 40, // slower scroll
+            duration: duration, // Responsive scroll speed
             ease: "linear",
           },
         }}

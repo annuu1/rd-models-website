@@ -18,15 +18,16 @@ export function FounderSection() {
             <Image
               src="/images/founder.png"
               alt="Ar. Rohitash Daiya - Founder RD Models"
-              width={800}
-              height={500}
+              width={1000}
+              height={700}
               priority
+              className="w-[300px] h-[220px] sm:w-[400px] sm:h-[320px] md:w-[500px] md:h-[400px] lg:w-[600px] lg:h-[480px] object-contain"
             />
           </div>
         </div>
         {/* Content */}
         <div className="flex-1 flex flex-col justify-center items-start gap-6 max-w-[550px] p-6">
-          <h2 className="relative text-4xl md:text-2xl font-bold text-primary font-grenda leading-tight">
+          <h2 className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary font-grenda leading-tight">
             An Architect who chose hobby as a profession & decide to set new benchmark in model making.
             <motion.span
               className="block absolute left-0 -bottom-2 h-1 bg-primary rounded"
