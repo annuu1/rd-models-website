@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Building2, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -22,14 +23,15 @@ export function MobileMenu() {
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between border-b pb-4">
-            <div className="flex items-center gap-2">
-              <Building2 className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold text-primary font-forum">RD Models</span>
+            <div className="relative h-16 w-48">
+              <Image
+                src="/images/logo.png"
+                alt="RD Models Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
-            <Button variant="ghost" size="icon" onClick={() => setOpen(false)}>
-              <X className="h-6 w-6" />
-              <span className="sr-only">Close</span>
-            </Button>
           </div>
           <nav className="flex flex-col gap-2 py-8">
             <Link
@@ -125,7 +127,7 @@ export function MobileMenu() {
           <div className="mt-auto border-t pt-4">
             <Button className="w-full" asChild>
               <Link href="/contact" onClick={() => setOpen(false)}>
-                Get a Quote
+                Enquire Now
               </Link>
             </Button>
           </div>
