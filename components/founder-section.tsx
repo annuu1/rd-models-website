@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 export function FounderSection() {
   return (
     <section className="py-20 flex justify-center items-center">
-      <div className="w-full flex flex-col md:flex-row items-center gap-12 p-8 sm:p-0 bg-white relative" style={{
+      <div className="w-full flex flex-col md:flex-row items-center gap-6 md:gap-12 p-2 sm:p-4 md:p-8 bg-white relative" style={{
         position: 'relative',
         zIndex: 1
       }}>
@@ -21,7 +21,7 @@ export function FounderSection() {
               width={1000}
               height={700}
               priority
-              className="w-[300px] h-[220px] sm:w-[400px] sm:h-[320px] md:w-[500px] md:h-[400px] lg:w-[600px] lg:h-[480px] object-contain"
+              className="w-[90vw] h-[38vw] max-w-[450px] max-h-[380px] sm:max-w-[600px] sm:max-h-[500px] md:max-w-[750px] md:max-h-[650px] lg:max-w-[900px] lg:max-h-[800px] object-contain"
             />
           </div>
         </div>

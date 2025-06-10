@@ -60,8 +60,7 @@ export default function Home() {
         <HeroSection />
         {/* Founder Section */}
         <section className="py-16 w-full bg-white">
-          <div className="sm:pl-64">
-
+          <div className="px-2 sm:px-8">
             <FounderSection />
           </div>
         </section>
