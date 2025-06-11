@@ -17,19 +17,21 @@ export function WhoWeAreSection() {
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Left Side: Image */}
-          <div className="relative h-full w-full min-h-[350px]">
-            {/* Animated Borders */}
-            <div className={styles["image-border-animated"]}>
-              <div className={styles["border-line"] + " " + styles["left"]}></div>
-              <div className={styles["border-line"] + " " + styles["right"]}></div>
+          <div className="flex items-center justify-center">
+            <div className="relative" style={{ width: 300, height: 500 }}>
+              {/* Animated Borders */}
+              <div className={styles["image-border-animated"]}>
+                <div className={`${styles["border-line"]} ${styles["left"]}`}></div>
+                <div className={`${styles["border-line"]} ${styles["right"]}`}></div>
+              </div>
+              <Image
+                src="/images/rd-brand-img.png"
+                alt="Ar. Rohitash Daiya - Founder RD Models"
+                fill
+                className="object-contain z-10"
+                priority
+              />
             </div>
-            <Image
-              src="/images/rd-brand-img.png"
-              alt="Ar. Rohitash Daiya - Founder RD Models"
-              fill
-              className="object-contain"
-              priority
-            />
           </div>
           {/* Right Side: Stat Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
