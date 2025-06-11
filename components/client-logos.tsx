@@ -115,8 +115,8 @@ export function ClientLogos() {
             // Clean up filename for alt text
             const alt = filename.replace(/[-_]/g, ' ').replace(/\.[^/.]+$/, '');
             return (
-              <div key={`${filename}-${index}`} className="flex-shrink-0 mx-8 group">
-                <div className="relative h-32 w-64 transition-all duration-300 client-logo-hover group-hover:scale-110">
+              <div key={`${filename}-${index}`} className="flex-shrink-0 mx-2 sm:mx-8 group">
+                <div className="relative h-12 w-24 sm:h-24 sm:w-48 md:h-32 md:w-64 transition-all duration-300 client-logo-hover group-hover:scale-105 sm:group-hover:scale-110">
                   <Image src={`/images/clients/${filename}`} alt={alt} fill className="object-contain client-logo-img" />
                 </div>
               </div>
