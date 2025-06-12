@@ -100,7 +100,7 @@ export default function AboutPage() {
             />
             <div className="absolute inset-0 bg-black/60 z-10" />
           </div>
-          <div className="absolute inset-0 flex items-center z-20">
+          {/* <div className="absolute inset-0 flex items-center z-20">
             <div className="container">
               <div className="max-w-2xl mx-auto bg-black/40 rounded-xl p-8 shadow-lg backdrop-blur-md flex flex-col items-center text-center">
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl font-forum">
@@ -111,8 +111,44 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+          </div> */}
+        </section>
+        {/* Our Achievements Section */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container">
+            <SectionHeading
+              title="Our Achievements"
+              subtitle="A snapshot of our growth and impact in the 3D modeling industry"
+            />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <StatCard
+                number="1,800+"
+                label="Models Delivered"
+                description="At RD Models, a premier model maker, we take pride in our extensive portfolio, having successfully delivered over 1,800 models. Our journey spans from creating small block study models to executing some of the world’s largest and most intricate projects. As a leading model maker, we cater to various scale requirements, from 1:20,000 to life-size 1:1 scale models, showcasing our versatility and capability. Each model we create is a testament to our commitment to precision, quality, and client satisfaction, reinforcing our reputation as a top model maker."
+                icon={<Package className="h-6 w-6 text-primary" />}
+              />
+              <StatCard
+                number="7+"
+                label="Countries"
+                description="RD Models, a leading model making company, has an efficient delivery system that allows us to successfully deliver models to clients in 7 countries around the world. Our ability to ship models internationally ensures that no matter where our clients are located, they can rely on us for timely and secure delivery. This global reach underscores our reputation as a reliable model maker capable of handling projects of any scale and complexity, anywhere in the world."
+                icon={<Globe className="h-6 w-6 text-primary" />}
+              />
+              <StatCard
+                number="700+"
+                label="Clients"
+                description="Our dedication to quality work and exceptional service has helped us build strong, lasting relationships with over 700 clients. As a top model maker, we don’t just create models; we build relationships based on trust and excellence. Our client base includes top-tier corporations, government agencies, and scientific institutions. As a leading model maker, we pride ourselves on understanding our clients’ unique needs and exceeding their expectations, which has earned us a loyal and diverse clientele."
+                icon={<Users className="h-6 w-6 text-primary" />}
+              />
+              <StatCard
+                number="6+"
+                label="Locations"
+                description="Maintaining high-quality standards across all our workshops is a challenge we meet with a well-developed, coordinated, and synchronized system. With six strategically located workshops in Jaipur, Delhi, Bangalore, Hyderabad, Ahmedabad, and Mumbai, we ensure that multiple locations can work in parallel to complete projects efficiently. This system not only speeds up the production process but also guarantees that every model meets our stringent quality standards, regardless of where it is produced. As a top model making company, we ensure consistent quality across all our locations."
+                icon={<MapPin className="h-6 w-6 text-primary" />}
+              />
+            </div>
           </div>
         </section>
+
 
         {/* Our Story Section */}
         <section className="py-16 md:py-24 bg-white">
@@ -207,42 +243,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Our Achievements Section */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container">
-            <SectionHeading
-              title="Our Achievements"
-              subtitle="A snapshot of our growth and impact in the 3D modeling industry"
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <StatCard
-                number="1,800+"
-                label="Models Delivered"
-                description="At RD Models, a premier model maker, we take pride in our extensive portfolio, having successfully delivered over 1,800 models. Our journey spans from creating small block study models to executing some of the world’s largest and most intricate projects. As a leading model maker, we cater to various scale requirements, from 1:20,000 to life-size 1:1 scale models, showcasing our versatility and capability. Each model we create is a testament to our commitment to precision, quality, and client satisfaction, reinforcing our reputation as a top model maker."
-                icon={<Package className="h-6 w-6 text-primary" />}
-              />
-              <StatCard
-                number="7+"
-                label="Countries"
-                description="RD Models, a leading model making company, has an efficient delivery system that allows us to successfully deliver models to clients in 7 countries around the world. Our ability to ship models internationally ensures that no matter where our clients are located, they can rely on us for timely and secure delivery. This global reach underscores our reputation as a reliable model maker capable of handling projects of any scale and complexity, anywhere in the world."
-                icon={<Globe className="h-6 w-6 text-primary" />}
-              />
-              <StatCard
-                number="700+"
-                label="Clients"
-                description="Our dedication to quality work and exceptional service has helped us build strong, lasting relationships with over 700 clients. As a top model maker, we don’t just create models; we build relationships based on trust and excellence. Our client base includes top-tier corporations, government agencies, and scientific institutions. As a leading model maker, we pride ourselves on understanding our clients’ unique needs and exceeding their expectations, which has earned us a loyal and diverse clientele."
-                icon={<Users className="h-6 w-6 text-primary" />}
-              />
-              <StatCard
-                number="6+"
-                label="Locations"
-                description="Maintaining high-quality standards across all our workshops is a challenge we meet with a well-developed, coordinated, and synchronized system. With six strategically located workshops in Jaipur, Delhi, Bangalore, Hyderabad, Ahmedabad, and Mumbai, we ensure that multiple locations can work in parallel to complete projects efficiently. This system not only speeds up the production process but also guarantees that every model meets our stringent quality standards, regardless of where it is produced. As a top model making company, we ensure consistent quality across all our locations."
-                icon={<MapPin className="h-6 w-6 text-primary" />}
-              />
-            </div>
-          </div>
-        </section>
-
+        {/* Our Services Section */}
         {/* CTA Section */}
         <section className="py-16 md:py-24 bg-primary">
           <div className="container text-center">
