@@ -86,7 +86,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <h1 className="text-2xl font-bold mb-4">Project Not Found</h1>
         <p className="mb-8">The project you're looking for doesn't exist or has been removed.</p>
         <Button asChild>
-          <Link href="/portfolio">Back to Portfolio</Link>
+          <Link href="/gallery/images">Back to Portfolio</Link>
         </Button>
       </div>
     )
@@ -114,7 +114,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               About Us
             </Link>
             <Link
-              href="/portfolio"
+              href="/gallery/images"
               className="text-base font-medium text-primary hover:text-primary/80 font-barlow link-underline"
             >
               Portfolio
@@ -144,7 +144,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <main className="container py-12">
         <div className="mb-8">
           <Button variant="ghost" size="sm" asChild className="mb-4">
-            <Link href="/portfolio">
+            <Link href="/gallery/images">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Portfolio
             </Link>

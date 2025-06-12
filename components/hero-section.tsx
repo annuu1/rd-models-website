@@ -135,7 +135,7 @@ export function HeroSection() {
                 size="lg"
                 className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-barlow text-lg px-8 py-4 rounded-full shadow-2xl border-0 relative overflow-hidden group"
               >
-                <Link href="/portfolio" className="relative z-10 flex items-center gap-2">
+                <Link href="/gallery/images" className="relative z-10 flex items-center gap-2">
                   <span>View Our Work</span>
                   <motion.svg
                     xmlns="http://www.w3.org/2000/svg"

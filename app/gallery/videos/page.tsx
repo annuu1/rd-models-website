@@ -295,7 +295,7 @@ export default function VideoGalleryPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/portfolio" className="text-muted-foreground hover:text-primary">
+                  <Link href="/gallery/images" className="text-muted-foreground hover:text-primary">
                     Portfolio
                   </Link>
                 </li>

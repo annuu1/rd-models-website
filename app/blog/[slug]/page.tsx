@@ -255,7 +255,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               About Us
             </Link>
             <Link
-              href="/portfolio"
+              href="/gallery/images"
               className="text-base font-medium text-muted-foreground hover:text-primary font-barlow link-underline"
             >
               Portfolio

@@ -40,7 +40,7 @@ export function CTASection() {
               variant="outline"
               className="bg-transparent border-gray-800 text-gray-800 hover:bg-primary hover:text-white hover:border-transparent"
             >
-              <Link href="/portfolio">View Portfolio</Link>
+              <Link href="/gallery/images">View Portfolio</Link>
             </AnimatedButton>
           </div>
         </div>
