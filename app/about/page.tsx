@@ -90,7 +90,7 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 z-10" />
-          <div className="relative h-[70vh] min-h-[400px]">
+          <div className="relative h-[100vh] min-h-[400px]">
             <Image
               src="https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/hero-bg/DSC00275%20copy%283%29-cslE8trs7ccKBrPbijtwnjwoKeQgba.jpg"
               alt="RD Models Team"
@@ -100,7 +100,7 @@ export default function AboutPage() {
             />
             <div className="absolute inset-0 bg-black/60 z-10" />
           </div>
-          {/* <div className="absolute inset-0 flex items-center z-20">
+          <div className="absolute inset-0 flex items-center z-20">
             <div className="container">
               <div className="max-w-2xl mx-auto bg-black/40 rounded-xl p-8 shadow-lg backdrop-blur-md flex flex-col items-center text-center">
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl font-forum">
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-          </div> */}
+          </div>
         </section>
         {/* Our Achievements Section */}
         <section className="py-16 md:py-24 bg-white">
