@@ -242,12 +242,12 @@ export default function VideoGalleryPage() {
                 </p>
                 <p>
                   <a
-                    href="mailto:info@rdmodels.com"
+                    href="mailto:rdarmodels@gmail.com"
                     className="flex items-center gap-2 hover:text-primary transition-colors"
                     aria-label="Email address"
                   >
                     <FaEnvelope className="h-4 w-4" />
-                    info@rdmodels.com
+                    rdarmodels@gmail.com
                   </a>
                 </p>
               </div>
