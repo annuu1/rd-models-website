@@ -136,7 +136,7 @@ export default function VideoGalleryPage() {
             subtitle="Explore our collection of 3D architectural visualizations, walkthroughs, and project presentations showcasing our expertise in building modeling."
           />
         </div>
-        <div className="mb-8 flex flex-wrap gap-4 justify-center">
+        {/* <div className="mb-8 flex flex-wrap gap-4 justify-center">
           {categories.map((category) => (
             <Button
               key={category}
@@ -151,7 +151,7 @@ export default function VideoGalleryPage() {
               {category}
             </Button>
           ))}
-        </div>
+        </div> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           {filteredVideos.map((video) => (
             <div
