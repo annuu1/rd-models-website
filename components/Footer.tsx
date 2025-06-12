@@ -50,12 +50,12 @@ export function Footer() {
             <div className="text-sm text-muted-foreground font-barlow mb-4">
               <p>
                 <a
-                  href="tel:+911234567890"
+                  href="tel:+919876543210"
                   className="flex items-center gap-2 hover:text-primary transition-colors"
                   aria-label="Phone number"
                 >
                   <FaPhone className="h-4 w-4" />
-                  +91 123-456-7890
+                  +91 9876543210
                 </a>
               </p>
               <p>
@@ -71,7 +71,7 @@ export function Footer() {
             </div>
             <div className="flex gap-4">
               <Link
-                href="https://www.linkedin.com/company/yourcompany"
+                href="https://www.linkedin.com/company/rd-models"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -80,7 +80,7 @@ export function Footer() {
                 <FaLinkedin className="h-6 w-6" />
               </Link>
               <Link
-                href="https://www.instagram.com/yourcompany"
+                href="https://www.instagram.com/rd.models"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -89,7 +89,7 @@ export function Footer() {
                 <FaInstagram className="h-6 w-6" />
               </Link>
               <Link
-                href="https://twitter.com/yourcompany"
+                href="https://twitter.com/rd_models"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
