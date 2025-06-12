@@ -12,14 +12,14 @@ import Image from "next/image";
 export function HeroSection() {
   // List of background images (add more if needed)
   const backgrounds = [
-    "images/hero-bg/hero-bg3.jpg",
+    "/images/hero-bg/hero-bg3.jpg",
     "/images/hero-bg1.JPG",
     "/images/hero-bg.jpg",
-    "images/hero-bg/hero-bg1.jpg",
-    "images/hero-bg/hero-bg2.jpg",
-    "images/hero-bg/hero-bg4.jpg",
-    "images/hero-bg/hero-bg5.jpg",
-    "images/hero-bg/hero-bg6.png"
+    "/images/hero-bg/hero-bg1.jpg",
+    "/images/hero-bg/hero-bg2.jpg",
+    "/images/hero-bg/hero-bg4.jpg",
+    "/images/hero-bg/hero-bg5.jpg",
+    "/images/hero-bg/hero-bg6.png"
   ];
   const [current, setCurrent] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
