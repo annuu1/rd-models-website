@@ -10,13 +10,13 @@ import { AnimatedHeader } from "@/components/animated-header"
 const blogPosts = [
   {
     id: 1,
-    title: "The Future of Architectural Visualization",
+    title: "Sometimes Rome Is Built in a Day—Or Less",
     excerpt:
       "Explore how emerging technologies like AR, VR, and real-time rendering are transforming the way architects and developers visualize projects. Learn about the latest tools and techniques that are setting new standards in the industry.",
     date: "May 15, 2023",
     author: "Deeksha Vyas",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?height=400&width=600",
-    slug: "future-of-architectural-visualization",
+    image: "https://www.fodors.com/wp-content/uploads/2019/07/01_BestAncientSitesInRome__RomanForum_shutterstock_351471179.jpg",
+    slug: "sometimes-rome-is-built-in-a-day",
     category: "Technology",
   },
   {
@@ -89,7 +89,7 @@ export default function BlogPage() {
         />
 
         {/* Categories */}
-        <div className="flex flex-wrap gap-2 mb-10 justify-center">
+        {/* <div className="flex flex-wrap gap-2 mb-10 justify-center">
           <Button variant="outline" className="rounded-full">
             All Categories
           </Button>
@@ -111,7 +111,7 @@ export default function BlogPage() {
           <Button variant="ghost" className="rounded-full">
             Tools
           </Button>
-        </div>
+        </div> */}
 
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -144,7 +144,7 @@ export default function BlogPage() {
         </div>
       </main>
 
-      <footer className="border-t bg-muted mt-12">
+      {/* <footer className="border-t bg-muted mt-12">
         <div className="container py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
@@ -156,7 +156,7 @@ export default function BlogPage() {
             </p>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }
