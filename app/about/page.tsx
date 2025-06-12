@@ -92,7 +92,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 z-10" />
           <div className="relative h-[70vh] min-h-[400px]">
             <Image
-              src="/images/hero-bg/hero-bg3.JPG"
+              src="https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/hero-bg/DSC00275%20copy%283%29-cslE8trs7ccKBrPbijtwnjwoKeQgba.jpg"
               alt="RD Models Team"
               fill
               className="object-cover"

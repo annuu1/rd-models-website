@@ -12,6 +12,7 @@ import Image from "next/image";
 export function HeroSection() {
   // List of background images (add more if needed)
   const backgrounds = [
+    "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/hero-bg/DSC00275%20copy%283%29-cslE8trs7ccKBrPbijtwnjwoKeQgba.jpg",
     "/images/hero-bg1.JPG",
     "/images/hero-bg.jpg",
     "images/hero-bg/hero-bg1.jpg",
@@ -55,7 +56,7 @@ export function HeroSection() {
             transition={{ opacity: { duration: 1 }, scale: { duration: 6, ease: 'easeInOut' } }}
           >
             <Image
-              src={src.startsWith("/") ? src : "/" + src.replace(/^images\//, "images/")}
+              src={ src.startsWith("https://") ? src : src.startsWith("/") ? src : "/" + src.replace(/^images\//, "images/")}
               alt="Hero background"
               fill
               priority={idx === 0}
