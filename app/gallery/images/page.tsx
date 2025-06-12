@@ -20,7 +20,7 @@ const images = [
   {
     id: 1,
     title: "KAAR",
-    category: "Residential",
+    category: "High Rise Residential",
     description: "A modern residential project with innovative architecture.",
     images: [
       "/gallery/pictures/1-KAAR/1.jpg",
@@ -34,7 +34,7 @@ const images = [
   {
     id: 2,
     title: "Empyreal club",
-    category: "Commercial",
+    category: "Low Rise Residential",
     description: "A luxury club project combining elegance and comfort.",
     images: [
       "/gallery/pictures/2-Empyreal club/1.jpg",
@@ -47,7 +47,7 @@ const images = [
   {
     id: 3,
     title: "Lehariya By KGK Realty",
-    category: "Commercial",
+    category: "Landscape+ Resort",
     description: "A vibrant commercial project by KGK Realty, inspired by traditional patterns.",
     images: [
       "/gallery/pictures/3-Lehariya/1 (15).JPG",
@@ -62,7 +62,7 @@ const images = [
   {
     id: 4,
     title: "Mahakumbh 2025",
-    category: "Event",
+    category: "Interior Units",
     description: "A grand event pavilion designed for Mahakumbh 2025 celebrations.",
     images: [
       "/gallery/pictures/4-Mahakumbh 2025/1 (11).jpg",
@@ -75,7 +75,7 @@ const images = [
   {
     id: 5,
     title: "NK Anantya",
-    category: "Residential",
+    category: "House Models",
     description: "A premium residential complex with state-of-the-art amenities.",
     images: [
       "/gallery/pictures/5-NK-Anantya/(20).JPG",
@@ -89,7 +89,7 @@ const images = [
   {
     id: 6,
     title: "MOTF Dubai",
-    category: "Cultural",
+    category: "Commercial Models",
     description: "Museum of the Future, Dubai – a showcase of innovative design and technology.",
     images: [
       "/gallery/pictures/6-MOTF-Dubai/1.png",
