@@ -18,7 +18,7 @@ export function WhoWeAreSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Left Side: Image */}
           <div className="flex items-center justify-center">
-            <div className="relative" style={{ width: 300, height: 500 }}>
+            <div className="relative" style={{ width: 500, height: 500 }}>
               {/* Animated Borders */}
               <div className={styles["image-border-animated"]}>
                 <div className={`${styles["border-line"]} ${styles["left"]}`}></div>
