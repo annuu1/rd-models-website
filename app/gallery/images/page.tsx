@@ -19,7 +19,7 @@ import "slick-carousel/slick/slick-theme.css";
 const images = [
   {
     id: 1,
-    title: "KAAR",
+    title: "KAAR, Dubai",
     category: "High Rise Residential",
     description: "A modern residential project with innovative architecture.",
     images: [
@@ -74,7 +74,7 @@ const images = [
   },
   {
     id: 5,
-    title: "NK Anantya",
+    title: "NK Anantya, Ahmedabad",
     category: "House Models",
     description: "A premium residential complex with state-of-the-art amenities.",
     images: [
