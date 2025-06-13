@@ -14,65 +14,10 @@ const blogPosts = [
     excerpt:
       "Explore how emerging technologies like AR, VR, and real-time rendering are transforming the way architects and developers visualize projects. Learn about the latest tools and techniques that are setting new standards in the industry.",
     date: "May 15, 2023",
-    author: "Deeksha Vyas",
+    author: "Urvashi",
     image: "https://www.fodors.com/wp-content/uploads/2019/07/01_BestAncientSitesInRome__RomanForum_shutterstock_351471179.jpg",
     slug: "sometimes-rome-is-built-in-a-day",
     category: "Technology",
-  },
-  {
-    id: 2,
-    title: "3D Modeling Techniques for Realistic Interiors",
-    excerpt:
-      "Learn about the latest techniques and tools for creating photorealistic interior visualizations. This article covers lighting, materials, texturing, and composition to help you create stunning interior renderings.",
-    date: "April 28, 2023",
-    author: "Pushpkant Yadav",
-    image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?height=400&width=600",
-    slug: "3d-modeling-techniques-for-realistic-interiors",
-    category: "Tutorials",
-  },
-  {
-    id: 3,
-    title: "How 3D Models Improve Client Communication",
-    excerpt:
-      "Discover how detailed 3D models can enhance communication and reduce misunderstandings in architectural projects. Learn how to use 3D visualization as an effective tool for client presentations and feedback.",
-    date: "April 10, 2023",
-    author: "Avinash Daiya",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?height=400&width=600",
-    slug: "how-3d-models-improve-client-communication",
-    category: "Business",
-  },
-  {
-    id: 4,
-    title: "Sustainable Architecture and 3D Visualization",
-    excerpt:
-      "Explore how 3D modeling can help architects and developers showcase sustainable design features and communicate green building concepts to clients and stakeholders.",
-    date: "March 22, 2023",
-    author: "Deeksha Vyas",
-    image: "https://images.unsplash.com/photo-1518005068251-37900150dfca?height=400&width=600",
-    slug: "sustainable-architecture-and-3d-visualization",
-    category: "Sustainability",
-  },
-  {
-    id: 5,
-    title: "The Role of Lighting in Architectural Visualization",
-    excerpt:
-      "Understand the critical role of lighting in creating realistic and impactful architectural visualizations. Learn techniques for simulating natural and artificial lighting to enhance your 3D models.",
-    date: "March 5, 2023",
-    author: "Pushpkant Yadav",
-    image: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?height=400&width=600",
-    slug: "role-of-lighting-in-architectural-visualization",
-    category: "Techniques",
-  },
-  {
-    id: 6,
-    title: "Choosing the Right 3D Modeling Software for Your Project",
-    excerpt:
-      "A comprehensive guide to selecting the most appropriate 3D modeling software based on your project requirements, budget, and expertise level. Compare features, capabilities, and learning curves.",
-    date: "February 18, 2023",
-    author: "Avinash Daiya",
-    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?height=400&width=600",
-    slug: "choosing-right-3d-modeling-software",
-    category: "Tools",
   },
 ]
 
