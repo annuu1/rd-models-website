@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { AnimatePresence, motion } from "framer-motion"
+import { AnimatedButton } from "./animated-button"
 
 const testimonials = [
   {
@@ -221,6 +222,7 @@ export function TestimonialSlider() {
                 </button>
               ))}
             </div>
+            
           </div>
           {/* Next button */}
           <button
@@ -231,6 +233,16 @@ export function TestimonialSlider() {
             <ChevronRight className="h-8 w-8" />
           </button>
         </div>
+      </div>
+      {/* View All Testimonials Button */}
+      <div className="text-center mt-8">
+        <AnimatedButton
+          href="/testimonials"
+          size="lg"
+          className="bg-primary text-white border border-transparent hover:bg-transparent hover:border-[1px] hover:border-primary hover:text-primary transition-all duration-200"
+        >
+          View All Testimonials
+        </AnimatedButton>
       </div>
     </section>
   )
