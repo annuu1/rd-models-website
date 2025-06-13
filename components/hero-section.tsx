@@ -102,7 +102,10 @@ export function HeroSection() {
             transition={{ duration: 1, delay: 0.5 }}
           >
             {/* <TypewriterEffect words={["Premier", "3D Architectural", "Modeling Services"]} className="text-white font-grenda" /> */}
-            <TypewriterEffect words={["Leading Model Maker In India"]} className="text-white font-forum border-b-4 border-white pb-2" />
+            <TypewriterEffect
+              words={["Leading Model Maker In India"]}
+              className="text-white font-forum border-b-4 border-white pb-2 max-w-xs sm:max-w-md mx-auto text-2xl sm:text-4xl lg:text-6xl leading-snug text-center"
+            />
           </motion.h1> 
 
           <motion.div
