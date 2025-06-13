@@ -101,9 +101,9 @@ export default function AboutPage() {
             />
             <div className="absolute inset-0 bg-black/60 z-10" />
           </div>
-          <div className="absolute inset-0 flex items-center z-20">
-            <div className="container">
-              <div className="max-w-2xl mx-auto rounded-xl p-8 flex flex-col items-center text-center">
+          <div className="absolute inset-0 flex items-center justify-center z-20">
+            <div className="pl-8 md:pl-16 w-full h-full flex items-center">
+              <div className="max-w-2xl rounded-xl p-8 flex flex-col items-start text-left">
                 {/* <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl font-forum">
                   About RD Models
                 </h1> */}
@@ -113,10 +113,10 @@ export default function AboutPage() {
                     "Our Story",
                     "Our Achievements",
                   ]}
-                  className="text-4xl md:text-4xl lg:text-6xl font-bold text-white/90 font-caveat bg-transparent text-center border-b-4 border-white pb-2"
+                  className="text-4xl md:text-4xl lg:text-6xl font-bold text-white/90 font-caveat bg-transparent text-left border-b-4 border-white pb-2"
                 />
 
-                <p className="mt-4 text-lg text-white/90 md:text-xl font-forum">
+                <p className="mt-4 text-lg text-white/90 md:text-xl font-forum text-left">
                   Learn about our journey, our team, and our commitment to excellence in 3D architectural modeling.
                 </p>
               </div>
