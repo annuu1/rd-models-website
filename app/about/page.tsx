@@ -113,7 +113,7 @@ export default function AboutPage() {
                     "Our Story",
                     "Our Achievements",
                   ]}
-                  className="text-4xl md:text-4xl lg:text-6xl font-bold text-white/90 font-forum bg-transparent text-center border-b-4 border-white pb-2"
+                  className="text-4xl md:text-4xl lg:text-6xl font-bold text-white/90 font-caveat bg-transparent text-center border-b-4 border-white pb-2"
                 />
 
                 <p className="mt-4 text-lg text-white/90 md:text-xl font-forum">

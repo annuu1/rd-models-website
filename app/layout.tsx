@@ -7,7 +7,7 @@ const grenda = localFont({
   display: 'swap',
 })
 
-import { Forum, Jost, Outfit, Amiri } from "next/font/google"
+import { Forum, Jost, Outfit, Amiri, Caveat } from "next/font/google"
 import type { Metadata } from "next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
@@ -42,6 +42,13 @@ const amiri = Amiri({
   variable: "--font-amiri",
 })
 
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+  variable: "--font-caveat",
+})
+
 export const metadata: Metadata = {
   title: "RD Models - 3D Architectural Models & Visualization Services in Jaipur, India",
   description:
@@ -51,6 +58,7 @@ export const metadata: Metadata = {
     "architectural visualization",
     "building models Jaipur",
     "3D modeling services India",
+    "interior visualization Jaipur",
     "architectural rendering",
     "interior visualization",
     "construction visualization",
@@ -113,7 +121,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en-IN" className={`${forum.variable} ${jost.variable} ${outfit.variable} ${amiri.variable} ${grenda.variable}`}>
+    <html lang="en-IN" className={`${forum.variable} ${jost.variable} ${outfit.variable} ${amiri.variable} ${grenda.variable} ${caveat.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

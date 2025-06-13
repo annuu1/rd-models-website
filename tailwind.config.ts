@@ -61,6 +61,7 @@ const config = {
         jost: ["var(--font-jost)", "sans-serif"],
         outfit: ["var(--font-outfit)", "sans-serif"],
         amiri: ["var(--font-amiri)", "serif"],
+        caveat: ["var(--font-caveat)", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
