@@ -50,13 +50,13 @@ const images = [
     category: "Landscape+ Resort",
     description: "A vibrant commercial project by KGK Realty, inspired by traditional patterns.",
     images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/1%20%2815%29-uLSnPWKlnm9jKxn1vAgzZKnsi5PPu7.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/1%20%2850%29-SrxEhJxoZM9dpsZqYYpyGaznOEVRvS.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/1%20%2858%29-YPkUhXkAWRAqY6y2a4qcu61bpfkOFK.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/1%20%2873%29-mgrXLgEaYPcGmBmta6Qv799gSH9zgn.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/1%20%2891%29-6m8sidH4nuhgR3YvRpWu8aSH2Ad8vD.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/2%20%2832%29-7iVlo35QbmKpi726KD2UHUnNTe4TF5.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/2%20%2852%29-EHwoqTx6787A0clyjEuOit728lQmDu.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/1-bbYrS75Z10Fdgt01LpJOgJnOEhJkIG.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/2-nd4jhCiacAJZn0i3TAcfcpXD9Pvvq0.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/3-aJXbaj9a0O3sUhIOqquepepkPTY7b8.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/4-nbw8duj0jxwzL6fVj8unjadmStHsBt.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/5-jQOvDDmbbqgw5KCkYSyv0zMI5jnGw9.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/6-oQEAyT18czCy28d1es5vtvLJYgU3EV.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/7-9VL2Zgk8C0NHBN43T4xvI4AOKz2omr.JPG",
     ],
   },
   {
@@ -65,11 +65,11 @@ const images = [
     category: "Interior Units",
     description: "A grand event pavilion designed for Mahakumbh 2025 celebrations.",
     images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/1%20%2811%29-Jseg2wZlEQeKDgWUihr6QsLfgNgJ4U.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/1%20%2828%29-C7OZcDWLCadtmfWztrlfclHCAbBJka.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/1%20%2836%29-uhtAQbUWMAMrX99uqcKfnqB7H6Bjtp.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/1%20%2853%29-KY93n88pzrJhDF485SHxEDL17wA63W.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/1%20%2863%29-6a1b8vY0sO0wS5LLhIW0aTJVSsuLuo.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/1.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/2.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/3.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/4.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/5.jpg",
     ],
   },
   {
@@ -134,10 +134,11 @@ export default function ImageGalleryPage() {
       <AnimatedHeader />
       <main className="py-12 md:px-4">
         <div className="mb-12">
-          <Button variant="ghost" size="sm" asChild className="mb-6">
+          <Button variant="default" size="sm" asChild 
+          className="mb-6 rounded-full bg-primary px-6 py-2 text-primary-foreground hover:bg-primary/10 hover:text-primary transition-all hover:border-primary hover:border-2 hover:shadow-md hover:shadow-primary/10">
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
+              Back
             </Link>
           </Button>
           <SectionHeading
@@ -153,7 +154,7 @@ export default function ImageGalleryPage() {
               className={`px-4 py-2 font-barlow text-sm ${
                 selectedCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "hover:bg-primary/10"
+                  : "hover:bg-primary/10 hover:text-primary-foreground transition-all duration-300 ease-in-out"
               }`}
               onClick={() => setSelectedCategory(category)}
             >
