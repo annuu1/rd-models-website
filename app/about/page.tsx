@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/section-heading"
 import { TeamMember } from "@/components/team-member"
 import { MobileMenu } from "@/components/mobile-menu"
 import { AnimatedHeader } from "@/components/animated-header"
+import { TypewriterEffect } from "@/components/typewriter-effect"
 import { useState } from "react"
 import CountUp from "react-countup"
 import { useInView } from "react-intersection-observer"
@@ -102,11 +103,20 @@ export default function AboutPage() {
           </div>
           <div className="absolute inset-0 flex items-center z-20">
             <div className="container">
-              <div className="max-w-2xl mx-auto bg-black/40 rounded-xl p-8 shadow-lg backdrop-blur-md flex flex-col items-center text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl font-forum">
+              <div className="max-w-2xl mx-auto rounded-xl p-8 flex flex-col items-center text-center">
+                {/* <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl font-forum">
                   About RD Models
-                </h1>
-                <p className="mt-4 text-lg text-white/90 md:text-xl font-barlow">
+                </h1> */}
+                <TypewriterEffect
+                  words={[
+                    "About Us",
+                    "Our Story",
+                    "Our Achievements",
+                  ]}
+                  className="text-4xl md:text-4xl lg:text-6xl font-bold text-white/90 font-forum bg-transparent text-center border-b-4 border-white pb-2"
+                />
+
+                <p className="mt-4 text-lg text-white/90 md:text-xl font-forum">
                   Learn about our journey, our team, and our commitment to excellence in 3D architectural modeling.
                 </p>
               </div>
