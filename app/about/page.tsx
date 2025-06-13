@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
+import { motion } from "framer-motion"
 import { Building2, ChevronDown, ChevronUp, Globe, MapPin, Users, Package } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SectionHeading } from "@/components/section-heading"
@@ -91,14 +92,21 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 z-10" />
-          <div className="relative h-[100vh] min-h-[400px]">
-            <Image
-              src="https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/hero-bg/DSC00275%20copy%283%29-cslE8trs7ccKBrPbijtwnjwoKeQgba.jpg"
-              alt="RD Models Team"
-              fill
-              className="object-cover"
-              priority
-            />
+          <div className="relative h-[100vh] min-h-[400px] overflow-hidden">
+            <motion.div
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.07 }}
+              transition={{ duration: 6, ease: 'easeInOut' }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <Image
+                src="https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/hero-bg/DSC00275%20copy%283%29-cslE8trs7ccKBrPbijtwnjwoKeQgba.jpg"
+                alt="RD Models Team"
+                fill
+                className="object-cover"
+                priority
+              />
+            </motion.div>
             <div className="absolute inset-0 bg-black/60 z-10" />
           </div>
           <div className="absolute inset-0 flex items-center justify-center z-20">
