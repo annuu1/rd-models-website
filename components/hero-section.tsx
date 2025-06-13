@@ -12,14 +12,14 @@ import Image from "next/image";
 export function HeroSection() {
   // List of background images (add more if needed)
   const backgrounds = [
-    "/images/hero-bg/hero-bg3.JPG",
-    "/images/hero-bg1.JPG",
-    "/images/hero-bg.jpg",
-    "/images/hero-bg/hero-bg1.jpg",
-    "/images/hero-bg/hero-bg2.jpg",
-    "/images/hero-bg/hero-bg4.jpg",
-    "/images/hero-bg/hero-bg5.jpg",
-    "/images/hero-bg/hero-bg6.png"
+    "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/hero-bg/8.JPG",
+    "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/hero-bg/1.JPG",
+    "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/hero-bg/2.jpg",
+    "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/hero-bg/3.jpg",
+    "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/hero-bg/4.jpg",
+    "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/hero-bg/5.jpg",
+    "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/hero-bg/6.JPG",
+    "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/hero-bg/7.jpg",
   ];
   const [current, setCurrent] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
