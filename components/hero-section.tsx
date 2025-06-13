@@ -12,7 +12,7 @@ import Image from "next/image";
 export function HeroSection() {
   // List of background images (add more if needed)
   const backgrounds = [
-    "/images/hero-bg/hero-bg3.jpg",
+    "/images/hero-bg/hero-bg3.JPG",
     "/images/hero-bg1.JPG",
     "/images/hero-bg.jpg",
     "/images/hero-bg/hero-bg1.jpg",
