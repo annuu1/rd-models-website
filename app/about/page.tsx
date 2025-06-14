@@ -167,63 +167,27 @@ export default function AboutPage() {
           </div>
         </section>
 
-
-        {/* Our Story Section */}
+        {/* Our Story & Mission Section (Side by Side) */}
         <section className="py-16 md:py-24 bg-white">
           <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+              {/* Our Story */}
               <div>
-                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum">
+                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum text-center md:text-left">
                   Our Story
                 </h2>
-                <div className="space-y-4 text-muted-foreground font-barlow">
+                <div className="space-y-4 text-muted-foreground font-barlow text-base md:text-lg">
                   <p>
-                    Founded in 2010, RD Models began as a small team of architects and 3D artists with a shared vision:
-                    to bridge the gap between architectural concepts and realistic visualization. What started as a
-                    boutique studio has grown into a leading 3D modeling company serving clients worldwide.
-                  </p>
-                  <p>
-                    Over the years, we've expanded our team, refined our processes, and embraced cutting-edge
-                    technologies to deliver exceptional 3D models that bring architectural visions to life. Our journey
-                    has been marked by a commitment to quality, attention to detail, and a passion for architectural
-                    visualization.
-                  </p>
-                  <p>
-                    Today, RD Models is recognized for its technical expertise, artistic vision, and client-centered
-                    approach. We continue to push the boundaries of what's possible in 3D modeling, helping architects,
-                    developers, and construction companies communicate their ideas with clarity and impact.
+                    Welcome to RD Models, your premier destination for high-quality scale models. As a leading model maker, RD Models has grown into India’s foremost model making company under the visionary leadership of Rohitash Dahiya. Over the past 15 years, we have been committed to innovation, precision, and unmatched quality. From our humble beginnings in Jaipur, we have expanded nationwide with workshops in Delhi, Bangalore, Hyderabad, Ahmedabad, and Mumbai. Our relentless pursuit of excellence has established us as the go-to model maker for top-tier companies and institutions.
                   </p>
                 </div>
               </div>
-              <div className="relative h-[400px] rounded-lg overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?height=800&width=1200"
-                  alt="RD Models Office"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Mission Section */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="relative h-[400px] rounded-lg overflow-hidden order-1 md:order-none">
-                <Image
-                  src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80"
-                  alt="Mission at RD Models"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              {/* Our Mission */}
               <div>
-                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum">
+                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum text-center md:text-left">
                   Our Mission
                 </h2>
-                <div className="space-y-4 text-muted-foreground font-barlow">
+                <div className="space-y-4 text-muted-foreground font-barlow text-base md:text-lg">
                   <p>
                     At RD Models, our mission is to push the boundaries of scale model making. We leverage the latest technologies to create detailed, accurate, and aesthetically pleasing models. As a pioneering model making company, we aim to be the industry benchmark, continually setting new standards of quality and craftsmanship. Our extensive in-house production capabilities, including CNC laser cutting, CNC milling, 5D CNC carving, vacuum forming, and large 3D scanning, enable us to execute complex and intricate projects with ease.
                   </p>
@@ -233,14 +197,46 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Our Team & Why Choose Us Section */}
+        {/* Photo Gallery with Micro-interactions */}
+        <section className="py-10 bg-white">
+          <div className="container">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {[
+                'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=600&q=80',
+              ].map((src, idx) => (
+                <motion.div
+                  key={src}
+                  whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(0,0,0,0.18)' }}
+                  whileTap={{ scale: 0.97 }}
+                  className="rounded-xl overflow-hidden shadow-md cursor-pointer transition-all duration-300 group"
+                >
+                  <Image
+                    src={src}
+                    alt={`RD Models Work ${idx + 1}`}
+                    width={400}
+                    height={260}
+                    className="object-cover w-full h-64 group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Our Team & Why Choose Us Section (Side by Side) */}
         <section className="py-16 md:py-24 bg-white">
           <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+              {/* Our Team */}
               <div>
-                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum">
-                  Our Team
-                </h2>
+                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum text-center md:text-left">
+  Our Team
+</h2>
                 <div className="space-y-4 text-muted-foreground font-barlow text-lg">
                   <p>
                     The heart of RD Models is our dedicated team of over 100 skilled craftsmen. Their passion and expertise drive our success as a leading model maker. Our team is committed to delivering models that not only meet but exceed client expectations. We take pride in transforming ideas into tangible realities, providing models that serve as powerful tools for visualization and communication.
