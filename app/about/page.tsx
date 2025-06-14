@@ -23,11 +23,10 @@ interface StatCardProps {
 function StatCard({ number, label, description, icon }: StatCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   const { ref, inView } = useInView({
-    triggerOnce: true, // Only trigger the animation once
-    threshold: 0.3, // Start when 30% of the card is visible
+    triggerOnce: true,
+    threshold: 0.3,
   })
 
-  // Extract numeric part from number (e.g., "1,800+" -> 1800)
   const numericValue = parseInt(number.replace(/[^0-9]/g, ""), 10)
   const suffix = number.includes("+") ? "+" : ""
 
@@ -48,9 +47,7 @@ function StatCard({ number, label, description, icon }: StatCardProps) {
       </h3>
       <p className="text-xl font-semibold text-muted-foreground font-barlow mb-4">{label}</p>
       <div className="text-sm text-muted-foreground font-barlow leading-relaxed">
-        {/* Full description on medium screens and above */}
         <div className="hidden md:block">{description}</div>
-        {/* Collapsible description for mobile */}
         <div className="md:hidden">
           {isExpanded ? (
             <div>
@@ -112,9 +109,6 @@ export default function AboutPage() {
           <div className="absolute inset-0 flex items-center justify-center z-20">
             <div className="pl-8 md:pl-48 w-full h-full flex items-center">
               <div className="max-w-2xl rounded-xl p-8 flex flex-col items-start text-left">
-                {/* <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl font-forum">
-                  About RD Models
-                </h1> */}
                 <TypewriterEffect
                   words={[
                     "About Us",
@@ -123,7 +117,6 @@ export default function AboutPage() {
                   ]}
                   className="text-4xl md:text-6xl lg:text-6xl font-bold text-white/90 font-caveat bg-transparent text-left border-b-4 border-white pb-2"
                 />
-
                 <p className="mt-4 text-lg text-white/90 md:text-xl font-forum text-left">
                   Learn about our journey, our team, and our commitment to excellence in 3D architectural modeling.
                 </p>
@@ -153,8 +146,8 @@ export default function AboutPage() {
               />
               <StatCard
                 number="700+"
-                label="Clients"
-                description="Our dedication to quality work and exceptional service has helped us build strong, lasting relationships with over 700 clients. As a top model maker, we don’t just create models; we build relationships based on trust and excellence. Our client base includes top-tier corporations, government agencies, and scientific institutions. As a leading model maker, we pride ourselves on understanding our clients’ unique needs and exceeding their expectations, which has earned us a loyal and diverse clientele."
+                label="Users"
+                description="Our dedication to quality work and exceptional service has helped us build strong, lasting relationships with over 700 clients. As a top model maker, we don’t just create models; we build relationships based on trust and excellence. Our client base includes top-tier corporations, government agencies, and scientific institutions. As a leading model maker, we pride ourselves on understanding our clients’ unique needs and exceeding their expectations."
                 icon={<Users className="h-6 w-6 text-primary" />}
               />
               <StatCard
@@ -197,13 +190,13 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Photo Gallery with Micro-interactions */}
+        {/* Photo Gallery with Flip Effect */}
         <section className="py-10 bg-white">
           <div className="container">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {[
                 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80',
+                'https://images.unsplash.com/photo-1519125323398-675f0ddf6308?auto=format&fit=crop&w=600&q=80',
                 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80',
                 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80',
                 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80',
@@ -211,17 +204,41 @@ export default function AboutPage() {
               ].map((src, idx) => (
                 <motion.div
                   key={src}
-                  whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(0,0,0,0.18)' }}
+                  className="rounded-xl overflow-hidden shadow-md cursor-pointer perspective-1000"
+                  whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
-                  className="rounded-xl overflow-hidden shadow-md cursor-pointer transition-all duration-300 group"
                 >
-                  <Image
-                    src={src}
-                    alt={`RD Models Work ${idx + 1}`}
-                    width={400}
-                    height={260}
-                    className="object-cover w-full h-64 group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300"
-                  />
+                  <motion.div
+                    className="relative w-full h-64"
+                    initial={{ rotateY: 0 }}
+                    whileHover={{ rotateY: 180 }}
+                    transition={{ duration: 0.6, ease: 'easeInOut' }}
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    {/* Front Face (Image) */}
+                    <div
+                      className="absolute w-full h-full backface-hidden"
+                      style={{ backfaceVisibility: 'hidden' }}
+                    >
+                      <Image
+                        src={src}
+                        alt={`RD Models Work ${idx + 1}`}
+                        width={400}
+                        height={260}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    {/* Back Face (Overlay with Text) */}
+                    <div
+                      className="absolute w-full h-full backface-hidden bg-primary/90 flex items-center justify-center text-white"
+                      style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' }}
+                    >
+                      <div className="text-center p-4">
+                        <h3 className="text-lg font-semibold font-forum">Project {idx + 1}</h3>
+                        <p className="text-sm font-barlow">Explore our craftsmanship</p>
+                      </div>
+                    </div>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
@@ -235,8 +252,8 @@ export default function AboutPage() {
               {/* Our Team */}
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum text-center md:text-left">
-  Our Team
-</h2>
+                  Our Team
+                </h2>
                 <div className="space-y-4 text-muted-foreground font-barlow text-lg">
                   <p>
                     The heart of RD Models is our dedicated team of over 100 skilled craftsmen. Their passion and expertise drive our success as a leading model maker. Our team is committed to delivering models that not only meet but exceed client expectations. We take pride in transforming ideas into tangible realities, providing models that serve as powerful tools for visualization and communication.
@@ -244,7 +261,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum">
+                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum text-center md:text-left">
                   Why Choose Us
                 </h2>
                 <div className="space-y-4 text-muted-foreground font-barlow text-lg">
@@ -257,7 +274,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Our Services Section */}
         {/* CTA Section */}
         <section className="py-16 md:py-24 bg-primary">
           <div className="container text-center">
@@ -272,20 +288,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-
-      {/* <footer className="border-t bg-muted">
-        <div className="container py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Building2 className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold text-primary font-forum">RD Models</span>
-            </div>
-            <p className="text-sm text-muted-foreground font-barlow">
-              © {new Date().getFullYear()} RD Models. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer> */}
     </div>
   )
 }
