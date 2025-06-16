@@ -43,7 +43,25 @@ export default function ImageGalleryPage() {
   }, []);
 
   // Extract unique categories
-  const categories = ["All", ...new Set(images.map((project: any) => project.category))];
+  const categories = [
+    "All",
+    "High Rise Residential",
+    "Low Rise Residential",
+    "Villa Township",
+    "Landscape + Resort",
+    "Interior Units",
+    "House Models",
+    "Commercial Models",
+    "Institutional Models",
+    "Industrial / Factory Models",
+    "Healthcare Hospital Models",
+    "Water supply Models",
+    "Residential Township",
+    "Industrial Township",
+    "Monochromatic Models",
+    "Art Models",
+    "Miscellaneous"
+  ]
 
   // Split categories into two rows
   const firstRowCategories = categories.slice(0, 9);
