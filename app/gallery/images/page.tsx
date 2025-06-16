@@ -158,6 +158,7 @@ const images = [
 
 export default function ImageGalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [visibleProjects, setVisibleProjects] = useState(6); // State for pagination
 
   // Extract unique categories
   const categories = ["All", ...new Set(images.map((project) => project.category))];
@@ -169,6 +170,19 @@ export default function ImageGalleryPage() {
   // Filter projects based on selected category
   const filteredImages =
     selectedCategory === "All" ? images : images.filter((project) => project.category === selectedCategory);
+
+  // Slice filtered images for pagination
+  const displayedImages = filteredImages.slice(0, visibleProjects);
+
+  // Handle Load More button click
+  const handleLoadMore = () => {
+    setVisibleProjects((prev) => prev + 6);
+  };
+
+  // Reset visibleProjects when category changes
+  useEffect(() => {
+    setVisibleProjects(6);
+  }, [selectedCategory]);
 
   // Footer form state and handlers
   const [formData, setFormData] = useState({
@@ -242,7 +256,7 @@ export default function ImageGalleryPage() {
           )}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-          {filteredImages.map((project) => (
+          {displayedImages.map((project) => (
             <div
               key={project.id}
               className="group relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-[28rem]"
@@ -282,11 +296,18 @@ export default function ImageGalleryPage() {
             </div>
           ))}
         </div>
-        <div className="text-center mt-16">
-          <Button variant="outline" size="lg" className="px-8 py-3">
-            Load More Images
-          </Button>
-        </div>
+        {visibleProjects < filteredImages.length && (
+          <div className="text-center mt-16">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="px-8 py-3"
+              onClick={handleLoadMore}
+            >
+              Load More Images
+            </Button>
+          </div>
+        )}
       </main>
       <FloatingContactButtons />
     </div>
