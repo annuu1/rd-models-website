@@ -99,6 +99,61 @@ const images = [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/6-Museum%20of%20the%20Future/5.JPG",
     ],
   },
+  {
+    id: 7,
+    title: "Hyderbad, Fwd",
+    category: "Art Models",
+    description: "Hyderbad, Fwd – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/2.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/5.JPG",
+    ],
+  },
+  {
+    id: 8,
+    title: "Ambience Park View Model-1, Hyderbad",
+    category: "House Model",
+    description: "Ambience Park View Model-1, Hyderbad – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/5.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/6.jpg",
+    ],
+  },
+  {
+    id: 9,
+    title: "Ambience Park View Model-2, Hyderbad",
+    category: "Villa Unit Model",
+    description: "Ambience Park View Model-2, Hyderbad – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/5.jpg",
+    ],
+  },
+  {
+    id: 10,
+    title: "The Aura By Vanshdeep",
+    category: "Institutional",
+    description: "The Aura By Vanshdeep – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/1.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/2.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/3.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/4.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/5.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/6.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/7.jpg",
+    ],
+  }
 ];
 
 export default function ImageGalleryPage() {
@@ -106,6 +161,10 @@ export default function ImageGalleryPage() {
 
   // Extract unique categories
   const categories = ["All", ...new Set(images.map((project) => project.category))];
+
+  // Split categories into two rows
+  const firstRowCategories = categories.slice(0, 9);
+  const secondRowCategories = categories.slice(9, 18);
 
   // Filter projects based on selected category
   const filteredImages =
@@ -146,21 +205,41 @@ export default function ImageGalleryPage() {
             subtitle="Explore our collection of architectural images showcasing our expertise in building modeling and design."
           />
         </div>
-        <div className="mb-8 flex flex-wrap gap-4 justify-center">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={selectedCategory === category ? "default" : "outline"}
-              className={`px-4 py-2 font-barlow text-sm ${
-                selectedCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-primary/10 hover:text-primary-foreground transition-all duration-300 ease-in-out"
-              }`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </Button>
-          ))}
+        <div className="mb-8 flex flex-col gap-4 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
+            {firstRowCategories.map((category) => (
+              <Button
+                key={category}
+                variant={selectedCategory === category ? "default" : "outline"}
+                className={`px-4 py-2 font-barlow text-sm ${
+                  selectedCategory === category
+                    ? "bg-primary text-primary-foreground"
+                    : "hover:bg-primary/10 hover:text-primary-foreground transition-all duration-300 ease-in-out"
+                }`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+          {secondRowCategories.length > 0 && (
+            <div className="flex flex-wrap gap-4 justify-center">
+              {secondRowCategories.map((category) => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  className={`px-4 py-2 font-barlow text-sm ${
+                    selectedCategory === category
+                      ? "bg-primary text-primary-foreground"
+                      : "hover:bg-primary/10 hover:text-primary-foreground transition-all duration-300 ease-in-out"
+                  }`}
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
+          )}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           {filteredImages.map((project) => (
