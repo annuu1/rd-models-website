@@ -15,194 +15,28 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Define the images array
-const images = [
-  {
-    id: 1,
-    title: "KAAR, Dubai",
-    category: "High Rise Residential",
-    description: "A modern residential project with innovative architecture.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/1-KAAR/1.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/1-KAAR/2.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/1-KAAR/3.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/1-KAAR/4.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/1-KAAR/5.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/1-KAAR/6.jpg",
-    ],
-  },
-  {
-    id: 2,
-    title: "Empyreal club",
-    category: "Low Rise Residential",
-    description: "A luxury club project combining elegance and comfort.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/2-Empereal%20Club/1-Y1qxKYNUfDUSKq6OUXI5koDz8Jm3Zg.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/2-Empereal%20Club/2-cnIA533kHqIXZkYO8o4tprBTdRUJ2z.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/2-Empereal%20Club/3-lKjHOZOePLsmmnXV6kIpi1NUoHmpEd.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/2-Empereal%20Club/4-uGZ1rL1FHlSC243szRA6rpOJ5Nycd2.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/2-Empereal%20Club/5-TIzgf9Dz6P8FvMllNxQM715BVOAuTS.jpg",
-    ],
-  },
-  {
-    id: 3,
-    title: "Lehariya By KGK Realty",
-    category: "Landscape+ Resort",
-    description: "A vibrant commercial project by KGK Realty, inspired by traditional patterns.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/1-bbYrS75Z10Fdgt01LpJOgJnOEhJkIG.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/2-nd4jhCiacAJZn0i3TAcfcpXD9Pvvq0.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/3-aJXbaj9a0O3sUhIOqquepepkPTY7b8.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/4-nbw8duj0jxwzL6fVj8unjadmStHsBt.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/5-jQOvDDmbbqgw5KCkYSyv0zMI5jnGw9.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/6-oQEAyT18czCy28d1es5vtvLJYgU3EV.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/7-9VL2Zgk8C0NHBN43T4xvI4AOKz2omr.JPG",
-    ],
-  },
-  {
-    id: 4,
-    title: "Mahakumbh 2025",
-    category: "Interior Units",
-    description: "A grand event pavilion designed for Mahakumbh 2025 celebrations.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/1.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/2.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/3.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/4.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/5.jpg",
-    ],
-  },
-  {
-    id: 5,
-    title: "NK Anantya, Ahmedabad",
-    category: "House Models",
-    description: "A premium residential complex with state-of-the-art amenities.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/5-NK%20Anantya/1.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/5-NK%20Anantya/2.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/5-NK%20Anantya/3.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/5-NK%20Anantya/4.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/5-NK%20Anantya/5.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/5-NK%20Anantya/6.JPG",
-    ],
-  },
-  {
-    id: 6,
-    title: "Museum of the Future",
-    category: "Commercial Models",
-    description: "Museum of the Future, Dubai – a showcase of innovative design and technology.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/6-Museum%20of%20the%20Future/1.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/6-Museum%20of%20the%20Future/2%20%282%29.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/6-Museum%20of%20the%20Future/3.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/6-Museum%20of%20the%20Future/4.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/6-Museum%20of%20the%20Future/5.JPG",
-    ],
-  },
-  {
-    id: 7,
-    title: "Hyderbad, Fwd",
-    category: "Art Models",
-    description: "Hyderbad, Fwd – a showcase of innovative design and technology.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/1.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/2.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/3.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/4.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/5.JPG",
-    ],
-  },
-  {
-    id: 8,
-    title: "Ambience Park View Model-1, Hyderbad",
-    category: "House Model",
-    description: "Ambience Park View Model-1, Hyderbad – a showcase of innovative design and technology.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/1.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/2.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/3.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/4.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/5.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/6.jpg",
-    ],
-  },
-  {
-    id: 9,
-    title: "Ambience Park View Model-2, Hyderbad",
-    category: "Villa Unit Model",
-    description: "Ambience Park View Model-2, Hyderbad – a showcase of innovative design and technology.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/1.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/2.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/3.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/4.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/5.jpg",
-    ],
-  },
-  {
-    id: 10,
-    title: "The Aura By Vanshdeep",
-    category: "Institutional",
-    description: "The Aura By Vanshdeep – a showcase of innovative design and technology.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/1.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/2.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/3.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/4.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/5.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/6.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/7.jpg",
-    ],
-  },
-  {
-    id: 11,
-    title: "Ditya Luxuria. Mumbai",
-    category: "Institutional",
-    description: "The Aura By Vanshdeep – a showcase of innovative design and technology.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/1.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/2.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/3.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/4.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/5.JPG",
-    ],
-  },
-  {
-    id: 12,
-    title: "Celestial, AHCPL Lucknow",
-    category: "Institutional",
-    description: "The Aura By Vanshdeep – a showcase of innovative design and technology.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/1.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/2.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/3.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/4.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/5.jpg",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/6.jpg", 
-    ],
-  },
-  {
-    id: 13,
-    title: "Amelias",
-    category: "Institutional",
-    description: "Amelias – a showcase of innovative design and technology.",
-    images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/1.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/2.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/3.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/4.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/5.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/6.JPG", 
-    ],
-  },
-];
+// Type for gallery project
+interface GalleryProject {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  images: string[];
+}
 
 export default function ImageGalleryPage() {
+  const [images, setImages] = useState<GalleryProject[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [visibleProjects, setVisibleProjects] = useState(6); // State for pagination
 
+  useEffect(() => {
+    fetch("/api/gallery-images")
+      .then((res) => res.json())
+      .then((data) => setImages(data));
+  }, []);
+
   // Extract unique categories
-  const categories = ["All", ...new Set(images.map((project) => project.category))];
+  const categories = ["All", ...new Set(images.map((project: any) => project.category))];
 
   // Split categories into two rows
   const firstRowCategories = categories.slice(0, 9);
