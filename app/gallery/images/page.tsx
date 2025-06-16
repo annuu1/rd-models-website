@@ -153,7 +153,48 @@ const images = [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/6.jpg",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/7.jpg",
     ],
-  }
+  },
+  {
+    id: 11,
+    title: "Ditya Luxuria. Mumbai",
+    category: "Institutional",
+    description: "The Aura By Vanshdeep – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/1.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/5.JPG",
+    ],
+  },
+  {
+    id: 12,
+    title: "Celestial, AHCPL Lucknow",
+    category: "Institutional",
+    description: "The Aura By Vanshdeep – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/2.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/3.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/5.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/6.jpg", 
+    ],
+  },
+  {
+    id: 13,
+    title: "Amelias",
+    category: "Institutional",
+    description: "Amelias – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/5.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/6.JPG", 
+    ],
+  },
 ];
 
 export default function ImageGalleryPage() {
