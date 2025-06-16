@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/section-heading";
 import { MobileMenu } from "@/components/mobile-menu";
@@ -29,6 +29,11 @@ export default function ImageGalleryPage() {
   const [images, setImages] = useState<GalleryProject[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [visibleProjects, setVisibleProjects] = useState(9); // State for pagination (3 rows × 3 columns)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null); // State for full-screen image
+
+  // Mouse position tracking for click vs drag detection
+  const mouseDownPos = useRef<{ x: number; y: number } | null>(null);
+  const DRAG_THRESHOLD = 5; // Pixels of movement to consider it a drag
 
   // Fetch images from API
   useEffect(() => {
@@ -84,6 +89,34 @@ export default function ImageGalleryPage() {
     e.preventDefault();
     console.log("Form submitted:", formData);
     setFormData({ name: "", email: "", message: "" });
+  };
+
+  // Handle mouse down to record starting position
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    mouseDownPos.current = { x: e.clientX, y: e.clientY };
+  };
+
+  // Handle mouse up to check if it was a click or drag
+  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>, image: string) => {
+    if (mouseDownPos.current) {
+      const dx = Math.abs(e.clientX - mouseDownPos.current.x);
+      const dy = Math.abs(e.clientY - mouseDownPos.current.y);
+      // If movement is less than threshold, treat as a click
+      if (dx <= DRAG_THRESHOLD && dy <= DRAG_THRESHOLD) {
+        handleImageClick(image);
+      }
+    }
+    mouseDownPos.current = null; // Reset position
+  };
+
+  // Handle image click to open full-screen
+  const handleImageClick = (image: string) => {
+    setSelectedImage(image);
+  };
+
+  // Close full-screen modal
+  const closeFullScreen = () => {
+    setSelectedImage(null);
   };
 
   return (
@@ -158,7 +191,12 @@ export default function ImageGalleryPage() {
                 className="w-full h-full"
               >
                 {project.images.map((image, index) => (
-                  <div key={`${project.id}-${index}`} className="relative w-full h-[28rem]">
+                  <div
+                    key={`${project.id}-${index}`}
+                    className="relative w-full h-[28rem] cursor-pointer"
+                    onMouseDown={handleMouseDown}
+                    onMouseUp={(e) => handleMouseUp(e, image)}
+                  >
                     <Image
                       src={image || "/placeholder.svg"}
                       alt={`${project.title} image ${index + 1}`}
@@ -189,6 +227,36 @@ export default function ImageGalleryPage() {
           <div ref={loadMoreRef} className="h-10 w-full mt-16"></div>
         )}
       </main>
+      {/* Full-screen image modal */}
+      {selectedImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+          onClick={closeFullScreen}
+        >
+          <div className="relative w-full h-full flex items-center justify-center">
+            <Image
+              src={selectedImage}
+              alt="Full-screen image"
+              className="object-contain max-w-[90%] max-h-[90%]"
+              width={1920}
+              height={1080}
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking image
+            />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-4 right-4 text-white hover:bg-white/20"
+              onClick={closeFullScreen}
+            >
+              <X className="h-6 w-6" />
+            </Button>
+          </div>
+        </motion.div>
+      )}
       <FloatingContactButtons />
     </div>
   );
