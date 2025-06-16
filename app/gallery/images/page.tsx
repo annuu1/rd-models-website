@@ -10,10 +10,11 @@ import { AnimatedHeader } from "@/components/animated-header";
 import { FaLinkedin, FaInstagram, FaTwitter, FaMapMarkerAlt, FaGlobeAsia, FaPhone, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 import FloatingContactButtons from "../../FloatingContactButtons";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useInView } from "react-intersection-observer";
 
 // Type for gallery project
 interface GalleryProject {
@@ -27,8 +28,9 @@ interface GalleryProject {
 export default function ImageGalleryPage() {
   const [images, setImages] = useState<GalleryProject[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [visibleProjects, setVisibleProjects] = useState(6); // State for pagination
+  const [visibleProjects, setVisibleProjects] = useState(9); // State for pagination (3 rows × 3 columns)
 
+  // Fetch images from API
   useEffect(() => {
     fetch("/api/gallery-images")
       .then((res) => res.json())
@@ -49,15 +51,22 @@ export default function ImageGalleryPage() {
   // Slice filtered images for pagination
   const displayedImages = filteredImages.slice(0, visibleProjects);
 
-  // Handle Load More button click
-  const handleLoadMore = () => {
-    setVisibleProjects((prev) => prev + 6);
-  };
-
   // Reset visibleProjects when category changes
   useEffect(() => {
-    setVisibleProjects(6);
+    setVisibleProjects(9);
   }, [selectedCategory]);
+
+  // Intersection Observer for automatic loading
+  const { ref: loadMoreRef, inView } = useInView({
+    threshold: 0.1, // Trigger when 10% of the ref element is visible
+    triggerOnce: false, // Allow multiple triggers
+  });
+
+  useEffect(() => {
+    if (inView && visibleProjects < filteredImages.length) {
+      setVisibleProjects((prev) => prev + 9); // Load next 3 rows (9 projects)
+    }
+  }, [inView, filteredImages.length, visibleProjects]);
 
   // Footer form state and handlers
   const [formData, setFormData] = useState({
@@ -82,8 +91,12 @@ export default function ImageGalleryPage() {
       <AnimatedHeader />
       <main className="py-12 md:px-4">
         <div className="mb-12">
-          <Button variant="default" size="sm" asChild 
-          className="mb-6 rounded-full bg-primary px-6 py-2 text-primary-foreground hover:bg-primary/10 hover:text-primary transition-all hover:border-primary hover:border-2 hover:shadow-md hover:shadow-primary/10">
+          <Button
+            variant="default"
+            size="sm"
+            asChild
+            className="mb-6 rounded-full bg-primary px-6 py-2 text-primary-foreground hover:bg-primary/10 hover:text-primary transition-all hover:border-primary hover:border-2 hover:shadow-md hover:shadow-primary/10"
+          >
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back
@@ -150,7 +163,7 @@ export default function ImageGalleryPage() {
                       src={image || "/placeholder.svg"}
                       alt={`${project.title} image ${index + 1}`}
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out"
-                      style={{height: '100%', width: '100%'}}
+                      style={{ height: "100%", width: "100%" }}
                       width={100}
                       height={100}
                     />
@@ -171,17 +184,9 @@ export default function ImageGalleryPage() {
             </div>
           ))}
         </div>
+        {/* Invisible trigger for automatic loading */}
         {visibleProjects < filteredImages.length && (
-          <div className="text-center mt-16">
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-8 py-3"
-              onClick={handleLoadMore}
-            >
-              Load More Images
-            </Button>
-          </div>
+          <div ref={loadMoreRef} className="h-10 w-full mt-16"></div>
         )}
       </main>
       <FloatingContactButtons />
