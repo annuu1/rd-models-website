@@ -195,12 +195,12 @@ export default function AboutPage() {
           <div className="container">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {[
-                'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80',
-                'https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=600&q=80',
+                'https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/about-us/1.JPG',
+                'https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/about-us/2.jpg',
+                'https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/about-us/3.JPG',
+                'https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/about-us/4.jpg',
+                'https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/about-us/5.jpg',
+                'https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/about-us/6.jpg',
               ].map((src, idx) => (
                 <motion.div
                   key={src}
