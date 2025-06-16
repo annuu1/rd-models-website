@@ -190,10 +190,10 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Photo Gallery with Flip Effect */}
+        {/* Photo Gallery with Zoom-In Effect */}
         <section className="py-10 bg-white">
           <div className="container">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0">
               {[
                 'https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/about-us/1.JPG',
                 'https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/about-us/2.jpg',
@@ -204,41 +204,18 @@ export default function AboutPage() {
               ].map((src, idx) => (
                 <motion.div
                   key={src}
-                  className="rounded-xl overflow-hidden shadow-md cursor-pointer perspective-1000"
-                  whileHover={{ scale: 1.04 }}
+                  className="overflow-hidden shadow-md cursor-pointer hover:shadow-xl"
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
-                  <motion.div
-                    className="relative w-full h-64"
-                    initial={{ rotateY: 0 }}
-                    whileHover={{ rotateY: 180 }}
-                    transition={{ duration: 0.6, ease: 'easeInOut' }}
-                    style={{ transformStyle: 'preserve-3d' }}
-                  >
-                    {/* Front Face (Image) */}
-                    <div
-                      className="absolute w-full h-full backface-hidden"
-                      style={{ backfaceVisibility: 'hidden' }}
-                    >
-                      <Image
-                        src={src}
-                        alt={`RD Models Work ${idx + 1}`}
-                        width={400}
-                        height={260}
-                        className="object-cover w-full h-full"
-                      />
-                    </div>
-                    {/* Back Face (Overlay with Text) */}
-                    <div
-                      className="absolute w-full h-full backface-hidden bg-primary/90 flex items-center justify-center text-white"
-                      style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' }}
-                    >
-                      <div className="text-center p-4">
-                        <h3 className="text-lg font-semibold font-forum">Project {idx + 1}</h3>
-                        <p className="text-sm font-barlow">Explore our craftsmanship</p>
-                      </div>
-                    </div>
-                  </motion.div>
+                  <Image
+                    src={src}
+                    alt={`RD Models Work ${idx + 1}`}
+                    width={400}
+                    height={260}
+                    className="object-cover w-full h-full transition-transform duration-300"
+                  />
                 </motion.div>
               ))}
             </div>
