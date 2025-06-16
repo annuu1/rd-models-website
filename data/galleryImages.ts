@@ -30,7 +30,7 @@ export const galleryImages = [
   {
     id: 3,
     title: "Lehariya By KGK Realty",
-    category: "Landscape+ Resort",
+    category: "Villa Township",
     description: "A vibrant commercial project by KGK Realty, inspired by traditional patterns.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/1-bbYrS75Z10Fdgt01LpJOgJnOEhJkIG.JPG",
@@ -45,7 +45,7 @@ export const galleryImages = [
   {
     id: 4,
     title: "Mahakumbh 2025",
-    category: "Interior Units",
+    category: "Landscape + Resort",
     description: "A grand event pavilion designed for Mahakumbh 2025 celebrations.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/1.jpg",
@@ -58,7 +58,7 @@ export const galleryImages = [
   {
     id: 5,
     title: "NK Anantya, Ahmedabad",
-    category: "House Models",
+    category: "Interior Units",
     description: "A premium residential complex with state-of-the-art amenities.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/5-NK%20Anantya/1.JPG",
@@ -72,7 +72,7 @@ export const galleryImages = [
   {
     id: 6,
     title: "Museum of the Future",
-    category: "Commercial Models",
+    category: "House Models",
     description: "Museum of the Future, Dubai – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/6-Museum%20of%20the%20Future/1.JPG",
@@ -85,7 +85,7 @@ export const galleryImages = [
   {
     id: 7,
     title: "Hyderbad, Fwd",
-    category: "Art Models",
+    category: "Commercial Models",
     description: "Hyderbad, Fwd – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/1.JPG",
@@ -98,7 +98,7 @@ export const galleryImages = [
   {
     id: 8,
     title: "Ambience Park View Model-1, Hyderbad",
-    category: "House Model",
+    category: "Institutional Models",
     description: "Ambience Park View Model-1, Hyderbad – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/1.JPG",
@@ -112,7 +112,7 @@ export const galleryImages = [
   {
     id: 9,
     title: "Ambience Park View Model-2, Hyderbad",
-    category: "Villa Unit Model",
+    category: "Industrial / Factory Models",
     description: "Ambience Park View Model-2, Hyderbad – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/1.JPG",
@@ -125,7 +125,7 @@ export const galleryImages = [
   {
     id: 10,
     title: "The Aura By Vanshdeep",
-    category: "Institutional",
+    category: "Healthcare Hospital Models",
     description: "The Aura By Vanshdeep – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/1.jpg",
@@ -140,8 +140,8 @@ export const galleryImages = [
   {
     id: 11,
     title: "Ditya Luxuria. Mumbai",
-    category: "Institutional",
-    description: "The Aura By Vanshdeep – a showcase of innovative design and technology.",
+    category: "Water supply Models",
+    description: "Ditya Luxuria. Mumbai – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/1.jpg",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/2.JPG",
@@ -153,8 +153,8 @@ export const galleryImages = [
   {
     id: 12,
     title: "Celestial, AHCPL Lucknow",
-    category: "Institutional",
-    description: "The Aura By Vanshdeep – a showcase of innovative design and technology.",
+    category: "Residential Township",
+    description: "Celestial, AHCPL Lucknow – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/1.JPG",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/2.jpg",
@@ -167,7 +167,7 @@ export const galleryImages = [
   {
     id: 13,
     title: "Amelias",
-    category: "Institutional",
+    category: "Industrial Township ",
     description: "Amelias – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/1.JPG",
@@ -176,6 +176,47 @@ export const galleryImages = [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/4.JPG",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/5.JPG",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/6.JPG", 
+    ],
+  },
+  {
+    id: 14,
+    title: "Formerah Greens, Chandigarh",
+    category: "Monochromatic Models",
+    description: "Formerah Greens, Chandigarh – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/14%20Formerah%20Greens%2C%20Chandigarh/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/14%20Formerah%20Greens%2C%20Chandigarh/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/14%20Formerah%20Greens%2C%20Chandigarh/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/14%20Formerah%20Greens%2C%20Chandigarh/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/14%20Formerah%20Greens%2C%20Chandigarh/5.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/14%20Formerah%20Greens%2C%20Chandigarh/7.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/14%20Formerah%20Greens%2C%20Chandigarh/8.JPG",
+    ],
+  },
+  {
+    id: 15,
+    title: "Oxyzone Park, Kota",
+    category: "Art Models",
+    description: "Oxyzone Park, Kota – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/15%20Oxyzone%20Park%2C%20Kota/1.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/15%20Oxyzone%20Park%2C%20Kota/2.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/15%20Oxyzone%20Park%2C%20Kota/3.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/15%20Oxyzone%20Park%2C%20Kota/4.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/15%20Oxyzone%20Park%2C%20Kota/5.JPG",
+    ],
+  },
+  {
+    id: 16,
+    title: "Oxyzone Park, Kota",
+    category: "Miscellaneous",
+    description: "Oxyzone Park, Kota – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/15%20Oxyzone%20Park%2C%20Kota/1.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/15%20Oxyzone%20Park%2C%20Kota/2.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/15%20Oxyzone%20Park%2C%20Kota/3.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/15%20Oxyzone%20Park%2C%20Kota/4.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/15%20Oxyzone%20Park%2C%20Kota/5.JPG",
     ],
   },
 ];
