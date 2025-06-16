@@ -17,7 +17,7 @@ export const galleryImages = [
   {
     id: 2,
     title: "Empyreal club",
-    category: "Low Rise Residential",
+    category: "Commercial Models",
     description: "A luxury club project combining elegance and comfort.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/2-Empereal%20Club/1-Y1qxKYNUfDUSKq6OUXI5koDz8Jm3Zg.jpg",
@@ -30,8 +30,8 @@ export const galleryImages = [
   {
     id: 3,
     title: "Lehariya By KGK Realty",
-    category: "Villa Township",
-    description: "A vibrant commercial project by KGK Realty, inspired by traditional patterns.",
+    category: "Commercial Models",
+    description: "Lehariya By KGK Realty – a vibrant commercial project by KGK Realty, inspired by traditional patterns.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/1-bbYrS75Z10Fdgt01LpJOgJnOEhJkIG.JPG",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/3-Lehariya/2-nd4jhCiacAJZn0i3TAcfcpXD9Pvvq0.JPG",
@@ -58,8 +58,8 @@ export const galleryImages = [
   {
     id: 5,
     title: "NK Anantya, Ahmedabad",
-    category: "Interior Units",
-    description: "A premium residential complex with state-of-the-art amenities.",
+    category: "High Rise Residential",
+    description: "NK Anantya, Ahmedabad – a premium residential complex with state-of-the-art amenities.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/5-NK%20Anantya/1.JPG",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/5-NK%20Anantya/2.JPG",
@@ -125,7 +125,7 @@ export const galleryImages = [
   {
     id: 10,
     title: "The Aura By Vanshdeep",
-    category: "Healthcare Hospital Models",
+    category: "High Rise Residential",
     description: "The Aura By Vanshdeep – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/10%20The%20Aura%20By%20Vanshdeep/1.jpg",
@@ -140,7 +140,7 @@ export const galleryImages = [
   {
     id: 11,
     title: "Ditya Luxuria. Mumbai",
-    category: "Water supply Models",
+    category: "High Rise Residential",
     description: "Ditya Luxuria. Mumbai – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/11%20Ditya%20Luxuria.%20Mumbai/1.jpg",
@@ -153,7 +153,7 @@ export const galleryImages = [
   {
     id: 12,
     title: "Celestial, AHCPL Lucknow",
-    category: "Residential Township",
+    category: "High Rise Residential",
     description: "Celestial, AHCPL Lucknow – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/12%20Celestial%2C%20AHCPL%20Lucknow/1.JPG",
@@ -181,7 +181,7 @@ export const galleryImages = [
   {
     id: 14,
     title: "Formerah Greens, Chandigarh",
-    category: "Monochromatic Models",
+    category: "Landscape + Resort",
     description: "Formerah Greens, Chandigarh – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/14%20Formerah%20Greens%2C%20Chandigarh/1.JPG",
@@ -196,7 +196,7 @@ export const galleryImages = [
   {
     id: 15,
     title: "Oxyzone Park, Kota",
-    category: "Art Models",
+    category: "Landscape + Resort",
     description: "Oxyzone Park, Kota – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/15%20Oxyzone%20Park%2C%20Kota/1.jpg",
@@ -209,7 +209,7 @@ export const galleryImages = [
   {
     id: 16,
     title: "Sawai Villa by Akshat Group",
-    category: "Miscellaneous",
+    category: "Villa Township",
     description: "Sawai Villa by Akshat Group – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/16-Sawai%20Villa%20by%20Akshat%20Group/1.JPG",
