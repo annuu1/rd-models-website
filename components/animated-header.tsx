@@ -112,7 +112,7 @@ export function AnimatedHeader() {
             transition={{ delay: 0.5 }}
           >
             <motion.a
-              href="tel:+911411234567"
+              href="tel:+919672232299"
               className={`p-2 rounded-lg transition-all duration-300 ${isScrolled
                   ? "border border-primary/90 text-primary bg-transparent hover:bg-primary/90 hover:text-white"
                   : "border border-white bg-white/0 text-white hover:bg-white/95 hover:text-primary"
@@ -123,7 +123,7 @@ export function AnimatedHeader() {
               <FaPhoneAlt className="h-4 w-4" />
             </motion.a>
             <motion.a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919672232299"
               target="_blank"
               rel="noopener noreferrer"
               className={`p-2 rounded-lg transition-all duration-300 ${isScrolled
