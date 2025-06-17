@@ -62,7 +62,7 @@ const blogPosts = [
       
       <p>It is architecture. Just on a different scale.</p>
     `,
-    date: "May 15, 2024",
+    date: "May 15, 2025",
     author: "Urvashi",
     authorTitle: "Architectural Model Maker",
     authorImage: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?cs=srgb&dl=pexels-vinicius-wiesehofer-289347-1130626.jpg&fm=jpg",
