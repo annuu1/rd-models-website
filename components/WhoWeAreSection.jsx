@@ -55,7 +55,7 @@ export function WhoWeAreSection() {
             />
             <StatCard
               number="8+"
-              label="Locations"
+              label="Locations in India"
               description="Over 8 locations in India, delivering excellence in 3D modeling..."
               link="/about"
             />

@@ -198,7 +198,7 @@ export default function ImageGalleryPage() {
                 className={`px-4 py-2 font-barlow text-sm ${
                   selectedCategory === category
                     ? "bg-primary text-primary-foreground"
-                    : "hover:bg-primary/10 hover:text-primary-foreground transition-all duration-300 ease-in-out"
+                    : "hover:bg-primary/100 hover:text-primary-foreground transition-all duration-300 ease-in-out"
                 }`}
                 onClick={() => setSelectedCategory(category)}
               >
@@ -215,7 +215,7 @@ export default function ImageGalleryPage() {
                   className={`px-4 py-2 font-barlow text-sm ${
                     selectedCategory === category
                       ? "bg-primary text-primary-foreground"
-                      : "hover:bg-primary/10 hover:text-primary-foreground transition-all duration-300 ease-in-out"
+                      : "hover:bg-primary/100 hover:text-primary-foreground transition-all duration-300 ease-in-out"
                   }`}
                   onClick={() => setSelectedCategory(category)}
                 >
