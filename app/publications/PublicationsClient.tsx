@@ -11,24 +11,40 @@ import { AnimatedHeader } from "@/components/animated-header"
 const publications = [
   {
     id: 1,
-    title: "Newspaper Cutting 1",
+    title: "",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_2.jpg",
+    category: "Press Release",
   },
   {
     id: 2,
     title: "Newspaper Cutting 2",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_4.jpg",
+    category: "Feature",
   },
   {
     id: 3,
     title: "Newspaper Cutting 3",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_1.jpg",
+    category: "Achievement",
   },
   {
     id: 4,
     title: "Newspaper Cutting 4",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_3.jpg",
+    category: "Press Release",
   },
+  {
+    id: 5,
+    title: "Newspaper Cutting 5",
+    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_5.png",
+    category: "Feature",
+  },
+  {
+    id: 6,
+    title: "Newspaper Cutting 6",
+    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_6.png",
+    category: "Feature",
+  }
 ]
 
 export default function PublicationsClient() {
@@ -49,7 +65,7 @@ export default function PublicationsClient() {
     <div className="min-h-screen bg-background">
       <AnimatedHeader />
 
-      <main className="container py-12">
+      <main className="container py-12 px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <Button variant="ghost" size="sm" asChild className="mb-4">
             <Link href="/">
@@ -58,31 +74,47 @@ export default function PublicationsClient() {
             </Link>
           </Button>
           <SectionHeading
-            title="Publications"
-            subtitle="A collection of our featured articles and achievements in the press."
+            title="Publications Gallery"
+            subtitle="Explore our collection of featured articles and press achievements."
           />
         </div>
 
         {/* Publications Gallery */}
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {publications.map((publication) => (
             <motion.div
               key={publication.id}
-              className="relative rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-xl max-w-full"
-              whileHover={{ scale: 1.03 }}
+              className="group relative rounded-lg overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}
               onClick={() => openModal(publication.image)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  openModal(publication.image)
+                }
+              }}
+              aria-label={`View ${publication.title}`}
             >
-              <Image
-                src={publication.image}
-                alt={publication.title}
-                width={600}
-                height={300}
-                className="w-full h-auto object-contain"
-                sizes="100vw"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-3">
-                <p className="text-sm font-barlow">{publication.title}</p>
+              <div className="relative w-full h-80 flex items-center justify-center p-4">
+                <Image
+                  src={publication.image}
+                  alt={publication.title}
+                  fill
+                  className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={publication.id === 1}
+                />
+                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="p-4 text-white text-center">
+                    <h3 className="text-lg font-semibold font-barlow">{publication.title}</h3>
+                    {publication.category && (
+                      <p className="text-sm text-gray-200 mt-1">{publication.category}</p>
+                    )}
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -92,23 +124,23 @@ export default function PublicationsClient() {
         <AnimatePresence>
           {isModalOpen && selectedImage && (
             <motion.div
-              className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+              className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeModal}
             >
               <motion.div
-                className="relative max-w-4xl w-full mx-4"
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.8 }}
+                className="relative max-w-5xl w-full mx-auto"
+                initial={{ scale: 0.8, y: 50 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.8, y: 50 }}
                 onClick={(e) => e.stopPropagation()}
               >
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute top-2 right-2 text-white hover:bg-white/20"
+                  className="absolute top-4 right-4 text-white hover:bg-white/20 z-10"
                   onClick={closeModal}
                   aria-label="Close modal"
                 >
@@ -119,27 +151,14 @@ export default function PublicationsClient() {
                   alt="Full-screen newspaper cutting"
                   width={1200}
                   height={800}
-                  className="w-full h-auto rounded-lg max-h-[80vh] object-contain"
+                  className="w-full h-auto rounded-lg max-h-[85vh] object-contain"
+                  sizes="100vw"
                 />
               </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
       </main>
-
-      {/* <footer className="border-t bg-muted mt-12">
-        <div className="container py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Building2 className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold text-primary font-forum">RD Models</span>
-            </div>
-            <p className="text-sm text-muted-foreground font-barlow">
-              © {new Date().getFullYear()} RD Models, Jaipur, Rajasthan, India. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer> */}
     </div>
   )
 }
