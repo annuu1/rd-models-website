@@ -15,7 +15,7 @@ const blogPosts = [
       "Explore how emerging technologies like AR, VR, and real-time rendering are transforming the way architects and developers visualize projects. Learn about the latest tools and techniques that are setting new standards in the industry.",
     date: "May 15, 2025",
     author: "Urvashi",
-    image: "https://www.fodors.com/wp-content/uploads/2019/07/01_BestAncientSitesInRome__RomanForum_shutterstock_351471179.jpg",
+    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/blog/blog_1.jpg",
     slug: "sometimes-rome-is-built-in-a-day",
     category: "Technology",
   },

@@ -62,11 +62,11 @@ const blogPosts = [
       
       <p>It is architecture. Just on a different scale.</p>
     `,
-    date: "December 15, 2024",
+    date: "May 15, 2024",
     author: "Urvashi",
     authorTitle: "Architectural Model Maker",
     authorImage: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?cs=srgb&dl=pexels-vinicius-wiesehofer-289347-1130626.jpg&fm=jpg",
-    image: "https://www.fodors.com/wp-content/uploads/2019/07/01_BestAncientSitesInRome__RomanForum_shutterstock_351471179.jpg",
+    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/blog/blog_1.jpg",
     slug: "sometimes-rome-is-built-in-a-day",
     category: "Craftsmanship",
     tags: ["Architectural Models", "Craftsmanship", "Art", "Model Making", "Architecture"],
