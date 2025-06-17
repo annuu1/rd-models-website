@@ -14,7 +14,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useInView } from "react-intersection-observer";
 
 // Type for gallery project
 interface GalleryProject {
@@ -28,9 +27,10 @@ interface GalleryProject {
 export default function ImageGalleryPage() {
   const [images, setImages] = useState<GalleryProject[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [visibleProjects, setVisibleProjects] = useState(9);
-  const [selectedProject, setSelectedProject] = useState<GalleryProject | null>(null); // Track selected project
-  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track current image index
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 21;
+  const [selectedProject, setSelectedProject] = useState<GalleryProject | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Mouse position tracking for click vs drag detection
   const mouseDownPos = useRef<{ x: number; y: number } | null>(null);
@@ -73,25 +73,15 @@ export default function ImageGalleryPage() {
   const filteredImages =
     selectedCategory === "All" ? images : images.filter((project) => project.category === selectedCategory);
 
-  // Slice filtered images for pagination
-  const displayedImages = filteredImages.slice(0, visibleProjects);
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredImages.length / projectsPerPage);
+  const startIndex = (currentPage - 1) * projectsPerPage;
+  const displayedImages = filteredImages.slice(startIndex, startIndex + projectsPerPage);
 
-  // Reset visibleProjects when category changes
+  // Reset page when category changes
   useEffect(() => {
-    setVisibleProjects(9);
+    setCurrentPage(1);
   }, [selectedCategory]);
-
-  // Intersection Observer for automatic loading
-  const { ref: loadMoreRef, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: false,
-  });
-
-  useEffect(() => {
-    if (inView && visibleProjects < filteredImages.length) {
-      setVisibleProjects((prev) => prev + 9);
-    }
-  }, [inView, filteredImages.length, visibleProjects]);
 
   // Handle Escape key to close full-screen modal
   useEffect(() => {
@@ -170,6 +160,12 @@ export default function ImageGalleryPage() {
     }
   };
 
+  // Handle page change
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <AnimatedHeader />
@@ -217,7 +213,7 @@ export default function ImageGalleryPage() {
                       ? "bg-primary text-primary-foreground"
                       : "hover:bg-primary/100 hover:text-primary-foreground transition-all duration-300 ease-in-out"
                   }`}
-                  onClick={() => setSelectedCategory(category)}
+                onClick={() => setSelectedCategory(category)}
                 >
                   {category}
                 </Button>
@@ -271,8 +267,36 @@ export default function ImageGalleryPage() {
             </div>
           ))}
         </div>
-        {visibleProjects < filteredImages.length && (
-          <div ref={loadMoreRef} className="h-10 w-full mt-16"></div>
+        {/* Pagination buttons */}
+        {totalPages > 1 && (
+          <div className="flex justify-center gap-2 mt-8">
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={currentPage === 1}
+              onClick={() => handlePageChange(currentPage - 1)}
+            >
+              Previous
+            </Button>
+            {[...Array(totalPages)].map((_, index) => (
+              <Button
+                key={index}
+                variant={currentPage === index + 1 ? "default" : "outline"}
+                size="sm"
+                onClick={() => handlePageChange(index + 1)}
+              >
+                {index + 1}
+              </Button>
+            ))}
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={currentPage === totalPages}
+              onClick={() => handlePageChange(currentPage + 1)}
+            >
+              Next
+            </Button>
+          </div>
         )}
       </main>
       {/* Full-screen image modal */}
