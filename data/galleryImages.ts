@@ -209,7 +209,7 @@ export const galleryImages = [
   {
     id: 16,
     title: "Sawai Villa by Akshat Group",
-    category: "Villa Township",
+    category: "Villa Unit Models",
     description: "Sawai Villa by Akshat Group – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/16-Sawai%20Villa%20by%20Akshat%20Group/1.JPG",

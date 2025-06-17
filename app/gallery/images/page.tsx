@@ -54,6 +54,7 @@ export default function ImageGalleryPage() {
     "House Models",
     "Commercial Models",
     "Institutional Models",
+    "Villa Unit Models",
     "Industrial / Factory Models",
     "Healthcare Hospital Models",
     "Water supply Models",
