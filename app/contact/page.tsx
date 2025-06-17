@@ -179,7 +179,7 @@ export default function ContactPage() {
                       </span>
                       <div>
                         <div className="font-semibold text-primary font-barlow">Call Us</div>
-                        <a href="tel:+91-9876543210" className="text-base text-foreground font-barlow hover:underline">+91-9672232299</a>
+                        <a href="tel:+91-9672232299" className="text-base text-foreground font-barlow hover:underline">+91-9672232299</a>
                       </div>
                     </div>
                   </div>

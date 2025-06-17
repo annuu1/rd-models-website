@@ -50,12 +50,12 @@ export function Footer() {
             <div className="text-sm text-muted-foreground font-barlow mb-4">
               <p>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+9672232299"
                   className="flex items-center gap-2 hover:text-primary transition-colors"
                   aria-label="Phone number"
                 >
                   <FaPhone className="h-4 w-4" />
-                  +91 9876543210
+                  +91 9672232299
                 </a>
               </p>
               <p>
