@@ -11,39 +11,39 @@ import { AnimatedHeader } from "@/components/animated-header"
 const publications = [
   {
     id: 1,
-    title: "",
+    title: "Jaipur Patrika",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_2.jpg",
     category: "Press Release",
   },
   {
     id: 2,
-    title: "Newspaper Cutting 2",
+    title: "",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_4.jpg",
-    category: "Feature",
+    category: "Press Release",
   },
   {
     id: 3,
-    title: "Newspaper Cutting 3",
+    title: "",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_1.jpg",
-    category: "Achievement",
+    category: "Press Release",
   },
   {
     id: 4,
-    title: "Newspaper Cutting 4",
+    title: "",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_3.jpg",
     category: "Press Release",
   },
   {
     id: 5,
-    title: "Newspaper Cutting 5",
+    title: "City First",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_5.png",
-    category: "Feature",
+    category: "Press Release",
   },
   {
     id: 6,
-    title: "Newspaper Cutting 6",
+    title: "",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_6.png",
-    category: "Feature",
+    category: "Press Release",
   }
 ]
 
