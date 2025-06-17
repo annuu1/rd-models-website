@@ -252,7 +252,15 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 md:py-24 bg-primary">
+        <section 
+          className="py-16 md:py-24 bg-primary"
+          style={{
+            backgroundImage: "url('https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/about-us/ready_to_work_dark.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
           <div className="container text-center">
             <h2 className="text-3xl font-bold text-white mb-6 font-forum">Ready to Work With Us?</h2>
             <p className="text-white/90 max-w-2xl mx-auto mb-8 font-barlow">
