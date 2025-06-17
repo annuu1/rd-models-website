@@ -3,7 +3,7 @@ export const galleryImages = [
   {
     id: 1,
     title: "KAAR, Dubai",
-    category: "High Rise Residential",
+    category: "Miscellaneous",
     description: "A modern residential project with innovative architecture.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/1-KAAR/1.jpg",
@@ -45,7 +45,7 @@ export const galleryImages = [
   {
     id: 4,
     title: "Mahakumbh 2025",
-    category: "Landscape + Resort",
+    category: "Miscellaneous",
     description: "A grand event pavilion designed for Mahakumbh 2025 celebrations.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/4-Mahakumbh%202025/1.jpg",
@@ -72,7 +72,7 @@ export const galleryImages = [
   {
     id: 6,
     title: "Museum of the Future",
-    category: "House Models",
+    category: "Miscellaneous",
     description: "Museum of the Future, Dubai – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/6-Museum%20of%20the%20Future/1.JPG",
@@ -85,7 +85,7 @@ export const galleryImages = [
   {
     id: 7,
     title: "Hyderbad, Fwd",
-    category: "Commercial Models",
+    category: "Miscellaneous",
     description: "Hyderbad, Fwd – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/1.JPG",
@@ -98,7 +98,7 @@ export const galleryImages = [
   {
     id: 8,
     title: "Ambience Park View Model-1, Hyderbad",
-    category: "Institutional Models",
+    category: "Miscellaneous",
     description: "Ambience Park View Model-1, Hyderbad – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/8%20Ambience%20Park%20View%20Model-1%2C%20Hyderbad/1.JPG",
@@ -112,7 +112,7 @@ export const galleryImages = [
   {
     id: 9,
     title: "Ambience Park View Model-2, Hyderbad",
-    category: "Industrial / Factory Models",
+    category: "Miscellaneous",
     description: "Ambience Park View Model-2, Hyderbad – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/9%20Ambience%20Park%20View%20Model-2%2C%20Hyderbad/1.JPG",
@@ -251,5 +251,48 @@ export const galleryImages = [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/18-Mirai%20House%20by%20Sanjay%20Puri/7.JPG",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/18-Mirai%20House%20by%20Sanjay%20Puri/8.JPG",
     ],
-  }
+  },
+  {
+    id: 19,
+    title: "Amaltas by Nature Homes",
+    category: "Low Rise Residential",
+    description: "Amaltas by Nature Homes – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/19-Amaltas%20by%20Nature%20Homes/1.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/19-Amaltas%20by%20Nature%20Homes/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/19-Amaltas%20by%20Nature%20Homes/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/19-Amaltas%20by%20Nature%20Homes/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/19-Amaltas%20by%20Nature%20Homes/5.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/19-Amaltas%20by%20Nature%20Homes/6.JPG",
+    ],
+  },
+  {
+    id: 20,
+    title: "Navkar Niivasa, Bhilwara",
+    category: "Villa Township",
+    description: "Navkar Niivasa, Bhilwara – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/20-Navkar%20Niivasa%2C%20Bhilwara/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/20-Navkar%20Niivasa%2C%20Bhilwara/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/20-Navkar%20Niivasa%2C%20Bhilwara/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/20-Navkar%20Niivasa%2C%20Bhilwara/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/20-Navkar%20Niivasa%2C%20Bhilwara/5.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/20-Navkar%20Niivasa%2C%20Bhilwara/6.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/20-Navkar%20Niivasa%2C%20Bhilwara/7.JPG",
+    ],
+  },
+  {
+    id: 21,
+    title: "Shalom International School",
+    category: "Institutional Models",
+    description: "Shalom International School – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/21-Shalom%20International%20School/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/21-Shalom%20International%20School/2.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/21-Shalom%20International%20School/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/21-Shalom%20International%20School/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/21-Shalom%20International%20School/5.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/21-Shalom%20International%20School/6.JPG",  
+    ],
+  },
 ];
