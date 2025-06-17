@@ -38,7 +38,7 @@ export function WhoWeAreSection() {
             <StatCard
               number="2000+"
               label="Models Delivered Across India"
-              description="Delivered over 1800 high-quality 3D models to clients ..."
+              description="Delivered over 2000 high-quality 3D models to clients ..."
               link="/about"
             />
             <StatCard
@@ -48,15 +48,15 @@ export function WhoWeAreSection() {
               link="/about"
             />
             <StatCard
-              number="7+"
+              number="3+"
               label="Countries"
-              description="Serving 28+ states with tailored 3D models for diverse architectural projects..."
+              description="Serving 3 countries with tailored 3D models for diverse architectural projects..."
               link="/about"
             />
             <StatCard
-              number="6+"
+              number="8+"
               label="Locations"
-              description="Over 15 years of expertise in Jaipur, delivering excellence in 3D modeling..."
+              description="Over 8 locations in India, delivering excellence in 3D modeling..."
               link="/about"
             />
           </div>

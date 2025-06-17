@@ -133,15 +133,15 @@ export default function AboutPage() {
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <StatCard
-                number="1,800+"
+                number="2,000+"
                 label="Models Delivered"
-                description="At RD Models, a premier model maker, we take pride in our extensive portfolio, having successfully delivered over 1,800 models. Our journey spans from creating small block study models to executing some of the world’s largest and most intricate projects. As a leading model maker, we cater to various scale requirements, from 1:20,000 to life-size 1:1 scale models, showcasing our versatility and capability. Each model we create is a testament to our commitment to precision, quality, and client satisfaction, reinforcing our reputation as a top model maker."
+                description="At RD Models, a premier model maker, we take pride in our extensive portfolio, having successfully delivered over 2,000 models. Our journey spans from creating small block study models to executing some of the world’s largest and most intricate projects. As a leading model maker, we cater to various scale requirements, from 1:20,000 to life-size 1:1 scale models, showcasing our versatility and capability. Each model we create is a testament to our commitment to precision, quality, and client satisfaction, reinforcing our reputation as a top model maker."
                 icon={<Package className="h-6 w-6 text-primary" />}
               />
               <StatCard
-                number="7+"
+                number="3+"
                 label="Countries"
-                description="RD Models, a leading model making company, has an efficient delivery system that allows us to successfully deliver models to clients in 7 countries around the world. Our ability to ship models internationally ensures that no matter where our clients are located, they can rely on us for timely and secure delivery. This global reach underscores our reputation as a reliable model maker capable of handling projects of any scale and complexity, anywhere in the world."
+                description="RD Models, a leading model making company, has an efficient delivery system that allows us to successfully deliver models to clients in 3 countries around the world. Our ability to ship models internationally ensures that no matter where our clients are located, they can rely on us for timely and secure delivery. This global reach underscores our reputation as a reliable model maker capable of handling projects of any scale and complexity, anywhere in the world."
                 icon={<Globe className="h-6 w-6 text-primary" />}
               />
               <StatCard
@@ -151,8 +151,8 @@ export default function AboutPage() {
                 icon={<Users className="h-6 w-6 text-primary" />}
               />
               <StatCard
-                number="6+"
-                label="Locations"
+                number="8+"
+                label="Locations in India"
                 description="Maintaining high-quality standards across all our workshops is a challenge we meet with a well-developed, coordinated, and synchronized system. With six strategically located workshops in Jaipur, Delhi, Bangalore, Hyderabad, Ahmedabad, and Mumbai, we ensure that multiple locations can work in parallel to complete projects efficiently. This system not only speeds up the production process but also guarantees that every model meets our stringent quality standards, regardless of where it is produced. As a top model making company, we ensure consistent quality across all our locations."
                 icon={<MapPin className="h-6 w-6 text-primary" />}
               />
