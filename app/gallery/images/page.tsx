@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, X } from "lucide-react";
+import { ArrowLeft, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/section-heading";
 import { MobileMenu } from "@/components/mobile-menu";
@@ -28,12 +28,13 @@ interface GalleryProject {
 export default function ImageGalleryPage() {
   const [images, setImages] = useState<GalleryProject[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [visibleProjects, setVisibleProjects] = useState(9); // State for pagination (3 rows × 3 columns)
-  const [selectedImage, setSelectedImage] = useState<string | null>(null); // State for full-screen image
+  const [visibleProjects, setVisibleProjects] = useState(9);
+  const [selectedProject, setSelectedProject] = useState<GalleryProject | null>(null); // Track selected project
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track current image index
 
   // Mouse position tracking for click vs drag detection
   const mouseDownPos = useRef<{ x: number; y: number } | null>(null);
-  const DRAG_THRESHOLD = 5; // Pixels of movement to consider it a drag
+  const DRAG_THRESHOLD = 5;
 
   // Fetch images from API
   useEffect(() => {
@@ -60,8 +61,8 @@ export default function ImageGalleryPage() {
     "Industrial Township",
     "Monochromatic Models",
     "Art Models",
-    "Miscellaneous"
-  ]
+    "Miscellaneous",
+  ];
 
   // Split categories into two rows
   const firstRowCategories = categories.slice(0, 9);
@@ -81,15 +82,27 @@ export default function ImageGalleryPage() {
 
   // Intersection Observer for automatic loading
   const { ref: loadMoreRef, inView } = useInView({
-    threshold: 0.1, // Trigger when 10% of the ref element is visible
-    triggerOnce: false, // Allow multiple triggers
+    threshold: 0.1,
+    triggerOnce: false,
   });
 
   useEffect(() => {
     if (inView && visibleProjects < filteredImages.length) {
-      setVisibleProjects((prev) => prev + 9); // Load next 3 rows (9 projects)
+      setVisibleProjects((prev) => prev + 9);
     }
   }, [inView, filteredImages.length, visibleProjects]);
+
+  // Handle Escape key to close full-screen modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedProject(null);
+        setCurrentImageIndex(0);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   // Footer form state and handlers
   const [formData, setFormData] = useState({
@@ -115,26 +128,45 @@ export default function ImageGalleryPage() {
   };
 
   // Handle mouse up to check if it was a click or drag
-  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>, image: string) => {
+  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>, project: GalleryProject, index: number) => {
     if (mouseDownPos.current) {
       const dx = Math.abs(e.clientX - mouseDownPos.current.x);
       const dy = Math.abs(e.clientY - mouseDownPos.current.y);
-      // If movement is less than threshold, treat as a click
       if (dx <= DRAG_THRESHOLD && dy <= DRAG_THRESHOLD) {
-        handleImageClick(image);
+        handleImageClick(project, index);
       }
     }
-    mouseDownPos.current = null; // Reset position
+    mouseDownPos.current = null;
   };
 
   // Handle image click to open full-screen
-  const handleImageClick = (image: string) => {
-    setSelectedImage(image);
+  const handleImageClick = (project: GalleryProject, index: number) => {
+    setSelectedProject(project);
+    setCurrentImageIndex(index);
   };
 
   // Close full-screen modal
   const closeFullScreen = () => {
-    setSelectedImage(null);
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
+  };
+
+  // Navigate to previous image
+  const goToPreviousImage = () => {
+    if (selectedProject) {
+      setCurrentImageIndex((prev) =>
+        prev === 0 ? selectedProject.images.length - 1 : prev - 1
+      );
+    }
+  };
+
+  // Navigate to next image
+  const goToNextImage = () => {
+    if (selectedProject) {
+      setCurrentImageIndex((prev) =>
+        prev === selectedProject.images.length - 1 ? 0 : prev + 1
+      );
+    }
   };
 
   return (
@@ -213,7 +245,7 @@ export default function ImageGalleryPage() {
                     key={`${project.id}-${index}`}
                     className="relative w-full h-[28rem] cursor-pointer"
                     onMouseDown={handleMouseDown}
-                    onMouseUp={(e) => handleMouseUp(e, image)}
+                    onMouseUp={(e) => handleMouseUp(e, project, index)}
                   >
                     <Image
                       src={image || "/placeholder.svg"}
@@ -240,13 +272,12 @@ export default function ImageGalleryPage() {
             </div>
           ))}
         </div>
-        {/* Invisible trigger for automatic loading */}
         {visibleProjects < filteredImages.length && (
           <div ref={loadMoreRef} className="h-10 w-full mt-16"></div>
         )}
       </main>
       {/* Full-screen image modal */}
-      {selectedImage && (
+      {selectedProject && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -255,15 +286,41 @@ export default function ImageGalleryPage() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
           onClick={closeFullScreen}
         >
-          <div className="relative w-full h-full flex items-center justify-center">
+          <div className="relative w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
             <Image
-              src={selectedImage}
-              alt="Full-screen image"
+              src={selectedProject.images[currentImageIndex] || "/placeholder.svg"}
+              alt={`${selectedProject.title} image ${currentImageIndex + 1}`}
               className="object-contain max-w-[90%] max-h-[90%]"
               width={1920}
               height={1080}
-              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking image
             />
+            {/* Navigation buttons */}
+            {selectedProject.images.length > 1 && (
+              <>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:bg-white/20"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToPreviousImage();
+                  }}
+                >
+                  <ChevronLeft className="h-8 w-8" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:bg-white/20"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToNextImage();
+                  }}
+                >
+                  <ChevronRight className="h-8 w-8" />
+                </Button>
+              </>
+            )}
             <Button
               variant="ghost"
               size="icon"
@@ -272,6 +329,12 @@ export default function ImageGalleryPage() {
             >
               <X className="h-6 w-6" />
             </Button>
+            {/* Image counter */}
+            {selectedProject.images.length > 1 && (
+              <div className="absolute bottom-4 text-white text-sm">
+                {currentImageIndex + 1} / {selectedProject.images.length}
+              </div>
+            )}
           </div>
         </motion.div>
       )}
