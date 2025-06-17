@@ -177,12 +177,10 @@ export default function ImageGalleryPage() {
           <Button
             variant="default"
             size="sm"
-            asChild
-            className="mb-6 rounded-full bg-primary px-6 py-2 text-primary-foreground hover:bg-primary/10 hover:text-primary transition-all hover:border-primary hover:border-2 hover:shadow-md hover:shadow-primary/10"
+            className="mb-6 rounded-full px-6 py-2 text-primary bg-transparent hover:bg-gray-100"
           >
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back
             </Link>
           </Button>
           <SectionHeading
