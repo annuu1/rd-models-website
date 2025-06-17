@@ -309,20 +309,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
         </article>
       </main>
-
-      {/* <footer className="border-t bg-muted mt-12">
-        <div className="container py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Building2 className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold text-primary font-forum">RD Models</span>
-            </div>
-            <p className="text-sm text-muted-foreground font-barlow">
-              © {new Date().getFullYear()} RD Models, Jaipur, Rajasthan, India. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer> */}
     </div>
   )
 }
