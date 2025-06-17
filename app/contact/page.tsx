@@ -188,13 +188,13 @@ export default function ContactPage() {
                   <div className="mt-8">
                     <div className="font-semibold text-primary mb-3 font-barlow">Social Media</div>
                     <div className="flex gap-4">
-                      <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#3b5998] text-white hover:bg-[#FFB16E] hover:text-white transition" aria-label="Facebook">
+                      <a href="https://www.facebook.com/rdarmodels/" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#3b5998] text-white hover:bg-[#FFB16E] hover:text-white transition" aria-label="Facebook">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.6 0 0 .6 0 1.326v21.348C0 23.4.6 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.4 24 24 23.4 24 22.674V1.326C24 .6 23.4 0 22.675 0" /></svg>
                       </a>
-                      <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#00aced] text-white hover:bg-[#FFB16E] hover:text-white transition" aria-label="Twitter">
+                      <a href="https://x.com/rdmodels" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#00aced] text-white hover:bg-[#FFB16E] hover:text-white transition" aria-label="Twitter">
                       <Twitter className="w-5 h-5" />
                       </a>
-                      <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#e4405f] text-white hover:bg-[#FFB16E] hover:text-white transition" aria-label="Instagram">
+                      <a href="https://www.instagram.com/rd.models" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#e4405f] text-white hover:bg-[#FFB16E] hover:text-white transition" aria-label="Instagram">
                         <Instagram className="w-5 h-5" />
                       </a>
                     </div>
