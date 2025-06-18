@@ -1,11 +1,11 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Building2, ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { SectionHeading } from "@/components/section-heading"
-import { Card, CardContent } from "@/components/ui/card"
-import { MobileMenu } from "@/components/mobile-menu"
-import { AnimatedHeader } from "@/components/animated-header"
+import Link from "next/link";
+import Image from "next/image";
+import { Building2, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/section-heading";
+import { Card, CardContent } from "@/components/ui/card";
+import { MobileMenu } from "@/components/mobile-menu";
+import { AnimatedHeader } from "@/components/animated-header";
 
 // Sample portfolio projects data
 const projects = [
@@ -14,8 +14,10 @@ const projects = [
     title: "Skyline Towers",
     category: "residential",
     client: "Urban Development Corp",
-    image: "https://img.cadnav.com/allimg/160322/cadnav-160322221013.jpg?height=400&width=600",
-    description: "A luxury residential complex featuring three towers with panoramic city views",
+    image:
+      "https://img.cadnav.com/allimg/160322/cadnav-160322221013.jpg?height=400&width=600",
+    description:
+      "A luxury residential complex featuring three towers with panoramic city views",
     slug: "skyline-towers",
   },
   {
@@ -23,8 +25,10 @@ const projects = [
     title: "Eco Business Center",
     category: "commercial",
     client: "Green Builders Inc",
-    image: "https://preview.free3d.com/img/2010/03/1688650179013510941/vn09h7yi.jpg?height=400&width=600",
-    description: "Sustainable commercial building with innovative energy-efficient design",
+    image:
+      "https://preview.free3d.com/img/2010/03/1688650179013510941/vn09h7yi.jpg?height=400&width=600",
+    description:
+      "Sustainable commercial building with innovative energy-efficient design",
     slug: "eco-business-center",
   },
   {
@@ -34,7 +38,8 @@ const projects = [
     client: "State Education Board",
     image:
       "https://media.cgtrader.com/variants/ht1X7QuTDn7p9WmgxwFFwxUq/a26e47dab5f2d22c43d6c5ce4b4b46ecc30c70918878397cba1a10c1e35d7bfc/Untitled_Viewport_001.jpg?height=400&width=600",
-    description: "A comprehensive university campus with academic buildings, dormitories, and recreational facilities",
+    description:
+      "A comprehensive university campus with academic buildings, dormitories, and recreational facilities",
     slug: "university-campus",
   },
   {
@@ -42,8 +47,10 @@ const projects = [
     title: "Luxury Penthouse Interior",
     category: "interior",
     client: "Elite Properties",
-    image: "https://www.all3dfree.net/uploads/5/1/9/6/51967249/5695580_orig.jpg?height=400&width=600",
-    description: "Detailed interior visualization of a luxury penthouse with custom furnishings",
+    image:
+      "https://www.all3dfree.net/uploads/5/1/9/6/51967249/5695580_orig.jpg?height=400&width=600",
+    description:
+      "Detailed interior visualization of a luxury penthouse with custom furnishings",
     slug: "luxury-penthouse",
   },
   {
@@ -51,8 +58,10 @@ const projects = [
     title: "Riverside Residences",
     category: "residential",
     client: "Luxury Homes Group",
-    image: "https://img.cadnav.com/allimg/131011/1-13101112294b14.jpg?height=400&width=600",
-    description: "Waterfront residential development with premium amenities and scenic views",
+    image:
+      "https://img.cadnav.com/allimg/131011/1-13101112294b14.jpg?height=400&width=600",
+    description:
+      "Waterfront residential development with premium amenities and scenic views",
     slug: "riverside-residences",
   },
   {
@@ -62,7 +71,8 @@ const projects = [
     client: "Retail Developers Inc",
     image:
       "https://p.turbosquid.com/ts-thumb/4C/i9YvRz/FM/_cover/jpg/1674469562/600x600/fit_q87/ee66153063b5f65da3ca8df1ab442a52914075aa/_cover.jpg?height=400&width=600",
-    description: "A multi-level shopping mall with over 100 retail spaces and entertainment venues",
+    description:
+      "A multi-level shopping mall with over 100 retail spaces and entertainment venues",
     slug: "shopping-mall",
   },
   {
@@ -70,8 +80,10 @@ const projects = [
     title: "Modern Office Complex",
     category: "commercial",
     client: "Corporate Spaces Ltd",
-    image: "https://img.cadnav.com/allimg/140807/cadnav-140FG14035.jpg?height=400&width=600",
-    description: "Contemporary office complex with flexible workspaces and collaborative areas",
+    image:
+      "https://img.cadnav.com/allimg/140807/cadnav-140FG14035.jpg?height=400&width=600",
+    description:
+      "Contemporary office complex with flexible workspaces and collaborative areas",
     slug: "modern-office-complex",
   },
   {
@@ -79,8 +91,10 @@ const projects = [
     title: "Beachfront Hotel",
     category: "hospitality",
     client: "Coastal Resorts",
-    image: "https://img.cadnav.com/allimg/140807/cadnav-140FG14035-0.jpg?height=400&width=600",
-    description: "Luxury beachfront hotel with stunning ocean views and premium amenities",
+    image:
+      "https://img.cadnav.com/allimg/140807/cadnav-140FG14035-0.jpg?height=400&width=600",
+    description:
+      "Luxury beachfront hotel with stunning ocean views and premium amenities",
     slug: "beachfront-hotel",
   },
   {
@@ -88,11 +102,13 @@ const projects = [
     title: "Urban Park",
     category: "landscape",
     client: "City Development Authority",
-    image: "https://img.cadnav.com/allimg/140807/cadnav-140FG14035-1.jpg?height=400&width=600",
-    description: "Public urban park with recreational facilities, walking paths, and landscaped areas",
+    image:
+      "https://img.cadnav.com/allimg/140807/cadnav-140FG14035-1.jpg?height=400&width=600",
+    description:
+      "Public urban park with recreational facilities, walking paths, and landscaped areas",
     slug: "urban-park",
   },
-]
+];
 
 export default function PortfolioPage() {
   return (
@@ -101,10 +117,13 @@ export default function PortfolioPage() {
 
       <main className="container py-12">
         <div className="mb-8">
-          <Button variant="ghost" size="sm" asChild className="mb-4">
+          <Button
+            variant="default"
+            size="sm"
+            className="mb-6 rounded-full px-6 py-2 text-primary bg-transparent hover:bg-gray-100"
+          >
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
             </Link>
           </Button>
           <SectionHeading
@@ -115,7 +134,11 @@ export default function PortfolioPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <Link key={project.id} href={`/portfolio/${project.slug}`} className="group">
+            <Link
+              key={project.id}
+              href={`/portfolio/${project.slug}`}
+              className="group"
+            >
               <Card className="overflow-hidden h-full transition-all duration-300 hover:shadow-lg">
                 <div className="relative h-64">
                   <Image
@@ -127,14 +150,18 @@ export default function PortfolioPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                     <p className="text-sm font-medium">{project.client}</p>
-                    <p className="text-xs uppercase tracking-wider">{project.category}</p>
+                    <p className="text-xs uppercase tracking-wider">
+                      {project.category}
+                    </p>
                   </div>
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-2 font-forum group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground font-barlow line-clamp-2">{project.description}</p>
+                  <p className="text-muted-foreground font-barlow line-clamp-2">
+                    {project.description}
+                  </p>
                 </CardContent>
               </Card>
             </Link>
@@ -156,5 +183,5 @@ export default function PortfolioPage() {
         </div>
       </footer> */}
     </div>
-  )
+  );
 }

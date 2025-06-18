@@ -1,65 +1,71 @@
-"use client"
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowLeft, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { SectionHeading } from "@/components/section-heading"
-import { motion, AnimatePresence } from "framer-motion"
-import { useState } from "react"
-import { AnimatedHeader } from "@/components/animated-header"
+"use client";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowLeft, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/section-heading";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { AnimatedHeader } from "@/components/animated-header";
 
 const publications = [
   {
     id: 1,
     title: "",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_2.jpg",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_2.jpg",
     category: "Press Release",
   },
   {
     id: 2,
     title: "Newspaper Cutting 2",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_4.jpg",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_4.jpg",
     category: "Feature",
   },
   {
     id: 3,
     title: "Newspaper Cutting 3",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_1.jpg",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_1.jpg",
     category: "Achievement",
   },
   {
     id: 4,
     title: "Newspaper Cutting 4",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_3.jpg",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_3.jpg",
     category: "Press Release",
   },
   {
     id: 5,
     title: "Newspaper Cutting 5",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_5.png",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_5.png",
     category: "Feature",
   },
   {
     id: 6,
     title: "Newspaper Cutting 6",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_6.png",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_6.png",
     category: "Feature",
-  }
-]
+  },
+];
 
 export default function PublicationsClient() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const openModal = (image: string) => {
-    setSelectedImage(image)
-    setIsModalOpen(true)
-  }
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
 
   const closeModal = () => {
-    setIsModalOpen(false)
-    setSelectedImage(null)
-  }
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -67,10 +73,13 @@ export default function PublicationsClient() {
 
       <main className="container py-12 px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <Button variant="ghost" size="sm" asChild className="mb-4">
+          <Button
+            variant="default"
+            size="sm"
+            className="mb-6 rounded-full px-6 py-2 text-primary bg-transparent hover:bg-gray-100"
+          >
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
             </Link>
           </Button>
           <SectionHeading
@@ -93,7 +102,7 @@ export default function PublicationsClient() {
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
-                  openModal(publication.image)
+                  openModal(publication.image);
                 }
               }}
               aria-label={`View ${publication.title}`}
@@ -109,9 +118,13 @@ export default function PublicationsClient() {
                 />
                 <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="p-4 text-white text-center">
-                    <h3 className="text-lg font-semibold font-barlow">{publication.title}</h3>
+                    <h3 className="text-lg font-semibold font-barlow">
+                      {publication.title}
+                    </h3>
                     {publication.category && (
-                      <p className="text-sm text-gray-200 mt-1">{publication.category}</p>
+                      <p className="text-sm text-gray-200 mt-1">
+                        {publication.category}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -160,5 +173,5 @@ export default function PublicationsClient() {
         </AnimatePresence>
       </main>
     </div>
-  )
+  );
 }

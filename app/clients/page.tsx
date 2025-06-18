@@ -168,13 +168,16 @@ export default function ClientsPage() {
     <div className="min-h-screen bg-background">
       <AnimatedHeader />
       <main>
-        
+
         <section className="py-8 md:py-8">
           <div className=" mx-auto px-4">
-            <Button variant="ghost" size="sm" asChild className="mb-2">
+            <Button
+              variant="default"
+              size="sm"
+              className="mb-6 rounded-full px-6 py-2 text-primary bg-transparent hover:bg-gray-100"
+            >
               <Link href="/">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
               </Link>
             </Button>
             <SectionHeading

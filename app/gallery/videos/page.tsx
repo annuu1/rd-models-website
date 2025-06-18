@@ -7,7 +7,15 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/section-heading";
 import { MobileMenu } from "@/components/mobile-menu";
 import { AnimatedHeader } from "@/components/animated-header";
-import { FaLinkedin, FaInstagram, FaTwitter, FaMapMarkerAlt, FaGlobeAsia, FaPhone, FaEnvelope } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaTwitter,
+  FaMapMarkerAlt,
+  FaGlobeAsia,
+  FaPhone,
+  FaEnvelope,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 import FloatingContactButtons from "../../FloatingContactButtons";
 import React, { useState } from "react";
@@ -18,8 +26,10 @@ const videos = [
     id: 1,
     title: "Luxury Residential Complex Walkthrough",
     category: "Residential",
-    description: "Complete 3D walkthrough of a luxury residential project featuring modern amenities and landscaping.",
-    thumbnail: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?height=800&width=1200",
+    description:
+      "Complete 3D walkthrough of a luxury residential project featuring modern amenities and landscaping.",
+    thumbnail:
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?height=800&width=1200",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: "3:45",
   },
@@ -27,8 +37,10 @@ const videos = [
     id: 2,
     title: "Commercial Office Building 360° Tour",
     category: "Commercial",
-    description: "Interactive 360-degree tour of a modern commercial office building with detailed interior spaces.",
-    thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?height=800&width=1200",
+    description:
+      "Interactive 360-degree tour of a modern commercial office building with detailed interior spaces.",
+    thumbnail:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?height=800&width=1200",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: "5:20",
   },
@@ -38,7 +50,8 @@ const videos = [
     category: "Institutional",
     description:
       "Comprehensive visualization of a multi-specialty hospital complex with detailed floor plans and facilities.",
-    thumbnail: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?height=800&width=1200",
+    thumbnail:
+      "https://images.unsplash.com/photo-1551190822-a9333d879b1f?height=800&width=1200",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: "4:15",
   },
@@ -48,7 +61,8 @@ const videos = [
     category: "Commercial",
     description:
       "Detailed showcase of shopping mall interior design with retail spaces, food courts, and entertainment areas.",
-    thumbnail: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?height=800&width=1200",
+    thumbnail:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?height=800&width=1200",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: "6:30",
   },
@@ -58,7 +72,8 @@ const videos = [
     category: "Institutional",
     description:
       "Complete master plan visualization of an educational campus with academic buildings, hostels, and recreational facilities.",
-    thumbnail: "https://images.unsplash.com/photo-1562774053-701939374585?height=800&width=1200",
+    thumbnail:
+      "https://images.unsplash.com/photo-1562774053-701939374585?height=800&width=1200",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: "7:45",
   },
@@ -66,8 +81,10 @@ const videos = [
     id: 6,
     title: "Industrial Factory Layout Animation",
     category: "Industrial",
-    description: "Animated presentation of industrial factory layout with production lines and workflow optimization.",
-    thumbnail: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?height=800&width=1200",
+    description:
+      "Animated presentation of industrial factory layout with production lines and workflow optimization.",
+    thumbnail:
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?height=800&width=1200",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: "4:55",
   },
@@ -75,8 +92,10 @@ const videos = [
     id: 7,
     title: "Luxury Resort Development",
     category: "Hospitality",
-    description: "Stunning visualization of a beachfront resort with infinity pools and tropical landscaping.",
-    thumbnail: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?height=800&width=1200",
+    description:
+      "Stunning visualization of a beachfront resort with infinity pools and tropical landscaping.",
+    thumbnail:
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?height=800&width=1200",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: "5:30",
   },
@@ -86,7 +105,8 @@ const videos = [
     category: "Mixed-Use",
     description:
       "Comprehensive walkthrough of a mixed-use development combining residential, commercial, and retail spaces.",
-    thumbnail: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?height=800&width=1200",
+    thumbnail:
+      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?height=800&width=1200",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: "8:15",
   },
@@ -100,7 +120,9 @@ export default function VideoGalleryPage() {
 
   // Filter videos based on selected category
   const filteredVideos =
-    selectedCategory === "All" ? videos : videos.filter((video) => video.category === selectedCategory);
+    selectedCategory === "All"
+      ? videos
+      : videos.filter((video) => video.category === selectedCategory);
 
   // Footer form state and handlers
   const [formData, setFormData] = useState({
@@ -109,7 +131,9 @@ export default function VideoGalleryPage() {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -125,10 +149,13 @@ export default function VideoGalleryPage() {
       <AnimatedHeader />
       <main className="py-12 md:px-4">
         <div className="mb-12">
-          <Button variant="ghost" size="sm" asChild className="mb-6">
+          <Button
+            variant="default"
+            size="sm"
+            className="mb-6 rounded-full px-6 py-2 text-primary bg-transparent hover:bg-gray-100"
+          >
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
             </Link>
           </Button>
           <SectionHeading
@@ -169,7 +196,10 @@ export default function VideoGalleryPage() {
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-16 h-16 bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary/80 transition-all duration-300 group-hover:scale-110">
-                    <Play className="h-8 w-8 text-white ml-1" fill="currentColor" />
+                    <Play
+                      className="h-8 w-8 text-white ml-1"
+                      fill="currentColor"
+                    />
                   </div>
                 </div>
                 <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 text-sm font-barlow flex items-center gap-1">
@@ -185,7 +215,9 @@ export default function VideoGalleryPage() {
                     <h3 className="text-lg font-bold font-forum drop-shadow text-white text-center">
                       {video.title}
                     </h3>
-                    <p className="text-xs text-white font-barlow mt-1 text-center px-2">{video.description}</p>
+                    <p className="text-xs text-white font-barlow mt-1 text-center px-2">
+                      {video.description}
+                    </p>
                   </div>
                 </div>
               </div>
