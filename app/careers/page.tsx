@@ -90,7 +90,7 @@ export default function CareersPage() {
         }}
       >
         <div className="text-center text-white prose prose-headings:font-forum">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Join Our Team</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Join Our Team</h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto">
             Discover exciting career opportunities and become part of our innovative, collaborative community.
           </p>
