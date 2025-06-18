@@ -152,7 +152,7 @@ export default function ContactPage() {
           <div className="container">
             <SectionHeading
               title="Get In Touch"
-              subtitle="Ready to bring your architectural vision to life? Contact our expert team in Jaipur for a consultation and quote."
+              subtitle="Ready to bring your architectural vision to life? Contact our expert team for a consultation and quote."
             />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
@@ -300,8 +300,8 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-bold mb-2 font-forum">How long does a typical project take?</h4>
                   <p className="text-muted-foreground font-barlow">
-                    Project timelines vary based on complexity. Simple residential models take 3-5 days, while complex
-                    commercial projects may take 2-3 weeks.
+                    Project timelines vary based on complexity. Simple residential models take 1-2 weeks, while complex
+                    commercial projects may take 3-4 weeks.
                   </p>
                 </div>
                 <div>

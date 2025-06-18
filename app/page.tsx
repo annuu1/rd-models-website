@@ -73,7 +73,7 @@ export default function Home() {
           <div className="container">
             <SectionHeading
               title="Meet Our Team"
-              subtitle="Our talented team of professionals in Jaipur brings together expertise in architecture, design, and technology to deliver exceptional 3D modeling services across India."
+              subtitle="Our talented team of professionals brings together expertise in architecture, design, and technology to deliver exceptional 3D modeling services across India."
             />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <TeamMember
@@ -132,7 +132,7 @@ export default function Home() {
           <div className="">
             <SectionHeading
               title="Instagram Handle"
-              subtitle="Check out our latest Instagram posts for inspiration and updates."
+              subtitle="Check out our latest Instagram posts for more updates."
             />
             <InstagramPost />
 

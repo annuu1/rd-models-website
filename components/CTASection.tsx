@@ -24,7 +24,7 @@ export function CTASection() {
         {/* Text and Buttons */}
         <div className="md:w-2/3 text-center md:text-left md:ml-16 md:pl-32 flex flex-col justify-center items-center"> {/* Added md:ml-8 for rightward shift */}
           <SectionHeading
-            title="Ready to Bring Your Vision to Life?"
+            title="Let’s work together to build a model that speaks for your brand"
             subtitle="Contact our Jaipur team today to discuss your 3D modeling requirements. We serve clients across India with
             world-class architectural visualization services."
           />

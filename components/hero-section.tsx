@@ -103,8 +103,8 @@ export function HeroSection() {
           >
             {/* <TypewriterEffect words={["Premier", "3D Architectural", "Modeling Services"]} className="text-white font-grenda" /> */}
             <TypewriterEffect
-              words={["Leading Model Maker In India"]}
-              className="text-white font-forum border-b-4 border-white pb-2 max-w-xs sm:max-w-md mx-auto text-2xl sm:text-4xl lg:text-6xl leading-snug text-center"
+              words={["Leading Model Maker In India", "India’s Top 3D Model Makers", "Best Scale Model Company in India"]}
+              className="text-white font-forum border-b-4 border-white pb-2 max-w-xs sm:max-w-md mx-auto text-2xl sm:text-4xl lg:text-5xl leading-snug text-center"
             />
           </motion.h1> 
 
@@ -118,8 +118,7 @@ export function HeroSection() {
               Based in Jaipur • Serving All of India
             </h2> */}
             <p className="text-lg md:text-xl lg:text-xl font-forum text-gray-200 max-w-3xl mx-auto leading-relaxed">
-              Leading 3D modeling company specializing in detailed architectural visualizations, building models, and
-              interior renderings for clients across India.
+              We are a leading 3D model making company in India, specializing in highly detailed architectural scale models, conceptual design models, interior models, landscape models etc.
             </p>
           </motion.div>
 
