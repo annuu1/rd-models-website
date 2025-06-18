@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import { FaBriefcase, FaBuilding, FaUsers, FaTimes } from "react-icons/fa";
 import { PHONE_NUMBER, WHATSAPP_NUMBER } from "../gallery/personalDetails";
+import { AnimatedHeader } from "@/components/animated-header"
 
 // Define job array
 const jobs = [
   {
     id: 1,
-    title: "Software Engineer",
-    description: "Develop innovative solutions with our tech team. Requires 3+ years of experience in JavaScript/TypeScript.",
+    title: "Data Analyst",
+    description: "Develop innovative solutions with our tech team. Requires 3+ years of experience in MS Excel/PowerBI.",
   },
   {
     id: 2,
@@ -80,6 +81,7 @@ export default function CareersPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-outfit">
+      <AnimatedHeader />
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center h-[60vh] flex items-center justify-center"
