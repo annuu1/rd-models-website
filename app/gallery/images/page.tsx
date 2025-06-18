@@ -66,9 +66,22 @@ export default function ImageGalleryPage() {
     "Miscellaneous",
   ];
 
-  // Split categories into two rows
-  const firstRowCategories = categories.slice(0, 9);
-  const secondRowCategories = categories.slice(9, 18);
+  // Responsive: show only a few categories on mobile, all on desktop
+  const [showAllCategories, setShowAllCategories] = useState(false);
+  const mobileCategoryLimit = 5;
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+  // For mobile: show only a few, rest on toggle
+  const visibleCategories = isMobile && !showAllCategories
+    ? categories.slice(0, mobileCategoryLimit)
+    : categories;
+  const hiddenCategories = isMobile && !showAllCategories
+    ? categories.slice(mobileCategoryLimit)
+    : [];
+
+  // For desktop: keep previous row split
+  const firstRowCategories = !isMobile ? categories.slice(0, 9) : [];
+  const secondRowCategories = !isMobile ? categories.slice(9, 18) : [];
 
   // Filter projects based on selected category
   const filteredImages =
@@ -186,9 +199,11 @@ export default function ImageGalleryPage() {
             subtitle="Explore our collection of architectural images showcasing our expertise in building modeling and design."
           />
         </div>
+        {/* Categories: Responsive - mobile vs desktop */}
         <div className="mb-8 flex flex-col gap-4 justify-center">
-          <div className="flex flex-wrap gap-4 justify-center">
-            {firstRowCategories.map((category) => (
+          {/* Mobile: show only a few categories, rest behind a toggle */}
+          <div className="flex flex-wrap gap-4 justify-center md:hidden">
+            {visibleCategories.map((category) => (
               <Button
                 key={category}
                 variant={selectedCategory === category ? "default" : "outline"}
@@ -202,10 +217,20 @@ export default function ImageGalleryPage() {
                 {category}
               </Button>
             ))}
+            {hiddenCategories.length > 0 && (
+              <Button
+                variant="outline"
+                className="px-4 py-2 font-barlow text-sm"
+                onClick={() => setShowAllCategories((prev) => !prev)}
+              >
+                {showAllCategories ? "Show less" : `+${hiddenCategories.length} more`}
+              </Button>
+            )}
           </div>
-          {secondRowCategories.length > 0 && (
+          {/* Desktop: show all categories in two rows as before */}
+          <div className="hidden md:flex flex-col gap-4 justify-center">
             <div className="flex flex-wrap gap-4 justify-center">
-              {secondRowCategories.map((category) => (
+              {firstRowCategories.map((category) => (
                 <Button
                   key={category}
                   variant={selectedCategory === category ? "default" : "outline"}
@@ -214,13 +239,31 @@ export default function ImageGalleryPage() {
                       ? "bg-primary text-primary-foreground"
                       : "hover:bg-primary/100 hover:text-primary-foreground transition-all duration-300 ease-in-out"
                   }`}
-                onClick={() => setSelectedCategory(category)}
+                  onClick={() => setSelectedCategory(category)}
                 >
                   {category}
                 </Button>
               ))}
             </div>
-          )}
+            {secondRowCategories.length > 0 && (
+              <div className="flex flex-wrap gap-4 justify-center">
+                {secondRowCategories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    className={`px-4 py-2 font-barlow text-sm ${
+                      selectedCategory === category
+                        ? "bg-primary text-primary-foreground"
+                        : "hover:bg-primary/100 hover:text-primary-foreground transition-all duration-300 ease-in-out"
+                    }`}
+                    onClick={() => setSelectedCategory(category)}
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           {displayedImages.map((project) => (
