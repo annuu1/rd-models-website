@@ -263,7 +263,7 @@ export default function AboutPage() {
         >
           <div className="container text-center">
             <h2 className="text-3xl font-bold text-white mb-6 font-forum">Ready to Work With Us?</h2>
-            <p className="text-white/90 max-w-2xl mx-auto mb-8 font-barlow">
+            <p className="text-white/90 max-w-2xl mx-auto mb-8 font-barlow text-lg">
               Love building, designing, and creating? Come grow with us at RD Models.
             </p>
             <Button size="lg" variant="outline" asChild className="bg-white hover:bg-white/90 text-primary">
