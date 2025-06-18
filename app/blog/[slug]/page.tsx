@@ -136,12 +136,15 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <AnimatedHeader />
 
       <main className="container py-12">
-        <Button variant="ghost" size="sm" asChild className="mb-8">
-          <Link href="/blog">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Blog
-          </Link>
-        </Button>
+        <Button
+            variant="default"
+            size="sm"
+            className="mb-6 rounded-full px-6 py-2 text-primary bg-transparent hover:bg-gray-100"
+          >
+            <Link href="/blog">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+            </Link>
+          </Button>
 
         <article className="max-w-4xl mx-auto">
           <div className="mb-8">
