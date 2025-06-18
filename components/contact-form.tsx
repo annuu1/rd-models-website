@@ -44,7 +44,7 @@ export function ContactForm() {
     };
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_FORMCARRY}`|| "https://formcarry.com/s/ZurztHP1rNK", {
+      const response = await fetch(process.env.NEXT_PUBLIC_FORMCARRY|| "https://formcarry.com/s/ZurztHP1rNK", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
