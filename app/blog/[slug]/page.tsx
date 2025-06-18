@@ -1,10 +1,10 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Building2, ArrowLeft, Calendar, User, Tag, Share2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { MobileMenu } from "@/components/mobile-menu"
-import type { Metadata } from "next"
-import { AnimatedHeader } from "@/components/animated-header"
+import Link from "next/link";
+import Image from "next/image";
+import { Building2, ArrowLeft, Calendar, User, Tag, Share2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { MobileMenu } from "@/components/mobile-menu";
+import type { Metadata } from "next";
+import { AnimatedHeader } from "@/components/animated-header";
 
 // Sample blog posts data
 const blogPosts = [
@@ -73,119 +73,16 @@ const blogPosts = [
     excerpt:
       "Walk into any architecture studio and you'll likely spot a physical model sitting quietly in a corner. At RD Models, we believe it's time to recognise architectural model making for what it truly is: an art form.",
   },
-  {
-    id: 2,
-    title: "The Future of Architectural Visualization",
-    content: `
-      <p>The field of architectural visualization is undergoing a profound transformation, driven by rapid advancements in technology and changing client expectations. As we look to the future, several emerging trends are set to redefine how architects, developers, and visualization specialists bring architectural concepts to life.</p>
-      
-      <h2>Virtual Reality (VR) and Immersive Experiences</h2>
-      
-      <p>Virtual Reality has moved beyond being a novelty to become an essential tool in architectural visualization. VR allows clients to step inside a building before a single brick is laid, experiencing spaces in a way that traditional renderings cannot match. The immersive nature of VR creates a deeper emotional connection to the design, helping clients make more informed decisions.</p>
-      
-      <p>As VR technology becomes more accessible and affordable, we're seeing a shift from occasional use to integration in standard workflow processes. Architects are now designing with VR in mind, considering how spaces will be experienced through this medium.</p>
-      
-      <h2>Augmented Reality (AR) for On-Site Visualization</h2>
-      
-      <p>While VR creates entirely virtual environments, Augmented Reality overlays digital information onto the physical world. This technology is particularly valuable for on-site visualization, allowing stakeholders to see proposed buildings in their actual context.</p>
-      
-      <p>Using AR applications on smartphones or tablets, clients can walk around a site and see how a new building will look from different angles, how it will cast shadows, and how it will interact with existing structures. This contextual understanding is invaluable for urban planning and development projects.</p>
-      
-      <h2>Real-Time Rendering and Interactive Presentations</h2>
-      
-      <p>The days of waiting hours for a single rendering to complete are fading. Real-time rendering engines, originally developed for the gaming industry, are now being adapted for architectural visualization. These tools allow for instantaneous visualization of changes, enabling more dynamic and interactive client presentations.</p>
-      
-      <p>Clients can request modifications during a presentation and see the results immediately, fostering a more collaborative design process. This interactivity is transforming client meetings from passive presentations to active co-creation sessions.</p>
-      
-      <h2>Artificial Intelligence and Automation</h2>
-      
-      <p>Artificial Intelligence is beginning to make its mark on architectural visualization through automation of repetitive tasks, intelligent scene population, and even design suggestion. AI algorithms can analyze vast libraries of design elements and suggest optimal layouts, materials, and lighting scenarios.</p>
-      
-      <p>This doesn't mean that human creativity is being replaced; rather, AI is handling the mundane aspects of visualization, freeing up artists to focus on the creative elements that require a human touch.</p>
-      
-      <h2>Photorealism vs. Stylized Visualization</h2>
-      
-      <p>While the pursuit of photorealism has long been a goal in architectural visualization, we're seeing a growing appreciation for stylized and artistic approaches. These non-photorealistic visualizations can often better communicate the essence and feeling of a space, rather than just its physical appearance.</p>
-      
-      <p>This trend reflects a broader understanding that different visualization styles serve different purposes. Photorealism may be ideal for marketing materials, while more abstract or stylized visualizations might better support the design development process.</p>
-      
-      <h2>Conclusion</h2>
-      
-      <p>The future of architectural visualization is not just about better graphics or faster rendering; it's about creating more meaningful and useful ways to communicate architectural ideas. As technology continues to evolve, the line between the virtual and physical worlds will blur, offering new possibilities for how we conceive, develop, and experience architecture.</p>
-      
-      <p>For visualization specialists and architectural firms, staying ahead of these trends isn't just about adopting new technologies—it's about understanding how these tools can enhance the design process and client experience. Those who can effectively integrate these emerging approaches will be well-positioned to lead in an increasingly competitive field.</p>
-    `,
-    date: "May 15, 2023",
-    author: "Deeksha Vyas",
-    authorTitle: "Chief Marketing Officer",
-    authorImage:
-      "https://rdmodels.com/wp-content/uploads/2025/01/Deeksha-pnxqvlmzw1pylhl7ivkogx2fwq65helnihpuu1atvc.png?height=100&width=100",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?height=600&width=1200",
-    slug: "future-of-architectural-visualization",
-    category: "Technology",
-    tags: ["Virtual Reality", "Augmented Reality", "Real-time Rendering", "Artificial Intelligence"],
-  },
-  {
-    id: 3,
-    title: "3D Modeling Techniques for Realistic Interiors",
-    content: `
-      <p>Creating photorealistic interior visualizations requires a combination of technical skill, artistic sensibility, and attention to detail. In this article, we'll explore advanced techniques for achieving stunning interior renderings that captivate clients and effectively communicate design concepts.</p>
-      
-      <h2>Mastering Lighting for Interior Spaces</h2>
-      
-      <p>Lighting is perhaps the most critical element in creating realistic interior visualizations. Natural light, artificial light sources, and their interaction with materials all contribute to the mood and realism of a scene.</p>
-      
-      <p>For natural lighting, consider the time of day, geographic location, and orientation of the space. Study how sunlight enters through windows, creating patterns of light and shadow. Use HDRI (High Dynamic Range Imaging) environments to achieve realistic ambient lighting and reflections.</p>
-      
-      <p>For artificial lighting, pay attention to the color temperature, intensity, and distribution of different light fixtures. Modern rendering engines allow for physically accurate light simulation, including IES profiles that replicate real-world light fixtures.</p>
-      
-      <h2>Material Definition and Texturing</h2>
-      
-      <p>Convincing materials are essential for realistic interiors. Each material should have appropriate properties for its physical counterpart, including reflectivity, roughness, transparency, and surface detail.</p>
-      
-      <p>Use PBR (Physically Based Rendering) materials whenever possible, as they respond to light in a physically accurate way. For textures, high-resolution images are important, but proper mapping and scale are equally crucial. A wood texture, for example, should have the right grain size and pattern for the specific type of wood being represented.</p>
-      
-      <p>Don't forget about imperfections—slight variations in surface color, subtle scratches, fingerprints on glass, or dust in corners all contribute to realism by breaking up the perfection that immediately signals a computer-generated image.</p>
-      
-      <h2>Composition and Staging</h2>
-      
-      <p>Even with perfect lighting and materials, poor composition can undermine the impact of an interior visualization. Consider the principles of photography when setting up your scenes.</p>
-      
-      <p>Choose camera angles that showcase the space effectively, typically at eye level for a natural perspective. Use the rule of thirds to create balanced compositions, and consider leading lines to draw the viewer's eye through the space.</p>
-      
-      <p>Staging—the arrangement of furniture, accessories, and personal items—is what transforms a sterile architectural space into a lived-in environment. Include elements that suggest human presence: a draped throw on a sofa, books on a coffee table, or a half-filled glass of water. These details create narrative and scale, helping viewers connect emotionally with the space.</p>
-      
-      <h2>Post-Processing for Enhanced Realism</h2>
-      
-      <p>The rendering is just the beginning. Thoughtful post-processing can elevate a good rendering to an exceptional one. Adjust exposure, contrast, and color balance to create a cohesive look. Add subtle effects like depth of field to focus attention and create a photographic quality.</p>
-      
-      <p>Consider the mood you want to convey—warm and inviting, cool and sophisticated, bright and energetic—and adjust your post-processing accordingly. Reference interior photography to understand how professional photographers treat similar spaces.</p>
-      
-      <h2>Conclusion</h2>
-      
-      <p>Creating realistic interior visualizations is both an art and a science. By mastering lighting, materials, composition, and post-processing, you can create renderings that not only showcase architectural spaces accurately but also evoke emotional responses from viewers.</p>
-      
-      <p>Remember that the goal isn't just technical perfection—it's effective communication of design intent. Sometimes, a slightly stylized approach that emphasizes certain design elements can be more effective than strict photorealism. Always consider the purpose of your visualization and the story you want to tell about the space.</p>
-    `,
-    date: "April 28, 2023",
-    author: "Pushpkant Yadav",
-    authorTitle: "Chief Technology Officer",
-    authorImage: "https://rdmodels.com/wp-content/uploads/2025/04/Pushpkant-ji-1-300x300.png?height=100&width=100",
-    image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?height=600&width=1200",
-    slug: "3d-modeling-techniques-for-realistic-interiors",
-    category: "Tutorials",
-    tags: ["Interior Design", "Lighting", "Materials", "Composition"],
-  },
-]
+];
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug)
+  const post = blogPosts.find((p) => p.slug === params.slug);
 
   if (!post) {
     return {
       title: "Blog Post Not Found - RD Models",
       description: "The blog post you're looking for could not be found.",
-    }
+    };
   }
 
   return {
@@ -214,12 +111,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description: post.excerpt || "",
       images: [post.image],
     },
-  }
+  };
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   // Find the blog post that matches the slug
-  const post = blogPosts.find((p) => p.slug === params.slug)
+  const post = blogPosts.find((p) => p.slug === params.slug);
 
   // If no post is found, you could redirect or show an error
   if (!post) {
@@ -231,7 +128,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <Link href="/blog">Back to Blog</Link>
         </Button>
       </div>
-    )
+    );
   }
 
   return (
@@ -270,7 +167,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
 
           <div
-            className="prose prose-lg max-w-none font-barlow prose-headings:font-forum prose-headings:text-primary"
+            className="prose prose-lg prose-neutral max-w-none font-barlow [&>h2]:font-forum [&>h2]:text-primary [&>p]:text-muted-foreground"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
@@ -310,5 +207,5 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </article>
       </main>
     </div>
-  )
+  );
 }
