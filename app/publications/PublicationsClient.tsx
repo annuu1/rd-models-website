@@ -146,7 +146,7 @@ export default function PublicationsClient() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute top-4 right-4 text-white hover:bg-white/20 z-10"
+                  className="absolute top-4 right-4 text-white hover:bg-white/20 z-10 bg-black/50 rounded-full"
                   onClick={closeModal}
                   aria-label="Close modal"
                 >
