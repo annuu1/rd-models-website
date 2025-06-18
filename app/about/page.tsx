@@ -167,7 +167,7 @@ export default function AboutPage() {
               {/* Our Story */}
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6 font-forum text-center md:text-left">
-                  Our Story
+                  Our Story 
                 </h2>
                 <div className="space-y-4 text-muted-foreground font-barlow text-base md:text-lg">
                   <p>
