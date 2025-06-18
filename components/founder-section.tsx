@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 export function FounderSection() {
   return (
-    <section className="py-20 flex justify-center items-center">
+    <section className="md:py-20 py-2 flex justify-center items-center">
       <div className="w-full flex flex-col md:flex-row items-center gap-6 md:gap-12 p-2 sm:p-4 md:p-8 bg-white relative" style={{
         position: 'relative',
         zIndex: 1

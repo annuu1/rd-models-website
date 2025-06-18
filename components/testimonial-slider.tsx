@@ -76,6 +76,9 @@ const testimonials = [
 export function TestimonialSlider() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(0) // -1 for left, 1 for right
+  const touchStartX = useRef<number | null>(null);
+  const touchMoveX = useRef<number | null>(null);
+  const threshold = 50;
 
   const nextTestimonial = () => {
     setDirection(1)
@@ -151,7 +154,34 @@ export function TestimonialSlider() {
               </div>
 
               {/* Center testimonial (main focus) with slide animation */}
-              <div className="w-full max-w-xs sm:max-w-sm md:w-96 h-96 z-10 flex items-center justify-center relative overflow-hidden">
+              <div
+                className="w-full max-w-xs sm:max-w-sm md:w-96 h-96 z-10 flex items-center justify-center relative overflow-hidden"
+                onTouchStart={(e) => {
+                  if (e.touches && e.touches.length === 1) {
+                    touchStartX.current = e.touches[0].clientX;
+                    touchMoveX.current = null;
+                  }
+                }}
+                onTouchMove={(e) => {
+                  if (e.touches && e.touches.length === 1) {
+                    touchMoveX.current = e.touches[0].clientX;
+                  }
+                }}
+                onTouchEnd={() => {
+                  if (touchStartX.current !== null && touchMoveX.current !== null) {
+                    const deltaX = touchMoveX.current - touchStartX.current;
+                    if (Math.abs(deltaX) > threshold) {
+                      if (deltaX < 0) {
+                        nextTestimonial();
+                      } else {
+                        prevTestimonial();
+                      }
+                    }
+                  }
+                  touchStartX.current = null;
+                  touchMoveX.current = null;
+                }}
+              >
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.div
                     key={currentIndex}
