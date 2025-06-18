@@ -403,4 +403,119 @@ export const galleryImages = [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/healthCare/BMCHRC%20by%20Kgk%20Realty/5.jpg",
     ],
   },
+  {
+    id: 30,
+    title: "J Park By Aashish Group",
+    category: "Sectional Models",
+    description: "J Park By Aashish Group – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/5.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/6.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/7.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/8.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/9.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/10.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/11.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/12.JPG",
+    ],
+  },
+  {
+    id: 31,
+    title: "J Park Interiors by Ashish Group",
+    category: "Interior Units",
+    description: "J Park Interiors by Ashish Group – a showcase of innovative design and technology.",
+    images: [
+       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/1.JPG",
+       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/2.JPG",
+       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/3.JPG",
+       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/4.JPG",
+       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/5.JPG",  
+       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/6.JPG",
+       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/7.JPG",
+       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/8.jpg",
+       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/9.jpg"
+    ]
+  },
+  {
+    id: 32,
+    title: "Ananta Karjat",
+    category: "Landscape + Resort",
+    description: "Ananta Karjat – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/landscape%20resort/32%20Ananta%20Karjat/1.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/landscape%20resort/32%20Ananta%20Karjat/2.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/landscape%20resort/32%20Ananta%20Karjat/3.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/landscape%20resort/32%20Ananta%20Karjat/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/landscape%20resort/32%20Ananta%20Karjat/5.JPG",  
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/landscape%20resort/32%20Ananta%20Karjat/6.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/landscape%20resort/32%20Ananta%20Karjat/7.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/landscape%20resort/32%20Ananta%20Karjat/8.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/landscape%20resort/32%20Ananta%20Karjat/9.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/landscape%20resort/32%20Ananta%20Karjat/10.jpg",
+    ]
+  },
+  {
+    id: 33,
+    title: "Unicorn's The Status",
+    category: "Low Rise Residential",
+    description: "Unicorn's The Status – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/33%20Unicorn%27s%20The%20Status/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/33%20Unicorn%27s%20The%20Status/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/33%20Unicorn%27s%20The%20Status/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/33%20Unicorn%27s%20The%20Status/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/33%20Unicorn%27s%20The%20Status/5.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/33%20Unicorn%27s%20The%20Status/6.JPG",
+    ]
+  },
+  {
+    id: 34,
+    title: "UIB Interiors",
+    category: "Interior Units", 
+    description: "UIB Interiors – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/34%20UIB%20Interiors/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/34%20UIB%20Interiors/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/34%20UIB%20Interiors/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/34%20UIB%20Interiors/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/34%20UIB%20Interiors/5.JPG",  
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/34%20UIB%20Interiors/6.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/34%20UIB%20Interiors/7.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/34%20UIB%20Interiors/8.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/34%20UIB%20Interiors/9.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/34%20UIB%20Interiors/10.JPG",
+    ]
+  },
+  {
+    id: 35,
+    title: "Shubhashish Forest",
+    category: "Villa Township",
+    description: "Shubhashish Forest – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/villa%20township/35%20Shubhashish%20Forest/DSC08224.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/villa%20township/35%20Shubhashish%20Forest/DSC08236.JPG",
+    ]
+  },
+  {
+    id: 36,
+    title: "Uttaryan Harmony",
+    category: "Low Rise Residential",
+    description: "Uttaryan Harmony – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/5.JPG",  
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/6.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/7.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/8.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/9.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/10.JPG",
+    ]
+  }
 ];
