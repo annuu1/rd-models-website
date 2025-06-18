@@ -225,9 +225,7 @@ export function Footer() {
         {/* Copyright Disclaimer */}
         <div className="mt-8 pt-6 border-t border-muted-foreground/20 text-center text-muted-foreground font-barlow text-sm">
           <p className="max-w-2xl mx-auto">
-            &copy; {new Date().getFullYear()} RD Models. All rights reserved. Designed and developed with passion by our
-            team. This website and its content are protected by copyright law. Unauthorized use or reproduction is
-            prohibited.
+            &copy; {new Date().getFullYear()} RD Models. All rights reserved.
           </p>
         </div>
       </div>
