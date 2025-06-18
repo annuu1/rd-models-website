@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -11,20 +11,46 @@ export function Footer() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState({ type: "", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setStatus({ type: "", message: "" }); // Clear status on input change
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", message: "" });
+    setStatus({ type: "loading", message: "Sending message..." });
+
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_FORMCARRY||"https://formcarry.com/s/ZurztHP1rNK", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.status === "success") {
+        setStatus({ type: "success", message: "Message sent successfully!" });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error(result.message || "Failed to send message.");
+      }
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: error.message || "An error occurred. Please try again.",
+      });
+    }
   };
 
   return (
-    <footer className="border-t bg-muted">
+    <footer className="border-t bg-muted-600">
       <div className="container py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
@@ -179,10 +205,20 @@ export function Footer() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-2 rounded-md transition-colors font-medium"
+                disabled={status.type === "loading"}
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-2 rounded-md transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {status.type === "loading" ? "Sending..." : "Send Message"}
               </button>
+              {status.message && (
+                <p
+                  className={`text-sm ${
+                    status.type === "success" ? "text-green-500" : "text-red-500"
+                  }`}
+                >
+                  {status.message}
+                </p>
+              )}
             </form>
           </div>
         </div>

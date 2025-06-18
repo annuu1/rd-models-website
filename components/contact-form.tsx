@@ -1,34 +1,82 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "@/components/ui/use-toast"
+import type React from "react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/components/ui/use-toast";
 
 export function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{ type: "idle" | "loading" | "success" | "error"; message: string }>({
+    type: "idle",
+    message: "",
+  });
+
+  const FORMCARRY = process.env.NEXT_PUBLIC_FORMCARRY;
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setIsSubmitting(true)
+    event.preventDefault();
+    setIsSubmitting(true);
+    setStatus({ type: "loading", message: "Sending your message..." });
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+    if (!FORMCARRY) {
+      setIsSubmitting(false);
+      setStatus({ type: "error", message: "Form configuration error. Please try again later." });
       toast({
-        title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
-      })
+        title: "Error",
+        description: "Form configuration error. Please try again later.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-      // Reset form
-      const form = event.target as HTMLFormElement
-      form.reset()
-    }, 1500)
-  }
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch(`${FORMCARRY}`|| "https://formcarry.com/s/ZurztHP1rNK", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.status === "success") {
+        setStatus({ type: "success", message: "Message sent successfully!" });
+        toast({
+          title: "Message sent!",
+          description: "We'll get back to you as soon as possible.",
+        });
+        form.reset();
+      } else {
+        throw new Error(result.message || "Failed to send message.");
+      }
+    } catch (error) {
+      const errorMessage = error.message || "An error occurred. Please try again.";
+      setStatus({ type: "error", message: errorMessage });
+      toast({
+        title: "Error",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -64,9 +112,23 @@ export function ContactForm() {
         </Label>
         <Textarea id="message" name="message" rows={5} required className="font-barlow" />
       </div>
-      <Button type="submit" className="w-full font-barlow" disabled={isSubmitting}>
+      <Button
+        type="submit"
+        className="w-full font-barlow"
+        disabled={isSubmitting}
+      >
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
+      {status.message && (
+        <p
+          className={`text-sm font-barlow ${
+            status.type === "success" ? "text-green-500" : status.type === "error" ? "text-red-500" : "text-gray-500"
+          }`}
+          aria-live="polite"
+        >
+          {status.message}
+        </p>
+      )}
     </form>
-  )
+  );
 }
