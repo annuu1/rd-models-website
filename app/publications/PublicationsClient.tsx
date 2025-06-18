@@ -11,7 +11,7 @@ import { AnimatedHeader } from "@/components/animated-header";
 const publications = [
   {
     id: 1,
-    title: "Jaipur Patrika",
+    title: "Rajasthan Patrika",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_2.jpg",
     category: "Press Release",
   },
