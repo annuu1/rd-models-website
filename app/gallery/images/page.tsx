@@ -62,6 +62,7 @@ export default function ImageGalleryPage() {
     "Industrial Township",
     "Monochromatic Models",
     "Art Models",
+    "Sectional Models",
     "Miscellaneous",
   ];
 
