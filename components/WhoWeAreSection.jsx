@@ -9,7 +9,7 @@ import styles from "./WhoWeAreSection.module.css";
 
 export function WhoWeAreSection() {
   return (
-    <section className="py-16 bg-muted" id="who-we-are">
+    <section className="py-12 md:py-16 bg-muted" id="who-we-are">
       <div className="container">
         <SectionHeading
           title="Who We Are"
