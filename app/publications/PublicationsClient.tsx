@@ -11,37 +11,12 @@ import { AnimatedHeader } from "@/components/animated-header";
 const publications = [
   {
     id: 1,
-<<<<<<< HEAD
-    title: "",
-    image:
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_2.jpg",
-=======
     title: "Jaipur Patrika",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_2.jpg",
->>>>>>> origin/master
     category: "Press Release",
   },
   {
     id: 2,
-<<<<<<< HEAD
-    title: "Newspaper Cutting 2",
-    image:
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_4.jpg",
-    category: "Feature",
-  },
-  {
-    id: 3,
-    title: "Newspaper Cutting 3",
-    image:
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_1.jpg",
-    category: "Achievement",
-  },
-  {
-    id: 4,
-    title: "Newspaper Cutting 4",
-    image:
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_3.jpg",
-=======
     title: "",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_4.jpg",
     category: "Press Release",
@@ -56,26 +31,9 @@ const publications = [
     id: 4,
     title: "",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_3.jpg",
->>>>>>> origin/master
     category: "Press Release",
   },
-  {
-    id: 5,
-<<<<<<< HEAD
-    title: "Newspaper Cutting 5",
-    image:
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_5.png",
-    category: "Feature",
-  },
-  {
-    id: 6,
-    title: "Newspaper Cutting 6",
-    image:
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_6.png",
-    category: "Feature",
-  },
-];
-=======
+{
     title: "City First",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_5.png",
     category: "Press Release",
@@ -87,7 +45,6 @@ const publications = [
     category: "Press Release",
   }
 ]
->>>>>>> origin/master
 
 export default function PublicationsClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
