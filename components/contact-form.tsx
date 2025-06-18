@@ -22,7 +22,7 @@ export function ContactForm() {
     setIsSubmitting(true);
     setStatus({ type: "loading", message: "Sending your message..." });
 
-    if (!FORMCARRY) {
+    if (!FORMCARRY && false) {
       setIsSubmitting(false);
       setStatus({ type: "error", message: "Form configuration error. Please try again later." });
       toast({
