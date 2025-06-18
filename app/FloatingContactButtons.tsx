@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default function FloatingContactButtons() {
   return (
-    <div className="fixed bottom-6 z-50 flex w-full justify-between px-6 md:justify-end">
+    <div className="fixed bottom-6 z-50 flex w-full justify-between px-6 md:w-auto md:justify-end md:right-0 md:pr-6">
       <a
         href={`tel:${PHONE_NUMBER}`}
         className="bg-blue-900 hover:bg-blue-700 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition-transform hover:scale-110 md:hidden"
