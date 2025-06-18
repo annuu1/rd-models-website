@@ -80,8 +80,8 @@ export default function ImageGalleryPage() {
     : [];
 
   // For desktop: keep previous row split
-  const firstRowCategories = !isMobile ? categories.slice(0, 9) : [];
-  const secondRowCategories = !isMobile ? categories.slice(9, 18) : [];
+  const firstRowCategories = !isMobile ? categories.slice(0, 10) : [];
+  const secondRowCategories = !isMobile ? categories.slice(10, 20) : [];
 
   // Filter projects based on selected category
   const filteredImages =
