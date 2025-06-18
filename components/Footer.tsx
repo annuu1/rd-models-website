@@ -115,7 +115,7 @@ export function Footer() {
                 <FaInstagram className="h-6 w-6" />
               </Link>
               <Link
-                href="https://twitter.com/rd_models"
+                href="https://x.com/rdmodels"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
