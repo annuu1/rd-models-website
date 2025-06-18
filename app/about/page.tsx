@@ -171,7 +171,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-muted-foreground font-barlow text-base md:text-lg">
                   <p>
-                    Welcome to RD Models, your premier destination for high-quality scale models. As a leading model maker, RD Models has grown into India’s foremost model making company under the visionary leadership of Rohitash Dahiya. Over the past 12 years, we have been committed to innovation, precision, and unmatched quality. From our humble beginnings in Jaipur, we have expanded nationwide with workshops in Delhi, Bangalore, Hyderabad, Ahmedabad, and Mumbai. Our relentless pursuit of excellence has established us as the go-to model maker for top-tier companies and institutions.
+                    Welcome to RD Models, your premier destination for high-quality scale models. As a leading model maker, RD Models has grown into India’s foremost model making company under the visionary leadership of Rohitash Daiya. Over the past 12 years, we have been committed to innovation, precision, and unmatched quality. From our humble beginnings in Jaipur, we have expanded nationwide with workshops in Delhi, Bangalore, Hyderabad, Ahmedabad, and Mumbai. Our relentless pursuit of excellence has established us as the go-to model maker for top-tier companies and institutions.
                   </p>
                 </div>
               </div>
