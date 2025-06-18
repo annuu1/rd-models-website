@@ -1,16 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Building2, Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Building2, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
   const [mediaOpen, setMediaOpen] = useState(false);
   const [portfolioOpen, setPortfolioOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -41,13 +42,45 @@ export function MobileMenu() {
             >
               Home
             </Link>
-            <Link
-              href="/about"
-              className="text-lg font-medium text-muted-foreground hover:text-primary font-barlow px-2 py-2 rounded"
-              onClick={() => setOpen(false)}
+
+            {/* About Dropdown */}
+            <button
+              type="button"
+              aria-expanded={aboutOpen}
+              aria-controls="mobile-about-dropdown"
+              className="flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-primary font-barlow px-2 py-2 rounded w-full focus:outline-none"
+              onClick={() => setAboutOpen((v) => !v)} // Changed from setPortfolioOpen to setAboutOpen
             >
-              About Us
-            </Link>
+              <span>About</span>
+              <span>{aboutOpen ? "▲" : "▼"}</span>
+            </button>
+            {aboutOpen && (
+              <div
+                id="mobile-about-dropdown"
+                className="flex flex-col gap-1 ml-4 mb-2"
+              >
+                <Link
+                  href="/about"
+                  className="text-base font-normal text-muted-foreground hover:text-primary font-barlow px-2 py-1 rounded"
+                  onClick={() => {
+                    setAboutOpen(false);
+                    setOpen(false);
+                  }} // Close both dropdown and sheet
+                >
+                  Know Us
+                </Link>
+                <Link
+                  href="/clients"
+                  className="text-base font-normal text-muted-foreground hover:text-primary font-barlow px-2 py-1 rounded"
+                  onClick={() => {
+                    setAboutOpen(false);
+                    setOpen(false);
+                  }} // Close both dropdown and sheet
+                >
+                  Our Clients
+                </Link>
+              </div>
+            )}
 
             {/* Portfolio Dropdown */}
             <button
@@ -61,7 +94,10 @@ export function MobileMenu() {
               <span>{portfolioOpen ? "▲" : "▼"}</span>
             </button>
             {portfolioOpen && (
-              <div id="mobile-portfolio-dropdown" className="flex flex-col gap-1 ml-4 mb-2">
+              <div
+                id="mobile-portfolio-dropdown"
+                className="flex flex-col gap-1 ml-4 mb-2"
+              >
                 <Link
                   href="/gallery/images"
                   className="text-base font-normal text-muted-foreground hover:text-primary font-barlow px-2 py-1 rounded"
@@ -91,7 +127,10 @@ export function MobileMenu() {
               <span>{mediaOpen ? "▲" : "▼"}</span>
             </button>
             {mediaOpen && (
-              <div id="mobile-media-dropdown" className="flex flex-col gap-1 ml-4 mb-2">
+              <div
+                id="mobile-media-dropdown"
+                className="flex flex-col gap-1 ml-4 mb-2"
+              >
                 <Link
                   href="/blog"
                   className="text-base font-normal text-muted-foreground hover:text-primary font-barlow px-2 py-1 rounded"
