@@ -90,8 +90,8 @@ export function AnimatedHeader() {
             <div className="relative group">
               <span className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${isScrolled ? "text-primary hover:text-primary" : "text-white hover:text-white-400"}`}>ABOUT</span>
               <div className="flex flex-col absolute left-0 mt-2 w-40 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 p-2">
-                <Link href="/about" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">KNOW US</Link>
-                <Link href="/clients" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">OUR CLIENTS</Link>
+                <Link href="/about" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">Know Us</Link>
+                <Link href="/clients" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">Our Clients</Link>
               </div>
             </div>
           </motion.div>
