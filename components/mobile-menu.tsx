@@ -12,6 +12,7 @@ export function MobileMenu() {
   const [mediaOpen, setMediaOpen] = useState(false);
   const [portfolioOpen, setPortfolioOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -49,7 +50,7 @@ export function MobileMenu() {
               aria-expanded={aboutOpen}
               aria-controls="mobile-about-dropdown"
               className="flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-primary font-barlow px-2 py-2 rounded w-full focus:outline-none"
-              onClick={() => setAboutOpen((v) => !v)} // Changed from setPortfolioOpen to setAboutOpen
+              onClick={() => setAboutOpen((v) => !v)}
             >
               <span>About</span>
               <span>{aboutOpen ? "▲" : "▼"}</span>
@@ -65,7 +66,7 @@ export function MobileMenu() {
                   onClick={() => {
                     setAboutOpen(false);
                     setOpen(false);
-                  }} // Close both dropdown and sheet
+                  }}
                 >
                   Know Us
                 </Link>
@@ -75,7 +76,7 @@ export function MobileMenu() {
                   onClick={() => {
                     setAboutOpen(false);
                     setOpen(false);
-                  }} // Close both dropdown and sheet
+                  }}
                 >
                   Our Clients
                 </Link>
@@ -155,13 +156,45 @@ export function MobileMenu() {
             >
               Testimonials
             </Link>
-            <Link
-              href="/contact"
-              className="text-lg font-medium text-muted-foreground hover:text-primary font-barlow px-2 py-2 rounded"
-              onClick={() => setOpen(false)}
+
+            {/* Contact Dropdown */}
+            <button
+              type="button"
+              aria-expanded={contactOpen}
+              aria-controls="mobile-contact-dropdown"
+              className="flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-primary font-barlow px-2 py-2 rounded w-full focus:outline-none"
+              onClick={() => setContactOpen((v) => !v)}
             >
-              Contact
-            </Link>
+              <span>Contact</span>
+              <span>{contactOpen ? "▲" : "▼"}</span>
+            </button>
+            {contactOpen && (
+              <div
+                id="mobile-contact-dropdown"
+                className="flex flex-col gap-1 ml-4 mb-2"
+              >
+                <Link
+                  href="/contact"
+                  className="text-base font-normal text-muted-foreground hover:text-primary font-barlow px-2 py-1 rounded"
+                  onClick={() => {
+                    setContactOpen(false);
+                    setOpen(false);
+                  }}
+                >
+                  Connect With Us
+                </Link>
+                <Link
+                  href="/careers"
+                  className="text-base font-normal text-muted-foreground hover:text-primary font-barlow px-2 py-1 rounded"
+                  onClick={() => {
+                    setContactOpen(false);
+                    setOpen(false);
+                  }}
+                >
+                  Careers
+                </Link>
+              </div>
+            )}
           </nav>
           <div className="mt-auto border-t pt-4">
             <Button className="w-full" asChild>
