@@ -502,7 +502,7 @@ export const galleryImages = [
   },
   {
     id: 36,
-    title: "Uttaryan Harmony",
+    title: "Uttaryan Harmony, Guwahati",
     category: "Low Rise Residential",
     description: "Uttaryan Harmony – a showcase of innovative design and technology.",
     images: [
@@ -520,9 +520,9 @@ export const galleryImages = [
   },
   {
     id: 37,
-    title: "Patna Bhita Airport",
+    title: "Patna Bihta Airport, Patna",
     category: "Miscellaneous",
-    description: "Patna Bhita Airport – a showcase of innovative design and technology.",
+    description: "Patna Bihta Airport – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/37%20Patna%20Bhita%20Airport/1.jpeg",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/37%20Patna%20Bhita%20Airport/2.JPG",
@@ -549,7 +549,7 @@ export const galleryImages = [
   },
   {
     id: 39,
-    title: "Saras Parlour",
+    title: "Saras Parlour, Jaipur",
     category: "Miscellaneous",
     description: "Saras Parlour – a showcase of innovative design and technology.",
     images: [
@@ -567,7 +567,7 @@ export const galleryImages = [
   },
   {
     id: 40,
-    title: "Sonorous By Tulsi Creators",
+    title: "Sonorous By Tulsi Creators, Vapi",
     category: "Commercial Models",
     description: "Sonorous By Tulsi Creators – a showcase of innovative design and technology.",
     images: [
@@ -580,7 +580,7 @@ export const galleryImages = [
   },
   {
     id: 41,
-    title: "Dhanraj International School",
+    title: "Dhanraj International School, Nagaur",
     category: "Institutional Models",
     description: "Dhanraj International School – a showcase of innovative design and technology.",
     images: [
@@ -598,7 +598,7 @@ export const galleryImages = [
   },
   {
     id: 42,
-    title: "Jantar Mantar",
+    title: "Jantar Mantar, Jaipur",
     category: "Monuments",
     description: "Jantar Mantar – a showcase of innovative design and technology.",
     images: [

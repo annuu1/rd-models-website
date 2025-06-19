@@ -9,19 +9,14 @@ import { AnimatedHeader } from "@/components/animated-header"
 const jobs = [
   {
     id: 1,
-    title: "Data Analyst",
-    description: "Develop innovative solutions with our tech team. Requires 3+ years of experience in MS Excel/PowerBI.",
+    title: "Model Maker",
+    description: "The ideal candidate should be skilled in working with various materials, tools, and techniques to create accurate and high-quality physical models. Strong attention to detail and manual dexterity Ability to interpret technical drawings and plans.",
   },
   {
     id: 2,
-    title: "Product Manager",
-    description: "Lead product development and strategy. Requires 5+ years of experience in product management.",
-  },
-  {
-    id: 3,
-    title: "UI/UX Designer",
-    description: "Design user-friendly interfaces for our products. Requires 2+ years of experience in Figma or similar tools.",
-  },
+    title: "3D Visualizer (SketchUp Expert)",
+    description: "We are looking for a creative 3D visualizer with strong proficiency in Google SketchUp. The candidate will be responsible for developing detailed 3D models and visual representations for architectural and conceptual presentations. Ability to create precise and visually compelling 3D models Understanding of architectural drawings and spatial design",
+  }
 ];
 
 export default function CareersPage() {
@@ -86,7 +81,7 @@ export default function CareersPage() {
       <section
         className="relative bg-cover bg-center h-[60vh] flex items-center justify-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1920&q=80')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/generals/careers/team.png')`,
         }}
       >
         <div className="text-center text-white prose prose-headings:font-forum">
@@ -106,12 +101,12 @@ export default function CareersPage() {
       {/* About Us Section */}
       <section className="py-16 bg-card w-full">
         <div className="container mx-auto px-0">
-          <h2 className="text-3xl md:text-4xl font-forum text-center mb-8">About Us</h2>
+          <h2 className="text-3xl md:text-4xl font-forum text-center mb-8">At RD Models</h2>
           <div className="prose prose-lg max-w-3xl mx-auto text-muted-foreground">
             <p>
-              We are a forward-thinking company dedicated to innovation, excellence, and creating a positive impact.
-              Our mission is to empower our team to build solutions that shape the future. With a focus on collaboration
-              and creativity, we foster an environment where every voice is heard, and every idea matters.
+              At RD Models, we’re more than a model-making company — we’re a team of innovators, designers,
+              and problem-solvers dedicated to shaping impactful ideas into reality. We believe in a culture of
+              collaboration, creativity, and continuous growth.
             </p>
             <p>
               Join us to work on cutting-edge projects, grow your skills, and contribute to a vision that inspires change.
@@ -136,7 +131,7 @@ export default function CareersPage() {
               <FaBuilding className="text-primary text-4xl mx-auto mb-4" />
               <h3 className="text-xl font-jost font-semibold mb-2">Modern Workspace</h3>
               <p className="text-muted-foreground">
-                Enjoy a state-of-the-art office with cutting-edge tools and resources.
+                Enjoy a well-equipped studio filled with the latest tools and resources.
               </p>
             </div>
             <div className="text-center">
@@ -264,13 +259,9 @@ export default function CareersPage() {
                 </p>
               )}
               <p className="text-center text-muted-foreground mt-4">
-                Prefer to talk? Call us at{" "}
-                <a href={`tel:9672232299`} className="text-primary hover:underline">
-                  +91 9672232299
-                </a>{" "}
-                or message us on{" "}
+                message us on{" "}
                 <a
-                  href={`https://wa.me/919672232299, "")}`}
+                  href={`https://wa.me/919672232299`}
                   className="text-primary hover:underline"
                 >
                   WhatsApp

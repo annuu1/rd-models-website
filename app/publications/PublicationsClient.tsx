@@ -62,21 +62,14 @@ const publications = [
     id: 8,
     title: "",
     image:
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_8.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_08.jpg",
     category: "Press Release",
   },
   {
     id: 9,
     title: "",
     image:
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_9.jpg",
-    category: "Press Release",
-  },
-  {
-    id: 10,
-    title: "",
-    image:
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_10.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_9.jpeg",
     category: "Press Release",
   },
 ];
