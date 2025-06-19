@@ -25,10 +25,11 @@ export function AnimatedHeader() {
 
   return (
     <motion.header
-      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
           ? "bg-white/100 backdrop-blur-md shadow-lg"
           : "bg-transparent"
-        }`}
+      }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -59,63 +60,164 @@ export function AnimatedHeader() {
             { href: "/testimonials", label: "TESTIMONIALS" },
             { href: "/contact", label: "CONTACT" },
           ].map((item, index) => {
-            if(item.label === "MEDIA"){
-              return(
-                <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-            <div className="relative group">
-              <span className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${isScrolled ? "text-primary hover:text-primary" : "text-white hover:text-white-400"}`}>MEDIA</span>
-              <div className="flex flex-col absolute left-0 mt-2 w-40 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 p-2">
-                <Link href="/blog" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">BLOG</Link>
-                <Link href="/publications" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0 text-nowrap ">PUBLICATIONS</Link>
-              </div>
-            </div>
-          </motion.div>
-              )
-            }else if(item.label === "PORTFOLIO"){
-              return(
-                <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-            <div className="relative group">
-              <span className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${isScrolled ? "text-primary hover:text-primary" : "text-white hover:text-white-400"}`}>PORTFOLIO</span>
-              <div className="flex flex-col absolute left-0 mt-2 w-40 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 p-2">
-                <Link href="/gallery/images" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">Photos</Link>
-                <Link href="/gallery/videos" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">Videos</Link>
-              </div>
-            </div>
-          </motion.div>
-              )
+            if (item.label === "MEDIA") {
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <div className="relative group">
+                    <span
+                      className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${
+                        isScrolled
+                          ? "text-primary hover:text-primary"
+                          : "text-white hover:text-white-400"
+                      }`}
+                    >
+                      MEDIA
+                    </span>
+                    <div className="flex flex-col absolute left-0 mt-2 w-40 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 p-2">
+                      <Link
+                        href="/blog"
+                        className="link-underline block px-4 py-2 text-primary hover:bg-primary/0"
+                      >
+                        BLOG
+                      </Link>
+                      <Link
+                        href="/publications"
+                        className="link-underline block px-4 py-2 text-primary hover:bg-primary/0 text-nowrap "
+                      >
+                        PUBLICATIONS
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            } else if (item.label === "PORTFOLIO") {
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <div className="relative group">
+                    <span
+                      className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${
+                        isScrolled
+                          ? "text-primary hover:text-primary"
+                          : "text-white hover:text-white-400"
+                      }`}
+                    >
+                      PORTFOLIO
+                    </span>
+                    <div className="flex flex-col absolute left-0 mt-2 w-40 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 p-2">
+                      <Link
+                        href="/gallery/images"
+                        className="link-underline block px-4 py-2 text-primary hover:bg-primary/0"
+                      >
+                        Photos
+                      </Link>
+                      <Link
+                        href="/gallery/videos"
+                        className="link-underline block px-4 py-2 text-primary hover:bg-primary/0"
+                      >
+                        Videos
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            } else if (item.label === "ABOUT") {
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <div className="relative group">
+                    <span
+                      className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${
+                        isScrolled
+                          ? "text-primary hover:text-primary"
+                          : "text-white hover:text-white-400"
+                      }`}
+                    >
+                      ABOUT
+                    </span>
+                    <div className="flex flex-col absolute left-0 mt-2 w-40 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 p-2">
+                      <Link
+                        href="/about"
+                        className="link-underline block px-4 py-2 text-primary hover:bg-primary/0"
+                      >
+                        Know Us
+                      </Link>
+                      <Link
+                        href="/clients"
+                        className="link-underline block px-4 py-2 text-primary hover:bg-primary/0"
+                      >
+                        Our Clients
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            } else if (item.label === "CONTACT") {
+              return (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <div className="relative group">
+                    <span
+                      className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${
+                        isScrolled
+                          ? "text-primary hover:text-primary"
+                          : "text-white hover:text-white-400"
+                      }`}
+                    >
+                      CONTACT
+                    </span>
+                    <div className="flex flex-col absolute left-0 mt-2 w-40 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 p-2">
+                      <Link
+                        href="/contact"
+                        className="link-underline block px-4 py-2 text-primary hover:bg-primary/0"
+                      >
+                        Contact
+                      </Link>
+                      <Link
+                        href="/careers"
+                        className="link-underline block px-4 py-2 text-primary hover:bg-primary/0"
+                      >
+                        Careers
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              );
             }
-            else if(item.label === "ABOUT"){
-              return(
-                <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-            <div className="relative group">
-              <span className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${isScrolled ? "text-primary hover:text-primary" : "text-white hover:text-white-400"}`}>ABOUT</span>
-              <div className="flex flex-col absolute left-0 mt-2 w-40 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 p-2">
-                <Link href="/about" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">Know Us</Link>
-                <Link href="/clients" className="link-underline block px-4 py-2 text-primary hover:bg-primary/0">Our Clients</Link>
-              </div>
-            </div>
-          </motion.div>
-              )
-            }
-            return(
-            <motion.div
-              key={item.href}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 + 0.3 }}
-            >
-              <Link
-                href={item.href}
-                className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${isScrolled ? "text-primary hover:text-primary" : "text-white hover:text-white-400"
-                  } `}
+            return (
+              <motion.div
+                key={item.href}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 + 0.3 }}
               >
-                {item.label}
-              </Link>
-
-            </motion.div>
-          )})}
+                <Link
+                  href={item.href}
+                  className={`link-underline relative inline-block text-base font-small transition-colors duration-300 font-grenda ${
+                    isScrolled
+                      ? "text-primary hover:text-primary"
+                      : "text-white hover:text-white-400"
+                  } `}
+                >
+                  {item.label}
+                </Link>
+              </motion.div>
+            );
+          })}
         </nav>
-
 
         <div className="flex items-center gap-4">
           <motion.div
@@ -126,10 +228,11 @@ export function AnimatedHeader() {
           >
             <motion.a
               href="tel:+919672232299"
-              className={`p-2 rounded-lg transition-all duration-300 ${isScrolled
+              className={`p-2 rounded-lg transition-all duration-300 ${
+                isScrolled
                   ? "border border-primary/90 text-primary bg-transparent hover:bg-primary/90 hover:text-white"
                   : "border border-white bg-white/0 text-white hover:bg-white/95 hover:text-primary"
-                }`}
+              }`}
               whileHover={{ scale: 1.1, rotate: 0 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -139,10 +242,11 @@ export function AnimatedHeader() {
               href="https://wa.me/919672232299"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 rounded-lg transition-all duration-300 ${isScrolled
+              className={`p-2 rounded-lg transition-all duration-300 ${
+                isScrolled
                   ? "border border-primary/90 text-primary bg-transparent hover:bg-primary/90 hover:text-white"
                   : "border border-white bg-white/0 text-white hover:bg-white/95 hover:text-primary"
-                }`}
+              }`}
               whileHover={{ scale: 1.1, rotate: 0 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -158,10 +262,11 @@ export function AnimatedHeader() {
             <Button
               variant="outline"
               size="sm"
-              className={`hidden md:flex font-grenda text-lg font-light px-4 py-2 rounded-lg transition-all duration-300 ${isScrolled
+              className={`hidden md:flex font-grenda text-lg font-light px-4 py-2 rounded-lg transition-all duration-300 ${
+                isScrolled
                   ? "border-primary text-primary hover:bg-primary hover:text-white"
                   : "border-white text-white hover:bg-white hover:text-primary bg-transparent"
-                }`}
+              }`}
               asChild
             >
               <Link href="/contact">ENQUIRE</Link>
