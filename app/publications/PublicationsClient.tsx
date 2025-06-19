@@ -59,13 +59,6 @@ const publications = [
     category: "Press Release",
   },
   {
-    id: 8,
-    title: "",
-    image:
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_08.jpg",
-    category: "Press Release",
-  },
-  {
     id: 9,
     title: "",
     image:
