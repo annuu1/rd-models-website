@@ -63,6 +63,7 @@ export default function ImageGalleryPage() {
     "Monochromatic Models",
     "Art Models",
     "Sectional Models",
+    "Monuments",
     "Miscellaneous",
   ];
 

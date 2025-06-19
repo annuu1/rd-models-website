@@ -517,5 +517,96 @@ export const galleryImages = [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/9.JPG",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/low%20rise%20residential/36%20Uttaryan%20Harmony%20%2C%20Guwahati/10.JPG",
     ]
+  },
+  {
+    id: 37,
+    title: "Patna Bhita Airport",
+    category: "Miscellaneous",
+    description: "Patna Bhita Airport – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/37%20Patna%20Bhita%20Airport/1.jpeg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/37%20Patna%20Bhita%20Airport/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/37%20Patna%20Bhita%20Airport/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/37%20Patna%20Bhita%20Airport/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/37%20Patna%20Bhita%20Airport/5.JPG",  
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/37%20Patna%20Bhita%20Airport/6.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/37%20Patna%20Bhita%20Airport/7.JPG",
+    ]
+  },
+  {
+    id: 38,
+    title: "Alaya by GBD Group",
+    category: "High Rise Residential",
+    description: "Alaya by GBD Group – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/highRiseResidential/38%20Alaya%20by%20GBD%20Group/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/highRiseResidential/38%20Alaya%20by%20GBD%20Group/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/highRiseResidential/38%20Alaya%20by%20GBD%20Group/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/highRiseResidential/38%20Alaya%20by%20GBD%20Group/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/highRiseResidential/38%20Alaya%20by%20GBD%20Group/5.JPG",  
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/highRiseResidential/38%20Alaya%20by%20GBD%20Group/6.JPG",
+    ]
+  },
+  {
+    id: 39,
+    title: "Saras Parlour",
+    category: "Miscellaneous",
+    description: "Saras Parlour – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/39%20Saras%20Parlour%2C%20Jaipur/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/39%20Saras%20Parlour%2C%20Jaipur/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/39%20Saras%20Parlour%2C%20Jaipur/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/39%20Saras%20Parlour%2C%20Jaipur/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/39%20Saras%20Parlour%2C%20Jaipur/5.JPG",  
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/39%20Saras%20Parlour%2C%20Jaipur/6.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/39%20Saras%20Parlour%2C%20Jaipur/7.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/39%20Saras%20Parlour%2C%20Jaipur/8.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/39%20Saras%20Parlour%2C%20Jaipur/9.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/39%20Saras%20Parlour%2C%20Jaipur/10.JPG",
+    ]
+  },
+  {
+    id: 40,
+    title: "Sonorous By Tulsi Creators",
+    category: "Commercial Models",
+    description: "Sonorous By Tulsi Creators – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/commercial/40%20Sonorous%20By%20Tulsi%20Creators%2C%20Vapi/1.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/commercial/40%20Sonorous%20By%20Tulsi%20Creators%2C%20Vapi/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/commercial/40%20Sonorous%20By%20Tulsi%20Creators%2C%20Vapi/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/commercial/40%20Sonorous%20By%20Tulsi%20Creators%2C%20Vapi/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/commercial/40%20Sonorous%20By%20Tulsi%20Creators%2C%20Vapi/5.JPG",
+    ]
+  },
+  {
+    id: 41,
+    title: "Dhanraj International School",
+    category: "Institutional Models",
+    description: "Dhanraj International School – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/institutional/41%20Dhanraj%20International%20School%2C%20Nagaur/1.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/institutional/41%20Dhanraj%20International%20School%2C%20Nagaur/2.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/institutional/41%20Dhanraj%20International%20School%2C%20Nagaur/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/institutional/41%20Dhanraj%20International%20School%2C%20Nagaur/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/institutional/41%20Dhanraj%20International%20School%2C%20Nagaur/5.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/institutional/41%20Dhanraj%20International%20School%2C%20Nagaur/6.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/institutional/41%20Dhanraj%20International%20School%2C%20Nagaur/7.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/institutional/41%20Dhanraj%20International%20School%2C%20Nagaur/8.jpg",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/institutional/41%20Dhanraj%20International%20School%2C%20Nagaur/9.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/institutional/41%20Dhanraj%20International%20School%2C%20Nagaur/10.JPG",
+    ]
+  },
+  {
+    id: 42,
+    title: "Jantar Mantar",
+    category: "Monuments",
+    description: "Jantar Mantar – a showcase of innovative design and technology.",
+    images: [
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/monuments/42%20Jantar%20Mantar%2C%20Jaipur/1.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/monuments/42%20Jantar%20Mantar%2C%20Jaipur/2.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/monuments/42%20Jantar%20Mantar%2C%20Jaipur/3.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/monuments/42%20Jantar%20Mantar%2C%20Jaipur/4.JPG",
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/monuments/42%20Jantar%20Mantar%2C%20Jaipur/5.JPG",
+    ]
   }
 ];
