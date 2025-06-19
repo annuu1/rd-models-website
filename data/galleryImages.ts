@@ -167,7 +167,7 @@ export const galleryImages = [
   {
     id: 13,
     title: "Amelias",
-    category: "Industrial Township ",
+    category: "High Rise Residential",
     description: "Amelias – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/13%20Amelias/1.JPG",
@@ -520,9 +520,9 @@ export const galleryImages = [
   },
   {
     id: 37,
-    title: "Patna Bihta Airport, Patna",
+    title: "Bihta Airport, Patna",
     category: "Miscellaneous",
-    description: "Patna Bihta Airport – a showcase of innovative design and technology.",
+    description: "Bihta Airport – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/37%20Patna%20Bhita%20Airport/1.jpeg",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/miscellaneous/37%20Patna%20Bhita%20Airport/2.JPG",
