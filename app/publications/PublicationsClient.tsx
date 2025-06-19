@@ -12,39 +12,74 @@ const publications = [
   {
     id: 1,
     title: "Rajasthan Patrika",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_2.jpg",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_2.jpg",
     category: "Press Release",
   },
   {
     id: 2,
     title: "",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_4.jpg",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_4.jpg",
     category: "Press Release",
   },
   {
     id: 3,
     title: "",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_1.jpg",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_1.jpg",
     category: "Press Release",
   },
   {
     id: 4,
     title: "",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_3.jpg",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_3.jpg",
     category: "Press Release",
   },
-{
+  {
+    id: 5,
     title: "City First",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_5.png",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_5.png",
     category: "Press Release",
   },
   {
     id: 6,
     title: "",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_6.png",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_6.png",
     category: "Press Release",
-  }
-]
+  },
+  {
+    id: 7,
+    title: "Dainik Bhaskar",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_7.jpg",
+    category: "Press Release",
+  },
+  {
+    id: 8,
+    title: "",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_8.jpg",
+    category: "Press Release",
+  },
+  {
+    id: 9,
+    title: "",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_9.jpg",
+    category: "Press Release",
+  },
+  {
+    id: 10,
+    title: "",
+    image:
+      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/publications/publication_10.jpg",
+    category: "Press Release",
+  },
+];
 
 export default function PublicationsClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
