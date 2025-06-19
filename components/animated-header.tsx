@@ -82,13 +82,13 @@ export function AnimatedHeader() {
                         href="/blog"
                         className="link-underline block px-4 py-2 text-primary hover:bg-primary/0"
                       >
-                        BLOG
+                        Blog
                       </Link>
                       <Link
                         href="/publications"
                         className="link-underline block px-4 py-2 text-primary hover:bg-primary/0 text-nowrap "
                       >
-                        PUBLICATIONS
+                        Publications
                       </Link>
                     </div>
                   </div>
@@ -184,7 +184,7 @@ export function AnimatedHeader() {
                         href="/contact"
                         className="link-underline block px-4 py-2 text-primary hover:bg-primary/0"
                       >
-                        Contact
+                        Contact Us
                       </Link>
                       <Link
                         href="/careers"
