@@ -184,7 +184,7 @@ export function MobileMenu() {
                   Connect With Us
                 </Link>
                 <Link
-                  href="/careers"
+                  href="/careers" 
                   className="text-base font-normal text-muted-foreground hover:text-primary font-barlow px-2 py-1 rounded"
                   onClick={() => {
                     setContactOpen(false);
