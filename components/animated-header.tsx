@@ -184,7 +184,7 @@ export function AnimatedHeader() {
                         href="/contact"
                         className="link-underline block px-4 py-2 text-primary hover:bg-primary/0"
                       >
-                        Contact Us
+                        Connect With Us
                       </Link>
                       <Link
                         href="/careers"
