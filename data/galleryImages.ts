@@ -612,5 +612,19 @@ export const galleryImages = [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/monuments/42%20Jantar%20Mantar%2C%20Jaipur/4.JPG",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/monuments/42%20Jantar%20Mantar%2C%20Jaipur/5.JPG",
     ]
+  },
+  {
+    id: 43,
+    title: "Shubhashish Forest Villa",
+    category: "Villa Unit Models",
+    description: "Shubhashish Forest Villa – a showcase of innovative design and technology.",
+    images: [
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750423685/rdmod/gallery/villa-unit-models/shubhashish-forest-villa/hsz7gr6h56tb1tfuv8fb.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750423741/rdmod/gallery/villa-unit-models/shubhashish-forest-villa/xtsyknex9az9yypesgie.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750423781/rdmod/gallery/villa-unit-models/shubhashish-forest-villa/zmmsfblzij5drdz69vmd.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750423782/rdmod/gallery/villa-unit-models/shubhashish-forest-villa/uicajgtveotqffcivzyn.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750423782/rdmod/gallery/villa-unit-models/shubhashish-forest-villa/nutu09v1i63ba2qnwkbe.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750423782/rdmod/gallery/villa-unit-models/shubhashish-forest-villa/dngpcayeklrxnqosbwty.jpg",
+    ]
   }
 ];
