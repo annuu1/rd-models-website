@@ -81,7 +81,7 @@ export default function CareersPage() {
       <section
         className="relative bg-cover bg-center h-[60vh] flex items-center justify-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750399533/3EB07230E28B9FA124A7F6-02_krdxak.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750412397/rdmod/gen/vvaip8gfkcaldawtzkiv.png')`,
         }}
       >
         <div className="text-center text-white prose prose-headings:font-forum">

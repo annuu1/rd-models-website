@@ -429,15 +429,13 @@ export const galleryImages = [
     category: "Interior Units",
     description: "J Park Interiors by Ashish Group – a showcase of innovative design and technology.",
     images: [
-       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/1.JPG",
-       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/2.JPG",
-       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/3.JPG",
-       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/4.JPG",
-       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/5.JPG",  
-       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/6.JPG",
-       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/7.JPG",
-       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/8.jpg",
-       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/interior/31%20J%20Park%20Interiors%20%20by%20Ashish%20Group/9.jpg"
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750412752/rdmod/gallery/interior-units/j-park-interiors-by-ashish-group/wf5etkysf20ujhd0yjpl.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750412831/rdmod/gallery/interior-units/j-park-interiors-by-ashish-group/dxyjhn31ghdd1tjbw6jh.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750412852/rdmod/gallery/interior-units/j-park-interiors-by-ashish-group/sfclldy468gh65toy3by.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750412863/rdmod/gallery/interior-units/j-park-interiors-by-ashish-group/unn6aahkgatqgzisoq5a.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750412864/rdmod/gallery/interior-units/j-park-interiors-by-ashish-group/qfbzy40spaaktew8yuqg.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750412870/rdmod/gallery/interior-units/j-park-interiors-by-ashish-group/ispkayd5kcedx62cnxho.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750412870/rdmod/gallery/interior-units/j-park-interiors-by-ashish-group/likrcktczpkybdtejc6u.jpg"
     ]
   },
   {
