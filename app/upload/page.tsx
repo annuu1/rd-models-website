@@ -8,10 +8,12 @@ export default function UploadPage() {
   const [title, setTitle] = useState<string>('');
   const [category, setCategory] = useState<string>('Miscellaneous');
   const [description, setDescription] = useState<string>('');
+  const [customFolder, setCustomFolder] = useState<string>('');
   const [uploadedImages, setUploadedImages] = useState<string[]>([]);
   const [copySuccess, setCopySuccess] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [folderPath, setFolderPath] = useState<string>('rdmod/gallery');
+  const [folderError, setFolderError] = useState<string | null>(null);
 
   const categories = [
     'Miscellaneous',
@@ -39,38 +41,65 @@ export default function UploadPage() {
   const sanitizeFolderName = (str: string) => {
     return str
       .trim()
-      .replace(/[^a-zA-Z0-9-]/g, '-') // Replace invalid characters with hyphens
+      .replace(/[^a-zA-Z0-9-_/]/g, '-') // Allow alphanumeric, hyphens, underscores, slashes
       .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+      .replace(/\/+/g, '/') // Replace multiple slashes with single slash
       .toLowerCase();
   };
 
-  // Update folder path when title or category changes
+  // Validate custom folder path
+  const validateCustomFolder = (path: string): string | null => {
+    if (!path) return null; // Empty custom folder is valid (falls back to default)
+    const sanitizedPath = sanitizeFolderName(path);
+    if (!sanitizedPath.startsWith('rdmod/')) {
+      return 'Custom folder must start with "rdmod/"';
+    }
+    if (sanitizedPath === 'rdmod/') {
+      return 'Custom folder must include a subfolder after "rdmod/"';
+    }
+    if (!/^[a-z0-9-_/]+$/.test(sanitizedPath.replace('rdmod/', ''))) {
+      return 'Custom folder can only contain letters, numbers, hyphens, underscores, and slashes';
+    }
+    return null;
+  };
+
+  // Update folder path when title, category, or customFolder changes
   useEffect(() => {
-    if (title.trim() && category) {
+    const customFolderError = validateCustomFolder(customFolder);
+    setFolderError(customFolderError);
+
+    if (customFolder && !customFolderError) {
+      // Use custom folder if provided and valid
+      const sanitizedCustomFolder = sanitizeFolderName(customFolder);
+      setFolderPath(sanitizedCustomFolder);
+      console.log('Updated folder path (custom):', sanitizedCustomFolder);
+    } else if (title.trim() && category) {
+      // Fallback to default folder structure
       const sanitizedCategory = sanitizeFolderName(category);
       const sanitizedTitle = sanitizeFolderName(title);
-      const newFolderPath = `rdmod/gallery/${sanitizedCategory}/${sanitizedTitle}`;
-      setFolderPath(newFolderPath);
-      console.log('Updated folder path:', newFolderPath); // Debug folder path
+      const defaultFolderPath = `rdmod/gallery/${sanitizedCategory}/${sanitizedTitle}`;
+      setFolderPath(defaultFolderPath);
+      console.log('Updated folder path (default):', defaultFolderPath);
     } else {
-      setFolderPath('rdmod/gallery');
+      setFolderPath('rdmod');
+      console.log('Folder path reset (invalid inputs): rdmod');
     }
-  }, [title, category]);
+  }, [title, category, customFolder]);
 
-  const handleUploadSuccess = async (results: CloudinaryUploadWidgetResults) => {
+  const handleUploadSuccess = (results: CloudinaryUploadWidgetResults) => {
     if (results.event === 'success' && results.info && typeof results.info !== 'string') {
       const newImageUrl = results.info.secure_url;
-      console.log('Uploaded to folder:', folderPath, 'URL:', newImageUrl); // Debug upload
+      console.log('Uploaded to folder:', folderPath, 'URL:', newImageUrl);
       setUploadedImages((prev) => [...prev, newImageUrl]);
     } else {
       setUploadError('Failed to upload image');
-      console.error('Upload failed:', results);
+      console.error('Upload error:', results);
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!title.trim() || !category || uploadedImages.length === 0) {
+    if (!title || !category || uploadedImages.length === 0) {
       setUploadError('Please provide title, category, and at least one image');
       return;
     }
@@ -79,14 +108,19 @@ export default function UploadPage() {
       const response = await fetch('/api/gallery', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, category, description, images: uploadedImages }),
+        body: JSON.stringify({ title,
+          category,
+          description,
+          images: uploadedImages }),
       });
 
       const result = await response.json();
       if (response.ok) {
         setUploadError(null);
         setTitle('');
+        setCategory('Miscellaneous');
         setDescription('');
+        setCustomFolder('');
         setUploadedImages([]);
       } else {
         setUploadError(result.error || 'Failed to update gallery');
@@ -108,8 +142,8 @@ export default function UploadPage() {
     }
   };
 
-  // Disable upload button if title or category is missing
-  const isUploadDisabled = !title.trim() || !category;
+  // Disable upload button if title and category are missing or custom folder is invalid
+  const isUploadDisabled = !title.trim() || !category || !!folderError;
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
@@ -146,6 +180,24 @@ export default function UploadPage() {
           </div>
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">
+              Custom Folder (Optional)
+            </label>
+            <input
+              type="text"
+              value={customFolder}
+              onChange={(e) => setCustomFolder(e.target.value)}
+              placeholder="e.g., rdmod/projects/client-name"
+              className="w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            {folderError && (
+              <p className="text-red-500 text-sm mt-2">{folderError}</p>
+            )}
+            <p className="text-gray-500 text-sm mt-2">
+              Leave blank to use: rdmod/gallery/[category]/[title]
+            </p>
+          </div>
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Description (Optional)
             </label>
             <textarea
@@ -160,7 +212,7 @@ export default function UploadPage() {
               Upload Images
             </label>
             <CldUploadButton
-              key={folderPath} // Force re-render when folderPath changes
+              key={folderPath}
               className={`w-full py-2 rounded-md text-sm font-medium flex items-center justify-center transition ${
                 isUploadDisabled
                   ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
@@ -180,7 +232,7 @@ export default function UploadPage() {
             </CldUploadButton>
             {isUploadDisabled && (
               <p className="text-red-500 text-sm mt-2">
-                Please provide both title and category before uploading
+                Please provide valid title, category, and custom folder (if used)
               </p>
             )}
             <p className="text-gray-500 text-sm mt-2">
