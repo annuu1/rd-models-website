@@ -85,7 +85,7 @@ export default function Home() {
               <TeamMember
                 name="Ar. Deeksha Vyas"
                 position="Chief Marketing Officer"
-                image="https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/generals/deeksha_vyas.jpg"
+                image="https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750399533/3EB085FE837DAA4501A23D-IMG_20250618_192024_1_sgtyzm.jpg"
                 bio="An architect by profession, Deeksha leads our marketing efforts with a deep understanding of client needs."
               />
               <TeamMember
