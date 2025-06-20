@@ -28,7 +28,7 @@ export default function ImageGalleryPage() {
   const [images, setImages] = useState<GalleryProject[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
-  const projectsPerPage = 21;
+  const projectsPerPage = 18; // Show only 18 images per page (6 rows of 3)
   const [selectedProject, setSelectedProject] = useState<GalleryProject | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
