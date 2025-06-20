@@ -419,7 +419,7 @@ export const galleryImages = [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/8.JPG",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/9.JPG",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/10.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/11.JPG",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750413470/rdmod/gallery/sectional-models/j-park-by-ashish-group/ajztwtvl2n94pk8tbgo8.jpg",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/sectional/30%20J%20Park%20By%20Aashish%20Group/12.JPG",
     ],
   },
