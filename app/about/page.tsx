@@ -1,4 +1,3 @@
-
 "use client"
 import Link from "next/link"
 import Image from "next/image"
@@ -82,22 +81,6 @@ function StatCard({ number, label, description, icon }: StatCardProps) {
 }
 
 export default function AboutPage() {
-  // Array of FAQs
-  const faqs = [
-    {
-      question: "What types of models does RD Models create?",
-      answer: "We create a wide range of scale models, from small block study models to life-size 1:1 scale models, including architectural, industrial, and conceptual designs."
-    },
-    {
-      question: "How long does it take to complete a model?",
-      answer: "Project timelines vary based on complexity, but most models are completed within 2-6 weeks, with expedited options available."
-    },
-    {
-      question: "Do you ship internationally?",
-      answer: "Yes, we have successfully delivered models to clients in 3 countries, ensuring secure and timely shipping."
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <AnimatedHeader />
@@ -189,8 +172,6 @@ export default function AboutPage() {
                 <div className="space-y-4 text-muted-foreground font-barlow text-base md:text-lg">
                   <p>
                     Welcome to RD Models, your premier destination for high-quality scale models. As a leading model maker, RD Models has grown into India’s foremost model making company under the visionary leadership of Rohitash Daiya. Over the past 12 years, we have been committed to innovation, precision, and unmatched quality. From our humble beginnings in Jaipur, we have expanded nationwide with workshops in Delhi, Bangalore, Hyderabad, Ahmedabad, and Mumbai. Our relentless pursuit of excellence has established us as the go-to model maker for top-tier companies and institutions.
-                  –
-
                   </p>
                 </div>
               </div>
@@ -264,43 +245,6 @@ export default function AboutPage() {
                   <p>
                     What sets RD Models apart as a premier model making company is our unwavering dedication to quality and innovation. We embrace challenging projects, using our advanced technology and extensive experience to create models that are both functional and beautiful. Our clients include industry giants like Tata, Vedanta, L&T, NCC, Reliance, Godrej, and Maruti, as well as government departments and scientific institutions. We are proud to be a trusted partner in bringing their visions to life.
                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQs Section with Video */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container">
-            <SectionHeading
-              title="Frequently Asked Questions"
-              subtitle="Get answers to common questions about our services"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-              {/* Video on the Left */}
-              <div className="w-full">
-                <video
-                  src="https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750416956/video_2025-06-20_16-23-59_hot2co.mp4"
-                  loop
-                  muted
-                  autoPlay
-                  className="w-full h-[360px] object-cover rounded-xl shadow-md"
-                />
-              </div>
-              {/* FAQs on the Right */}
-              <div className="w-full">
-                <div className="space-y-4 max-h-[360px] overflow-y-auto pr-4">
-                  {faqs.map((faq, index) => (
-                    <div key={index}>
-                      <h3 className="text-lg font-semibold text-primary font-forum">
-                        {faq.question}
-                      </h3>
-                      <p className="text-sm text-muted-foreground font-barlow">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>
