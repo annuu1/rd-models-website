@@ -496,8 +496,14 @@ export const galleryImages = [
     category: "Villa Township",
     description: "Shubhashish Forest – a showcase of innovative design and technology.",
     images: [
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/villa%20township/35%20Shubhashish%20Forest/DSC08224.JPG",
-      "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/villa%20township/35%20Shubhashish%20Forest/DSC08236.JPG",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750410368/rdmod/gallery/villa-township/35-shubhashish-forest/pqwcahwuy4aahya6sulu.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750410359/rdmod/gallery/villa-township/35-shubhashish-forest/lk90qwx4jfobnzmlebxa.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750410358/rdmod/gallery/villa-township/35-shubhashish-forest/oe0noytqp5y3o54szekd.png",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750410361/rdmod/gallery/villa-township/35-shubhashish-forest/uwxdpdeivoselevyfdnr.png",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750410359/rdmod/gallery/villa-township/35-shubhashish-forest/j2fluxb746bgd3d0tbmh.png",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750410360/rdmod/gallery/villa-township/35-shubhashish-forest/brqxgg2h9fvlp1agxq6u.png",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750410360/rdmod/gallery/villa-township/35-shubhashish-forest/zw1j0zaj9arfayhnugz0.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750410359/rdmod/gallery/villa-township/35-shubhashish-forest/qp2rnb8dpplvj5qgmkev.jpg"
     ]
   },
   {
