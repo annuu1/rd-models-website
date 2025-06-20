@@ -116,6 +116,35 @@ export default function ContactPage() {
       ]
     }
   ];
+
+    // Array of FAQs
+  const faqs = [
+    {
+      question: "What areas do you serve?",
+      answer: "While we're based in Jaipur, Rajasthan, we serve clients across all of India including major cities like Delhi, Mumbai, Bangalore, Chennai, Kolkata, and Hyderabad."
+    },
+    {
+      question: "How long does a typical project take?",
+      answer: "Project timelines vary based on complexity. Simple residential models take 1-2 weeks, while complex commercial projects may take 3-4 weeks."
+    },
+    {
+      question: "Do you work with international clients?",
+      answer: "Yes, we work with clients globally. Our team in Jaipur collaborates with architects and developers worldwide through digital communication."
+    },
+    {
+      question: "Can you handle rush projects?",
+      answer: "Yes, we offer expedited services for urgent projects. Contact us directly to discuss timeline and pricing for rush orders."
+    },
+    {
+      question: "Can you handle large-scale projects?",
+      answer: "Absolutely! Our team has experience with both small residential models and large commercial developments, ensuring quality at any scale."
+    },
+    {
+      question: "Do you provide revisions?",
+      answer: "We include up to 3 rounds of revisions in our standard pricing. Additional revisions can be accommodated at a nominal charge."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <AnimatedHeader />
@@ -282,57 +311,36 @@ export default function ContactPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16">
+        <section className="py-16 md:py-24 bg-white">
           <div className="container">
             <SectionHeading
               title="Frequently Asked Questions"
-              subtitle="Common questions about our 3D modeling services and process"
+              subtitle="Get answers to common questions about our services"
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-bold mb-2 font-forum">What areas do you serve?</h4>
-                  <p className="text-muted-foreground font-barlow">
-                    While we're based in Jaipur, Rajasthan, we serve clients across all of India including major cities
-                    like Delhi, Mumbai, Bangalore, Chennai, Kolkata, and Hyderabad.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold mb-2 font-forum">How long does a typical project take?</h4>
-                  <p className="text-muted-foreground font-barlow">
-                    Project timelines vary based on complexity. Simple residential models take 1-2 weeks, while complex
-                    commercial projects may take 3-4 weeks.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold mb-2 font-forum">Do you work with international clients?</h4>
-                  <p className="text-muted-foreground font-barlow">
-                    Yes, we work with clients globally. Our team in Jaipur collaborates with architects and developers
-                    worldwide through digital communication.
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              {/* Video on the Left */}
+              <div className="w-full">
+                <video
+                  src="https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750416956/video_2025-06-20_16-23-59_hot2co.mp4"
+                  loop
+                  muted
+                  autoPlay
+                  className="w-full h-[360px] object-cover rounded-xl shadow-md"
+                />
               </div>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-bold mb-2 font-forum">What file formats do you accept?</h4>
-                  <p className="text-muted-foreground font-barlow">
-                    We accept AutoCAD drawings, SketchUp files, Revit models, PDF plans, and hand-drawn sketches. Our
-                    team can work with any architectural documentation.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold mb-2 font-forum">Can you handle rush projects?</h4>
-                  <p className="text-muted-foreground font-barlow">
-                    Yes, we offer expedited services for urgent projects. Contact us directly to discuss timeline and
-                    pricing for rush orders.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold mb-2 font-forum">Do you provide revisions?</h4>
-                  <p className="text-muted-foreground font-barlow">
-                    We include up to 3 rounds of revisions in our standard pricing. Additional revisions can be
-                    accommodated at a nominal charge.
-                  </p>
+              {/* FAQs on the Right */}
+              <div className="w-full">
+                <div className="space-y-4 max-h-[360px] overflow-y-auto pr-4">
+                  {faqs.map((faq, index) => (
+                    <div key={index}>
+                      <h3 className="text-lg font-semibold text-primary font-forum">
+                        {faq.question}
+                      </h3>
+                      <p className="text-sm text-muted-foreground font-barlow">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
