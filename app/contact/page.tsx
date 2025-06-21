@@ -268,7 +268,7 @@ export default function ContactPage() {
                   loop
                   muted
                   autoPlay
-                  className="w-full h-[360px] object-cover rounded-xl shadow-md"
+                  className="w-full h-[360px] object-contain rounded-xl"
                 />
               </div>
               {/* FAQs on the Right */}
