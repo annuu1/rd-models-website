@@ -18,7 +18,7 @@ export default function ContactPage() {
         "JB Nagar, Andheri East",
         "Mumbai, Maharastra, 400047"
       ],
-      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750503505/rdmod/gen/locations-icons/aeqplwckisvfyda2xqdu.jpg"
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750504530/rdmod/gen/locations-icons/mrhuerqdq3fmjbwaaxfy.jpg"
     },
     {
       name: "Hyderabad",
