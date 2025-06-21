@@ -18,7 +18,7 @@ export default function ContactPage() {
         "JB Nagar, Andheri East",
         "Mumbai, Maharastra, 400047"
       ],
-      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750504530/rdmod/gen/locations-icons/mrhuerqdq3fmjbwaaxfy.jpg"
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750506699/mumbi_me4vl8.jpg"
     },
     {
       name: "Hyderabad",
@@ -26,7 +26,7 @@ export default function ContactPage() {
         "G2, N block, Rainbow Vistas Rock Garden",
         "Hyderabad, Telangana, 500018"
       ],
-      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750504231/rdmod/gen/locations-icons/wfo3c73d5mlns99nwycq.jpg"
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750506114/photo_2_2025-06-21_17-10-41_gx5pmz.jpg"
     },
     {
       name: "Bangalore",
@@ -34,7 +34,7 @@ export default function ContactPage() {
         "5, Raja Ram Mohan, Sampangi Rama Nagara",
         "Bengaluru, Karnataka 560025"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750506113/photo_5_2025-06-21_17-10-41_o9rulc.jpg"
     },
     {
       name: "Chennai",
@@ -42,7 +42,7 @@ export default function ContactPage() {
         "Near Shaik Ali Subedar St, Park Town",
         "Chennai, Tamil Nadu 600003"
       ],
-      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750504149/rdmod/gen/locations-icons/rpowozafzhfcwtxaarug.jpg"
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750506113/photo_8_2025-06-21_17-10-41_buvktm.jpg"
     },
     {
       name: "Pune",
@@ -50,7 +50,7 @@ export default function ContactPage() {
         "J-556, Tropics Apartments, Near Sameer Lawns, Ravet",
         "Pune. 412101"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750506113/photo_6_2025-06-21_17-10-41_ukvxuy.jpg"
     },
     {
       name: "Ahmedabad",
@@ -58,7 +58,7 @@ export default function ContactPage() {
         "89, Behind green park society, New RTO road",
         "Ahemdabad, Gujrat, 382410"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750506114/photo_1_2025-06-21_17-10-41_jpnv3h.jpg"
     },
     {
       name: "Delhi",
@@ -66,7 +66,7 @@ export default function ContactPage() {
         "SHED NO. 41, Scheme-1, Okhla Industrial Area, Ph.2",
         "New Delhi-110020"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750506113/photo_7_2025-06-21_17-10-41_gjhgjd.jpg"
     },
     {
       name: "Jaipur",
@@ -74,7 +74,7 @@ export default function ContactPage() {
         "84/54, Sector 8, Sector 9, Pratap Nagar",
         "Jaipur, Rajasthan 302033"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750506113/photo_4_2025-06-21_17-10-41_pxkcem.jpg"
     },
     {
       name: "Chandigarh",
@@ -82,7 +82,7 @@ export default function ContactPage() {
         "Udyog Path, Sector 22B",
         "Chandigarh, 160022"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750506114/photo_3_2025-06-21_17-10-41_xh6but.jpg"
     },
     {
       name: "Lucknow",
@@ -235,7 +235,7 @@ export default function ContactPage() {
                         alt={`Iconic place in ${loc.name}`}
                         width={100}
                         height={100}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </motion.div>
                   </div>
