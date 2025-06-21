@@ -1,32 +1,13 @@
+"use client"
 import Link from "next/link"
 import Image from "next/image"
-import { Building2, Mail, MapPin, Phone, Clock, Instagram, Twitter, Facebook } from "lucide-react"
+import { motion } from "framer-motion"
+import { Building2, Mail, Phone, Clock, Instagram, Twitter, Facebook } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ContactForm } from "@/components/contact-form"
 import { SectionHeading } from "@/components/section-heading"
 import { MobileMenu } from "@/components/mobile-menu"
-import type { Metadata } from "next"
 import { AnimatedHeader } from "@/components/animated-header"
-
-export const metadata: Metadata = {
-  title: "Contact RD Models - 3D Architectural Modeling Services in Jaipur, India",
-  description:
-    "Contact RD Models for professional 3D architectural modeling services. Based in Jaipur, Rajasthan, we serve clients across India. Get a quote for your architectural visualization project today.",
-  keywords: [
-    "contact RD Models",
-    "3D modeling quote Jaipur",
-    "architectural visualization contact",
-    "building models inquiry India",
-    "3D modeling services Rajasthan",
-    "architectural rendering quote",
-  ],
-  openGraph: {
-    title: "Contact RD Models - 3D Architectural Modeling Services in Jaipur, India",
-    description:
-      "Contact RD Models for professional 3D architectural modeling services. Based in Jaipur, Rajasthan, we serve clients across India.",
-    url: "https://rdmodels.com/contact",
-  },
-}
 
 export default function ContactPage() {
   const locations = [
@@ -36,88 +17,99 @@ export default function ContactPage() {
         "503, Ashirwad CHS",
         "JB Nagar, Andheri East",
         "Mumbai, Maharastra, 400047"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     },
     {
       name: "Hyderabad",
       address: [
         "G2, N block, Rainbow Vistas Rock Garden",
         "Hyderabad, Telangana, 500018"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     },
     {
       name: "Bangalore",
       address: [
         "5, Raja Ram Mohan, Sampangi Rama Nagara",
         "Bengaluru, Karnataka 560025"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     },
     {
       name: "Chennai",
       address: [
         "Near Shaik Ali Subedar St, Park Town",
         "Chennai, Tamil Nadu 600003"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     },
     {
       name: "Pune",
       address: [
         "J-556, Tropics Apartments, Near Sameer Lawns, Ravet",
         "Pune. 412101"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     },
     {
       name: "Ahmedabad",
       address: [
         "89, Behind green park society, New RTO road",
         "Ahemdabad, Gujrat, 382410"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     },
     {
       name: "Delhi",
       address: [
         "SHED NO. 41, Scheme-1, Okhla Industrial Area, Ph.2",
         "New Delhi-110020"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     },
     {
       name: "Jaipur",
       address: [
         "84/54, Sector 8, Sector 9, Pratap Nagar",
         "Jaipur, Rajasthan 302033"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     },
     {
       name: "Chandigarh",
       address: [
         "Udyog Path, Sector 22B",
         "Chandigarh, 160022"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     },
     {
       name: "Lucknow",
       address: [
         "Seth Ramjas Rd, Hazratganj",
         "Lucknow, Uttar Pradesh 226001"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     },
     {
       name: "Indore",
       address: [
         "Tilak Path, Bhangiya, Rajwada",
         "Indore, Madhya Pradesh 452007"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     },
     {
       name: "Guwahati",
       address: [
         "AK Dev Rd, GARCHUK",
         "Guwahati, Assam 781035"
-      ]
+      ],
+      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
     }
   ];
 
-    // Array of FAQs
   const faqs = [
     {
       question: "What areas do you serve?",
@@ -150,32 +142,6 @@ export default function ContactPage() {
       <AnimatedHeader />
 
       <main>
-        {/* Hero Section */}
-        {/* <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 z-10" />
-          <div className="relative h-[70vh] min-h-[400px]">
-            <Image
-              src="/images/hero-bg/hero-bg2.jpg"
-              alt="Contact RD Models - 3D Architectural Modeling Services in Jaipur"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-          <div className="absolute inset-0 flex items-center z-20">
-            <div className="container">
-              <div className="max-w-2xl mx-auto bg-black/40 rounded-xl p-8 shadow-lg backdrop-blur-md flex flex-col items-center text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl font-forum">
-                  Contact Us
-                </h1>
-                <p className="mt-4 text-lg text-white/90 md:text-xl font-barlow">
-                  Get in touch with our Jaipur team for professional 3D architectural modeling services across India.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         {/* Contact Form and Info Section */}
         <section className="py-16 md:py-12">
           <div className="container">
@@ -221,7 +187,7 @@ export default function ContactPage() {
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.6 0 0 .6 0 1.326v21.348C0 23.4.6 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.4 24 24 23.4 24 22.674V1.326C24 .6 23.4 0 22.675 0" /></svg>
                       </a>
                       <a href="https://x.com/rdmodels" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#00aced] text-white hover:bg-[#FFB16E] hover:text-white transition" aria-label="Twitter">
-                      <Twitter className="w-5 h-5" />
+                        <Twitter className="w-5 h-5" />
                       </a>
                       <a href="https://www.instagram.com/rd.models" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#e4405f] text-white hover:bg-[#FFB16E] hover:text-white transition" aria-label="Instagram">
                         <Instagram className="w-5 h-5" />
@@ -229,24 +195,6 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-
-                {/* <div className="bg-muted p-8 rounded-lg">
-                  <h4 className="font-medium mb-4 font-forum">Business Hours</h4>
-                  <div className="space-y-2 text-sm text-muted-foreground font-barlow">
-                    <div className="flex justify-between">
-                      <span>Monday - Friday</span>
-                      <span>9:00 AM - 7:00 PM IST</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Saturday</span>
-                      <span>10:00 AM - 5:00 PM IST</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Sunday</span>
-                      <span>Closed</span>
-                    </div>
-                  </div>
-                </div> */}
 
                 <div className="bg-primary p-8 rounded-lg text-white">
                   <h4 className="font-medium mb-4 font-forum">Quick Response Guarantee</h4>
@@ -274,35 +222,30 @@ export default function ContactPage() {
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {locations.map((loc, idx) => (
-                <div key={idx} className="bg-white rounded-lg shadow p-6 flex md:flex-col gap-6">
-                  <div className="flex-1">
-                    <h4 className="text-lg font-bold text-primary font-forum">{loc.name}</h4>
-                    <div className="text-muted-foreground font-barlow">
-                      {loc.address.map((line, i) => (
-                        <span key={i}>
-                          {line}
-                          {/* <br /> */}
-                        </span>
-                      ))}
-                    </div>
-                    {/* <div className="text-sm text-muted-foreground font-barlow">
-                      <span className="font-medium">Phone:</span> {loc.phone}
-                    </div>
-                    <div className="text-sm text-muted-foreground font-barlow">
-                      <span className="font-medium">Email:</span> {loc.email}
-                    </div> */}
+                <div key={idx} className="bg-white rounded-lg shadow p-6 flex gap-6 items-start">
+                  <div className="flex flex-col items-center min-w-[100px]">
+                    <h4 className="text-lg font-extrabold text-primary font-forum mb-2">{loc.name}</h4>
+                    <motion.div
+                      whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)" }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="rounded-full overflow-hidden shadow-md w-[100px] h-[100px]"
+                    >
+                      <Image
+                        src={loc.iconicImage}
+                        alt={`Iconic place in ${loc.name}`}
+                        width={100}
+                        height={100}
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
                   </div>
-                  <div className="flex-1 min-w-[220px] max-w-full">
-                    <iframe
-                      src={`https://www.google.com/maps?q=${encodeURIComponent(loc.address.join(", ").replace(/\n/g, " "))}&output=embed`}
-                      width="100%"
-                      height="300"
-                      style={{ border: 0 }}
-                      allowFullScreen={true}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title={`Map for ${loc.name}`}
-                    ></iframe>
+                  <div className="flex-1 h-full text-muted-foreground font-barlow  rounded-lg align-middle flex flex-col justify-center">
+                    {loc.address.map((line, i) => (
+                      <span key={i}>
+                        {line}
+                        {i < loc.address.length - 1 && ", "}
+                      </span>
+                    ))}
                   </div>
                 </div>
               ))}
@@ -347,20 +290,6 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-
-      {/* <footer className="border-t bg-muted">
-        <div className="container py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Building2 className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold text-primary font-forum">RD Models</span>
-            </div>
-            <p className="text-sm text-muted-foreground font-barlow">
-              © {new Date().getFullYear()} RD Models, Jaipur, Rajasthan, India. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer> */}
     </div>
   )
 }
