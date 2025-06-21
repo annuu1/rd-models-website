@@ -90,7 +90,7 @@ export default function ContactPage() {
         "Seth Ramjas Rd, Hazratganj",
         "Lucknow, Uttar Pradesh 226001"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750507451/photo_2025-06-21_17-33-58_w8mgvp.jpg"
     },
     {
       name: "Indore",
@@ -98,7 +98,7 @@ export default function ContactPage() {
         "Tilak Path, Bhangiya, Rajwada",
         "Indore, Madhya Pradesh 452007"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750507343/photo_2025-06-21_17-32-08_kpfqf1.jpg"
     },
     {
       name: "Guwahati",
@@ -106,7 +106,7 @@ export default function ContactPage() {
         "AK Dev Rd, GARCHUK",
         "Guwahati, Assam 781035"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750507503/photo_2025-06-21_17-34-53_i1gvlg.jpg"
     }
   ];
 
