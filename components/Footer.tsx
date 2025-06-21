@@ -153,6 +153,11 @@ export function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link href="/contact/#FAQs" className="text-muted-foreground hover:text-primary">
+                  FAQs
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

@@ -18,7 +18,7 @@ export default function ContactPage() {
         "JB Nagar, Andheri East",
         "Mumbai, Maharastra, 400047"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750503505/rdmod/gen/locations-icons/aeqplwckisvfyda2xqdu.jpg"
     },
     {
       name: "Hyderabad",
@@ -26,7 +26,7 @@ export default function ContactPage() {
         "G2, N block, Rainbow Vistas Rock Garden",
         "Hyderabad, Telangana, 500018"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750504231/rdmod/gen/locations-icons/wfo3c73d5mlns99nwycq.jpg"
     },
     {
       name: "Bangalore",
@@ -42,7 +42,7 @@ export default function ContactPage() {
         "Near Shaik Ali Subedar St, Park Town",
         "Chennai, Tamil Nadu 600003"
       ],
-      iconicImage: "https://media.istockphoto.com/id/602312024/vector/vintage-poster-of-charminar-in-hyderabad-famous-monument-india.jpg?s=612x612&w=0&k=20&c=V4KAY7WRMyOJNmLsyfPnaJQyW0-u_O6JN86RDJSUFS0="
+      iconicImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750504149/rdmod/gen/locations-icons/rpowozafzhfcwtxaarug.jpg"
     },
     {
       name: "Pune",
@@ -226,7 +226,7 @@ export default function ContactPage() {
                   <div className="flex flex-col items-center min-w-[100px]">
                     <h4 className="text-lg font-extrabold text-primary font-forum mb-2">{loc.name}</h4>
                     <motion.div
-                      whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)" }}
+                      whileHover={{boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)" }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="rounded-full overflow-hidden shadow-md w-[100px] h-[100px]"
                     >
@@ -254,7 +254,7 @@ export default function ContactPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 md:py-24 bg-white">
+        <section id="FAQs" className="py-16 md:py-24 bg-white">
           <div className="container">
             <SectionHeading
               title="Frequently Asked Questions"
