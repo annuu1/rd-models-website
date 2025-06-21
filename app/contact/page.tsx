@@ -264,7 +264,7 @@ export default function ContactPage() {
               {/* Video on the Left */}
               <div className="w-full">
                 <video
-                  src="https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750416956/video_2025-06-20_16-23-59_hot2co.mp4"
+                  src="https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750482594/FAQs_Video_yajtpp.mp4"
                   loop
                   muted
                   autoPlay
