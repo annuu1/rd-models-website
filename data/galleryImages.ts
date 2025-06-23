@@ -84,9 +84,9 @@ export const galleryImages = [
   },
   {
     id: 7,
-    title: "Hyderbad, Fwd",
-    category: "Miscellaneous",
-    description: "Hyderbad, Fwd – a showcase of innovative design and technology.",
+    title: "Quambiant Amaranthine, Hyderbad",
+    category: "High Rise Residential",
+    description: "Quambiant Amaranthine, Hyderbad – a showcase of innovative design and technology.",
     images: [
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/1.JPG",
       "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/images/7%20Hyderbad%2C%20Fwd/2.jpg",
