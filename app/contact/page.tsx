@@ -226,20 +226,37 @@ export default function ContactPage() {
                   <div className="flex flex-col items-center min-w-[100px]">
                     <h4 className="text-lg font-extrabold text-primary font-forum mb-2">{loc.name}</h4>
                     <motion.div
-                      whileHover={{boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)" }}
+                      className="rounded-full overflow-hidden shadow-md w-[100px] h-[100px] relative"
+                      whileHover={{ rotateY: 180 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="rounded-full overflow-hidden shadow-md w-[100px] h-[100px]"
                     >
-                      <Image
-                        src={loc.iconicImage}
-                        alt={`Iconic place in ${loc.name}`}
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-contain"
-                      />
+                      {/* Image */}
+                      <motion.div
+                        className="absolute inset-0 w-full h-full"
+                        initial={{ opacity: 1 }}
+                        whileHover={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Image
+                          src={loc.iconicImage}
+                          alt={`Iconic place in ${loc.name}`}
+                          width={100}
+                          height={100}
+                          className="w-full h-full object-contain"
+                        />
+                      </motion.div>
+                      {/* Text Overlay */}
+                      <motion.div
+                        className="absolute inset-0 w-full h-full bg-gray-500 text-white flex items-center justify-center rounded-full"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1, rotateY: 180 }}
+                        transition={{ duration: 0 }}
+                      >
+                        <span className="text-sm font-bold font-forum">{loc.name}</span>
+                      </motion.div>
                     </motion.div>
                   </div>
-                  <div className="flex-1 h-full text-muted-foreground font-barlow  rounded-lg align-middle flex flex-col justify-center">
+                  <div className="flex-1 h-full text-muted-foreground font-barlow rounded-lg align-middle flex flex-col justify-center">
                     {loc.address.map((line, i) => (
                       <span key={i}>
                         {line}
