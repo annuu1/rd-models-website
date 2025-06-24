@@ -267,7 +267,7 @@ export default function AboutPage() {
               Love building, designing, and creating? Come grow with us at RD Models.
             </p>
             <Button size="lg" variant="outline" asChild className="bg-white hover:bg-white/90 text-primary">
-              <Link href="/#contact">Get in Touch</Link>
+              <Link href="/contact">Get in Touch</Link>
             </Button>
           </div>
         </section>

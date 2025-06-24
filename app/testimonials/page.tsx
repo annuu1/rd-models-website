@@ -131,12 +131,12 @@ export default function TestimonialsPage() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <AnimatedHeader />
       <main>
-        <section className="py-10 md:py-20">
+        <section className="py-4 md:py-4">
           <div className="container mx-auto px-4">
             <Button
               variant="default"
               size="sm"
-              className="mb-6 rounded-full px-6 py-2 text-primary bg-transparent hover:bg-gray-100"
+              className="mb-2 rounded-full px-6 py-2 text-primary bg-transparent hover:bg-gray-100"
             >
               <Link href="/">
                 <ArrowLeft className="mr-2 h-4 w-4" />
