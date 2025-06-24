@@ -17,12 +17,12 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import FloatingContactButtons from "../../FloatingContactButtons";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 // Video data with Cloudinary videos
 const videos = [
   {
-    id: 9,
+    id: 1,
     title: "Modern Residential Visualization",
     category: "Residential",
     description:
@@ -34,7 +34,7 @@ const videos = [
     duration: "4:00",
   },
   {
-    id: 10,
+    id: 2,
     title: "Commercial Space Animation",
     category: "Commercial",
     description:
@@ -46,7 +46,7 @@ const videos = [
     duration: "3:30",
   },
   {
-    id: 11,
+    id: 3,
     title: "Urban Development Walkthrough",
     category: "Mixed-Use",
     description:
@@ -57,11 +57,36 @@ const videos = [
       "https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750762791/Vd1_fina__akwygd.mp4",
     duration: "5:00",
   },
+  {
+    id: 4,
+    title: "Luxury Hotel Exterior",
+    category: "Hospitality",
+    description:
+      "Exterior visualization of a luxury hotel showcasing modern architecture and elegant design.",
+    thumbnail:
+      "https://images.unsplash.com/photo-1521747116042-5a810fda9664?height=800&width=1200",
+    videoUrl:
+      "https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750762776/Vid_20211006_184956_wn8u4f.mp4",
+    duration: "3:45",
+  },
+  {
+    id: 5,
+    title: "Office Building Interior",
+    category: "Commercial",
+    description:
+      "Interior visualization of a modern office building with open spaces and collaborative areas.",
+    thumbnail:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?height=800&width=1200",
+    videoUrl:
+      "https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750762760/VID_20250623_035621_242_jdqli0.mp4",
+    duration: "4:20",
+  },
 ];
 
 export default function VideoGalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
 
   // Extract unique categories
   const categories = ["All", ...new Set(videos.map((video) => video.category))];
@@ -92,7 +117,7 @@ export default function VideoGalleryPage() {
     setFormData({ name: "", email: "", message: "" });
   };
 
-  // Handle video play
+  // Handle video play on click
   const handlePlayVideo = (videoUrl: string) => {
     setSelectedVideo(videoUrl);
   };
@@ -100,6 +125,23 @@ export default function VideoGalleryPage() {
   // Close video modal
   const handleCloseVideo = () => {
     setSelectedVideo(null);
+  };
+
+  // Handle mouse enter to play video
+  const handleMouseEnter = (videoId: number) => {
+    const videoElement = videoRefs.current[videoId];
+    if (videoElement) {
+      videoElement.play().catch((error) => console.error("Playback failed:", error));
+    }
+  };
+
+  // Handle mouse leave to pause video
+  const handleMouseLeave = (videoId: number) => {
+    const videoElement = videoRefs.current[videoId];
+    if (videoElement) {
+      videoElement.pause();
+      videoElement.currentTime = 0; // Reset to start
+    }
   };
 
   return (
@@ -126,15 +168,20 @@ export default function VideoGalleryPage() {
             <div
               key={video.id}
               className="group relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-[24rem]"
+              onMouseEnter={() => handleMouseEnter(video.id)}
+              onMouseLeave={() => handleMouseLeave(video.id)}
             >
               <div
                 className="relative h-full w-full overflow-hidden bg-gray-200"
                 style={{ backgroundImage: `url(/placeholder.svg)` }}
               >
-                <img
-                  src={video.thumbnail || "/placeholder.svg"}
-                  alt={video.title}
-                  className="object-fill w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out"
+                <video
+                  ref={(el) => { videoRefs.current[video.id] = el; }}
+                  className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out"
+                  src={video.videoUrl}
+                  loop
+                  playsInline
+                  poster={video.thumbnail || "/placeholder.svg"}
                 />
                 <button
                   onClick={() => handlePlayVideo(video.videoUrl)}
