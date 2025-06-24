@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowLeft, Play, Clock } from "lucide-react";
+import { ArrowLeft, Play, Clock, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/section-heading";
 import { MobileMenu } from "@/components/mobile-menu";
@@ -20,100 +19,49 @@ import { motion } from "framer-motion";
 import FloatingContactButtons from "../../FloatingContactButtons";
 import React, { useState } from "react";
 
-// Sample video data with categories
+// Video data with Cloudinary videos
 const videos = [
   {
-    id: 1,
-    title: "Luxury Residential Complex Walkthrough",
+    id: 9,
+    title: "Modern Residential Visualization",
     category: "Residential",
     description:
-      "Complete 3D walkthrough of a luxury residential project featuring modern amenities and landscaping.",
+      "Detailed 3D visualization showcasing a modern residential building with contemporary design elements.",
     thumbnail:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?height=800&width=1200",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    duration: "3:45",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?height=800&width=1200",
+    videoUrl:
+      "https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750762802/Vid_20250623_040321_603_1_1_1_1_1_hcoqie.mp4",
+    duration: "4:00",
   },
   {
-    id: 2,
-    title: "Commercial Office Building 360° Tour",
+    id: 10,
+    title: "Commercial Space Animation",
     category: "Commercial",
     description:
-      "Interactive 360-degree tour of a modern commercial office building with detailed interior spaces.",
+      "Animated tour of a commercial space highlighting innovative architectural design and functionality.",
     thumbnail:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?height=800&width=1200",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    duration: "5:20",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?height=800&width=1200",
+    videoUrl:
+      "https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750762792/Vid_1_1_1_1_rqt8br.mp4",
+    duration: "3:30",
   },
   {
-    id: 3,
-    title: "Hospital Complex Architectural Visualization",
-    category: "Institutional",
-    description:
-      "Comprehensive visualization of a multi-specialty hospital complex with detailed floor plans and facilities.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1551190822-a9333d879b1f?height=800&width=1200",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    duration: "4:15",
-  },
-  {
-    id: 4,
-    title: "Shopping Mall Interior Design Showcase",
-    category: "Commercial",
-    description:
-      "Detailed showcase of shopping mall interior design with retail spaces, food courts, and entertainment areas.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?height=800&width=1200",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    duration: "6:30",
-  },
-  {
-    id: 5,
-    title: "Educational Campus Master Plan",
-    category: "Institutional",
-    description:
-      "Complete master plan visualization of an educational campus with academic buildings, hostels, and recreational facilities.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1562774053-701939374585?height=800&width=1200",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    duration: "7:45",
-  },
-  {
-    id: 6,
-    title: "Industrial Factory Layout Animation",
-    category: "Industrial",
-    description:
-      "Animated presentation of industrial factory layout with production lines and workflow optimization.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?height=800&width=1200",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    duration: "4:55",
-  },
-  {
-    id: 7,
-    title: "Luxury Resort Development",
-    category: "Hospitality",
-    description:
-      "Stunning visualization of a beachfront resort with infinity pools and tropical landscaping.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?height=800&width=1200",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    duration: "5:30",
-  },
-  {
-    id: 8,
-    title: "Urban Mixed-Use Development",
+    id: 11,
+    title: "Urban Development Walkthrough",
     category: "Mixed-Use",
     description:
-      "Comprehensive walkthrough of a mixed-use development combining residential, commercial, and retail spaces.",
+      "Comprehensive walkthrough of an urban development project featuring integrated residential and commercial spaces.",
     thumbnail:
-      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?height=800&width=1200",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    duration: "8:15",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?height=800&width=1200",
+    videoUrl:
+      "https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750762791/Vd1_fina__akwygd.mp4",
+    duration: "5:00",
   },
 ];
 
 export default function VideoGalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   // Extract unique categories
   const categories = ["All", ...new Set(videos.map((video) => video.category))];
@@ -144,6 +92,16 @@ export default function VideoGalleryPage() {
     setFormData({ name: "", email: "", message: "" });
   };
 
+  // Handle video play
+  const handlePlayVideo = (videoUrl: string) => {
+    setSelectedVideo(videoUrl);
+  };
+
+  // Close video modal
+  const handleCloseVideo = () => {
+    setSelectedVideo(null);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <AnimatedHeader />
@@ -163,22 +121,6 @@ export default function VideoGalleryPage() {
             subtitle="Explore our collection of 3D architectural visualizations, walkthroughs, and project presentations showcasing our expertise in building modeling."
           />
         </div>
-        {/* <div className="mb-8 flex flex-wrap gap-4 justify-center">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={selectedCategory === category ? "default" : "outline"}
-              className={`px-4 py-2 font-barlow text-sm ${
-                selectedCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-primary/10"
-              }`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </Button>
-          ))}
-        </div> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           {filteredVideos.map((video) => (
             <div
@@ -194,14 +136,17 @@ export default function VideoGalleryPage() {
                   alt={video.title}
                   className="object-fill w-full h-full group-hover:scale-105 transition-transform duration-800 ease-out"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
+                <button
+                  onClick={() => handlePlayVideo(video.videoUrl)}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
                   <div className="w-16 h-16 bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary/80 transition-all duration-300 group-hover:scale-110">
                     <Play
                       className="h-8 w-8 text-white ml-1"
                       fill="currentColor"
                     />
                   </div>
-                </div>
+                </button>
                 <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 text-sm font-barlow flex items-center gap-1">
                   <Clock className="h-3 w-3" />
                   {video.duration}
@@ -230,178 +175,29 @@ export default function VideoGalleryPage() {
           </Button>
         </div>
       </main>
-      {/* <footer className="border-t bg-muted mt-16">
-        <div className="container py-8 md:py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
-              <motion.div
-                className="flex items-center gap-3 mb-4"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="relative h-16 w-48">
-                  <Image
-                    src="/images/logo.png"
-                    alt="RD Models Logo"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-              </motion.div>
-              <p className="text-muted-foreground max-w-xs font-barlow mb-4">
-                Leading 3D architectural modeling company based in Jaipur, Rajasthan, serving clients across India with
-                detailed building models and visualizations.
-              </p>
-              <div className="text-sm text-muted-foreground font-barlow mb-4">
-                <p className="flex items-center gap-2">
-                  <FaMapMarkerAlt className="h-4 w-4" />
-                  Jaipur, Rajasthan, India
-                </p>
-                <p className="flex items-center gap-2">
-                  <FaGlobeAsia className="h-4 w-4" />
-                  Serving all of India
-                </p>
-                <p>
-                  <a
-                    href="tel:+911234567890"
-                    className="flex items-center gap-2 hover:text-primary transition-colors"
-                    aria-label="Phone number"
-                  >
-                    <FaPhone className="h-4 w-4" />
-                    +91 123-456-7890
-                  </a>
-                </p>
-                <p>
-                  <a
-                    href="mailto:rdarmodels@gmail.com"
-                    className="flex items-center gap-2 hover:text-primary transition-colors"
-                    aria-label="Email address"
-                  >
-                    <FaEnvelope className="h-4 w-4" />
-                    rdarmodels@gmail.com
-                  </a>
-                </p>
-              </div>
-              <div className="flex gap-4">
-                <Link
-                  href="https://www.linkedin.com/company/yourcompany"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedin className="h-6 w-6" />
-                </Link>
-                <Link
-                  href="https://www.instagram.com/yourcompany"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="Instagram"
-                >
-                  <FaInstagram className="h-6 w-6" />
-                </Link>
-                <Link
-                  href="https://twitter.com/yourcompany"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="Twitter"
-                >
-                  <FaTwitter className="h-6 w-6" />
-                </Link>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-medium mb-4 font-forum">Quick Links</h3>
-              <ul className="space-y-2 font-barlow">
-                <li>
-                  <Link href="/" className="text-muted-foreground hover:text-primary">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="text-muted-foreground hover:text-primary">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/gallery/images" className="text-muted-foreground hover:text-primary">
-                    Portfolio
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="text-muted-foreground hover:text-primary">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-muted-foreground hover:text-primary">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-medium mb-4 font-forum">Contact Us</h3>
-              <form onSubmit={handleSubmit} className="space-y-4 font-barlow">
-                <div>
-                  <label htmlFor="name" className="sr-only">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your Name"
-                    required
-                    className="w-full bg-transparent border-b border-muted-foreground/50 text-muted-foreground focus:outline-none focus:border-primary py-2 px-1 transition-colors placeholder:text-muted-foreground/70"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="sr-only">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Your Email"
-                    required
-                    className="w-full bg-transparent border-b border-muted-foreground/50 text-muted-foreground focus:outline-none focus:border-primary py-2 px-1 transition-colors placeholder:text-muted-foreground/70"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="sr-only">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Your Message"
-                    required
-                    rows={1}
-                    className="w-full bg-transparent border-b border-muted-foreground/50 text-muted-foreground focus:outline-none focus:border-primary py-2 px-1 transition-colors placeholder:text-muted-foreground/70 resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-2 rounded-md transition-colors font-medium"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+          <div className="relative w-full max-w-4xl">
+            <button
+              onClick={handleCloseVideo}
+              className="absolute top-4 right-4 text-white hover:text-gray-300"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <video
+              className="w-full h-auto"
+              controls
+              autoPlay
+              src={selectedVideo}
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
-      </footer> */}
+      )}
+
       <FloatingContactButtons />
     </div>
   );
