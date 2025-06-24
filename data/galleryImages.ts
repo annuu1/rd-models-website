@@ -626,5 +626,22 @@ export const galleryImages = [
       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750423782/rdmod/gallery/villa-unit-models/shubhashish-forest-villa/nutu09v1i63ba2qnwkbe.jpg",
       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750423782/rdmod/gallery/villa-unit-models/shubhashish-forest-villa/dngpcayeklrxnqosbwty.jpg",
     ]
+  },
+  {
+    id: 44,
+    title: "Hamlet by the Bay, Goa",
+    category: "Villa Township",
+    description: "Hamlet by the Bay, Goa – a showcase of innovative design and technology.",
+    images: [
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750752118/rdmod/gallery/villa-township/hamlet-by-the-bay-goa/qlia25ijzqt7dxu7qzhq.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750752225/rdmod/gallery/villa-township/hamlet-by-the-bay-goa/kx8x5kokomv6wyxf2epm.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750752256/rdmod/gallery/villa-township/hamlet-by-the-bay-goa/svxa4gmzl5elq7onx1fv.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750752256/rdmod/gallery/villa-township/hamlet-by-the-bay-goa/i2wiwqzzshhl3ofdg864.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750752297/rdmod/gallery/villa-township/hamlet-by-the-bay-goa/gw4gn20cbzywjkl56fpb.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750752298/rdmod/gallery/villa-township/hamlet-by-the-bay-goa/cim3tr4wmco2ng9awax5.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750752298/rdmod/gallery/villa-township/hamlet-by-the-bay-goa/dktfmncxh3gdqxqqv66i.jpg",
+       "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750752299/rdmod/gallery/villa-township/hamlet-by-the-bay-goa/jv8bja5gpr9rjamnlldt.jpg"
+
+    ]
   }
 ];
