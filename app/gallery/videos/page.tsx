@@ -35,10 +35,10 @@ const videos = [
   },
   {
     id: 2,
-    title: "Commercial Space Animation",
+    title: "Lift-Up Floor Mechanism with Tablet Control",
     category: "Commercial",
     description:
-      "Animated tour of a commercial space highlighting innovative architectural design and functionality.",
+      "The model features a sectional cut-out that is operated via tablet. When activated, the sectional floor lifts up, revealing the lower levels of the model for a clearer interior view.",
     thumbnail:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?height=800&width=1200",
     videoUrl:
@@ -47,10 +47,10 @@ const videos = [
   },
   {
     id: 3,
-    title: "Urban Development Walkthrough",
+    title: "The model is operated via  tablet",
     category: "Mixed-Use",
     description:
-      "Comprehensive walkthrough of an urban development project featuring integrated residential and commercial spaces.",
+      " All floor lights are controlled through the tablet interface. When a specific floor button is pressed on the tablet, the corresponding floor light in the model illuminates.",
     thumbnail:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?height=800&width=1200",
     videoUrl:
@@ -59,10 +59,10 @@ const videos = [
   },
   {
     id: 4,
-    title: "Luxury Hotel Exterior",
+    title: "Moving Lift Inside the Model",
     category: "Hospitality",
     description:
-      "Exterior visualization of a luxury hotel showcasing modern architecture and elegant design.",
+      "The model includes a working elevator mechanism that mimics the real movement of a lift. The elevator travels smoothly between floors within the structure, demonstrating realistic vertical circulation.",
     thumbnail:
       "https://images.unsplash.com/photo-1521747116042-5a810fda9664?height=800&width=1200",
     videoUrl:
@@ -71,10 +71,10 @@ const videos = [
   },
   {
     id: 5,
-    title: "Office Building Interior",
+    title: "Car Movement Mechanism in the Model",
     category: "Commercial",
     description:
-      "Interior visualization of a modern office building with open spaces and collaborative areas.",
+      "A custom mechanism is  integrated into our models to enable cars to move along the roads.",
     thumbnail:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?height=800&width=1200",
     videoUrl:
@@ -82,6 +82,7 @@ const videos = [
     duration: "4:20",
   },
 ];
+
 
 export default function VideoGalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
