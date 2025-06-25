@@ -643,5 +643,54 @@ export const galleryImages = [
        "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750752299/rdmod/gallery/villa-township/hamlet-by-the-bay-goa/jv8bja5gpr9rjamnlldt.jpg"
 
     ]
+  },
+  {
+    id: 45,
+    title: "Roongta Exquisite, Nashik",
+    category: "High Rise Residential",
+    description: "Roongta Exquisite, Nashik – a showcase of innovative design and technology.",
+    images: [
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830325/rdmod/gallery/high-rise-residential/roongta-exquisite-nashik/qtj93hvw0rvyq8jxgfda.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830325/rdmod/gallery/high-rise-residential/roongta-exquisite-nashik/dkz7d2eqkysgc2t4msgq.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830325/rdmod/gallery/high-rise-residential/roongta-exquisite-nashik/dkz7d2eqkysgc2t4msgq.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830462/rdmod/gallery/high-rise-residential/roongta-exquisite-nashik/mb4bxndufwq0dmwneztw.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830462/rdmod/gallery/high-rise-residential/roongta-exquisite-nashik/qkumdwx2nnuuskcha7ky.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830463/rdmod/gallery/high-rise-residential/roongta-exquisite-nashik/mlezdo6iwggm94jgndnd.jpg"
+    ]
+  },
+  {
+    id: 46,
+    title: "Ananta Jaisalmer By Sanjay Puri",
+    category: "Landscape + Resort",
+    description: "Ananta Jaisalmer By Sanjay Puri – a showcase of innovative design and technology.",
+    images: [
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830763/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/webqvo8juspiu7xux3t8.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830776/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/vkqisyqdzvlauw7geecu.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830786/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/kmbxdyke7hex0j2g2pkx.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830860/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/hn8nkhcgsiiou2izhxeh.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830861/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/dxff9aygx7jxiwj9jnmq.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830862/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/abseceu4mqewhh4qmhz2.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830862/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/pbw1mjqn8ytb25sjbeh1.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830862/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/hq1nu2v2nqi5pbb4pbq0.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830862/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/pimg09huwavfowwianub.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830862/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/woqdq7g3qcvmta1wusf5.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830863/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/psfm7vawlmih5tlpzawb.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750830863/rdmod/gallery/landscape-resort/ananta-jaisalmer-by-sanjay-puri/oeitzyrpvw0py1omclno.jpg",
+
+    ]
+  },
+  {
+    id: 47,
+    title: "Bhushan Trith, Ahmedabad",
+    category: "Low Rise Residential",
+    description: "Bhushan Trith, Ahmedabad – a showcase of innovative design and technology.",
+    images: [
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750831073/rdmod/gallery/low-rise-residential/bhushan-trith-ahemdabad/wbdkoc5xk0xaubovkmve.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750831082/rdmod/gallery/low-rise-residential/bhushan-trith-ahemdabad/x1jzdvjckcfltvlp7pdl.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750831088/rdmod/gallery/low-rise-residential/bhushan-trith-ahemdabad/ibew9ttpsi1dxzjhqlrx.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750831096/rdmod/gallery/low-rise-residential/bhushan-trith-ahemdabad/un2xlahvcyiifimedzij.jpg",
+      "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1750831096/rdmod/gallery/low-rise-residential/bhushan-trith-ahemdabad/e7dpcug2wpmlpek28l5a.jpg",
+
+    ]
   }
 ];
