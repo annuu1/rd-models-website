@@ -65,7 +65,7 @@ const blogPosts = [
     date: "May 15, 2025",
     author: "Ar. Urvashi Vasishtha",
     authorTitle: "",
-    authorImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1751008123/rdmod/gen/team/mwphbmsfjplkcdncytrf.jpg",
+    authorImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1751009690/rdmod/gen/team/olcuijb6csiwq8zrraxn.jpg",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/blog/blog_1.jpg",
     slug: "sometimes-rome-is-built-in-a-day",
     category: "Craftsmanship",
