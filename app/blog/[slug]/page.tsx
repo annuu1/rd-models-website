@@ -63,9 +63,9 @@ const blogPosts = [
       <p>It is architecture. Just on a different scale.</p>
     `,
     date: "May 15, 2025",
-    author: "Urvashi",
-    authorTitle: "Architectural Model Maker",
-    authorImage: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?cs=srgb&dl=pexels-vinicius-wiesehofer-289347-1130626.jpg&fm=jpg",
+    author: "Ar. Urvashi Vasishtha",
+    authorTitle: "",
+    authorImage: "https://res.cloudinary.com/dp8l2hrt1/image/upload/v1751008123/rdmod/gen/team/mwphbmsfjplkcdncytrf.jpg",
     image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/blog/blog_1.jpg",
     slug: "sometimes-rome-is-built-in-a-day",
     category: "Craftsmanship",
