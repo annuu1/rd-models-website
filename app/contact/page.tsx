@@ -226,8 +226,9 @@ export default function ContactPage() {
                   <div className="flex flex-col items-center min-w-[100px]">
                     <h4 className="text-lg font-extrabold text-primary font-forum mb-2">{loc.name}</h4>
                     <motion.div
-                      className="rounded-full overflow-hidden shadow-md w-[100px] h-[100px] relative"
+                      className="rounded-full overflow-hidden shadow-md w-[100px] h-[100px] relative cursor-pointer"
                       whileHover={{ rotateY: 180 }}
+                      whileTap={{ rotateY: 180 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
                       {/* Image */}
@@ -235,6 +236,7 @@ export default function ContactPage() {
                         className="absolute inset-0 w-full h-full"
                         initial={{ opacity: 1 }}
                         whileHover={{ opacity: 0 }}
+                        whileTap={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
                         <Image
@@ -250,6 +252,7 @@ export default function ContactPage() {
                         className="absolute inset-0 w-full h-full bg-gray-500 text-white flex items-center justify-center rounded-full"
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1, rotateY: 180 }}
+                        whileTap={{ opacity: 1, rotateY: 180 }}
                         transition={{ duration: 0 }}
                       >
                         <span className="text-sm font-bold font-forum">{loc.name}</span>
