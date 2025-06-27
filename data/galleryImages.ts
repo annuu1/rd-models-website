@@ -16,7 +16,7 @@ export const galleryImages = [
   },
   {
     id: 2,
-    title: "Empyreal club",
+    title: "Empyreal Club By Bardiya Group",
     category: "Commercial Models",
     description: "A luxury club project combining elegance and comfort.",
     images: [

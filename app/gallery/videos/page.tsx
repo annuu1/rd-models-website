@@ -28,7 +28,7 @@ const videos = [
     description:
       "Detailed 3D visualization showcasing a modern residential building with contemporary design elements.",
     thumbnail:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?height=800&width=1200",
+      "",
     videoUrl:
       "https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750762802/Vid_20250623_040321_603_1_1_1_1_1_hcoqie.mp4",
     duration: "4:00",
@@ -40,7 +40,7 @@ const videos = [
     description:
       "The model features a sectional cut-out that is operated via tablet. When activated, the sectional floor lifts up, revealing the lower levels of the model for a clearer interior view.",
     thumbnail:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?height=800&width=1200",
+      "",
     videoUrl:
       "https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750762792/Vid_1_1_1_1_rqt8br.mp4",
     duration: "3:30",
@@ -52,7 +52,7 @@ const videos = [
     description:
       " All floor lights are controlled through the tablet interface. When a specific floor button is pressed on the tablet, the corresponding floor light in the model illuminates.",
     thumbnail:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?height=800&width=1200",
+      "",
     videoUrl:
       "https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750762791/Vd1_fina__akwygd.mp4",
     duration: "5:00",
@@ -64,7 +64,7 @@ const videos = [
     description:
       "The model includes a working elevator mechanism that mimics the real movement of a lift. The elevator travels smoothly between floors within the structure, demonstrating realistic vertical circulation.",
     thumbnail:
-      "https://images.unsplash.com/photo-1521747116042-5a810fda9664?height=800&width=1200",
+      "",
     videoUrl:
       "https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750762776/Vid_20211006_184956_wn8u4f.mp4",
     duration: "3:45",
@@ -76,7 +76,7 @@ const videos = [
     description:
       "A custom mechanism is  integrated into our models to enable cars to move along the roads.",
     thumbnail:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?height=800&width=1200",
+      "",
     videoUrl:
       "https://res.cloudinary.com/dp8l2hrt1/video/upload/v1750762760/VID_20250623_035621_242_jdqli0.mp4",
     duration: "4:20",
@@ -182,7 +182,7 @@ export default function VideoGalleryPage() {
                   src={video.videoUrl}
                   loop
                   playsInline
-                  poster={video.thumbnail || "/placeholder.svg"}
+                  poster={video.thumbnail || ""}
                 />
                 <button
                   onClick={() => handlePlayVideo(video.videoUrl)}
