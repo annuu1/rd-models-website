@@ -76,7 +76,8 @@ const blogPosts = [
 ];
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const awaitedParams = await params;
+  const post = blogPosts.find((p) => p.slug === awaitedParams.slug);
 
   if (!post) {
     return {
@@ -114,7 +115,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   // Find the blog post that matches the slug
   const post = blogPosts.find((p) => p.slug === params.slug);
 
