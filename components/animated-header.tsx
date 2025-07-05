@@ -63,6 +63,7 @@ export function AnimatedHeader() {
             if (item.label === "MEDIA") {
               return (
                 <motion.div
+                key={item.href}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
@@ -97,6 +98,7 @@ export function AnimatedHeader() {
             } else if (item.label === "PORTFOLIO") {
               return (
                 <motion.div
+                  key={item.href}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
@@ -131,6 +133,7 @@ export function AnimatedHeader() {
             } else if (item.label === "ABOUT") {
               return (
                 <motion.div
+                  key={item.href}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
@@ -165,6 +168,7 @@ export function AnimatedHeader() {
             } else if (item.label === "CONTACT") {
               return (
                 <motion.div
+                  key={item.href}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}

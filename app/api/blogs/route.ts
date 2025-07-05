@@ -74,15 +74,27 @@ export async function GET(request: Request) {
   const blog = mongoBlog || localBlog;
 
   if (type === 'preview') {
+    if (!blog) {
+      return NextResponse.json(
+        { error: 'Blog not found' },
+        { status: 404 }
+      );
+    }
     const preview: BlogPreview = {
-      _id: { $oid: (mongoBlog ? mongoBlog._id.toString() : localBlog.id.$oid) },
+      _id: { $oid: (mongoBlog ? mongoBlog._id.toString() : localBlog?._id?.$oid ?? '') },
       title: blog.title,
       excerpt: blog.excerpt,
       date: mongoBlog
         ? (mongoBlog.createdAt
             ? new Date(mongoBlog.createdAt.$date).toLocaleDateString()
             : new Date().toLocaleDateString())
-        : localBlog.date,
+        : (localBlog?.createdAt
+            ? new Date(
+                typeof localBlog.createdAt === 'string'
+                  ? localBlog.createdAt
+                  : localBlog.createdAt.$date
+              ).toLocaleDateString()
+            : new Date().toLocaleDateString()),
       author: blog.author,
       image: blog.image?.url || blog.image.url || '',
       slug: blog.slug,
@@ -169,10 +181,16 @@ export async function GET(request: Request) {
     if (type === 'preview') {
       const previews: BlogPreview[] = Array.isArray(blogData)
         ? blogData.map(blog => ({
-            _id: blog.id,
+            _id: blog._id,
             title: blog.title,
             excerpt: blog.excerpt,
-            date: blog.date,
+            date: blog.createdAt
+              ? new Date(
+                  typeof blog.createdAt === 'string'
+                    ? blog.createdAt
+                    : blog.createdAt.$date
+                ).toLocaleDateString()
+              : new Date().toLocaleDateString(),
             author: blog.author,
             image: blog.image.url,
             slug: blog.slug,

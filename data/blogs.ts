@@ -1,4 +1,4 @@
-export const blogData = {
+export const blogData = [{
   "_id": {
     "$oid": "68639a5248771ba9d4aafab5"
   },
@@ -85,4 +85,4 @@ export const blogData = {
   },
   "slug": "sometimes-rome-is-built-in-a-day",
   "__v": 0
-}
+}]

@@ -1,31 +1,28 @@
-import Link from "next/link"
-import { Building2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { SectionHeading } from "@/components/section-heading"
-import { BlogPreview } from "@/components/blog-preview"
-import { MobileMenu } from "@/components/mobile-menu"
-import { AnimatedHeader } from "@/components/animated-header"
+"use client";
 
-// Sample blog posts data
-const blogPosts = [
-  {
-    id: 1,
-    title: "Sometimes Rome Is Built in a Day—Or Less",
-    excerpt:
-      "Explore how emerging technologies like AR, VR, and real-time rendering are transforming the way architects and developers visualize projects. Learn about the latest tools and techniques that are setting new standards in the industry.",
-    date: "May 15, 2025",
-    author: "Ar. Urvashi Vasishtha",
-    image: "https://zzbsgmn7m1siorzp.public.blob.vercel-storage.com/blog/blog_1.jpg",
-    slug: "sometimes-rome-is-built-in-a-day",
-    category: "Technology",
-  },
-]
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/section-heading";
+import { BlogPreview } from "@/components/blog-preview";
+import { AnimatedHeader } from "@/components/animated-header";
 
 export default function BlogPage() {
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/blogs?type=preview")
+      .then((res) => res.json())
+      .then((data) => {
+        setBlogPosts(data); 
+        console.log("Fetched blog posts:", data);
+      })
+      .catch((err) => console.error("Failed to fetch blogs:", err));
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <AnimatedHeader />
-
       <main className="container py-12">
         <SectionHeading
           title="Our Blog"
@@ -35,8 +32,8 @@ export default function BlogPage() {
 
         {/* Blog Posts Flex Container */}
         <div className="flex flex-wrap justify-center gap-8">
-          {blogPosts.map((post) => (
-            <div key={post.id} className="max-w-sm w-full">
+          {blogPosts.map((post: any) => (
+            <div key={post._id?.$oid || post._id} className="max-w-sm w-full">
               <BlogPreview
                 title={post.title}
                 excerpt={post.excerpt}
@@ -65,5 +62,5 @@ export default function BlogPage() {
         </div>
       </main>
     </div>
-  )
+  );
 }
