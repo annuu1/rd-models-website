@@ -1,5 +1,7 @@
 // Video data with Cloudinary videos
-export const videos = [
+export const videos = []
+
+const videos1 = [
   {
     id: 1,
     title: "Modern Residential Visualization",
