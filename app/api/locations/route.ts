@@ -11,17 +11,6 @@ interface Location {
     url: string;
     publicId: string;
   };
-  city: string;
-  state: string;
-  country: string;
-  pincode?: string;
-  phone?: string;
-  email?: string;
-  coordinates?: {
-    latitude: number;
-    longitude: number;
-  };
-  isHeadOffice: boolean;
   status: string;
   order: number;
   createdAt: string;
@@ -44,15 +33,11 @@ export async function GET() {
       const transformedLocations = mongoLocations.map((location) => ({
         name: location.name,
         address: location.address,
-        iconicImage: location.iconicImage.url,
-        city: location.city,
-        state: location.state,
-        country: location.country,
-        pincode: location.pincode,
-        phone: location.phone,
-        email: location.email,
-        coordinates: location.coordinates,
-        isHeadOffice: location.isHeadOffice
+        iconicImage: location.iconicImage.url, // Assuming iconicImage is a URL string
+        publicId: location.iconicImage.publicId, // Assuming publicId is also stored
+        _id: location._id.$oid, // Convert MongoDB ObjectId to string
+        createdAt: new Date(location.createdAt).toISOString(), // Convert date to ISO string
+        updatedAt: new Date(location.updatedAt).toISOString() // Convert date to ISO string
       }));
 
       return NextResponse.json(transformedLocations);

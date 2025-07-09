@@ -123,7 +123,7 @@ export default function PublicationsClient() {
                   <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="p-4 text-white text-center">
                       <h3 className="text-lg font-semibold font-barlow">
-                        {publication.title || "Untitled"}
+                        {publication.title || ""}
                       </h3>
                       {publication.category && (
                         <p className="text-sm text-gray-200 mt-1">
